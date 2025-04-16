@@ -14,7 +14,7 @@
         nixos = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
-            ./configuration.nix
+            ./nixos/configuration.nix
             
 	    home-manager.nixosModules.home-manager
             {
