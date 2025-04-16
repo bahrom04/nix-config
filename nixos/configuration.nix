@@ -113,7 +113,6 @@
     curl
     git
     whois
-    fastfetch
     gnome-extension-manager
     gnomeExtensions.dash-to-dock
     telegram-desktop

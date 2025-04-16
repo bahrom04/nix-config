@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
  
 {
+
+  imports = [
+    ./modules/home/fastfetch/default.nix
+  ];
+  
   # Iltimos, foydalanuvchi nomini va uy katalogini oʻz holatingizga moslang
   home.username = "bahrom04";
   home.homeDirectory = "/home/bahrom04";
