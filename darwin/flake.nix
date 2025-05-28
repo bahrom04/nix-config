@@ -23,14 +23,37 @@
         modules = [
           {
             nix.settings.experimental-features = "nix-command flakes";
-            environment.systemPackages = with pkgs; [ neovim fastfetch ];
+            environment.systemPackages = with pkgs; [ 
+              neovim 
+              fastfetch 
+              redis	
+              ];
+
+	          services.redis.enable = true;
+	    
             programs.fish.enable = true;
+	    
+	          system.defaults.dock = {
+              autohide = false;
+              largesize = 16;
+              mineffect = "scale";
+              minimize-to-application = true;
+              mru-spaces = true;
+              orientation = "bottom";
+              show-recents = false;
+              show-process-indicators = true;
+              tilesize = 50;
+            };
+
+	          system.primaryUser = "bahrom04";
+
             users.users.bahrom04 = {
               name = "bahrom04";
               home = "/Users/bahrom04";
               shell = pkgs.fish;
               uid = 501;
             };
+
             system.stateVersion = 5;
           }
           home-manager.darwinModules.home-manager
