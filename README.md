@@ -1,4 +1,4 @@
 sudo nixos-rebuild switch --flake .#nixos
 
 ## Daun darwin
-darwin-rebuild switch --flake .#bahrom04
+sudo darwin-rebuild switch --flake ~/nix-config#bahrom04
