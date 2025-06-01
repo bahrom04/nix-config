@@ -2,8 +2,10 @@
 
 {
   imports = [
-     ./modules/fastfetch/default.nix
-     ];
+     ./modules/home/fastfetch.nix
+     ./modules/services/espanso.nix
+  ];
+
   home.username = "bahrom04";
   home.homeDirectory = "/Users/bahrom04";
 
@@ -75,35 +77,8 @@
     # `nom` buyrug'ini beradi va `nix` day ishlaydi
     # tafsilotli log chiqishini ta’minlaydi  
     # nix-output-monitor
-  
+    espanso
   ];
-
-  home.file.".aria2/aria2.conf".text = ''
-    dir=/Users/${config.home.username}/Downloads
-    continue=true
-    max-connection-per-server=5
-    split=5
-    daemon=true
-    enable-rpc=true
-    rpc-listen-port=6800
-    rpc-allow-origin-all=true
-  '';
-
-  launchd.agents.aria2 = {
-    enable = true;
-    config = {
-      ProgramArguments = [
-        "${pkgs.aria2}/bin/aria2c"
-        "--conf-path=$HOME/.aria2/aria2.conf"
-      ];
-      RunAtLoad = true;
-      KeepAlive = true;
-      StandartOutPath = "$HOME/Library/Logs/aria2.logs";
-      StandartErrorPath = "$HOME/Library/Logs/aria2.err";
-    };
-  };
-
+  
   home.stateVersion = "25.05";
-
-
 }

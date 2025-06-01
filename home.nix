@@ -3,7 +3,8 @@
 {
 
   imports = [
-    ./modules/home/fastfetch/default.nix
+    ./modules/home/fastfetch.nix
+    ./modules/services/espanso.nix
   ];
   
   # Iltimos, foydalanuvchi nomini va uy katalogini oʻz holatingizga moslang
