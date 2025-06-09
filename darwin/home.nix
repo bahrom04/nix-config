@@ -3,6 +3,10 @@
 {
   imports = [
      ./modules/home/fastfetch.nix
+     ./modules/home/fish.nix
+     ./modules/home/zsh.nix
+     ./modules/home/starship.nix
+     ./modules/home/programs/git.nix
      ./modules/services/espanso.nix
   ];
 
@@ -12,43 +16,17 @@
   programs.home-manager.enable = true;
   # home-manager.backupFileExtension = "backup";
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    initContent = ''
-      eval "$(starship init zsh)"
-    '';
-  };
-
-  programs.fish = {
-    enable = true;
-    generateCompletions = true;
-    loginShellInit = ''
-      eval "$(starship init fish)"
-    '';
-  };
-
-  programs.starship = {
-    enable = true;
-    settings = {
-      add_newline = false;
-      character.success_symbol = "[➜](green)";
-      directory.truncation_length = 3;
-    };
-  };
-
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
   };
   
-  
   # Foydalanuvchi profiliga oʻrnatilishi kerak boʻlgan paketlar
   home.packages = with pkgs; [
     # ushbu keltirilganlar men kunlik davomida ishlatadiganlarim
     # o'zingiznikini qo'shish yoki keltirilganlardan olib tashashdan tortinmang
-    
+    git
+    gnupg # gpg key uchun
     neofetch
     
     # arxivlar
@@ -79,6 +57,6 @@
     # nix-output-monitor
     espanso
   ];
-  
+
   home.stateVersion = "25.05";
 }
