@@ -1,13 +1,16 @@
 { config, pkgs, ... }:
-
+let
+  modulesHome = import ./modules/home;
+  modulesServices = import ./modules/services;
+in
 {
   imports = [
-     ./modules/home/fastfetch.nix
-     ./modules/home/fish.nix
-     ./modules/home/zsh.nix
-     ./modules/home/starship.nix
-     ./modules/home/programs/git.nix
-     ./modules/services/espanso.nix
+     modulesHome.fastfetch
+     modulesHome.fish
+     modulesHome.git
+     modulesHome.starship
+     modulesHome.zsh
+     modulesServices.espanso
   ];
 
   home.username = "bahrom04";

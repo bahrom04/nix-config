@@ -25,6 +25,10 @@
             trigger = "G'";
             replace = "Gʻ";
           }
+          {
+            trigger = ";'";
+            replace = "ʼ";
+          }
         ];
       };
     global_vars = {

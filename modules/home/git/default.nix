@@ -17,5 +17,13 @@
         http.sslVerify = false;
         pull.rebase = false;
         };
+
+        # Git ignores
+        ignores = [
+            ".idea"
+            ".DS_Store"
+            "nohup.out"
+        ];
+        
     };
 }
