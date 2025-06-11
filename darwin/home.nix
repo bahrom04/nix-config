@@ -10,7 +10,7 @@ in
      modulesHome.git
      modulesHome.starship
      modulesHome.zsh
-     modulesServices.espanso
+    #  modulesServices.espanso
      modulesServices.vscode
   ];
 
@@ -19,6 +19,8 @@ in
 
   programs.home-manager.enable = true;
   # home-manager.backupFileExtension = "backup";
+
+  services.tarjimonlar.enable = true;
 
   programs.direnv = {
     enable = true;
