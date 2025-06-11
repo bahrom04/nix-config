@@ -37,6 +37,10 @@
             trigger = ''":''; # qoʻshitirnoq yopilishi
             replace = "”";
           }
+          {
+            trigger = "..."; # va hokazodagi 3 ta nuqta 1 bayt shakliga oʻgirish
+            replace = "…";
+          }
         ];
       };
     global_vars = {
