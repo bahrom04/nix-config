@@ -27,6 +27,13 @@ in
     nix-direnv.enable = true;
   };
   
+  environment.systemPackages = with pkgs; [ 
+    nixfmt-rfc-style
+    neovim 
+    fastfetch 
+    redis	
+  ];
+  
   # Foydalanuvchi profiliga oʻrnatilishi kerak boʻlgan paketlar
   home.packages = with pkgs; [
     # ushbu keltirilganlar men kunlik davomida ishlatadiganlarim

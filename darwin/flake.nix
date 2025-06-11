@@ -29,11 +29,7 @@
         modules = [
           {
             nix.settings.experimental-features = "nix-command flakes";
-            environment.systemPackages = with pkgs; [ 
-		          neovim 
-		          fastfetch 
-		          redis	
-		        ];
+            
 
 	      services.redis.enable = true;
 
