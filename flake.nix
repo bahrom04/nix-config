@@ -1,3 +1,4 @@
+# forked from: https://github.com/shakhzodkudratov/blazingly-fast
 {
   description = "Starter Configuration with secrets for MacOS and NixOS";
   inputs = {
