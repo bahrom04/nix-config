@@ -9,4 +9,5 @@
     zsh = import ./zsh;
     fish = import ./fish;
     starship = import ./starship;
+    vscode = import ./vscode;
 }

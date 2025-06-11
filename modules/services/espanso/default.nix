@@ -29,6 +29,14 @@
             trigger = ";'";
             replace = "ʼ";
           }
+          {
+            trigger = '':"''; # qoʻshtirnoq ochilishi
+            replace = "“";
+          }
+          {
+            trigger = ''":''; # qoʻshitirnoq yopilishi
+            replace = "”";
+          }
         ];
       };
     global_vars = {

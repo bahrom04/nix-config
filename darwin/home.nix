@@ -11,6 +11,7 @@ in
      modulesHome.starship
      modulesHome.zsh
      modulesServices.espanso
+     modulesServices.vscode
   ];
 
   home.username = "bahrom04";
