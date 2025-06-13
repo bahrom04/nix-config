@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./nixos/hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./nixos/hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -86,16 +88,15 @@
   users.users.bahrom04 = {
     isNormalUser = true;
     description = "bahrom04";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHIZuQTfX/6BimJ8zkCOWKUkbMcJjkug5nrnEcn2M+p+ bahrom04@nixos"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHIZuQTfX/6BimJ8zkCOWKUkbMcJjkug5nrnEcn2M+p+ bahrom04@nixos"
     ];
     packages = with pkgs; [
       thunderbird
     ];
   };
 
-   
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -103,7 +104,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Flakes va yangi nix buyruq qatori vositasini yoqish
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -138,7 +139,7 @@
       X11Forwarding = true;
       PermitRootLogin = "no";
       PasswordAuthentication = true;
-     };
+    };
     openFirewall = true;
   };
 
@@ -155,5 +156,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

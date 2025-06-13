@@ -1,7 +1,9 @@
 # reference: https://maksar.github.io/posts/code/2021-09-19-vscode/
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.vscode = {
     enable = true;
     profiles.default = {
@@ -33,9 +35,9 @@
         "editor.defaultFormatter" = "ms-python.black-formatter";
         "editor.formatOnSave" = true;
         "terminal.integrated.profiles.osx" = {
-            "fish (nix)" = {
+          "fish (nix)" = {
             path = "/run/current-system/sw/bin/fish";
-            };
+          };
         };
         "terminal.integrated.defaultProfile.osx" = "zsh";
         "workbench.iconTheme" = "vscode-icons";
@@ -43,49 +45,49 @@
         "vsicons.dontShowNewVersionMessage" = true;
         "liveServer.settings.donotShowInfoMsg" = true;
         "explorer.fileNesting.patterns" = {
-            "*.ts" = "\${capture}.js";
-            "*.js" = "\${capture}.js.map, \${capture}.min.js, \${capture}.d.ts";
-            "*.jsx" = "\${capture}.js";
-            "*.tsx" = "\${capture}.ts";
-            "tsconfig.json" = "tsconfig.*.json";
-            "package.json" = "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb";
-            "*.sqlite" = "\${capture}.\${extname}-*";
-            "*.db" = "\${capture}.\${extname}-*";
-            "*.sqlite3" = "\${capture}.\${extname}-*";
-            "*.db3" = "\${capture}.\${extname}-*";
-            "*.sdb" = "\${capture}.\${extname}-*";
-            "*.s3db" = "\${capture}.\${extname}-*";
+          "*.ts" = "\${capture}.js";
+          "*.js" = "\${capture}.js.map, \${capture}.min.js, \${capture}.d.ts";
+          "*.jsx" = "\${capture}.js";
+          "*.tsx" = "\${capture}.ts";
+          "tsconfig.json" = "tsconfig.*.json";
+          "package.json" = "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb";
+          "*.sqlite" = "\${capture}.\${extname}-*";
+          "*.db" = "\${capture}.\${extname}-*";
+          "*.sqlite3" = "\${capture}.\${extname}-*";
+          "*.db3" = "\${capture}.\${extname}-*";
+          "*.sdb" = "\${capture}.\${extname}-*";
+          "*.s3db" = "\${capture}.\${extname}-*";
         };
         "terminal.integrated.inheritEnv" = false;
         "editor.accessibilitySupport" = "off";
 
         # Language-specific settings
         "[javascript]" = {
-            "editor.defaultFormatter" = "vscode.typescript-language-features";
+          "editor.defaultFormatter" = "vscode.typescript-language-features";
         };
         "[javascriptreact]" = {
-            "editor.defaultFormatter" = "vscode.typescript-language-features";
+          "editor.defaultFormatter" = "vscode.typescript-language-features";
         };
         "[html]" = {
-            "editor.defaultFormatter" = "NikolaosGeorgiou.html-fmt-vscode";
+          "editor.defaultFormatter" = "NikolaosGeorgiou.html-fmt-vscode";
         };
         "[css]" = {
-            "editor.defaultFormatter" = "vscode.css-language-features";
+          "editor.defaultFormatter" = "vscode.css-language-features";
         };
         "[python]" = {
-            "diffEditor.ignoreTrimWhitespace" = false;
-            "editor.defaultColorDecorators" = "never";
-            "gitlens.codeLens.symbolScopes" = [ "!Module" ];
-            "editor.formatOnType" = true;
-            "editor.wordBasedSuggestions" = "off";
+          "diffEditor.ignoreTrimWhitespace" = false;
+          "editor.defaultColorDecorators" = "never";
+          "gitlens.codeLens.symbolScopes" = ["!Module"];
+          "editor.formatOnType" = true;
+          "editor.wordBasedSuggestions" = "off";
         };
         "github.copilot.enable" = {
-            "*" = false;
-            "plaintext" = false;
-            "markdown" = false;
-            "scminput" = false;
-          };
+          "*" = false;
+          "plaintext" = false;
+          "markdown" = false;
+          "scminput" = false;
         };
+      };
     };
   };
 }

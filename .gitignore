@@ -94,4 +94,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode
+# Direnv
+.direnv

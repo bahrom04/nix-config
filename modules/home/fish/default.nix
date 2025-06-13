@@ -1,7 +1,9 @@
-{ config, pkgs, ...}:
-
 {
-    programs.fish = {
+  config,
+  pkgs,
+  ...
+}: {
+  programs.fish = {
     enable = true;
     generateCompletions = true;
     loginShellInit = ''
