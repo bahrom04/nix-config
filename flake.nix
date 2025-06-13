@@ -1,84 +1,100 @@
-# forked from: https://github.com/shakhzodkudratov/blazingly-fast
+# ~/nix-config/flake.nix
 {
-  description = "Starter Configuration with secrets for MacOS and NixOS";
+  description = "My macOS config with nix-darwin + Home Manager";
+
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.05-darwin";
+    # Nixpkgs
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+
+    # Nixpkgs for darwin
+    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
+
+    # Theme version as Nixpkgs
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
-    };
+      };
+
+    auto-profile-tg.url = "github:bahrom04/auto-profile-tg";
+    
   };
-  outputs = { self, darwin, home-manager, nixpkgs, ... }@inputs:
+
+  outputs = { self, nixpkgs, nix-darwin, home-manager, auto-profile-tg, ...}@ inputs:
     let
-      # user = "shakhzod";
-      linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
-      darwinSystems = [ "aarch64-darwin" "x86_64-darwin" ];
-      forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) f;
-      devShell = system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in {
-          default = with pkgs;
-            mkShell {
-              nativeBuildInputs = with pkgs; [
-                bashInteractive
-                git
-                age
-              ];
-              # shellHook = ''
-              #   export EDITOR=vim
-              # '';
-            };
-        };
-      mkApp = scriptName: system: {
-        type = "app";
-        program = "${
-            (nixpkgs.legacyPackages.${system}.writeScriptBin scriptName ''
-              #!/usr/bin/env bash
-              PATH=${nixpkgs.legacyPackages.${system}.git}/bin:$PATH
-              echo "Running ${scriptName} for ${system}"
-              exec ${self}/apps/${system}/${scriptName}
-            '')
-          }/bin/${scriptName}";
-      };
-      mkLinuxApps = system: {
-        "apply" = mkApp "apply" system;
-        "build-switch" = mkApp "build-switch" system;
-        "copy-keys" = mkApp "copy-keys" system;
-        "create-keys" = mkApp "create-keys" system;
-        "check-keys" = mkApp "check-keys" system;
-        "install" = mkApp "install" system;
-        "install-with-secrets" = mkApp "install-with-secrets" system;
-      };
-      mkDarwinApps = system: {
-        "apply" = mkApp "apply" system;
-        "build" = mkApp "build" system;
-        "build-switch" = mkApp "build-switch" system;
-        "copy-keys" = mkApp "copy-keys" system;
-        "create-keys" = mkApp "create-keys" system;
-        "check-keys" = mkApp "check-keys" system;
-        "rollback" = mkApp "rollback" system;
-      };
+      system = "aarch64-darwin";
+      pkgs = import nixpkgs { inherit system; };
     in {
-      devShells = forAllSystems devShell;
-      apps = nixpkgs.lib.genAttrs linuxSystems mkLinuxApps
-        // nixpkgs.lib.genAttrs darwinSystems mkDarwinApps;
-
-      # darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system:
-
-      # formatter.aarch64-darwin = nixpkgs.legacyPackages.${system}.nixfmt-tree;
-
-      darwinConfigurations.powerlaptop = darwin.lib.darwinSystem {
-        # inherit system;
-        specialArgs = inputs;
-        modules = [ home-manager.darwinModules.home-manager ./darwin/home.nix ];
+      formatter.aarch64-darwin = nixpkgs.legacyPackages.${system}.nixfmt-tree;
+      
+      # todo make let in above to kepp only darwinConfigurations then import some modules  
+      darwinConfigurations.bahrom04 = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        # formatter.aarch64-darwin = nixpkgs.legacyPackages.${system}.nixfmt-tree;
+        modules = [
+          inputs.auto-profile-tg.darwinModules.default
+          { 
+            nix.settings.experimental-features = "nix-command flakes";
+            environment.systemPackages = with pkgs; [ 
+              nixfmt-rfc-style
+		          neovim 
+		          fastfetch 
+		          redis	
+		        ];
+
+            auto-profile-tg = {
+              enable = true;
+              app-id = "";
+              api-hash = "";
+              phone-number = "+";
+              first-name = "Bahrom";
+              lat = "41.2995";
+              lon = "69.2401";
+              timezone = "Asia/Tashkent";
+              weather-api-key = "";
+            };
+
+	          services.redis.enable = true;
+
+            programs.fish.enable = true;
+
+            # MacOs Dock setttings
+            system.defaults.dock = {
+              autohide = false;
+              largesize = 16;
+              mineffect = "scale";
+              minimize-to-application = true;
+              mru-spaces = true;
+              orientation = "bottom";
+              show-recents = false;
+              show-process-indicators = true;
+              tilesize = 50;
+            };
+
+            system.primaryUser = "bahrom04";
+              users.users.bahrom04 = {
+                name = "bahrom04";
+                home = "/Users/bahrom04";
+                shell = pkgs.fish;
+                uid = 501;
+                };
+                system.stateVersion = 5;
+          }
+          
+        home-manager.darwinModules.home-manager
+          {
+            nixpkgs.config.allowUnfree = true;
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.bahrom04 = import ./home.nix;
+          }
+        
+        ];
+
+        specialArgs = {
+          inherit inputs;
+        };
       };
     };
 }
