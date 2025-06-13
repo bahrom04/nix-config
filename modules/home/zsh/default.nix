@@ -1,7 +1,9 @@
-{ confgi, pkgs, ...}:
-
 {
-    programs.zsh = {
+  confgi,
+  pkgs,
+  ...
+}: {
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;

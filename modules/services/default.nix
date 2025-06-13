@@ -1,3 +1,3 @@
 {
-    espanso = import ./espanso;
+  espanso = import ./espanso;
 }

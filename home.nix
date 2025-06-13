@@ -1,17 +1,19 @@
-{ config, pkgs, ... }:
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   modulesHome = import ./modules/home;
   modulesServices = import ./modules/services;
-in
-{
+in {
   imports = [
-     modulesHome.fastfetch
-     modulesHome.fish
-     modulesHome.git
-     modulesHome.starship
-     modulesHome.zsh
-    #  modulesServices.espanso
-     modulesServices.vscode
+    modulesHome.fastfetch
+    modulesHome.fish
+    modulesHome.git
+    modulesHome.starship
+    modulesHome.zsh
+    modulesHome.vscode
+    modulesServices.espanso
   ];
 
   home.username = "bahrom04";
@@ -20,20 +22,20 @@ in
   programs.home-manager.enable = true;
   # home-manager.backupFileExtension = "backup";
 
-  services.tarjimonlar.enable = true;
+  # services.tarjimonlar.enable = true;
 
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
   };
-  
-  environment.systemPackages = with pkgs; [ 
-    nixfmt-rfc-style
-    neovim 
-    fastfetch 
-    redis	
-  ];
-  
+
+  # environment.systemPackages = with pkgs; [
+  #   nixfmt-rfc-style
+  #   neovim
+  #   fastfetch
+  #   redis
+  # ];
+
   # Foydalanuvchi profiliga oʻrnatilishi kerak boʻlgan paketlar
   home.packages = with pkgs; [
     # ushbu keltirilganlar men kunlik davomida ishlatadiganlarim
@@ -41,14 +43,14 @@ in
     git
     gnupg # gpg key uchun
     neofetch
-    
+
     # arxivlar
     zip
     xz
     unzip
-    
+
     # utilitalar
-    jq # json ustida ishlovchi yengil va qulay instrument    
+    jq # json ustida ishlovchi yengil va qulay instrument
     # tarmoq utilitalari
     mtr # tarmoq diagnostika utilitasi
     dnsutils # `dig` + `nslookup`
@@ -64,9 +66,9 @@ in
     which
     tree
     # nix ga tegishli
-    # 
+    #
     # `nom` buyrug'ini beradi va `nix` day ishlaydi
-    # tafsilotli log chiqishini ta’minlaydi  
+    # tafsilotli log chiqishini ta’minlaydi
     # nix-output-monitor
     espanso
   ];

@@ -1,4 +1,4 @@
 {
-    home = import ./home;
-    services = import ./services;
+  home = import ./home;
+  services = import ./services;
 }
