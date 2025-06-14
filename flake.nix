@@ -18,6 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    inputs.sops-nix.url = "github:Mic92/sops-nix";
+    # optional, not necessary for the module
+    #inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     auto-profile-tg.url = "github:bahrom04/auto-profile-tg";
   };
 

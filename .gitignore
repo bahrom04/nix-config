@@ -96,3 +96,7 @@ $RECYCLE.BIN/
 
 # Direnv
 .direnv
+
+result
+secrets/
+.sops.yaml

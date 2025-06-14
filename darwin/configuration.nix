@@ -4,6 +4,9 @@
   pkgs,
   ...
 }: {
+  imports = [
+    inputs.sops-nix.darwinModules.sops
+  ];
   nix.settings.experimental-features = "nix-command flakes";
   environment.systemPackages = with pkgs; [
     nixfmt-rfc-style
@@ -11,7 +14,10 @@
     fastfetch
     redis
   ];
-
+  
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  
   services.redis.enable = true;
 
   programs.fish.enable = true;
@@ -50,15 +56,14 @@
 
   services.auto-profile-tg = {
     enable = true;
-    app-id = "";
-    api-hash = "";
-    phone-number = "+";
+    app-id = "22090464";
+    api-hash = "3c467285ab4370a6577489ae2bcbbb26";
+    phone-number = "+998996166018";
     first-name = "Bahrom";
     lat = "41.2995";
     lon = "69.2401";
     timezone = "Asia/Tashkent";
-    weather-api-key = "";
+    weather-api-key = "00de3e3400f5ef50f02428295585eba5";
   };
-
   system.stateVersion = 5;
 }
