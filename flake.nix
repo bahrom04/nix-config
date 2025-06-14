@@ -58,7 +58,6 @@
           home-manager.darwinModules.home-manager
 
           ./darwin/configuration.nix
-          inputs.sops-nix.darwinModules.sops
 
           inputs.auto-profile-tg.darwinModules.default
         ];

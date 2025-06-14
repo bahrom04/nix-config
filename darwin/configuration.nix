@@ -1,11 +1,14 @@
 {
+  config,
   inputs,
   outputs,
   pkgs,
   ...
-}: {
+}: let
+  key = "${config.users.users.bahrom04.home}/.config/sops/age/keys.txt";
+in {
   imports = [
-    # "${(import ./nix/sources.nix).sops-nix}/modules/sops"
+    inputs.sops-nix.darwinModules.sops
   ];
   nix.settings.experimental-features = "nix-command flakes";
   environment.systemPackages = with pkgs; [
@@ -17,9 +20,12 @@
   ];
 
   sops = {
-    defaultSopsFile = ./secrets/secrets.yaml;
+    # Path to key file for unlocking secrets
+    age.keyFile = key;
+    # Default file that contains list of secrets
+    defaultSopsFile = ../secrets/secrets.yaml;
+    # The format of the secret file
     defaultSopsFormat = "yaml";
-    # age.keyFile = "/Users/bahrom04/.config/sops/age/keys.txt";
   };
 
   services.redis.enable = true;
