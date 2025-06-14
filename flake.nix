@@ -7,10 +7,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
 
     # Nixpkgs for darwin
-    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
+    nix-darwin = {
+      url = "github:lnl7/nix-darwin/nix-darwin-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    # Theme version as Nixpkgs
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    # Flake utils for eachSystem
+    flake-utils.url = "github:numtide/flake-utils";
 
     # Home manager
     home-manager = {
@@ -18,9 +21,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    inputs.sops-nix.url = "github:Mic92/sops-nix";
-    # optional, not necessary for the module
-    #inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     auto-profile-tg.url = "github:bahrom04/auto-profile-tg";
   };
@@ -30,29 +34,38 @@
     nixpkgs,
     nix-darwin,
     home-manager,
+    flake-utils,
     ...
   } @ inputs: let
     outputs = self;
-    system = "aarch64-darwin";
-    pkgs = import nixpkgs {inherit system;};
-  in {
-    formatter.aarch64-darwin = nixpkgs.legacyPackages.${system}.alejandra;
-    devShells.aarch64-darwin.default = import ./shell.nix {inherit pkgs;};
+  in
+    # Attributes for each system
+    flake-utils.lib.eachDefaultSystem (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        # Nixpkgs packages for the current system
+        {
+          # Development shells
+          devShells.default = import ./shell.nix {inherit pkgs;};
+          formatter = nixpkgs.legacyPackages.${system}.alejandra;
+        }
+    )
+    // {
+      darwinConfigurations.bahrom04 = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          home-manager.darwinModules.home-manager
 
-    # todo make let in above to kepp only darwinConfigurations then import some modules
-    darwinConfigurations.bahrom04 = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [
-        home-manager.darwinModules.home-manager
+          ./darwin/configuration.nix
+          inputs.sops-nix.darwinModules.sops
 
-        ./darwin/configuration.nix
+          inputs.auto-profile-tg.darwinModules.default
+        ];
 
-        inputs.auto-profile-tg.darwinModules.default
-      ];
-
-      specialArgs = {
-        inherit inputs outputs;
+        specialArgs = {
+          inherit inputs outputs;
+        };
       };
     };
-  };
 }
