@@ -26,7 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    auto-profile-tg.url = "github:bahrom04/auto-profile-tg";
+    auto_profile_tg.url = "github:bahrom04/auto-profile-tg";
   };
 
   outputs = {
@@ -59,7 +59,7 @@
 
           ./darwin/configuration.nix
 
-          inputs.auto-profile-tg.darwinModules.default
+          inputs.auto_profile_tg.darwinModules.default
         ];
 
         specialArgs = {

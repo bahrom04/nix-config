@@ -66,7 +66,7 @@ in {
     };
   };
 
-  services.auto-profile-tg = {
+  services.auto_profile_tg = {
     enable = true;
     api_id = config.sops.secrets."auto_profile_tg/api_id".path;
     api_hash = config.sops.secrets."auto_profile_tg/api_hash".path;
