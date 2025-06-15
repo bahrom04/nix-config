@@ -66,15 +66,15 @@ in {
 
   services.auto-profile-tg = {
     enable = true;
-    app-id = sops.secrets."auto-profile-tg.api-hash".path;
-    api-hash = sops.secrets."auto-profile-tg.api-hash".path;
-    phone-number = sops.secrets."auto-profile-tg.phone-number".path;
-    first-name = sops.secrets."auto-profile-tg.first-name".path;
-    lat = sops.secrets."auto-profile-tg.lat".path;
-    lon = sops.secrets."auto-profile-tg.lon".path;
-    timezone = sops.secrets."auto-profile-tg.timezone".path;
-    city = sops.secrets."auto-profile-tg.city".path;
-    weather-api-key = sops.secrets."auto-profile-tg.weather-api-key".path;
+    app-id = config.sops.secrets."auto-profile-tg.api-hash".path;
+    api-hash = config.sops.secrets."auto-profile-tg.api-hash".path;
+    phone-number = config.sops.secrets."auto-profile-tg.phone-number".path;
+    first-name = config.sops.secrets."auto-profile-tg.first-name".path;
+    lat = config.sops.secrets."auto-profile-tg.lat".path;
+    lon = config.sops.secrets."auto-profile-tg.lon".path;
+    timezone = config.sops.secrets."auto-profile-tg.timezone".path;
+    city = config.sops.secrets."auto-profile-tg.city".path;
+    weather-api-key = config.sops.secrets."auto-profile-tg.weather-api-key".path;
   };
   system.stateVersion = 5;
 }
