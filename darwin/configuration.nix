@@ -66,15 +66,15 @@ in {
 
   services.auto-profile-tg = {
     enable = true;
-    app-id = config.sops.services.auto-profile-tg.api-hash.path;
-    api-hash = config.sops.services.auto-profile-tg.api-hash.path;
-    phone-number = config.sops.services.auto-profile-tg.phone-number.path;
-    first-name = config.sops.services.auto-profile-tg.first-name.path;
-    lat = config.sops.services.auto-profile-tg.lat.path;
-    lon = config.sops.services.auto-profile-tg.lon.path;
-    timezone = config.sops.services.auto-profile-tg.timezone.path;
-    city = config.sops.services.auto-profile-tg.city.path;
-    weather-api-key = config.sops.services.auto-profile-tg.weather-api-key.path;
+    app-id = config.sops.secrets."auto-profile-tg.api-hash".path;
+    api-hash = config.sops.secrets."auto-profile-tg.api-hash".path;
+    phone-number = config.sops.secrets."auto-profile-tg.phone-number".path;
+    first-name = config.sops.secrets."auto-profile-tg.first-name".path;
+    lat = config.sops.secrets."auto-profile-tg.lat".path;
+    lon = config.sops.secrets."auto-profile-tg.lon".path;
+    timezone = config.sops.secrets."auto-profile-tg.timezone".path;
+    city = config.sops.secrets."auto-profile-tg.city".path;
+    weather-api-key = config.sops.secrets."auto-profile-tg.weather-api-key".path;
   };
   system.stateVersion = 5;
 }
