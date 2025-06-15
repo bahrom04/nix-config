@@ -1,16 +1,16 @@
 {
   "nodes": {
-    "auto-profile-tg": {
+    "auto_profile_tg": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1749998204,
-        "narHash": "sha256-Nu0wsxdow+DvO4iMzYz1+Iy7mM4jrV62C7sWCOYVQO0=",
+        "lastModified": 1749997756,
+        "narHash": "sha256-fxq0qOYTvxuagby2plfD20anv3QoyPDHfSRHq+h7+o8=",
         "owner": "bahrom04",
         "repo": "auto-profile-tg",
-        "rev": "191f5929c59811d6c6178b76ee31137679924772",
+        "rev": "57d60ee9183692b8c21a43284b2eacca7d1469e9",
         "type": "github"
       },
       "original": {
@@ -131,7 +131,7 @@
     },
     "root": {
       "inputs": {
-        "auto-profile-tg": "auto-profile-tg",
+        "auto_profile_tg": "auto_profile_tg",
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
