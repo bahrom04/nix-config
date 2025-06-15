@@ -19,6 +19,8 @@ in {
     sops
   ];
 
+  environment.variables.EDITOR = "vim";
+
   sops = {
     # Path to key file for unlocking secrets
     age.keyFile = key;
