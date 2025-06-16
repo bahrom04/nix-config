@@ -10,13 +10,13 @@ in {
   imports = [
     inputs.sops-nix.darwinModules.sops
   ];
+
   nix.settings.experimental-features = "nix-command flakes";
   environment.systemPackages = with pkgs; [
     nixfmt-rfc-style
     neovim
     fastfetch
     redis
-    sops
   ];
 
   environment.variables.EDITOR = "vim";
