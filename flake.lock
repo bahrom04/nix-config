@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1749997756,
-        "narHash": "sha256-fxq0qOYTvxuagby2plfD20anv3QoyPDHfSRHq+h7+o8=",
+        "lastModified": 1749999284,
+        "narHash": "sha256-ClDMwZhbP8HHXAu2TFdthyDZ5eeCsYveR60NKKNC7HU=",
         "owner": "bahrom04",
         "repo": "auto-profile-tg",
-        "rev": "57d60ee9183692b8c21a43284b2eacca7d1469e9",
+        "rev": "0034805109df2a043608b4f5c3df0a35ee8ee5a2",
         "type": "github"
       },
       "original": {

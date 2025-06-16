@@ -4,9 +4,11 @@
   outputs,
   pkgs,
   ...
-}: let
+}:
+let
   key = "${config.users.users.bahrom04.home}/.config/sops/age/keys.txt";
-in {
+in
+{
   imports = [
     inputs.sops-nix.darwinModules.sops
   ];
@@ -66,17 +68,18 @@ in {
     };
   };
 
-  services.auto_profile_tg = {
-    enable = true;
-    api_id = config.sops.secrets."auto_profile_tg/api_id".path;
-    api_hash = config.sops.secrets."auto_profile_tg/api_hash".path;
-    phone_number = config.sops.secrets."auto_profile_tg/phone_number".path;
-    first_name = config.sops.secrets."auto_profile_tg/first_name".path;
-    lat = config.sops.secrets."auto_profile_tg/lat".path;
-    lon = config.sops.secrets."auto_profile_tg/lon".path;
-    timezone = config.sops.secrets."auto_profile_tg/timezone".path;
-    city = config.sops.secrets."auto_profile_tg/city".path;
-    weather_api_key = config.sops.secrets."auto_profile_tg/weather_api_key".path;
-  };
+  # services.auto_profile_tg = {
+  #   enable = true;
+  #   api_id = config.sops.secrets."auto_profile_tg/api_id".path;
+  #   api_hash = config.sops.secrets."auto_profile_tg/api_hash".path;
+  #   phone_number = config.sops.secrets."auto_profile_tg/phone_number".path;
+  #   first_name = config.sops.secrets."auto_profile_tg/first_name".path;
+  #   lat = config.sops.secrets."auto_profile_tg/lat".path;
+  #   lon = config.sops.secrets."auto_profile_tg/lon".path;
+  #   timezone = config.sops.secrets."auto_profile_tg/timezone".path;
+  #   city = config.sops.secrets."auto_profile_tg/city".path;
+  #   weather_api_key = config.sops.secrets."auto_profile_tg/weather_api_key".path;
+  # };
+
   system.stateVersion = 5;
 }

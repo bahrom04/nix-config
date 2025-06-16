@@ -26,30 +26,36 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    auto_profile_tg.url = "github:bahrom04/auto-profile-tg";
+    auto_profile_tg = {
+      url = "github:bahrom04/auto-profile-tg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nix-darwin,
-    home-manager,
-    flake-utils,
-    ...
-  } @ inputs: let
-    outputs = self;
-  in
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+      flake-utils,
+      ...
+    }@inputs:
+    let
+      outputs = self;
+    in
     # Attributes for each system
     flake-utils.lib.eachDefaultSystem (
-      system: let
+      system:
+      let
         pkgs = nixpkgs.legacyPackages.${system};
       in
-        # Nixpkgs packages for the current system
-        {
-          # Development shells
-          devShells.default = import ./shell.nix {inherit pkgs;};
-          formatter = nixpkgs.legacyPackages.${system}.alejandra;
-        }
+      # Nixpkgs packages for the current system
+      {
+        # Development shells
+        devShells.default = import ./shell.nix { inherit pkgs; };
+        formatter = nixpkgs.legacyPackages.${system}.alejandra;
+      }
     )
     // {
       darwinConfigurations.bahrom04 = nix-darwin.lib.darwinSystem {
