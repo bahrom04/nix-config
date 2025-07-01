@@ -1,6 +1,5 @@
 # reference: https://maksar.github.io/posts/code/2021-09-19-vscode/
 {
-  config,
   pkgs,
   ...
 }: {
