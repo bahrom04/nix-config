@@ -55,7 +55,8 @@
         }
     )
     // {
-      homeModules.vscode = import ./modules/home/vscode.nix;
+      modulesHome = import ./modules/home;
+      modulesServices = import ./modules/services;
 
       darwinConfigurations.air = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
