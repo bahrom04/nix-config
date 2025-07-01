@@ -41,7 +41,6 @@
     ...
   } @ inputs: let
     outputs = self;
-    homeModules.vscode = import ./modules/home/vscode.nix;
   in
     # Attributes for each system
     flake-utils.lib.eachDefaultSystem (
@@ -56,7 +55,7 @@
         }
     )
     // {
-      
+      homeModules.vscode = import ./modules/home/vscode.nix;
 
       darwinConfigurations.air = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
