@@ -69,12 +69,16 @@ in {
 
   system.primaryUser = "bahrom04";
 
-  users.users.bahrom04 = {
+  users.users = {
+    bahrom04 = {
     name = "bahrom04";
     home = "/Users/bahrom04";
+    };
   };
 
   home-manager = {
+    # useGlobalPkgs = true;
+    # useUserPackages = true;
     users.bahrom04 = import ../home.nix;
     extraSpecialArgs = {
       inherit inputs outputs;
