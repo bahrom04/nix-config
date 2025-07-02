@@ -55,8 +55,7 @@
         }
     )
     // {
-      modulesHome = import ./modules/home;
-      modulesServices = import ./modules/services;
+      homeModules = import ./modules/home;
 
       darwinConfigurations.air = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
