@@ -71,8 +71,8 @@ in {
 
   users.users = {
     bahrom04 = {
-    name = "bahrom04";
-    home = "/Users/bahrom04";
+      name = "bahrom04";
+      home = "/Users/bahrom04";
     };
   };
 

@@ -1,8 +1,5 @@
 # reference: https://maksar.github.io/posts/code/2021-09-19-vscode/
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     profiles.default = {
