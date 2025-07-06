@@ -36,6 +36,7 @@
           };
         };
         "terminal.integrated.defaultProfile.osx" = "zsh";
+        "terminal.integrated.defaultProfile.linux" = "zsh";
         "workbench.iconTheme" = "vscode-icons";
         "diffEditor.ignoreTrimWhitespace" = false;
         "vsicons.dontShowNewVersionMessage" = true;

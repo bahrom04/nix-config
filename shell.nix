@@ -9,6 +9,7 @@ pkgs.stdenv.mkDerivation {
     alejandra
     age
     sops
+    rng-tools
   ];
 
   NIX_CONFIG = "extra-experimental-features = nix-command flakes";

@@ -11,6 +11,7 @@
   modules = import ../modules;
 in {
   imports = [
+    ./hardware-configuration.nix
     # Custom modules
     #inputs.auto_profile_tg.darwinModules.default
     # Home manager darwin modules
@@ -18,6 +19,51 @@ in {
     # Configuration modules
     #modules.sops
   ];
+  
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  # Enable networking
+  networking.networkmanager.enable = true;
+  # Set your time zone.
+  time.timeZone = "Asia/Tashkent";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "uz_UZ.UTF-8";
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+  
+
   nix = {
     enable = true;
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
@@ -36,6 +82,9 @@ in {
       redis
       age
       sops
+      rng-tools
+      pinentry
+      haveged
     ];
   };
 
@@ -86,7 +135,8 @@ in {
   home-manager = {
     # useGlobalPkgs = true;
     # useUserPackages = true;
-    users.bahrom04 = import ../home.nix;
+    backupFileExtension = "hbak";
+    users.bahrom = import ../home.nix;
     extraSpecialArgs = {
       inherit inputs outputs;
     };
@@ -101,9 +151,9 @@ in {
   };
 
   # Replace commant not found with nix-index
-  programs.nix-index = {
-    enable = true;
-  };
+  # programs.nix-index = {
+  #   enable = true;
+  # };
 
   # Networking DNS & Interfaces
   #networking = {
@@ -129,5 +179,5 @@ in {
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 5;
+  system.stateVersion = "25.05";
 }

@@ -11,11 +11,10 @@ in {
     homeModules.home.starship
     homeModules.home.zsh
     homeModules.home.vscode
-    homeModules.services.espanso
+    # homeModules.services.espanso
   ];
 
   programs.home-manager.enable = true;
-  # home-manager.backupFileExtension = "backup";
 
   # services.tarjimonlar.enable = true;
 }
