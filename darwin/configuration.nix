@@ -19,7 +19,7 @@ in {
     # Configuration modules
     #modules.sops
   ];
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -62,7 +62,6 @@ in {
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  
 
   nix = {
     enable = true;
@@ -118,20 +117,34 @@ in {
 
   #system.primaryUser = "bahrom";
 
-  #users.users = {
-  #  bahrom = {
-  #    name = "bahrom";
-  #    home = "/home/bahrom";
-  #  };
-  #};
-  users.users.bahrom = {
-    isNormalUser = true;
-    description = "bahrom";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+  users.users = {
+    bahrom = {
+      name = "bahrom";
+      home = "/home/bahrom";
+      isNormalUser = true;
+      description = "bahrom's profile";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [
+        thunderbird
+        firefox
+        telegram-desktop
+        google-chrome
+     ];
+    };
+    adam = {
+      name = "adam";
+      home = "/home/adam";
+      isNormalUser = true;
+      description = "adam's profile";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [
+        telegram-desktop
+        google-chrome
+     ];
+      
+    };
   };
+
   home-manager = {
     # useGlobalPkgs = true;
     # useUserPackages = true;
