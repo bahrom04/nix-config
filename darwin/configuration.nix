@@ -123,25 +123,24 @@ in {
       home = "/home/bahrom";
       isNormalUser = true;
       description = "bahrom's profile";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = ["networkmanager" "wheel"];
       packages = with pkgs; [
         thunderbird
         firefox
         telegram-desktop
         google-chrome
-     ];
+      ];
     };
     adam = {
       name = "adam";
       home = "/home/adam";
       isNormalUser = true;
-      description = "adam's profile";
-      extraGroups = [ "networkmanager" "wheel" ];
+      description = "islom";
+      extraGroups = ["networkmanager" "wheel"];
       packages = with pkgs; [
         telegram-desktop
         google-chrome
-     ];
-      
+      ];
     };
   };
 
