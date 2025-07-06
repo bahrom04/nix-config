@@ -1,0 +1,10 @@
+auto_profile_tg:
+  api_id: "2345"
+  api_hash: "something"
+  phone_number: "something"
+  first_name: "something"
+  lat: "something"
+  lon: "something"
+  timezone: "ct"
+  city: "something"
+  weather_api_key: "something"
