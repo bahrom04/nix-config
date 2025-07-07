@@ -20,12 +20,14 @@ nix build .#darwinConfigurations.bahrom04.config.system.build.toplevel --show-tr
 ```
 nix fmt .
 nix flake check --all-systems --show-trace
+nix repl # and inside type ":lf ."
 ```
 
-## To edit secrets 
+## To edit secrets
+Check that environment variable has proper sops path
 ```
 nix develop
-EDITOR=vim sops ./secrets/secrets.yaml
+sops ./secrets/secrets.yaml
 ```
 
 <p align="center">
