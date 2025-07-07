@@ -83,6 +83,28 @@
           "markdown" = false;
           "scminput" = false;
         };
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nixd";
+        "nix.serverSettings" = {
+          "nixd" = {
+            "formatting" = {
+              "command" = [
+                "nixfmt"
+              ];
+            };
+            "options" = {
+              "nixos" = {
+                "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
+              };
+              "home-manager" = {
+                "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
+              };
+              "nix-darwin" = {
+                "expr" = "(builtins.getFlake \"$\{workspaceFolder}/path/to/flake\").darwinConfigurations.<name>.options";
+              };
+            };
+          };
+        };
       };
     };
   };
