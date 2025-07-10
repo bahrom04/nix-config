@@ -163,6 +163,7 @@ in {
     systemPackages = with pkgs; [
       nixfmt-rfc-style
       neovim
+      vim
       fastfetch
       redis
       age
