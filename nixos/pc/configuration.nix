@@ -8,7 +8,7 @@
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
 
-  modules = import ../modules;
+  modules = import ../../modules;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -32,17 +32,103 @@ in {
   i18n.defaultLocale = "uz_UZ.UTF-8";
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    # Configure keymap in X11
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+    displayManager = {
+      gdm = {
+        enable = true;
+        autoSuspend = false;
+      };
+    };
+    desktopManager.gnome = {
+      enable = true;
+      extraGSettingsOverrides = ''
+        # Change default background
+        [org.gnome.desktop.background]
+        picture-uri='file://${pkgs.nixos-artwork.wallpapers.nineish.gnomeFilePath}'
+
+        # Background for dark theme
+        [org.gnome.desktop.background]
+        picture-uri-dark='file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath}'
+
+        # Prefer dark theme
+        [org.gnome.desktop.interface]
+        color-scheme='prefer-dark'
+
+        # Favorite apps in gnome-shell
+        [org.gnome.shell]
+        favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Console.desktop', 'org.gnome.gitg.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Polari.desktop']
+
+        # Enable user extensions
+        [org.gnome.shell]
+        disable-user-extensions=false
+
+        # List of enabled extensions
+        [org.gnome.shell]
+        enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'appindicatorsupport@rgcjonas.gmail.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com']
+
+        # Workspace should grow dynamically
+        [org.gnome.mutter]
+        dynamic-workspaces=true
+
+        # Edge Tiling with mouse
+        [org.gnome.mutter]
+        edge-tiling=true
+
+        # Set the icon theme
+        [org.gnome.desktop.interface]
+        icon-theme='Papirus-Dark'
+
+        # Use default color scheme
+        [org.gnome.desktop.interface]
+        color-scheme='default'
+
+        # Automatic timezone
+        [org.gnome.desktop.datetime]
+        automatic-timezone=true
+
+        # Never show the notice on tweak
+        [org.gnome.tweaks]
+        show-extensions-notice=false
+
+        # Show all three button layers
+        [org.gnome.desktop.wm.preferences]
+        button-layout='appmenu:minimize,maximize,close'
+
+        # Shitty monospace font to JetBrains Mono
+        [org.gnome.desktop.interface]
+        monospace-font-name='JetBrainsMono Nerd Font 10'
+
+        # Dash to dock for multiple monitors
+        [org.gnome.shell.extensions.dash-to-dock]
+        multi-monitor=true
+
+        # Custom theme on Dash to dock
+        [org.gnome.shell.extensions.dash-to-dock]
+        apply-custom-theme=true
+
+        # Don't hibernate on delay
+        [org.gnome.settings-daemon.plugins.power]
+        sleep-inactive-ac-type='nothing'
+
+        # Don't sleep, don't sleep!
+        [org.gnome.desktop.session]
+        idle-delay=0
+      '';
+      extraGSettingsOverridePackages = [
+        pkgs.gsettings-desktop-schemas
+        pkgs.gnome-shell
+      ];
+    };
   };
+  services.flatpak.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -84,6 +170,10 @@ in {
       rng-tools
       pinentry
       haveged
+      fractal
+      gnome-extension-manager
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.applications-menu
     ];
   };
 
@@ -101,19 +191,6 @@ in {
   };
 
   services.redis.enable = true;
-
-  # MacOs Dock setttings
-  #system.defaults.dock = {
-  #  autohide = false;
-  #  largesize = 16;
-  #  mineffect = "scale";
-  #  minimize-to-application = true;
-  #  mru-spaces = true;
-  #  orientation = "bottom";
-  #  show-recents = false;
-  #  show-process-indicators = true;
-  #  tilesize = 50;
-  #};
 
   #system.primaryUser = "bahrom";
 
@@ -148,7 +225,7 @@ in {
     # useGlobalPkgs = true;
     # useUserPackages = true;
     backupFileExtension = "hbak";
-    users.bahrom = import ../home.nix;
+    users.bahrom = import ../../home.nix;
     extraSpecialArgs = {
       inherit inputs outputs;
     };
