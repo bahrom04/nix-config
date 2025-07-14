@@ -1,6 +1,5 @@
-# ~/nix-config/flake.nix
 {
-  description = "My macOS config with nix-darwin + Home Manager";
+  description = "My NixOS config with nix-darwin + Home Manager";
 
   inputs = {
     # Nixpkgs
@@ -36,7 +35,6 @@
     self,
     nixpkgs,
     nix-darwin,
-    home-manager,
     flake-utils,
     ...
   } @ inputs: let
@@ -57,10 +55,21 @@
     // {
       homeModules = import ./modules;
 
+      # nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   modules = [
+      #     ./nixos/pc/configuration.nix
+      #   ];
+
+      #   specialArgs = {
+      #     inherit inputs outputs;
+      #   };
+      # };
+
       darwinConfigurations.air = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          ./darwin/configuration.nix
+          ./nixos/darwin/configuration.nix
         ];
 
         specialArgs = {

@@ -8,7 +8,7 @@
 }: let
   age_keys = "${config.users.users.bahrom04.home}/.config/sops/age/keys.txt";
 
-  modules = import ../modules;
+  modules = import ../../modules;
 in {
   imports = [
     # Custom modules
@@ -79,7 +79,7 @@ in {
   home-manager = {
     # useGlobalPkgs = true;
     # useUserPackages = true;
-    users.bahrom04 = import ../home.nix;
+    users.bahrom04 = import ../../home.nix;
     extraSpecialArgs = {
       inherit inputs outputs;
     };

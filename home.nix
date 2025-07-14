@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{...}: let
   homeModules = import ./modules;
 in {
   imports = [
