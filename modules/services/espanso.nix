@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   services.espanso = {
     enable = true;
     matches = {

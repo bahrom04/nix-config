@@ -28,7 +28,7 @@
         "[python]"."editor.tabSize" = 4;
         "editor.fontSize" = 16;
         "terminal.integrated.fontSize" = 14;
-        # "editor.defaultFormatter" = "ms-python.black-formatter";
+        "editor.defaultFormatter" = "ms-python.black-formatter";
         "editor.formatOnSave" = true;
         "terminal.integrated.profiles.osx" = {
           "fish (nix)" = {
