@@ -13,13 +13,14 @@
         ms-vscode-remote.vscode-remote-extensionpack
         ms-vscode-remote.remote-ssh
         ms-python.black-formatter
-        #rust-lang.rust-analyzer
+        rust-lang.rust-analyzer
         zguolee.tabler-icons
         vscode-icons-team.vscode-icons
         tal7aouy.icons
         tamasfe.even-better-toml
         #kubukoz.nickel-syntax
         bbenoist.nix
+        jnoortheen.nix-ide
       ];
 
       userSettings = {
@@ -60,17 +61,21 @@
 
         # Language-specific settings
         "[javascript]" = {
-          "editor.defaultFormatter" = "vscode.typescript-language-features";
+          "editor.defaultFormatter" = "typescript-language-features";
         };
         "[javascriptreact]" = {
-          "editor.defaultFormatter" = "vscode.typescript-language-features";
+          "editor.defaultFormatter" = "typescript-language-features";
         };
         "[html]" = {
           "editor.defaultFormatter" = "NikolaosGeorgiou.html-fmt-vscode";
         };
         "[css]" = {
-          "editor.defaultFormatter" = "vscode.css-language-features";
+          "editor.defaultFormatter" = "css-language-features";
         };
+        "[rust]" = {
+          "editor.defaultFormatter" = "rust-lang.rust-analyzer";
+        };
+        
         "[python]" = {
           "diffEditor.ignoreTrimWhitespace" = false;
           "editor.defaultColorDecorators" = "never";

@@ -82,10 +82,6 @@ in {
         [org.gnome.mutter]
         edge-tiling=true
 
-        # Set the icon theme
-        [org.gnome.desktop.interface]
-        icon-theme='Papirus-Dark'
-
         # Use default color scheme
         [org.gnome.desktop.interface]
         color-scheme='default'
@@ -101,10 +97,6 @@ in {
         # Show all three button layers
         [org.gnome.desktop.wm.preferences]
         button-layout='appmenu:minimize,maximize,close'
-
-        # Shitty monospace font to JetBrains Mono
-        [org.gnome.desktop.interface]
-        monospace-font-name='JetBrainsMono Nerd Font 10'
 
         # Dash to dock for multiple monitors
         [org.gnome.shell.extensions.dash-to-dock]
@@ -161,6 +153,8 @@ in {
       SOPS_AGE_KEY_FILE = age_keys;
     };
     systemPackages = with pkgs; [
+      flatpak-builder
+      gnome-builder
       nixfmt-rfc-style
       neovim
       vim
@@ -175,6 +169,7 @@ in {
       gnome-extension-manager
       gnomeExtensions.dash-to-dock
       gnomeExtensions.applications-menu
+      e-imzo
     ];
   };
 
