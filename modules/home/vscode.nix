@@ -13,7 +13,7 @@
         ms-vscode-remote.vscode-remote-extensionpack
         ms-vscode-remote.remote-ssh
         ms-python.black-formatter
-        #rust-lang.rust-analyzer
+        rust-lang.rust-analyzer
         zguolee.tabler-icons
         vscode-icons-team.vscode-icons
         tal7aouy.icons
@@ -28,7 +28,7 @@
         "[python]"."editor.tabSize" = 4;
         "editor.fontSize" = 16;
         "terminal.integrated.fontSize" = 14;
-        "editor.defaultFormatter" = "ms-python.black-formatter";
+        # "editor.defaultFormatter" = "ms-python.black-formatter";
         "editor.formatOnSave" = true;
         "terminal.integrated.profiles.osx" = {
           "fish (nix)" = {
@@ -71,11 +71,15 @@
           "editor.defaultFormatter" = "vscode.css-language-features";
         };
         "[python]" = {
+          "editor.defaultFormatter" = "ms-python.black-formatter";
           "diffEditor.ignoreTrimWhitespace" = false;
           "editor.defaultColorDecorators" = "never";
           "gitlens.codeLens.symbolScopes" = ["!Module"];
           "editor.formatOnType" = true;
           "editor.wordBasedSuggestions" = "off";
+        };
+        "[rust]" = {
+          "editor.defaultFormatter" = "rust-lang.rust-analyzer";
         };
         "github.copilot.enable" = {
           "*" = false;
