@@ -81,6 +81,9 @@
         "[rust]" = {
           "editor.defaultFormatter" = "rust-lang.rust-analyzer";
         };
+        "[jsonc]": {
+            "editor.defaultFormatter": "vscode.json-language-features"
+        };
         "github.copilot.enable" = {
           "*" = false;
           "plaintext" = false;
