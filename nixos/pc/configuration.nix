@@ -170,6 +170,8 @@ in {
       gnomeExtensions.dash-to-dock
       gnomeExtensions.applications-menu
       e-imzo
+      authenticator
+      glade
     ];
   };
 
@@ -186,7 +188,7 @@ in {
     };
   };
 
-  services.redis.enable = true;
+  # services.redis.enable = true;
 
   #system.primaryUser = "bahrom";
 
