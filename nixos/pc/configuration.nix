@@ -7,8 +7,7 @@
   ...
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-
-  modules = import ../../modules;
+  # modules = import ../../modules;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -154,7 +153,6 @@ in {
     };
     systemPackages = with pkgs; [
       flatpak-builder
-      gnome-builder
       nixfmt-rfc-style
       neovim
       vim
@@ -165,15 +163,19 @@ in {
       rng-tools
       pinentry
       haveged
-      fractal
       gnome-extension-manager
-      gnomeExtensions.dash-to-dock
       gnomeExtensions.applications-menu
-      e-imzo
+      gnomeExtensions.dash-to-dock
+      # APPS
+      gnome-builder
+      fractal
       authenticator
-      glade
+      libreoffice
+      postman
     ];
   };
+
+  services.e-imzo.enable = true;
 
   nixpkgs = {
     config = {

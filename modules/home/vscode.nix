@@ -77,7 +77,7 @@
           "editor.defaultFormatter" = "rust-lang.rust-analyzer";
         };
         "[jsonc]" = {
-            "editor.defaultFormatter" = "vscode.json-language-features";
+          "editor.defaultFormatter" = "vscode.json-language-features";
         };
         "[python]" = {
           "diffEditor.ignoreTrimWhitespace" = false;
