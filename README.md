@@ -28,6 +28,11 @@ nix develop
 EDITOR=vim sops ./secrets/secrets.yaml
 ```
 
+# Python
+```
+poetry run python test/web.py
+```
+
 <p align="center">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/nix-config-footer.png">

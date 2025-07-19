@@ -7,16 +7,44 @@
   ...
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-  # modules = import ../../modules;
+  gnomeApps = outputs.homeModules.gnome {inherit pkgs;};
 in {
   imports = [
     ./hardware-configuration.nix
-    # Custom modules
-    #inputs.auto_profile_tg.darwinModules.default
     # Home manager darwin modules
     inputs.home-manager.nixosModules.home-manager
-    # Configuration modules
-    #modules.sops
+
+    outputs.homeModules.nixpkgs
+    outputs.homeModules.desktop
+  ];
+
+  security.pki.certificates = [
+    ''
+      -----BEGIN CERTIFICATE-----
+      MIIEBDCCAuygAwIBAgIRAID5hYfq5Qz6JbWvqXsy8i8wDQYJKoZIhvcNAQELBQAw
+      gYwxDzANBgNVBAMMBkUtSU1aTzFsMGoGA1UECgxj0JPQo9CfINCd0LDRg9GH0L3Q
+      vi3QuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Ri9C5INGG0LXQvdGC0YAgwqvQr9Cd
+      0JPQmCDQotCV0KXQndCe0JvQntCT0JjQr9Cb0JDQoMK7MQswCQYDVQQGEwJVWjAe
+      Fw0yMjA5MjIxMDE2MzhaFw00MjA5MjIxMDE2MzhaMIGMMQ8wDQYDVQQDDAZFLUlN
+      Wk8xbDBqBgNVBAoMY9CT0KPQnyDQndCw0YPRh9C90L4t0LjQvdGE0L7RgNC80LDR
+      htC40L7QvdC90YvQuSDRhtC10L3RgtGAIMKr0K/QndCT0Jgg0KLQldCl0J3QntCb
+      0J7Qk9CY0K/Qm9CQ0KDCuzELMAkGA1UEBhMCVVowggEiMA0GCSqGSIb3DQEBAQUA
+      A4IBDwAwggEKAoIBAQCUlGz+QoFa/j72DLY2DoBr1UOa0gun2kxfBISWYSS3djqQ
+      5HuHEvFfiJ4BMX6agCqxmM+tOcL7i9BCDBOE8TwxSgJY+RBnWbQiET2qdnI1IgVc
+      Kb1QXQCmqaj8dvSlIOb7CMHBVmjuWXmPHWA9KIecE/mpZyb5UHmtnz3zDfpjiZqj
+      X0fJhn0VaP8P92ykaFkmMAiUT7kfpA8tFxBBOfX8Gu9ANVB9GMAVPMktk0kMsZZc
+      xZY+n4FEJ33xyJ3Uv8NwMEpDEWIHPopqrpIHZ1oro/j+Csi/nV4u3ZMifwOuyLYO
+      S5GjGaOUPeY//pIGOMw6JxdWDVyB20nd82gpnrljAgMBAAGjXzBdMB0GA1UdDgQW
+      BBRzzguLjqvNCPqq+iX47UYMAxP41TAQBgNVHRMECTAHAQH/AgIA/zALBgNVHQ8E
+      BAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA0GCSqGSIb3DQEB
+      CwUAA4IBAQA8xZlYde8XcJPMhNp+SI1DEu7QITkEVwbXIWe702b+/LnxBTAw6xou
+      Q2r1TY9Gqyiv3zx3kmoY+v67+6IH9GzsFomfi6e+txAhdePIpIetWM84mqAwP0Ej
+      d9ynUZi1q/PGdzvaZabL9wpzb6ovvMKuJJ+4oLokq3g9kw2bvxt61ZhkQ0Nkr04W
+      NqPKmFpMqz5TMAQ1zRW3LSNMjc1TJCVayXouICjQ2am9nPGUvWQVSwQIHCl10E/B
+      GIFRvadXV9+hDlDM7qYund1k+5cWrStoRnnpHAdQK//KePfyiHRZXVabmQ8CyPEb
+      K1r+sxWbiCvrXMN9AqKdHqZSZ22Od9xZ
+      -----END CERTIFICATE-----
+    ''
   ];
 
   # Bootloader.
@@ -29,97 +57,6 @@ in {
 
   # Select internationalisation properties.
   i18n.defaultLocale = "uz_UZ.UTF-8";
-
-  # Enable the X11 windowing system.
-  # Enable the GNOME Desktop Environment.
-  services.xserver = {
-    enable = true;
-
-    # Configure keymap in X11
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-    displayManager = {
-      gdm = {
-        enable = true;
-        autoSuspend = false;
-      };
-    };
-    desktopManager.gnome = {
-      enable = true;
-      extraGSettingsOverrides = ''
-        # Change default background
-        [org.gnome.desktop.background]
-        picture-uri='file://${pkgs.nixos-artwork.wallpapers.nineish.gnomeFilePath}'
-
-        # Background for dark theme
-        [org.gnome.desktop.background]
-        picture-uri-dark='file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath}'
-
-        # Prefer dark theme
-        [org.gnome.desktop.interface]
-        color-scheme='prefer-dark'
-
-        # Favorite apps in gnome-shell
-        [org.gnome.shell]
-        favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Console.desktop', 'org.gnome.gitg.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Polari.desktop']
-
-        # Enable user extensions
-        [org.gnome.shell]
-        disable-user-extensions=false
-
-        # List of enabled extensions
-        [org.gnome.shell]
-        enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'appindicatorsupport@rgcjonas.gmail.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com']
-
-        # Workspace should grow dynamically
-        [org.gnome.mutter]
-        dynamic-workspaces=true
-
-        # Edge Tiling with mouse
-        [org.gnome.mutter]
-        edge-tiling=true
-
-        # Use default color scheme
-        [org.gnome.desktop.interface]
-        color-scheme='default'
-
-        # Automatic timezone
-        [org.gnome.desktop.datetime]
-        automatic-timezone=true
-
-        # Never show the notice on tweak
-        [org.gnome.tweaks]
-        show-extensions-notice=false
-
-        # Show all three button layers
-        [org.gnome.desktop.wm.preferences]
-        button-layout='appmenu:minimize,maximize,close'
-
-        # Dash to dock for multiple monitors
-        [org.gnome.shell.extensions.dash-to-dock]
-        multi-monitor=true
-
-        # Custom theme on Dash to dock
-        [org.gnome.shell.extensions.dash-to-dock]
-        apply-custom-theme=true
-
-        # Don't hibernate on delay
-        [org.gnome.settings-daemon.plugins.power]
-        sleep-inactive-ac-type='nothing'
-
-        # Don't sleep, don't sleep!
-        [org.gnome.desktop.session]
-        idle-delay=0
-      '';
-      extraGSettingsOverridePackages = [
-        pkgs.gsettings-desktop-schemas
-        pkgs.gnome-shell
-      ];
-    };
-  };
-  services.flatpak.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -140,57 +77,30 @@ in {
     #media-session.enable = true;
   };
 
-  nix = {
-    enable = true;
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-    settings.experimental-features = "nix-command flakes";
-  };
-
   environment = {
     variables = {
       EDITOR = "vim";
       SOPS_AGE_KEY_FILE = age_keys;
     };
-    systemPackages = with pkgs; [
-      flatpak-builder
-      nixfmt-rfc-style
-      neovim
-      vim
-      fastfetch
-      redis
-      age
-      sops
-      rng-tools
-      pinentry
-      haveged
-      gnome-extension-manager
-      gnomeExtensions.applications-menu
-      gnomeExtensions.dash-to-dock
-      # APPS
-      gnome-builder
-      fractal
-      authenticator
-      libreoffice
-      postman
-    ];
+    systemPackages = with pkgs;
+      [
+        nixfmt-rfc-style
+        neovim
+        vim
+        fastfetch
+        age
+        sops
+        rng-tools
+        pinentry
+        haveged
+
+        # Services
+        redis
+      ]
+      ++ gnomeApps;
   };
 
   services.e-imzo.enable = true;
-
-  nixpkgs = {
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Disable if you don't want linux thingies on mac
-      allowUnsupportedSystem = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-      # Let the system use fucked up programs
-      allowBroken = true;
-    };
-  };
-
-  # services.redis.enable = true;
 
   #system.primaryUser = "bahrom";
 
@@ -229,14 +139,6 @@ in {
     extraSpecialArgs = {
       inherit inputs outputs;
     };
-  };
-
-  # Automatic flake devShell loading
-  programs.direnv = {
-    enable = true;
-    silent = true;
-    loadInNixShell = false;
-    nix-direnv.enable = true;
   };
 
   # Replace commant not found with nix-index

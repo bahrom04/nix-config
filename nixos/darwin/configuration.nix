@@ -11,18 +11,13 @@
   modules = import ../modules;
 in {
   imports = [
+    inputs.home-manager.darwinModules.home-manager
     # Custom modules
     inputs.auto_profile_tg.darwinModules.default
-    # Home manager darwin modules
-    inputs.home-manager.darwinModules.home-manager
-    # Configuration modules
+
+    outputs.homeModules.nixpkgs
     modules.sops
   ];
-  nix = {
-    enable = true;
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-    settings.experimental-features = "nix-command flakes";
-  };
 
   environment = {
     variables = {
@@ -37,19 +32,6 @@ in {
       age
       sops
     ];
-  };
-
-  nixpkgs = {
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Disable if you don't want linux thingies on mac
-      allowUnsupportedSystem = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-      # Let the system use fucked up programs
-      allowBroken = true;
-    };
   };
 
   services.redis.enable = true;

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "new"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+authors = ["bahrom04 https://github.com/bahrom04"]
+# packages = [{ include = "auto_profile_tg" }]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
+websockets = "^15.0.1"
+requests = "^2.32.4"
+websocket-client = "^1.8.0"
+
+[tool.poetry.scripts]
+runner = "test.web:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

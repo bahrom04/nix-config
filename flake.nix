@@ -55,6 +55,8 @@
         }
     )
     // {
+      # nixosModules = import ./modules/nixos;
+      # darwinModules = import ./modules/darwin;
       homeModules = import ./modules;
 
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {

@@ -1,16 +1,14 @@
-{pkgs, ...}: let
-  homeModules = import ./modules;
-in {
+{outputs, ...}: {
   imports = [
-    homeModules.packages
-    homeModules.nixpkgs
-    homeModules.direnv
-    homeModules.home.fastfetch
-    homeModules.home.fish
-    homeModules.home.git
-    homeModules.home.starship
-    homeModules.home.zsh
-    homeModules.home.vscode
+    outputs.homeModules.nixpkgs
+    outputs.homeModules.packages
+    outputs.homeModules.direnv
+    outputs.homeModules.home.fastfetch
+    outputs.homeModules.home.fish
+    outputs.homeModules.home.git
+    outputs.homeModules.home.starship
+    outputs.homeModules.home.zsh
+    outputs.homeModules.home.vscode
     # homeModules.services.espanso
   ];
 
