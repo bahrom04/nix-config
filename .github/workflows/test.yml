@@ -15,4 +15,4 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@main
 
       - name: Test flake check     
-        run: nix flake check
+        run: nix flake check --show-trace
