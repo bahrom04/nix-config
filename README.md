@@ -21,6 +21,7 @@ nix build .#darwinConfigurations.bahrom04.config.system.build.toplevel --show-tr
 nix fmt .
 nix flake check --all-systems --show-trace
 nix repl # and inside type ":lf ."
+nix run nixpkgs#nix-tree
 ```
 
 ## To edit secrets
