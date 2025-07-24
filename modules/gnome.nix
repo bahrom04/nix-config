@@ -8,6 +8,7 @@
   pkgs.postman
   pkgs.virtualbox
   pkgs.poedit
+  pkgs.czkawka
   pkgs.gnome-extension-manager
   pkgs.gnomeExtensions.applications-menu
   pkgs.gnomeExtensions.dash-to-dock
