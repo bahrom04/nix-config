@@ -103,7 +103,7 @@ in {
   services.e-imzo.enable = true;
 
   #system.primaryUser = "bahrom";
-
+  programs.zsh.enable = true;
   users.users = {
     bahrom = {
       name = "bahrom";
@@ -111,6 +111,7 @@ in {
       isNormalUser = true;
       description = "bahrom's profile";
       extraGroups = ["networkmanager" "wheel"];
+      shell = pkgs.zsh;
       packages = with pkgs; [
         thunderbird
         firefox
@@ -141,6 +142,8 @@ in {
     };
   };
 
+  programs.mtr.enable = true;
+  
   # Replace commant not found with nix-index
   # programs.nix-index = {
   #   enable = true;

@@ -9,6 +9,7 @@
     outputs.homeModules.home.starship
     outputs.homeModules.home.zsh
     outputs.homeModules.home.vscode
+    outputs.homeModules.home.zed
     # homeModules.services.espanso
   ];
 

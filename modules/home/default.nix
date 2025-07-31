@@ -7,6 +7,7 @@
   git = import ./git.nix;
   zsh = import ./zsh.nix;
   fish = import ./fish.nix;
+  zed = import ./zed.nix;
   vscode = import ./vscode.nix;
   starship = import ./starship.nix;
   fastfetch = import ./fastfetch.nix;
