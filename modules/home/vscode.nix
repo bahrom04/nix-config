@@ -4,7 +4,7 @@
     enable = true;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
-        mkhl.direnv
+        # mkhl.direnv
         dracula-theme.theme-dracula
         yzhang.markdown-all-in-one
         ecmel.vscode-html-css
@@ -19,9 +19,11 @@
         vscode-icons-team.vscode-icons
         tal7aouy.icons
         tamasfe.even-better-toml
-        #kubukoz.nickel-syntax
+        # kubukoz.nickel-syntax
         bbenoist.nix
         jnoortheen.nix-ide
+        # golang
+        golang.go
       ];
 
       userSettings = {
