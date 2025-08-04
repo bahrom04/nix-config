@@ -22,6 +22,8 @@
         #kubukoz.nickel-syntax
         bbenoist.nix
         jnoortheen.nix-ide
+        mesonbuild.mesonbuild
+        kamadorueda.alejandra
       ];
 
       userSettings = {
@@ -74,7 +76,7 @@
           "editor.defaultFormatter" = "css-language-features";
         };
         "[rust]" = {
-          "editor.defaultFormatter" = "rust-lang.rust-analyzer";
+          "editor.defaultFormatter" = "rust-lang.rus`t-analyzer";
         };
         "[jsonc]" = {
           "editor.defaultFormatter" = "vscode.json-language-features";
