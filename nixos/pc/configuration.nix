@@ -93,7 +93,7 @@ in {
         rng-tools
         pinentry
         haveged
-
+        element-desktop
         # Services
         redis
       ]
