@@ -11,4 +11,5 @@
   pkgs.gnome-extension-manager
   pkgs.gnomeExtensions.applications-menu
   pkgs.gnomeExtensions.dash-to-dock
+  pkgs.gnome-boxes
 ]

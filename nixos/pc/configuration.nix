@@ -75,7 +75,7 @@ in {
       home = "/home/bahrom";
       isNormalUser = true;
       description = "bahrom's profile";
-      extraGroups = ["networkmanager" "wheel" "vboxusers"];
+      extraGroups = ["networkmanager" "wheel" "vboxusers" "libvirtd"];
       shell = pkgs.zsh;
       packages = with pkgs; [
         thunderbird

@@ -91,13 +91,13 @@
     };
   };
 
-  # KVM Virtualization (for GNOME Boxes)
+  # Virtualization (for GNOME Boxes)
   virtualisation = {
     libvirtd = {
-      enable = false;
+      enable = true;
       qemu = {
         package = pkgs.qemu_kvm;
-        runAsRoot = false;
+        runAsRoot = true;
         swtpm.enable = true;
         ovmf = {
           enable = true;
@@ -112,7 +112,10 @@
       };
     };
     virtualbox = {
-      host.enable = true;
+      host = {
+        enable = true;
+        enableExtensionPack = true;
+      };
       guest.enable = true;
       guest.dragAndDrop = true;
     };
