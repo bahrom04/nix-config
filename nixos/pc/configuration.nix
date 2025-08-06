@@ -110,7 +110,7 @@ in {
       home = "/home/bahrom";
       isNormalUser = true;
       description = "bahrom's profile";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "vboxusers"];
       shell = pkgs.zsh;
       packages = with pkgs; [
         thunderbird
