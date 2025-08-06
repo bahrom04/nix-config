@@ -6,7 +6,6 @@
   pkgs.authenticator
   pkgs.libreoffice
   pkgs.postman
-  pkgs.virtualbox
   pkgs.poedit
   pkgs.czkawka
   pkgs.gnome-extension-manager
