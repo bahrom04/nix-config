@@ -31,6 +31,7 @@
     "wgsl"
     "xml"
     "zig"
+    "meson"
   ];
 
   settings = {
@@ -137,9 +138,10 @@
     theme = {
       mode = "system";
       light = "Vercel Light";
-      dark = "Vercel Dark";
+      dark = "Vscode Dark Plus";
+
     };
-    icon_theme = "Material Icon Theme";
+    icon_theme = "VSCode Icons Theme";
 
     tab_size = 2;
     preferred_line_length = 100;
