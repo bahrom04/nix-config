@@ -13,6 +13,10 @@
       allowUnfreePredicate = _: true;
       # Let the system use fucked up programs
       allowBroken = true;
+
+      permittedInsecurePackages = [
+        "googleearth-pro-7.3.6.10201"
+      ];
     };
   };
 

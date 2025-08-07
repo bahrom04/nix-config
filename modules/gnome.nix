@@ -12,4 +12,5 @@
   pkgs.gnomeExtensions.applications-menu
   pkgs.gnomeExtensions.dash-to-dock
   pkgs.gnome-boxes
+  pkgs.googleearth-pro
 ]
