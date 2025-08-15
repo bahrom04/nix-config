@@ -42,6 +42,9 @@ in {
     pulse.enable = true;
   };
 
+  # NVIDIA driver support
+  services.xserver.videoDrivers = ["nvidia"];
+  
   environment = {
     variables = {
       EDITOR = "vim";
