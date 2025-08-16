@@ -10,7 +10,7 @@
     outputs.homeModules.home.zsh
     outputs.homeModules.home.vscode
     outputs.homeModules.home.zed
-    # homeModules.services.espanso
+    outputs.homeModules.services.espanso
   ];
 
   programs.home-manager.enable = true;

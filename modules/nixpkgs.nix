@@ -10,7 +10,13 @@
       # Disable if you don't want linux thingies on mac
       allowUnsupportedSystem = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
+      allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+          "steam"
+          "steam-original"
+          "steam-unwrapped"
+          "steam-run"
+        ];
       # Let the system use fucked up programs
       allowBroken = true;
 

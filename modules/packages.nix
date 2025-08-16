@@ -27,7 +27,6 @@
     which
     tree
     # nix-output-monitor
-    espanso
     btop
   ];
 
