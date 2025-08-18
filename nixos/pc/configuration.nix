@@ -136,6 +136,8 @@ in {
   #  weather_api_key = config.sops.secrets.weather_api_key.path;
   #};
 
+  networking.hostName = "bahrom"; # Define your hostname.
+
   # Select host type for the system
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
