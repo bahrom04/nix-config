@@ -12,6 +12,7 @@
     # };
 
     extraConfig = {
+      init.defaultBranch = "main";
       http.sslVerify = false;
       pull.rebase = false;
     };

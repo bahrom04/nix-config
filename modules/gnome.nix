@@ -13,4 +13,6 @@
   pkgs.gnomeExtensions.dash-to-dock
   pkgs.gnome-boxes
   pkgs.googleearth-pro
+  pkgs.prismlauncher
+  pkgs.github-desktop
 ]
