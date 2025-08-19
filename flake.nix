@@ -57,7 +57,7 @@
       # darwinModules = import ./modules/darwin;
       homeModules = import ./modules;
 
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.bahrom = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./nixos/pc/configuration.nix
