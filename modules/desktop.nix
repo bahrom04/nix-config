@@ -111,14 +111,6 @@
         };
       };
     };
-    virtualbox = {
-      host = {
-        enable = true;
-        enableExtensionPack = true;
-      };
-      guest.enable = true;
-      guest.dragAndDrop = true;
-    };
   };
 
   # programs.steam = {
