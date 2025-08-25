@@ -28,6 +28,7 @@
     tree
     # nix-output-monitor
     btop
+    google-chrome
   ];
 
   home.stateVersion = "25.05";

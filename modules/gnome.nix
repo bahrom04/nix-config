@@ -15,4 +15,6 @@
   pkgs.googleearth-pro
   pkgs.prismlauncher
   pkgs.github-desktop
+  pkgs.thunderbird
+  pkgs.firefox
 ]

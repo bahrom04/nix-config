@@ -62,6 +62,7 @@ in {
         pinentry
         haveged
         element-desktop
+        telegram-desktop
         # Services
         redis
       ]
@@ -80,12 +81,6 @@ in {
       description = "bahrom's profile";
       extraGroups = ["networkmanager" "wheel" "vboxusers" "libvirtd"];
       shell = pkgs.zsh;
-      packages = with pkgs; [
-        thunderbird
-        firefox
-        telegram-desktop
-        google-chrome
-      ];
     };
     adam = {
       name = "adam";
@@ -93,10 +88,6 @@ in {
       isNormalUser = true;
       description = "islom";
       extraGroups = ["networkmanager" "wheel"];
-      packages = with pkgs; [
-        telegram-desktop
-        google-chrome
-      ];
     };
   };
 
