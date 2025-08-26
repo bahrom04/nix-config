@@ -76,7 +76,7 @@
           "editor.defaultFormatter" = "css-language-features";
         };
         "[rust]" = {
-          "editor.defaultFormatter" = "rust-lang.rus`t-analyzer";
+          "editor.defaultFormatter" = "rust-lang.rust-analyzer";
         };
         "[jsonc]" = {
           "editor.defaultFormatter" = "vscode.json-language-features";
