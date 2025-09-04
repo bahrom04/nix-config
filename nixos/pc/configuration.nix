@@ -63,7 +63,7 @@ in {
         haveged
         element-desktop
         telegram-desktop
-        # google-chrome
+        google-chrome
         # Services
         redis
       ]

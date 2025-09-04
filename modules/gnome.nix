@@ -1,5 +1,6 @@
 {pkgs, ...}: [
   # GNOME APPS
+  pkgs.gnome-tweaks
   pkgs.flatpak-builder
   pkgs.gnome-builder
   pkgs.fractal
