@@ -19,32 +19,59 @@ in {
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    hostName = "bahrom"; # Define your hostname.
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Tashkent";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "uz_UZ.UTF-8";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+  # Garbage collector.
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 10d";
   };
 
-  # NVIDIA driver support
-  services.xserver.videoDrivers = ["nvidia"];
-  
+  # Enable CUPS to print documents.
+  services = {
+    printing.enable = true;
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+    # NVIDIA driver support
+    xserver.videoDrivers = ["nvidia"];
+    e-imzo.enable = true;
+    #auto_profile_tg = {
+    #  enable = false;
+    #  api_id = config.sops.secrets.api_id.path;
+    #  api_hash = config.sops.secrets.api_hash.path;
+    #  phone_number = config.sops.secrets.phone_number.path;
+    #  first_name = config.sops.secrets.first_name.path;
+    #  lat = config.sops.secrets.lat.path;
+    #  lon = config.sops.secrets.lon.path;
+    #  timezone = config.sops.secrets.timezone.path;
+    #  city = config.sops.secrets.city.path;
+    #  weather_api_key = config.sops.secrets.weather_api_key.path;
+    #};
+  };
+
+  # Enable sound with pipewire.
+  security.rtkit.enable = true;
+
   environment = {
     variables = {
       EDITOR = "vim";
@@ -70,10 +97,6 @@ in {
       ++ gnomeApps;
   };
 
-  services.e-imzo.enable = true;
-
-  #system.primaryUser = "bahrom";
-  programs.zsh.enable = true;
   users.users = {
     bahrom = {
       name = "bahrom";
@@ -102,33 +125,10 @@ in {
     };
   };
 
-  programs.mtr.enable = true;
-  
-  # Replace commant not found with nix-index
-  # programs.nix-index = {
-  #   enable = true;
-  # };
-
-  # Networking DNS & Interfaces
-  #networking = {
-  #  computerName = "air"; # Define your computer name.
-  #  localHostName = "air"; # Define your local host name.
-  #};
-
-  #services.auto_profile_tg = {
-  #  enable = false;
-  #  api_id = config.sops.secrets.api_id.path;
-  #  api_hash = config.sops.secrets.api_hash.path;
-  #  phone_number = config.sops.secrets.phone_number.path;
-  #  first_name = config.sops.secrets.first_name.path;
-  #  lat = config.sops.secrets.lat.path;
-  #  lon = config.sops.secrets.lon.path;
-  #  timezone = config.sops.secrets.timezone.path;
-  #  city = config.sops.secrets.city.path;
-  #  weather_api_key = config.sops.secrets.weather_api_key.path;
-  #};
-
-  networking.hostName = "bahrom"; # Define your hostname.
+  programs = {
+    zsh.enable = true;
+    mtr.enable = true;
+  };
 
   # Select host type for the system
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
