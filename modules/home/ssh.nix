@@ -4,7 +4,7 @@
   ...
 }: let
   extraConfig = ''
-    IdentityFile ~/.ssh/id_rsa
+    IdentityFile ~/.ssh/id_ed25519
     ${(lib.optionalString pkgs.stdenv.isDarwin
       ''
         UseKeychain yes
