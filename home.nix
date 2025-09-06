@@ -10,6 +10,7 @@
     outputs.homeModules.home.zsh
     outputs.homeModules.home.vscode
     outputs.homeModules.home.zed
+    outputs.homeModules.home.ssh
     # outputs.homeModules.services.espanso
   ];
 

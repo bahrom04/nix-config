@@ -11,4 +11,5 @@
   vscode = import ./vscode.nix;
   starship = import ./starship.nix;
   fastfetch = import ./fastfetch.nix;
+  ssh = import ./ssh.nix;
 }

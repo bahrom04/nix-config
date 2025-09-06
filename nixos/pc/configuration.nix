@@ -125,6 +125,20 @@ in {
     };
   };
 
+  # does nothing. can not scale my resolution to 150%. Only 200% and 100%
+  # home-manager.users.gdm = {lib, ...}: {
+  #   dconf.settings = {
+  #     "org/gnome/desktop/interface" = {
+  #       # text-scaling-factor = 1.5; # 150% text scaling
+  #       scaling-factor = 1.5;
+  #     };
+  #     "org/gnome/mutter" = {
+  #       experimental-features = ["scale-monitor-framebuffer"]; # enables fractional scaling
+  #     };
+  #   };
+  #   home.stateVersion = "25.05";
+  # };
+
   programs = {
     zsh.enable = true;
     mtr.enable = true;

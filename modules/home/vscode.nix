@@ -61,6 +61,8 @@
         };
         "terminal.integrated.inheritEnv" = false;
         "editor.accessibilitySupport" = "off";
+        "remote.SSH.configFile" = "~/.ssh/id_rsa";
+
 
         # Language-specific settings
         "[javascript]" = {
