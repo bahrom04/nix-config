@@ -70,7 +70,24 @@ in {
   };
 
   # Enable sound with pipewire.
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    sudo.extraRules = [
+      {
+        users = ["bahrom"];
+        commands = [
+          {
+            command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake . --show-trace";
+            options = ["NOPASSWD"];
+          }
+          {
+            command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake .";
+            options = ["NOPASSWD"];
+          }
+        ];
+      }
+    ];
+  };
 
   environment = {
     variables = {
