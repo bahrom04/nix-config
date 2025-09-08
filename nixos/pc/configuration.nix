@@ -35,6 +35,7 @@ in {
 
   # Select internationalisation properties.
   i18n.defaultLocale = "uz_UZ.UTF-8";
+  i18n.supportedLocales = [ "all" ];
 
   # Garbage collector.
   nix.gc = {
