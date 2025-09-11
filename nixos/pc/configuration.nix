@@ -8,6 +8,9 @@
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
   gnomeApps = outputs.homeModules.gnome_apps {inherit pkgs;};
+  nix-software-center = inputs.nix-software-center.packages.x86_64-linux.nix-software-center;
+  xinux-module-manager = inputs.xinux-module-manager.packages.x86_64-linux.xinux-module-manager;
+  # nixos-conf-editor = inputs.nixos-conf-editor.packages.x86_64-linux.nixos-conf-editor;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -111,6 +114,10 @@ in {
         google-chrome
         # Services
         redis
+        # Xinux
+        nix-software-center
+        xinux-module-manager
+        # nixos-conf-editor
       ]
       ++ gnomeApps;
   };

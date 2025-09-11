@@ -30,6 +30,22 @@
       url = "github:bahrom04/auto-profile-tg";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Xinux
+    nix-software-center = {
+      url = "github:xinux-org/software-center";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    xinux-module-manager = {
+      url = "github:xinux-org/module-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-conf-editor = {
+      url = "github:xinux-org/conf-editor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
