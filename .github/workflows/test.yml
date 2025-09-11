@@ -1,7 +1,7 @@
 on:
-  pull_request:
   push:
     branches: [main, x86_64-linux]
+  workflow_dispatch:
 
 jobs:
   tests:
