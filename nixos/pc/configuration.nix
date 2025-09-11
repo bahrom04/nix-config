@@ -7,7 +7,7 @@
   ...
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-  gnomeApps = outputs.homeModules.gnome {inherit pkgs;};
+  gnomeApps = outputs.homeModules.gnome_apps {inherit pkgs;};
 in {
   imports = [
     ./hardware-configuration.nix
@@ -35,7 +35,7 @@ in {
 
   # Select internationalisation properties.
   i18n.defaultLocale = "uz_UZ.UTF-8";
-  i18n.supportedLocales = [ "all" ];
+  i18n.supportedLocales = ["all"];
 
   # Garbage collector.
   nix.gc = {
@@ -160,6 +160,7 @@ in {
   programs = {
     zsh.enable = true;
     mtr.enable = true;
+    steam.enable = true;
   };
 
   # Select host type for the system

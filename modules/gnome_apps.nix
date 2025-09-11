@@ -1,4 +1,6 @@
 {pkgs, ...}: [
+  # assets
+  pkgs.papirus-icon-theme
   # GNOME APPS
   pkgs.gnome-tweaks
   pkgs.flatpak-builder
