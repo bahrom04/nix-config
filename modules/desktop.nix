@@ -20,21 +20,16 @@
     desktopManager.gnome = {
       enable = true;
       extraGSettingsOverrides = ''
-        # Change default background
-        [org.gnome.desktop.background]
-        picture-uri='file://${pkgs.nixos-artwork.wallpapers.nineish.gnomeFilePath}'
-
-        # Background for dark theme
-        [org.gnome.desktop.background]
-        picture-uri-dark='file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath}'
-
         # Prefer dark theme
         [org.gnome.desktop.interface]
         color-scheme='prefer-dark'
 
+        [org.gnome.desktop.interface]
+        icon-theme='Papirus-Dark'
+
         # Favorite apps in gnome-shell
         [org.gnome.shell]
-        favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Console.desktop', 'org.gnome.gitg.desktop', 'org.gnome.Builder.desktop', 'org.gnome.Polari.desktop']
+        favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Console.desktop', 'org.gnome.gitg.desktop']
 
         # Enable user extensions
         [org.gnome.shell]
@@ -111,9 +106,5 @@
         };
       };
     };
-  };
-
-  programs.steam = {
-    enable = true;
   };
 }
