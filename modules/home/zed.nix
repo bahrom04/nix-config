@@ -1,12 +1,5 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
+{pkgs, ...}: let
   extensions = [
-    "assembly"
-    "deno"
-    "env"
     "glsl"
     "haskell"
     "html"
@@ -21,33 +14,27 @@
     "nix"
     "nu"
     "pkl"
-    "ruby"
     "slint"
     "sql"
-    "swift"
     "toml"
     "typst"
     "vercel-theme"
     "wgsl"
     "xml"
     "zig"
-    "meson"
   ];
 
   settings = {
-    auto_update = false;
+    auto_update = true;
+
+    disable_ai = true;
 
     telemetry = {
       metrics = false;
       diagnostics = false;
     };
 
-    show_edit_predictions = false;
-
-    node = {
-      path = lib.getExe pkgs.nodejs;
-      npm_path = lib.getExe' pkgs.nodejs "npm";
-    };
+    show_edit_predictions = true;
 
     languages = {
       Markdown = {
@@ -62,26 +49,6 @@
           "nixd"
           "!nil"
         ];
-      };
-
-      TypeScript = {
-        language_servers = [
-          "typescript-language-server"
-          "deno"
-          "!vtsls"
-          "!eslint"
-        ];
-        formatter = "language_server";
-      };
-
-      TSX = {
-        language_servers = [
-          "typescript-language-server"
-          "deno"
-          "!eslint"
-          "!vtsls"
-        ];
-        formatter = "language_server";
       };
     };
 
@@ -116,12 +83,6 @@
         };
       };
 
-      deno = {
-        binary = {
-          ignore_system_version = false;
-        };
-      };
-
       solargraph = {
         binary = {
           ignore_system_version = false;
@@ -137,26 +98,25 @@
 
     theme = {
       mode = "system";
-      light = "Vercel Light";
-      dark = "Vscode Dark Plus";
-
+      light = "Ayu Light";
+      dark = "Ayu Mirage";
     };
-    icon_theme = "VSCode Icons Theme";
+    icon_theme = "Material Icon Theme";
 
     tab_size = 2;
     preferred_line_length = 100;
 
-    autosave = "off";
+    autosave = "after_delay";
     format_on_save = "language_server";
     enable_language_server = true;
 
     soft_wrap = "editor_width";
 
     buffer_font_size = 16;
-    buffer_font_family = "Liga SFMono Nerd Font";
+    buffer_font_family = "mononoki";
 
     ui_font_size = 16;
-    ui_font_family = ".SystemUIFont";
+    ui_font_family = "mononoki";
 
     confirm_quit = false;
     use_autoclose = false;
@@ -183,12 +143,13 @@
     };
   };
 in {
-  programs.zed-editor = {
-    enable = true;
-    inherit extensions;
-    userSettings = settings;
-    installRemoteServer = true;
-    extraPackages = with pkgs; [nixd];
-    package = pkgs.zed-editor;
+  config = {
+    programs.zed-editor = {
+      enable = true;
+      inherit extensions;
+      userSettings = settings;
+      installRemoteServer = true;
+      extraPackages = with pkgs; [nixd];
+    };
   };
 }
