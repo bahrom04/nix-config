@@ -16,7 +16,6 @@ in {
     ./hardware-configuration.nix
     # Home manager darwin modules
     inputs.home-manager.nixosModules.home-manager
-
     outputs.homeModules.nixpkgs
     outputs.homeModules.desktop
   ];
@@ -76,21 +75,21 @@ in {
   # Enable sound with pipewire.
   security = {
     rtkit.enable = true;
-    sudo.extraRules = [
-      {
-        users = ["bahrom"];
-        commands = [
-          {
-            command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake . --show-trace";
-            options = ["NOPASSWD"];
-          }
-          {
-            command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake .";
-            options = ["NOPASSWD"];
-          }
-        ];
-      }
-    ];
+    # sudo.extraRules = [
+    #   {
+    #     users = ["bahrom"];
+    #     commands = [
+    #       {
+    #         command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake . --show-trace";
+    #         options = ["NOPASSWD"];
+    #       }
+    #       {
+    #         command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake .";
+    #         options = ["NOPASSWD"];
+    #       }
+    #     ];
+    #   }
+    # ];
   };
 
   environment = {
@@ -149,27 +148,11 @@ in {
       inherit inputs outputs;
     };
   };
-
-  # does nothing. can not scale my resolution to 150%. Only 200% and 100%
-  # home-manager.users.gdm = {lib, ...}: {
-  #   dconf.settings = {
-  #     "org/gnome/desktop/interface" = {
-  #       # text-scaling-factor = 1.5; # 150% text scaling
-  #       scaling-factor = 1.5;
-  #     };
-  #     "org/gnome/mutter" = {
-  #       experimental-features = ["scale-monitor-framebuffer"]; # enables fractional scaling
-  #     };
-  #   };
-  #   home.stateVersion = "25.05";
-  # };
-
   programs = {
     zsh.enable = true;
     mtr.enable = true;
     steam.enable = true;
   };
-
   # Select host type for the system
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
