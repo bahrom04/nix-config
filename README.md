@@ -5,10 +5,10 @@
     </picture>
 </p>
 
-## NixOS
+## NixOS in x86_64-linux branch
 sudo nixos-rebuild switch --flake .#nixos
 
-## nix-darwin
+## nix-darwin in main branch
 ```
 sudo darwin-rebuild switch --flake .#bahrom04
 --option tarball-ttl 0 # no caching
