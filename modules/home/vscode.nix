@@ -24,6 +24,8 @@
         jnoortheen.nix-ide
         mesonbuild.mesonbuild
         kamadorueda.alejandra
+        haskell.haskell
+        justusadam.language-haskell
       ];
 
       userSettings = {
@@ -38,6 +40,21 @@
           "fish (nix)" = {
             path = "/run/current-system/sw/bin/fish";
           };
+        };
+        "files.associations" = {
+          "*.dump-simpl" = "haskell";
+          "*.dump-ds" = "haskell";
+          "*.project.local" = "haskell";
+        };
+        "files.exclude" = {
+          "**/.DS_Store" = true;
+          "**/.git" = true;
+          "**/.hg" = true;
+          "**/.lsp" = true;
+          "**/.svn" = true;
+          "**/.idea" = true;
+          "**/CVS" = true;
+          "**/Thumbs.db" = true;
         };
         "terminal.integrated.defaultProfile.osx" = "zsh";
         "terminal.integrated.defaultProfile.linux" = "zsh";
@@ -62,7 +79,6 @@
         "terminal.integrated.inheritEnv" = false;
         "editor.accessibilitySupport" = "off";
         "remote.SSH.configFile" = "~/.ssh/id_ed25519";
-
 
         # Language-specific settings
         "[javascript]" = {

@@ -6,10 +6,11 @@
 {
   git = import ./git.nix;
   zsh = import ./zsh.nix;
-  fish = import ./fish.nix;
   zed = import ./zed.nix;
+  ssh = import ./ssh.nix;
+  fish = import ./fish.nix;
   vscode = import ./vscode.nix;
+  haskell = import ./haskell.nix;
   starship = import ./starship.nix;
   fastfetch = import ./fastfetch.nix;
-  ssh = import ./ssh.nix;
 }

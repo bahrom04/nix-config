@@ -111,6 +111,7 @@ in {
         element-desktop
         telegram-desktop
         google-chrome
+        android-studio
         # Services
         redis
         # Xinux
@@ -120,6 +121,7 @@ in {
       ]
       ++ gnomeApps;
   };
+  # android_sdk.accept_license = true;
 
   users.users = {
     bahrom = {

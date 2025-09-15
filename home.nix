@@ -1,16 +1,17 @@
 {outputs, ...}: {
   imports = [
+    outputs.homeModules.direnv
     outputs.homeModules.nixpkgs
     outputs.homeModules.packages
-    outputs.homeModules.direnv
-    outputs.homeModules.home.fastfetch
-    outputs.homeModules.home.fish
     outputs.homeModules.home.git
-    outputs.homeModules.home.starship
     outputs.homeModules.home.zsh
-    outputs.homeModules.home.vscode
     outputs.homeModules.home.zed
     outputs.homeModules.home.ssh
+    outputs.homeModules.home.fish
+    outputs.homeModules.home.vscode
+    outputs.homeModules.home.haskell
+    outputs.homeModules.home.starship
+    outputs.homeModules.home.fastfetch
     # outputs.homeModules.services.espanso
   ];
 
