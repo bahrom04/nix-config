@@ -1,9 +1,9 @@
 {
   disks ? [
-    # 2TB HDD
+    # 1TB SATA
     "/dev/sda"
 
-    # 1TB SATA
+    # 2TB HDD
     "/dev/sdb"
   ],
   ...
@@ -11,7 +11,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = builtins.elemAt disks 1;
+        device = builtins.elemAt disks 0;
         type = "disk";
         content = {
           type = "gpt";
@@ -47,7 +47,7 @@
       };
 
       storage = {
-        device = builtins.elemAt disks 0;
+        device = builtins.elemAt disks 1;
         type = "disk";
         content = {
           type = "gpt";
