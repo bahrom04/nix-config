@@ -1,23 +1,17 @@
 {
+  lib,
   pkgs,
   inputs,
   outputs,
   ...
 }: let
-  inherit (inputs.self) lib;
-
   # Packages that are not aarch64 compatible
-  x86_64-only =
-    lib.condition.mkArrIf
-    pkgs.stdenv.hostPlatform.isx86_64
-    (with pkgs; [
-      # Latest discord
-      pkgs.discord
-      # To patch discord's krisp
-      pkgs.krisper
-      # Zoom conference
-      zoom-us
-    ]);
+  x86_64-only = with pkgs; [
+    # Latest discord
+    pkgs.discord
+    # Zoom conference
+    zoom-us
+  ];
 
   packages =
     (with pkgs; [
@@ -26,7 +20,7 @@
       # Mastodon client
       tuba
       # Telegram desktop
-      unstable.telegram-desktop
+      telegram-desktop
       # GitHub Desktop
       github-desktop
       # RDP Management
@@ -71,7 +65,7 @@ in {
       };
       users = {
         # Import your home-manager configuration
-        sakhib = import ../../../home.nix;
+        bahrom = import ../../home.nix;
       };
     };
   };

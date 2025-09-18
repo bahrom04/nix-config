@@ -19,7 +19,7 @@ in {
     inputs.home-manager.nixosModules.home-manager
     outputs.homeModules.nixpkgs
     outputs.homeModules.desktop
-    outputs.nixosModules.users.bahrom04
+    outputs.homeModules.users.bahrom04
   ];
 
   # Bootloader.

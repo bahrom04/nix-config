@@ -50,6 +50,10 @@ in {
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    # GPU (Nvidia)
+    nvidia = {
+      open = false;
+    };
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
