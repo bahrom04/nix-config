@@ -1,0 +1,138 @@
+{
+  lib,
+  config,
+  inputs,
+  outputs,
+  pkgs,
+  ...
+}: let
+  age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
+  gnomeApps = outputs.homeModules.gnome_apps {inherit pkgs;};
+  nix-software-center = inputs.nix-software-center.packages.x86_64-linux.nix-software-center;
+  xinux-module-manager = inputs.xinux-module-manager.packages.x86_64-linux.xinux-module-manager;
+  nixos-conf-editor = inputs.nixos-conf-editor.packages.x86_64-linux.nixos-conf-editor;
+in {
+  imports = [
+    ./hardware-configuration.nix
+
+    # Home manager darwin modules
+    inputs.home-manager.nixosModules.home-manager
+    outputs.homeModules.nixpkgs
+    outputs.homeModules.desktop
+    outputs.nixosModules.users.bahrom04
+  ];
+
+  # Bootloader.
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
+  # Enable networking
+  networking = {
+    networkmanager.enable = true;
+    hostName = "matax"; # Define your hostname.
+  };
+
+  # Set your time zone.
+  time.timeZone = "Asia/Tashkent";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "uz_UZ.UTF-8";
+  i18n.supportedLocales = ["all"];
+
+  # Garbage collector.
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 10d";
+  };
+
+  # Enable CUPS to print documents.
+  services = {
+    printing.enable = true;
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+    # NVIDIA driver support
+    xserver.videoDrivers = ["nvidia"];
+    e-imzo.enable = true;
+    #auto_profile_tg = {
+    #  enable = false;
+    #  api_id = config.sops.secrets.api_id.path;
+    #  api_hash = config.sops.secrets.api_hash.path;
+    #  phone_number = config.sops.secrets.phone_number.path;
+    #  first_name = config.sops.secrets.first_name.path;
+    #  lat = config.sops.secrets.lat.path;
+    #  lon = config.sops.secrets.lon.path;
+    #  timezone = config.sops.secrets.timezone.path;
+    #  city = config.sops.secrets.city.path;
+    #  weather_api_key = config.sops.secrets.weather_api_key.path;
+    #};
+  };
+
+  # Enable sound with pipewire.
+  security = {
+    rtkit.enable = true;
+    # sudo.extraRules = [
+    #   {
+    #     users = ["bahrom"];
+    #     commands = [
+    #       {
+    #         command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake . --show-trace";
+    #         options = ["NOPASSWD"];
+    #       }
+    #       {
+    #         command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake .";
+    #         options = ["NOPASSWD"];
+    #       }
+    #     ];
+    #   }
+    # ];
+  };
+
+  environment = {
+    variables = {
+      EDITOR = "vim";
+      SOPS_AGE_KEY_FILE = age_keys;
+    };
+    systemPackages = with pkgs;
+      [
+        nixfmt-rfc-style
+        neovim
+        vim
+        fastfetch
+        age
+        sops
+        rng-tools
+        pinentry
+        haveged
+        element-desktop
+        telegram-desktop
+        google-chrome
+        android-studio
+        # Services
+        redis
+        # Xinux
+        nix-software-center
+        xinux-module-manager
+        nixos-conf-editor
+      ]
+      ++ gnomeApps;
+  };
+  # android_sdk.accept_license = true;
+  programs = {
+    zsh.enable = true;
+    mtr.enable = true;
+    steam.enable = true;
+  };
+  # Select host type for the system
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+  # Used for backwards compatibility, please read the changelog before changing.
+  # $ darwin-rebuild changelog
+  system.stateVersion = "25.05";
+}

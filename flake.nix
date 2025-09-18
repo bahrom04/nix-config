@@ -4,7 +4,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     # Nixpkgs for darwin
     nix-darwin = {
@@ -46,6 +46,11 @@
       url = "github:xinux-org/conf-editor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Disko for easier partition management
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -73,10 +78,10 @@
       # darwinModules = import ./modules/darwin;
       homeModules = import ./modules;
 
-      nixosConfigurations.bahrom = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.matax = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./nixos/pc/configuration.nix
+          ./nixos/matax/configuration.nix
         ];
 
         specialArgs = {
