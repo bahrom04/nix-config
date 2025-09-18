@@ -1,6 +1,6 @@
 # .sops.yaml
 keys:
-  - &primary age1wqa7ynnzf43s3cqhtmml6xf0t6agwsx6c48yd8p7tlm6ae7w243sgtmml3
+  - &primary age1rsk3d76ch8965hfffesqe9uln9w50sja3y2c8my8s36p2z6qxyuq7tuc6l
 
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$

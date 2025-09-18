@@ -106,6 +106,7 @@
           "editor.formatOnType" = true;
           "editor.wordBasedSuggestions" = "off";
         };
+        "mesonbuild.configureOnOpen" = false;
         "github.copilot.enable" = {
           "*" = false;
           "plaintext" = false;
