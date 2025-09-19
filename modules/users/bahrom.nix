@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   inputs,
   outputs,
@@ -13,7 +14,8 @@ in {
         inherit hashedPassword;
         isNormalUser = true;
         description = "Bakhrom Rakhmatov";
-
+        shell = pkgs.zsh;
+        
         extraGroups = [
           "networkmanager"
           "wheel"
