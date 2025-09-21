@@ -12,7 +12,7 @@
     outputs.homeModules.home.haskell
     outputs.homeModules.home.starship
     outputs.homeModules.home.fastfetch
-    # outputs.homeModules.services.espanso
+    outputs.homeModules.services.espanso
   ];
 
   home.username = "bahrom04";
