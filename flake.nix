@@ -88,5 +88,16 @@
           inherit inputs outputs;
         };
       };
+
+      darwinConfigurations.air = inputs.nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./nixos/darwin/configuration.nix
+        ];
+
+        specialArgs = {
+          inherit inputs outputs;
+        };
+      };
     };
 }

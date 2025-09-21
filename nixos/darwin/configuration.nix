@@ -8,7 +8,7 @@
 }: let
   age_keys = "${config.users.users.bahrom04.home}/.config/sops/age/keys.txt";
 
-  modules = import ../modules;
+  #modules = import ../modules;
 in {
   imports = [
     inputs.home-manager.darwinModules.home-manager
@@ -16,7 +16,7 @@ in {
     inputs.auto_profile_tg.darwinModules.default
 
     outputs.homeModules.nixpkgs
-    modules.sops
+    #modules.sops
   ];
 
   environment = {
@@ -61,7 +61,7 @@ in {
   home-manager = {
     # useGlobalPkgs = true;
     # useUserPackages = true;
-    users.bahrom04 = import ../home.nix;
+    users.bahrom04 = import ./home.nix;
     extraSpecialArgs = {
       inherit inputs outputs;
     };
@@ -86,23 +86,23 @@ in {
     localHostName = "air"; # Define your local host name.
   };
 
-  services.auto_profile_tg = {
-    enable = false;
-    api_id = config.sops.secrets.api_id.path;
-    api_hash = config.sops.secrets.api_hash.path;
-    phone_number = config.sops.secrets.phone_number.path;
-    first_name = config.sops.secrets.first_name.path;
-    lat = config.sops.secrets.lat.path;
-    lon = config.sops.secrets.lon.path;
-    timezone = config.sops.secrets.timezone.path;
-    city = config.sops.secrets.city.path;
-    weather_api_key = config.sops.secrets.weather_api_key.path;
-  };
+  #services.auto_profile_tg = {
+  #  enable = false;
+  #  api_id = config.sops.secrets.api_id.path;
+  #  api_hash = config.sops.secrets.api_hash.path;
+  #  phone_number = config.sops.secrets.phone_number.path;
+  #  first_name = config.sops.secrets.first_name.path;
+  #  lat = config.sops.secrets.lat.path;
+  #  lon = config.sops.secrets.lon.path;
+  #  timezone = config.sops.secrets.timezone.path;
+  #  city = config.sops.secrets.city.path;
+  #  weather_api_key = config.sops.secrets.weather_api_key.path;
+  #};
 
   # Select host type for the system
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-darwin";
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 25.05;
+  system.stateVersion = 5;
 }
