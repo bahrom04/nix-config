@@ -18,7 +18,7 @@ in {
     outputs.homeModules.nixpkgs
     #modules.sops
   ];
-
+  
   environment = {
     variables = {
       EDITOR = "vim";
@@ -61,6 +61,7 @@ in {
   home-manager = {
     # useGlobalPkgs = true;
     # useUserPackages = true;
+    backupFileExtension = "hbak";
     users.bahrom04 = import ./home.nix;
     extraSpecialArgs = {
       inherit inputs outputs;

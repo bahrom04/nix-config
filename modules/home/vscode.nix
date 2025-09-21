@@ -1,9 +1,14 @@
 # reference: https://maksar.github.io/posts/code/2021-09-19-vscode/
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = true;
     profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with pkgs.vscode-marketplace; [
         mkhl.direnv
         dracula-theme.theme-dracula
         yzhang.markdown-all-in-one
