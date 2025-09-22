@@ -10,7 +10,7 @@ sudo nixos-rebuild switch --flake .#nixos
 
 ## nix-darwin
 ```
-sudo darwin-rebuild switch --flake .#bahrom04
+sudo darwin-rebuild switch --flake .#air
 --option tarball-ttl 0 # no caching
 
 nix build .#darwinConfigurations.bahrom04.config.system.build.toplevel --show-trace

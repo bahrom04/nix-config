@@ -5,7 +5,6 @@
   outputs,
   ...
 }: let
-  # Packages that are not aarch64 compatible
   hashedPassword = "$2b$05$QgiAihjGOtxfGZ06pfm2u.dMR6522sT2Pmy4mt//Rf2x5YonDcD.2";
 in {
   config = {

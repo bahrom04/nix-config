@@ -1,4 +1,4 @@
-# ~/nix-config/flake.nix
+# ./flake.nix
 {
   description = "My macOS config with nix-darwin + Home Manager";
 
@@ -25,12 +25,19 @@
       url = "github:Mic92/sops-nix";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    auto_profile_tg = {
-      url = "github:bahrom04/auto-profile-tg";
+    # Disko for easier partition management
+    disko = {
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    # auto_profile_tg = {
+    #   url = "github:bahrom04/auto-profile-tg";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # VSCode extension marketplace
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+    };
     # Xinux
     nix-software-center = {
       url = "github:xinux-org/software-center";
@@ -46,12 +53,6 @@
       url = "github:xinux-org/conf-editor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Disko for easier partition management
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = {
@@ -81,6 +82,7 @@
       # darwinModules = import ./modules/darwin;
       homeModules = import ./modules;
 
+      # When using NixOS: sudo nixos-rebuild switch --flake .#matax
       nixosConfigurations.matax = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -92,6 +94,7 @@
         };
       };
 
+      # When using Mac: sudo darwin-rebuild switch --flake .#air
       darwinConfigurations.air = inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
