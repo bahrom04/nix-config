@@ -8,10 +8,10 @@
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
   gnomeApps = outputs.homeModules.gnome_apps {inherit pkgs;};
-  nix-software-center = inputs.nix-software-center.packages.x86_64-linux.nix-software-center;
-  xinux-module-manager = inputs.xinux-module-manager.packages.x86_64-linux.xinux-module-manager;
-  nixos-conf-editor = inputs.nixos-conf-editor.packages.x86_64-linux.nixos-conf-editor;
-  hunspell-uz = inputs.hunspell-uz.packages.x86_64-linux.default;
+  nix-software-center = inputs.nix-software-center.packages."${pkgs.system}".nix-software-center;
+  xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.system}".xinux-module-manager;
+  nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.system}".nixos-conf-editor;
+  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.system}".default;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -116,6 +116,7 @@ in {
         haveged
         element-desktop
         telegram-desktop
+        # Browsers
         google-chrome
         chromium
         android-studio

@@ -12,6 +12,7 @@
     outputs.homeModules.home.haskell
     outputs.homeModules.home.starship
     outputs.homeModules.home.fastfetch
+    #outputs.homeModules.home.zen-browser
     # outputs.homeModules.services.espanso
   ];
 
