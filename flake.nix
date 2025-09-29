@@ -53,6 +53,11 @@
       url = "github:xinux-org/conf-editor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hunspell-uz = {
+      url = "github:uzbek-net/uz-hunspell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
