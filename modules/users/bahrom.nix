@@ -23,6 +23,7 @@ in {
           "media"
           "admins"
           "libvirtd"
+          "input"
         ];
 
         openssh.authorizedKeys.keys = lib.strings.splitString "\n" (
