@@ -61,8 +61,8 @@
       systems = ["x86_64-linux" "aarch64-darwin"];
 
       imports = [
-        ./nixos/darwin/flake.nix
-        ./nixos/matax/flake.nix
+        ./hosts/darwin/flake.nix
+        ./hosts/matax/flake.nix
       ];
 
       perSystem = {
