@@ -13,4 +13,5 @@
   haskell = import ./haskell.nix;
   starship = import ./starship.nix;
   fastfetch = import ./fastfetch.nix;
+  zen-browser = import ./zen-browser.nix;
 }

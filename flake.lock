@@ -1,26 +1,5 @@
 {
   "nodes": {
-    "auto_profile_tg": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1750186266,
-        "narHash": "sha256-H5wWsy/AnSkrIzmfOGB2o1sZsOx16C+XVQBEtbnAsh8=",
-        "owner": "bahrom04",
-        "repo": "auto-profile-tg",
-        "rev": "131cd6cd60ac64f15e059c0a69e52542947451c2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bahrom04",
-        "repo": "auto-profile-tg",
-        "type": "github"
-      }
-    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -180,6 +159,27 @@
         "owner": "nix-community",
         "ref": "release-25.05",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "hunspell-uz": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1758803982,
+        "narHash": "sha256-J9UYDY5DFiIkACdxQqfmhw0PrknhwguNDSxlvccRJP0=",
+        "owner": "uzbek-net",
+        "repo": "uz-hunspell",
+        "rev": "8ad88b7873fcda0171a19d2959e527da9d961967",
+        "type": "github"
+      },
+      "original": {
+        "owner": "uzbek-net",
+        "repo": "uz-hunspell",
         "type": "github"
       }
     },
@@ -358,10 +358,10 @@
     },
     "root": {
       "inputs": {
-        "auto_profile_tg": "auto_profile_tg",
         "disko": "disko",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
+        "hunspell-uz": "hunspell-uz",
         "nix-darwin": "nix-darwin",
         "nix-software-center": "nix-software-center",
         "nix-vscode-extensions": "nix-vscode-extensions",

@@ -8,9 +8,10 @@
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
   gnomeApps = outputs.homeModules.gnome_apps {inherit pkgs;};
-  nix-software-center = inputs.nix-software-center.packages.x86_64-linux.nix-software-center;
-  xinux-module-manager = inputs.xinux-module-manager.packages.x86_64-linux.xinux-module-manager;
-  nixos-conf-editor = inputs.nixos-conf-editor.packages.x86_64-linux.nixos-conf-editor;
+  nix-software-center = inputs.nix-software-center.packages."${pkgs.system}".nix-software-center;
+  xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.system}".xinux-module-manager;
+  nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.system}".nixos-conf-editor;
+  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.system}".default;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -107,12 +108,17 @@ in {
         fastfetch
         age
         sops
+        hunspell
+        hunspell-uz # todo: add pkgs.hunspell.uz-UZ
+        hunspellDicts.uk_UA
         rng-tools
         pinentry
         haveged
         element-desktop
         telegram-desktop
+        # Browsers
         google-chrome
+        chromium
         android-studio
         # Services
         redis
@@ -123,11 +129,25 @@ in {
       ]
       ++ gnomeApps;
   };
+
+  environment.variables = {
+    DICPATH = "/run/current-system/sw/share/hunspell/";
+    DICTIONARY_PATH = "/run/current-system/sw/share/hunspell";
+  };
   # android_sdk.accept_license = true;
   programs = {
     zsh.enable = true;
     mtr.enable = true;
     steam.enable = true;
+    # Install firefox.
+    firefox = {
+      enable = true;
+      preferences = {
+        "spellchecker.dictionary_path" = "/run/current-system/sw/share/hunspell/";
+        "layout.spellcheckDefault" = 2;
+      };
+      languagePacks = ["en-US" "uz"];
+    };
   };
   # Select host type for the system
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

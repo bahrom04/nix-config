@@ -28,6 +28,10 @@
     tree
     # nix-output-monitor
     btop
+
+    # l10n
+    wl-clipboard
+    espanso-wayland
   ];
 
   home.stateVersion = "25.05";
