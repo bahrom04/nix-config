@@ -2,11 +2,11 @@
   lib,
   config,
   inputs,
-  outputs,
   pkgs,
   ...
 }: let
   age_keys = "${config.users.users.bahrom04.home}/.config/sops/age/keys.txt";
+  homeModules = import ../../modules;
 
   #modules = import ../modules;
 in {
@@ -15,7 +15,7 @@ in {
     # Custom modules
     inputs.auto_profile_tg.darwinModules.default
 
-    outputs.homeModules.nixpkgs
+    homeModules.nixpkgs
     #modules.sops
   ];
   
@@ -64,7 +64,7 @@ in {
     backupFileExtension = "hbak";
     users.bahrom04 = import ./home.nix;
     extraSpecialArgs = {
-      inherit inputs outputs;
+      inherit inputs;
     };
   };
 

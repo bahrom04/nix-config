@@ -1,4 +1,8 @@
-{pkgs ? import <nixpkgs> {}}: let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   pythonEnv = pkgs.python3.withPackages (ps:
     with ps; [
       pip

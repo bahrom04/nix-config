@@ -1,18 +1,21 @@
-{pkgs,outputs, ...}: {
+{pkgs, ...}: let 
+    homeModules = import ../../modules;
+in
+  {
   imports = [
-    outputs.homeModules.direnv
-    outputs.homeModules.nixpkgs
+    homeModules.direnv
+    homeModules.nixpkgs
     #outputs.homeModules.packages
-    outputs.homeModules.home.git
-    outputs.homeModules.home.zsh
-    outputs.homeModules.home.zed
-    outputs.homeModules.home.ssh
-    outputs.homeModules.home.fish
-    outputs.homeModules.home.vscode
-    outputs.homeModules.home.haskell
-    outputs.homeModules.home.starship
-    outputs.homeModules.home.fastfetch
-    outputs.homeModules.services.espanso
+    homeModules.home.git
+    homeModules.home.zsh
+    homeModules.home.zed
+    homeModules.home.ssh
+    homeModules.home.fish
+    homeModules.home.vscode
+    homeModules.home.haskell
+    homeModules.home.starship
+    homeModules.home.fastfetch
+    homeModules.services.espanso
   ];
 
   home.username = "bahrom04";
