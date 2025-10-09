@@ -13,7 +13,7 @@ in {
   imports = [
     inputs.home-manager.darwinModules.home-manager
     # Custom modules
-    inputs.auto_profile_tg.darwinModules.default
+    # inputs.auto_profile_tg.darwinModules.default
 
     homeModules.nixpkgs
     #modules.sops
