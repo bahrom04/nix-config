@@ -6,19 +6,14 @@
   ...
 }: let
   age_keys = "${config.users.users.bahrom04.home}/.config/sops/age/keys.txt";
-  homeModules = import ../../modules;
-
-  #modules = import ../modules;
 in {
   imports = [
     inputs.home-manager.darwinModules.home-manager
+    inputs.self.nixpkgs
     # Custom modules
     # inputs.auto_profile_tg.darwinModules.default
-
-    homeModules.nixpkgs
-    #modules.sops
   ];
-  
+
   environment = {
     variables = {
       EDITOR = "vim";

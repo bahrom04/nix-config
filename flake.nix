@@ -62,21 +62,29 @@
     };
   };
 
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs = {
+    self,
+    flake-parts,
+    ...
+  } @ inputs: let
+    outputs = self;
+  in
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux" "aarch64-darwin"];
 
       imports = [
+        inputs.flake-parts.flakeModules.modules
         ./hosts/darwin/flake.nix
         ./hosts/matax/flake.nix
       ];
 
+      flake = {
+        homeModules = import ./modules;
+      };
+
       perSystem = {
         inputs,
-        system,
         pkgs,
-        lib,
-        config,
         ...
       }: {
         devShells.default = import ./shell.nix {inherit pkgs inputs;};

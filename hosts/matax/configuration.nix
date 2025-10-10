@@ -2,12 +2,11 @@
   lib,
   config,
   inputs,
-  outputs,
   pkgs,
   ...
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-  gnomeApps = outputs.homeModules.gnome_apps {inherit pkgs;};
+  gnomeApps = inputs.self.homeModules.gnome_apps {inherit pkgs;};
   nix-software-center = inputs.nix-software-center.packages."${pkgs.system}".nix-software-center;
   xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.system}".xinux-module-manager;
   nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.system}".nixos-conf-editor;
@@ -18,9 +17,9 @@ in {
 
     # Home manager darwin modules
     inputs.home-manager.nixosModules.home-manager
-    outputs.homeModules.nixpkgs
-    outputs.homeModules.desktop
-    outputs.homeModules.users.bahrom04
+    inputs.self.homeModules.nixpkgs
+    inputs.self.homeModules.desktop
+    inputs.self.homeModules.users.bahrom04
   ];
 
   # Bootloader.

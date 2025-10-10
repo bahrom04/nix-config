@@ -1,8 +1,9 @@
-{pkgs, ...}: let 
-    homeModules = import ../../modules;
-in
-  {
-  imports = [
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = with inputs.self; [
     homeModules.direnv
     homeModules.nixpkgs
     #outputs.homeModules.packages
@@ -52,6 +53,6 @@ in
   programs.home-manager.enable = true;
 
   # services.tarjimonlar.enable = true;
-  
+
   home.stateVersion = "25.05";
 }

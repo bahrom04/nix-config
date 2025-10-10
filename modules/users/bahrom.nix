@@ -44,7 +44,7 @@ in {
       };
       users = {
         # Import your home-manager configuration
-        bahrom = import ../../home.nix;
+        bahrom = import ../../hosts/matax/home.nix;
       };
     };
   };
