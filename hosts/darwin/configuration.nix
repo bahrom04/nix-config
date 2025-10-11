@@ -9,7 +9,7 @@
 in {
   imports = [
     inputs.home-manager.darwinModules.home-manager
-    inputs.self.nixpkgs
+    inputs.self.homeModules.nixpkgs
     # Custom modules
     # inputs.auto_profile_tg.darwinModules.default
   ];
