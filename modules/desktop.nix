@@ -19,7 +19,7 @@
           hash = "sha256-rh6/QaYWpcS6oNUGT2EsVuQTEn5vTlM7uvKUr9AcviE=";
         }}/uz";
       };
-      layout = "uz-latin";
+      layout = "us,uz-latin";
     };
 
     displayManager = {
