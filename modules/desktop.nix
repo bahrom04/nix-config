@@ -16,7 +16,7 @@ in {
     # Configure keymap in X11
     xkb = {
       extraLayouts.uz-latin = {
-        description = "Uzbek latin and kiril keyboard";
+        description = "Oʻzbekcha klaviatura";
         languages = ["eng" "uzb"];
         # symbolsFile = builtins.fetchurl {
         #   url = "https://github.com/bahrom04/uzbek-latin-keyboard";
