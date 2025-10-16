@@ -1,8 +1,4 @@
-{pkgs, ...}: let
-  compiledLayout = pkgs.runCommand "keyboard-layout" {} ''
-    ${pkgs.xorg.xkbcomp}/bin/xkbcomp ${../layout.xkb} $out
-  '';
-in {
+{pkgs, ...}: {
   services.flatpak.enable = true;
 
   console.keyMap = "us";
@@ -11,18 +7,17 @@ in {
   services.xserver = {
     enable = true;
 
-    # displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${compiledLayout} $DISPLAY";
-
     # Configure keymap in X11
     xkb = {
       extraLayouts.uz-latin = {
-        description = "Oʻzbekcha klaviatura";
+        description = "Oʻzbekcha";
         languages = ["eng" "uzb"];
-        # symbolsFile = builtins.fetchurl {
-        #   url = "https://github.com/bahrom04/uzbek-latin-keyboard";
-        #   sha256 = "1parfkk1anrnkx5b8xr00fbn6a56m9g0yipcyyvi97rkhyfm6446";
-        # };
-        symbolsFile = ../uz;
+        symbolsFile = "${pkgs.fetchFromGitHub {
+          owner = "bahrom04";
+          repo = "uzbek-latin-keyboard";
+          rev = "main";
+          hash = "sha256-rh6/QaYWpcS6oNUGT2EsVuQTEn5vTlM7uvKUr9AcviE=";
+        }}/uz";
       };
       layout = "uz-latin";
     };
