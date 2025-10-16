@@ -28,7 +28,7 @@
 
     # l10n
     wl-clipboard
-    espanso-wayland
+    #espanso-wayland
   ];
 
   home.stateVersion = "25.05";
