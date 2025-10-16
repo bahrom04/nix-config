@@ -1,16 +1,32 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  compiledLayout = pkgs.runCommand "keyboard-layout" {} ''
+    ${pkgs.xorg.xkbcomp}/bin/xkbcomp ${../layout.xkb} $out
+  '';
+in {
   services.flatpak.enable = true;
 
+  console.keyMap = "us";
   # Enable the X11 windowing system.
   # Enable the GNOME Desktop Environment.
   services.xserver = {
     enable = true;
 
+    # displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${compiledLayout} $DISPLAY";
+
     # Configure keymap in X11
     xkb = {
-      layout = "us";
-      variant = "";
+      extraLayouts.uz-latin = {
+        description = "Uzbek latin and kiril keyboard";
+        languages = ["eng" "uzb"];
+        # symbolsFile = builtins.fetchurl {
+        #   url = "https://github.com/bahrom04/uzbek-latin-keyboard";
+        #   sha256 = "1parfkk1anrnkx5b8xr00fbn6a56m9g0yipcyyvi97rkhyfm6446";
+        # };
+        symbolsFile = ../uz;
+      };
+      layout = "uz-latin";
     };
+
     displayManager = {
       gdm = {
         enable = true;

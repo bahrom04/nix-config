@@ -16,6 +16,10 @@
     # outputs.homeModules.services.espanso
   ];
 
+  home.username = "bahrom";
+  home.homeDirectory = "/home/bahrom";
+  home.keyboard = null;
+  
   programs.home-manager.enable = true;
 
   # services.tarjimonlar.enable = true;

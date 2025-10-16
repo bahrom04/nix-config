@@ -1,7 +1,4 @@
 {pkgs, ...}: {
-  home.username = "bahrom";
-  home.homeDirectory = "/home/bahrom";
-
   # Foydalanuvchi profiliga oʻrnatilishi kerak boʻlgan paketlar
   home.packages = with pkgs; [
     git

@@ -115,6 +115,8 @@ in {
         haveged
         element-desktop
         telegram-desktop
+        xorg.setxkbmap
+        xorg.xkbcomp
         # Browsers
         google-chrome
         chromium
