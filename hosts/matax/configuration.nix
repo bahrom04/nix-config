@@ -59,7 +59,7 @@ in {
     };
     # NVIDIA driver support
     xserver.videoDrivers = ["nvidia"];
-    e-imzo.enable = true;
+    e-imzo.enable = false;
     #auto_profile_tg = {
     #  enable = false;
     #  api_id = config.sops.secrets.api_id.path;
