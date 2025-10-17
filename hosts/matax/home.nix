@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  imports = with inputs.self;[
+  imports = with inputs.self; [
     homeModules.direnv
     homeModules.nixpkgs
     homeModules.packages
@@ -16,10 +16,17 @@
     # outputs.homeModules.services.espanso
   ];
 
-  home.username = "bahrom";
-  home.homeDirectory = "/home/bahrom";
-  home.keyboard = null;
-  
+  # home.keyboard = null;
+  home = {
+    username = "bahrom";
+    homeDirectory = "/home/bahrom";
+    
+    keyboard = {
+      layout = "uz";
+      variant = "latin";
+    };
+  };
+
   programs.home-manager.enable = true;
 
   # services.tarjimonlar.enable = true;

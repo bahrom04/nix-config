@@ -9,17 +9,20 @@
 
     # Configure keymap in X11
     xkb = {
-      extraLayouts.uz-latin = {
-        description = "Oʻzbekcha";
+      extraLayouts.uz = {
+        description = "Uzbek (Oʻzbekiston)";
         languages = ["eng" "uzb"];
         symbolsFile = "${pkgs.fetchFromGitHub {
           owner = "bahrom04";
           repo = "uzbek-latin-keyboard";
           rev = "main";
-          hash = "sha256-rh6/QaYWpcS6oNUGT2EsVuQTEn5vTlM7uvKUr9AcviE=";
+          hash = "sha256-09PLyZiimPTC9TiaZh1C2zTWBRz+yOJdwOXb8rOB7YU=";
         }}/uz";
+        # symbolsFile = ../uz;
       };
-      layout = "us,uz-latin";
+      layout = "uz,us";
+      variant = "latin";
+
     };
 
     displayManager = {
