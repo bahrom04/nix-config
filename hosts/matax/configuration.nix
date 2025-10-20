@@ -134,6 +134,7 @@ in {
   environment.variables = {
     DICPATH = "/run/current-system/sw/share/hunspell/";
     DICTIONARY_PATH = "/run/current-system/sw/share/hunspell";
+    NIXPKGS_ALLOW_UNFREE = 1;
   };
   # android_sdk.accept_license = true;
   programs = {
@@ -153,6 +154,9 @@ in {
   # Select host type for the system
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
+  fonts.packages = with pkgs; [
+    corefonts
+  ];
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.05";

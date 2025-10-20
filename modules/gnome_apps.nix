@@ -20,4 +20,6 @@
   pkgs.prismlauncher
   pkgs.github-desktop
   pkgs.thunderbird
+  # some apps
+  pkgs.onlyoffice-bin
 ]
