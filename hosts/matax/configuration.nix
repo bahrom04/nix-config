@@ -127,6 +127,7 @@ in {
         nix-software-center
         xinux-module-manager
         nixos-conf-editor
+        libgnomekbd # gkbd-keyboard-display
       ]
       ++ gnomeApps;
   };
