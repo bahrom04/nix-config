@@ -123,6 +123,6 @@ xkb_symbols "latin" {
 
     key <SPCE> { [ space, space, nobreakspace ] };  // SPACE, SPACE, NO-BREAK SPACE
 
-    include "level3(switch)"
+    include "level3(ralt_switch)"
     
 };
