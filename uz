@@ -3,7 +3,6 @@
 // The Cyrillic variant (the default) is standard compliant.
 // The standard was accepted by the official body of Uzbekistan.
 // http://www.uznet.net/index.php?option=com_content&task=view&id=288&Itemid=58
-//
 // February 2007, Mashrab Kuvatov <kmashrab@uni-bremen.de>
 
 default partial alphanumeric_keys
