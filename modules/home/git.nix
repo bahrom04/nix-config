@@ -6,10 +6,10 @@
     userName = "bahrom04";
     userEmail = "magdiyevbahrom@gmail.com";
 
-    # signing = {
-    #   signByDefault = true;
-    #   key = "3A1329E21721DA4B99E4E9403FCB31D3A00AE191";
-    # };
+    signing = {
+      signByDefault = true;
+      key = "6F392032DFAA7D70C243AE2CB21C6C3287D8517F";
+    };
 
     extraConfig = {
       init.defaultBranch = "main";
@@ -22,6 +22,7 @@
       ".idea"
       ".DS_Store"
       "nohup.out"
+      "node_modules"
     ];
   };
 }

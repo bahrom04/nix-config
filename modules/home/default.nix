@@ -12,6 +12,7 @@
   vscode = import ./vscode.nix;
   haskell = import ./haskell.nix;
   starship = import ./starship.nix;
+  packages = import ./packages.nix;
   fastfetch = import ./fastfetch.nix;
   zen-browser = import ./zen-browser.nix;
 }
