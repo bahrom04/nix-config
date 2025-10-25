@@ -67,7 +67,6 @@ xkb_symbols "cyrillic" {
     key <AB09>	{[      Cyrillic_yu,      Cyrillic_YU, U00bb, U201c ]};
 };
 
-// The Latin variant is experimental, as there is no official standard for it.
 
 partial alphanumeric_keys
 xkb_symbols "latin" {
