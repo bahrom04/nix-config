@@ -7,15 +7,7 @@
   lib,
   modulesPath,
   ...
-}: let
-  disks = [
-    # 2TB HDD
-    "/dev/sda"
-
-    # 1TB SATA
-    "/dev/sdb"
-  ];
-in {
+}: {
   imports = [
     inputs.disko.nixosModules.disko
     ./disk-configuration.nix
