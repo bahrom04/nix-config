@@ -2,36 +2,23 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
+  inputs,
   config,
   lib,
   modulesPath,
   ...
 }: {
   imports = [
+    inputs.disko.nixosModules.disko
+    ./disk-configuration.nix
+
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
+  boot.initrd.kernelModules = []; # "nvme"
   boot.kernelModules = ["kvm-amd" "vboxdrv" "vboxnetflt" "vboxnetadp"];
   boot.extraModulePackages = [];
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/ac34aeab-a7b4-4273-8178-90e30051848c";
-    fsType = "ext4";
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/19E6-A67F";
-    fsType = "vfat";
-    options = ["fmask=0077" "dmask=0077"];
-  };
-
-  swapDevices = [
-    {
-      device = "/swapfile";
-    }
-  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

@@ -2,22 +2,21 @@
   lib,
   config,
   inputs,
-  outputs,
   pkgs,
   ...
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-  gnomeApps = outputs.homeModules.gnome_apps {inherit pkgs;};
-  nix-software-center = inputs.nix-software-center.packages.x86_64-linux.nix-software-center;
-  xinux-module-manager = inputs.xinux-module-manager.packages.x86_64-linux.xinux-module-manager;
-  nixos-conf-editor = inputs.nixos-conf-editor.packages.x86_64-linux.nixos-conf-editor;
+  gnomeApps = inputs.self.homeModules.gnome_apps {inherit pkgs;};
+  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.system}".default;
 in {
   imports = [
     ./hardware-configuration.nix
+
     # Home manager darwin modules
     inputs.home-manager.nixosModules.home-manager
-    outputs.homeModules.nixpkgs
-    outputs.homeModules.desktop
+    inputs.self.homeModules.nixpkgs
+    inputs.self.homeModules.desktop
+    inputs.self.homeModules.users.bahrom04
   ];
 
   # Bootloader.
@@ -29,7 +28,7 @@ in {
   # Enable networking
   networking = {
     networkmanager.enable = true;
-    hostName = "bahrom"; # Define your hostname.
+    hostName = "matax"; # Define your hostname.
   };
 
   # Set your time zone.
@@ -57,7 +56,7 @@ in {
     };
     # NVIDIA driver support
     xserver.videoDrivers = ["nvidia"];
-    e-imzo.enable = true;
+    e-imzo.enable = false;
     #auto_profile_tg = {
     #  enable = false;
     #  api_id = config.sops.secrets.api_id.path;
@@ -75,21 +74,6 @@ in {
   # Enable sound with pipewire.
   security = {
     rtkit.enable = true;
-    # sudo.extraRules = [
-    #   {
-    #     users = ["bahrom"];
-    #     commands = [
-    #       {
-    #         command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake . --show-trace";
-    #         options = ["NOPASSWD"];
-    #       }
-    #       {
-    #         command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake .";
-    #         options = ["NOPASSWD"];
-    #       }
-    #     ];
-    #   }
-    # ];
   };
 
   environment = {
@@ -105,59 +89,53 @@ in {
         fastfetch
         age
         sops
+        hunspell
+        hunspell-uz # todo: add pkgs.hunspell.uz-UZ
+        hunspellDicts.uk_UA
         rng-tools
         pinentry
         haveged
         element-desktop
         telegram-desktop
+        xorg.setxkbmap
+        xorg.xkbcomp
+        # Browsers
         google-chrome
-        android-studio
+        chromium
         # Services
         redis
         # Xinux
-        nix-software-center
-        xinux-module-manager
-        nixos-conf-editor
+        libgnomekbd # gkbd-keyboard-display
       ]
       ++ gnomeApps;
   };
+
+  environment.variables = {
+    DICPATH = "/run/current-system/sw/share/hunspell/";
+    DICTIONARY_PATH = "/run/current-system/sw/share/hunspell";
+    NIXPKGS_ALLOW_UNFREE = 1;
+  };
   # android_sdk.accept_license = true;
-
-  users.users = {
-    bahrom = {
-      name = "bahrom";
-      home = "/home/bahrom";
-      isNormalUser = true;
-      description = "bahrom's profile";
-      extraGroups = ["networkmanager" "wheel" "vboxusers" "libvirtd"];
-      shell = pkgs.zsh;
-    };
-    adam = {
-      name = "adam";
-      home = "/home/adam";
-      isNormalUser = true;
-      description = "islom";
-      extraGroups = ["networkmanager" "wheel"];
-    };
-  };
-
-  home-manager = {
-    # useGlobalPkgs = true;
-    # useUserPackages = true;
-    backupFileExtension = "hbak";
-    users.bahrom = import ../../home.nix;
-    extraSpecialArgs = {
-      inherit inputs outputs;
-    };
-  };
   programs = {
     zsh.enable = true;
     mtr.enable = true;
     steam.enable = true;
+    # Install firefox.
+    firefox = {
+      enable = true;
+      preferences = {
+        "spellchecker.dictionary_path" = "/run/current-system/sw/share/hunspell/";
+        "layout.spellcheckDefault" = 2;
+      };
+      languagePacks = ["en-US" "uz"];
+    };
   };
   # Select host type for the system
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
+  fonts.packages = with pkgs; [
+    corefonts
+  ];
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.05";

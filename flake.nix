@@ -70,6 +70,7 @@
         # inputs.flake-parts.flakeModules.modules
         ./hosts/darwin/flake.nix
         ./hosts/matax/flake.nix
+        ./hosts/dell/flake.nix
       ];
 
       flake = {
