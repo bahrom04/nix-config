@@ -138,5 +138,5 @@ in {
   ];
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }
