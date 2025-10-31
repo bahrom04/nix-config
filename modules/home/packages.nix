@@ -4,7 +4,7 @@
     git
     gnupg # gpg key uchun
     neofetch
-
+    curl
     # arxivlar
     zip
     xz

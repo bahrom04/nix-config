@@ -13,20 +13,20 @@
 in {
   config = {
     programs.ssh = {
+      # enableDefaultConfig = false;
       enable = true;
       inherit extraConfig;
-      addKeysToAgent = "yes";
-
-      # Server keep alive
-      serverAliveInterval = 30;
-      serverAliveCountMax = 3;
-
+      
       matchBlocks = {
         # Uzinfocom
         kolyma-1 = {
           port = 22;
           user = "bahrom04";
           hostname = "ns1.kolyma.uz";
+          # Server keep alive
+          serverAliveInterval = 30;
+          serverAliveCountMax = 3;
+          addKeysToAgent = "yes";
         };
       };
     };

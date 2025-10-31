@@ -1,35 +1,41 @@
 # reference: https://maksar.github.io/posts/code/2021-09-19-vscode/
 {
   pkgs,
+  inputs,
   ...
-}: {
+}: let
+  inherit
+    (pkgs.nix4vscode)
+    forVscode
+    ;
+in {
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
     profiles.default = {
-      extensions = with pkgs.vscode-marketplace; [
-        mkhl.direnv
-        dracula-theme.theme-dracula
-        yzhang.markdown-all-in-one
-        ecmel.vscode-html-css
-        fill-labs.dependi
-        ms-python.vscode-pylance
-        ms-python.python
-        ms-vscode-remote.vscode-remote-extensionpack
-        ms-vscode-remote.remote-ssh
-        ms-python.black-formatter
-        rust-lang.rust-analyzer
-        zguolee.tabler-icons
-        vscode-icons-team.vscode-icons
-        tal7aouy.icons
-        tamasfe.even-better-toml
-        #kubukoz.nickel-syntax
-        bbenoist.nix
-        jnoortheen.nix-ide
-        mesonbuild.mesonbuild
-        kamadorueda.alejandra
-        haskell.haskell
-        justusadam.language-haskell
+      extensions = forVscode [
+        "mkhl.direnv"
+        "dracula-theme.theme-dracula"
+        "yzhang.markdown-all-in-one"
+        "ecmel.vscode-html-css"
+        "fill-labs.dependi"
+        "ms-python.vscode-pylance"
+        "ms-python.python"
+        "ms-vscode-remote.vscode-remote-extensionpack"
+        "ms-vscode-remote.remote-ssh"
+        "ms-python.black-formatter"
+        "rust-lang.rust-analyzer"
+        "zguolee.tabler-icons"
+        "vscode-icons-team.vscode-icons"
+        "tal7aouy.icons"
+        "tamasfe.even-better-toml"
+        "kubukoz.nickel-syntax"
+        "bbenoist.nix"
+        "jnoortheen.nix-ide"
+        "mesonbuild.mesonbuild"
+        "kamadorueda.alejandra"
+        "haskell.haskell"
+        "justusadam.language-haskell"
       ];
 
       userSettings = {

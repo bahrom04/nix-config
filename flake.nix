@@ -37,8 +37,9 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     # VSCode extension marketplace
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
+    nix4vscode = {
+      url = "github:nix-community/nix4vscode";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # Xinux
     nix-software-center = {
@@ -62,13 +63,13 @@
     };
   };
 
-  outputs = inputs:
+  outputs = {self, ...} @ inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux" "aarch64-darwin"];
 
       imports = [
         # inputs.flake-parts.flakeModules.modules
-        ./hosts/darwin/flake.nix
+        # ./hosts/darwin/flake.nix
         ./hosts/matax/flake.nix
         ./hosts/dell/flake.nix
       ];
