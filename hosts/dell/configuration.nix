@@ -93,7 +93,7 @@ in {
         hunspell-uz # todo: add pkgs.hunspell.uz-UZ
         hunspellDicts.uk_UA
         rng-tools
-        pinentry
+        pinentry-curses
         haveged
         element-desktop
         telegram-desktop

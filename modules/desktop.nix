@@ -2,7 +2,6 @@
   services.flatpak.enable = true;
 
   console.keyMap = "us";
-  # Enable the X11 windowing system.
   # Enable the GNOME Desktop Environment.
   services.xserver = {
     enable = true;
@@ -25,9 +24,10 @@
     };
   };
 
-  services.xserver = {
+  services = {
     displayManager = {
       gdm = {
+        wayland = true;
         enable = true;
         autoSuspend = false;
       };
