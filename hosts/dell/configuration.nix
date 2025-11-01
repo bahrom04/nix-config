@@ -7,7 +7,7 @@
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
   gnomeApps = inputs.self.homeModules.gnome_apps {inherit pkgs;};
-  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.system}".default;
+  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.stdenv.hostPlatform.system}".default;
 in {
   imports = [
     ./hardware-configuration.nix

@@ -6,14 +6,9 @@
   pythonEnv = pkgs.python3.withPackages (ps:
     with ps; [
       pip
-      APScheduler
-      loguru
-      flit-core
       python-dotenv
       pytz
       requests
-      tenacity
-      telethon
       setuptools
     ]);
 in

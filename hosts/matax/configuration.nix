@@ -7,10 +7,10 @@
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
   gnomeApps = inputs.self.homeModules.gnome_apps {inherit pkgs;};
-  nix-software-center = inputs.nix-software-center.packages."${pkgs.system}".nix-software-center;
-  xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.system}".xinux-module-manager;
-  nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.system}".nixos-conf-editor;
-  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.system}".default;
+  nix-software-center = inputs.nix-software-center.packages."${pkgs.stdenv.hostPlatform.system}".nix-software-center;
+  xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
+  nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
+  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.stdenv.hostPlatform.system}".default;
 in {
   imports = [
     ./hardware-configuration.nix
