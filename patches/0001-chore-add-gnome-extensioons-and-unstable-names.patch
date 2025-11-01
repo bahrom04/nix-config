@@ -1,0 +1,122 @@
+From c094cb1ddb147632f302459e5b85165e20a4b63f Mon Sep 17 00:00:00 2001
+From: bahrom04 <magdiyevbahrom@gmail.com>
+Date: Sat, 1 Nov 2025 15:03:03 +0500
+Subject: [PATCH] chore: add gnome extensioons and unstable names
+
+---
+ flake.lock                    | 12 ++++++------
+ hosts/dell/configuration.nix  |  2 +-
+ hosts/matax/configuration.nix |  8 ++++----
+ modules/desktop.nix           | 10 ++++++++++
+ shell.nix                     |  5 -----
+ 5 files changed, 21 insertions(+), 16 deletions(-)
+
+diff --git a/flake.lock b/flake.lock
+index 5cc4aae..0e91448 100644
+--- a/flake.lock
++++ b/flake.lock
+@@ -323,11 +323,11 @@
+         "systems": "systems_4"
+       },
+       "locked": {
+-        "lastModified": 1761875994,
+-        "narHash": "sha256-VNv/TjDoq7qJ9tcxBeixe7ert0HpUIJGlXV9kyNtuFk=",
++        "lastModified": 1761962625,
++        "narHash": "sha256-u/XJbjxYB+7VXrDqXNsFMzSk73ki7+muo4V6K5e+frM=",
+         "owner": "nix-community",
+         "repo": "nix4vscode",
+-        "rev": "0a6f252480cc42599077b6d1cabbf58677315640",
++        "rev": "59a0544c05455377826dd7dc8f64a396c31f9e29",
+         "type": "github"
+       },
+       "original": {
+@@ -386,11 +386,11 @@
+     },
+     "nixpkgs": {
+       "locked": {
+-        "lastModified": 1761672384,
+-        "narHash": "sha256-o9KF3DJL7g7iYMZq9SWgfS1BFlNbsm6xplRjVlOCkXI=",
++        "lastModified": 1761907660,
++        "narHash": "sha256-kJ8lIZsiPOmbkJypG+B5sReDXSD1KGu2VEPNqhRa/ew=",
+         "owner": "NixOS",
+         "repo": "nixpkgs",
+-        "rev": "08dacfca559e1d7da38f3cf05f1f45ee9bfd213c",
++        "rev": "2fb006b87f04c4d3bdf08cfdbc7fab9c13d94a15",
+         "type": "github"
+       },
+       "original": {
+diff --git a/hosts/dell/configuration.nix b/hosts/dell/configuration.nix
+index 3efde0f..6953e90 100644
+--- a/hosts/dell/configuration.nix
++++ b/hosts/dell/configuration.nix
+@@ -7,7 +7,7 @@
+ }: let
+   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
+   gnomeApps = inputs.self.homeModules.gnome_apps {inherit pkgs;};
+-  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.system}".default;
++  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.stdenv.hostPlatform.system}".default;
+ in {
+   imports = [
+     ./hardware-configuration.nix
+diff --git a/hosts/matax/configuration.nix b/hosts/matax/configuration.nix
+index 3d530d8..3ee4b67 100644
+--- a/hosts/matax/configuration.nix
++++ b/hosts/matax/configuration.nix
+@@ -7,10 +7,10 @@
+ }: let
+   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
+   gnomeApps = inputs.self.homeModules.gnome_apps {inherit pkgs;};
+-  nix-software-center = inputs.nix-software-center.packages."${pkgs.system}".nix-software-center;
+-  xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.system}".xinux-module-manager;
+-  nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.system}".nixos-conf-editor;
+-  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.system}".default;
++  nix-software-center = inputs.nix-software-center.packages."${pkgs.stdenv.hostPlatform.system}".nix-software-center;
++  xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
++  nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
++  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.stdenv.hostPlatform.system}".default;
+ in {
+   imports = [
+     ./hardware-configuration.nix
+diff --git a/modules/desktop.nix b/modules/desktop.nix
+index 524bd66..2c1836b 100644
+--- a/modules/desktop.nix
++++ b/modules/desktop.nix
+@@ -101,6 +101,16 @@
+     };
+   };
+ 
++  environment.systemPackages = [
++
++    pkgs.gnomeExtensions.appindicator
++    pkgs.gnomeExtensions.dash-to-dock
++    pkgs.gnomeExtensions.gsconnect
++    pkgs.gnomeExtensions.clipboard-indicator
++
++    pkgs.papirus-icon-theme
++  ];
++  
+   # Virtualization (for GNOME Boxes)
+   virtualisation = {
+     libvirtd = {
+diff --git a/shell.nix b/shell.nix
+index c4a4a89..e1d8e74 100644
+--- a/shell.nix
++++ b/shell.nix
+@@ -6,14 +6,9 @@
+   pythonEnv = pkgs.python3.withPackages (ps:
+     with ps; [
+       pip
+-      APScheduler
+-      loguru
+-      flit-core
+       python-dotenv
+       pytz
+       requests
+-      tenacity
+-      telethon
+       setuptools
+     ]);
+ in
+-- 
+2.51.0
+

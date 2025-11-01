@@ -1,0 +1,8 @@
+--- test.txt	2025-11-01 15:19:12.069587258 +0500
++++ test-p.txt	2025-11-01 15:19:16.572617359 +0500
+@@ -1 +1,2 @@
+-asd
+\ No newline at end of file
++aaaaaa
++aaa
+\ No newline at end of file
