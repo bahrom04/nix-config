@@ -6,14 +6,17 @@
 }: let
   inherit
     (pkgs.nix4vscode)
-    forVscode
+    forVscodeVersion
     ;
 in {
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
     profiles.default = {
-      extensions = forVscode [
+      enableExtensionUpdateCheck = false;
+      enableUpdateCheck = false;
+
+      extensions = forVscodeVersion "1.100.2" [
         "mkhl.direnv"
         "dracula-theme.theme-dracula"
         "yzhang.markdown-all-in-one"
