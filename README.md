@@ -8,6 +8,8 @@
 # NixOS
 ```bash
 sudo nixos-rebuild switch --flake .#nixos #use hostname here
+
+nix build .#nixosConfigurations.bahrom04.config.system.build.toplevel --show-trace
 ```
 
 ### Install from live iso. Disko
