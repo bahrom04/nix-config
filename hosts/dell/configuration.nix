@@ -28,7 +28,7 @@ in {
   # Enable networking
   networking = {
     networkmanager.enable = true;
-    hostName = "matax"; # Define your hostname.
+    hostName = "dell"; # Define your hostname.
   };
 
   # Set your time zone.
