@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   inputs,
   outputs,
   ...
@@ -12,9 +11,9 @@ in {
       bahrom = {
         inherit hashedPassword;
         isNormalUser = true;
-        description = "Bakhrom Rakhmatov";
+        description = "Bahrom";
         shell = pkgs.zsh;
-        
+
         extraGroups = [
           "networkmanager"
           "wheel"
@@ -26,14 +25,13 @@ in {
           "input"
         ];
 
-        openssh.authorizedKeys.keys = lib.strings.splitString "\n" (
-          builtins.readFile (
-            builtins.fetchurl {
-              url = "https://github.com/bahrom04.keys";
-              sha256 = "";
-            }
-          )
-        );
+        openssh.authorizedKeys.keys = [
+          # dll
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDH+EVAeaZpe98gggH8fPQ4bKEgw2FbTqYzngTRSpSbp magdiyevbahrom04@gmail.com"
+          # mtx
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFEJjeEUMVe4fyRXVGbG4UvQiSACjPv/AEdyytIazfgT magdiyevbahrom@gmail.com"
+          # add more
+        ];
       };
     };
 

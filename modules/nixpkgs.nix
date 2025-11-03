@@ -45,7 +45,7 @@
       ];
       trusted-users = [
         "root"
-        "bahrom04"
+        "bahrom"
         "@wheel"
       ];
     };
