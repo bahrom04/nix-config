@@ -38,6 +38,8 @@ nix build .#darwinConfigurations.bahrom04.config.system.build.toplevel --show-tr
 ```bash
 nix fmt .
 nix flake check --all-systems --show-trace
+
+nix repl :lf .
 ```
 
 ## Edit secrets 
