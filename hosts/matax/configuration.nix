@@ -69,6 +69,7 @@ in {
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
     # NVIDIA driver support
     xserver.videoDrivers = ["nvidia"];
     e-imzo.enable = false;
@@ -85,7 +86,12 @@ in {
     #  weather_api_key = config.sops.secrets.weather_api_key.path;
     #};
   };
-
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
   # Enable sound with pipewire.
   security = {
     rtkit.enable = true;

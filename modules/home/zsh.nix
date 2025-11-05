@@ -6,6 +6,7 @@
     autosuggestion.enable = true;
     initContent = ''
       eval "$(starship init zsh)"
+      export GPG_TTY="$(tty)"
     '';
   };
 }
