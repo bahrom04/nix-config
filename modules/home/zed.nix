@@ -9,6 +9,7 @@
     "lua"
     "make"
     "material-icon-theme"
+    "vscode-icons"
     "neocmake"
     "nginx"
     "nix"
@@ -22,6 +23,7 @@
     "wgsl"
     "xml"
     "zig"
+
   ];
 
   settings = {
@@ -99,9 +101,9 @@
     theme = {
       mode = "system";
       light = "Ayu Light";
-      dark = "Ayu Mirage";
+      dark = "VSCode Dark Modern";
     };
-    icon_theme = "Material Icon Theme";
+    icon_theme = "VSCode Icons for Zed (Dark)";
 
     tab_size = 2;
     preferred_line_length = 100;
