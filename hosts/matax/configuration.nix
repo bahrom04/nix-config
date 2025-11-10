@@ -92,7 +92,7 @@ in {
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentryPackage = pkgs.pinentry-gnome3;
   };
   programs.atop.enable = true;
   # Enable sound with pipewire.
@@ -132,7 +132,7 @@ in {
         hunspell-uz # todo: add pkgs.hunspell.uz-UZ
         hunspellDicts.uk_UA
         rng-tools
-        pinentry-curses
+        pinentry-gnome3
         haveged
         element-desktop
         telegram-desktop
