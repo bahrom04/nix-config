@@ -155,6 +155,7 @@ in {
     # exclude apps
     gnome.excludePackages = with pkgs; [];
   };
+  # remove all gnome utility apps 
   # services.gnome.core-utilities.enable = false;
 
   environment.variables = {
