@@ -155,6 +155,7 @@ in {
     # exclude apps
     gnome.excludePackages = with pkgs; [];
   };
+  # services.gnome.core-utilities.enable = false;
 
   environment.variables = {
     DICPATH = "/run/current-system/sw/share/hunspell/";
