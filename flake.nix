@@ -61,6 +61,11 @@
       url = "github:uzbek-net/uz-hunspell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-data = {
+      url = "github:xinux-org/nix-data";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, ...} @ inputs:

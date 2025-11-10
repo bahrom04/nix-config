@@ -20,6 +20,8 @@ in {
     inputs.self.homeModules.nixpkgs
     inputs.self.homeModules.desktop
     inputs.self.homeModules.users.bahrom04
+
+    inputs.nix-data.nixosModules.nix-data
   ];
 
   # Bootloader.
@@ -92,6 +94,7 @@ in {
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-curses;
   };
+  programs.atop.enable = true;
   # Enable sound with pipewire.
   security = {
     rtkit.enable = true;
@@ -179,4 +182,11 @@ in {
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
+
+  programs.nix-data = {
+    enable = true;
+    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/matax/configuration.nix";
+    flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
+    flakearg = "matax";
+  };
 }
