@@ -40,6 +40,11 @@ nix fmt .
 nix flake check --all-systems --show-trace
 
 nix repl :lf .
+
+# geting narHash
+nix flake prefetch "github:xinux-org/modules"
+# getting rev
+git rev-parse main
 ```
 
 ## Edit secrets 

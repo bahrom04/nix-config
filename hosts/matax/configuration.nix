@@ -151,6 +151,9 @@ in {
         libgnomekbd # gkbd-keyboard-display
       ]
       ++ gnomeApps;
+      
+    # exclude apps
+    gnome.excludePackages = with pkgs; [];
   };
 
   environment.variables = {
