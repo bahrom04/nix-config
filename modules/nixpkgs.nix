@@ -38,7 +38,7 @@
     enable = true;
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
     settings = {
-      experimental-features = "nix-command flakes";
+      experimental-features = "nix-command flakes pipe-operators";
       substituters = [
         "https://cache.nixos.org/"
         "https://cache.xinux.uz/"
