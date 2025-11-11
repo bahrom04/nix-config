@@ -8,4 +8,5 @@
   nixpkgs = import ./nixpkgs.nix;
   packages = import ./packages.nix;
   gnome_apps = import ./gnome_apps.nix;
+  wallpapers = import ./wallpapers.nix;
 }

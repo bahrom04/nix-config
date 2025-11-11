@@ -19,6 +19,7 @@ in {
     inputs.home-manager.nixosModules.home-manager
     inputs.self.homeModules.nixpkgs
     inputs.self.homeModules.desktop
+    inputs.self.homeModules.wallpapers
     inputs.self.homeModules.users.bahrom04
 
     inputs.nix-data.nixosModules.nix-data
@@ -98,21 +99,6 @@ in {
   # Enable sound with pipewire.
   security = {
     rtkit.enable = true;
-    # sudo.extraRules = [
-    #   {
-    #     users = ["bahrom"];
-    #     commands = [
-    #       {
-    #         command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake . --show-trace";
-    #         options = ["NOPASSWD"];
-    #       }
-    #       {
-    #         command = "/run/wrappers/bin/sudo nixos-rebuild switch --flake .";
-    #         options = ["NOPASSWD"];
-    #       }
-    #     ];
-    #   }
-    # ];
   };
 
   environment = {
@@ -148,14 +134,17 @@ in {
         nix-software-center
         xinux-module-manager
         nixos-conf-editor
-        libgnomekbd # gkbd-keyboard-display
+        libgnomekbd # gkbd-keyboard-display        
       ]
       ++ gnomeApps;
-      
+
     # exclude apps
-    gnome.excludePackages = with pkgs; [];
+    gnome.excludePackages = with pkgs; [
+      gnome-tour
+      # gnome-backgrounds
+    ];
   };
-  # remove all gnome utility apps 
+  # remove all gnome utility apps
   # services.gnome.core-utilities.enable = false;
 
   environment.variables = {
