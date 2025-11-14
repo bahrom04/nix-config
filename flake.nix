@@ -14,7 +14,6 @@
 
     # Flake utils for eachSystem
     # flake-utils.url = "github:numtide/flake-utils";
-
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     # Home manager
@@ -32,10 +31,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # auto_profile_tg = {
-    #   url = "github:bahrom04/auto-profile-tg";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     # VSCode extension marketplace
     nix4vscode = {
       url = "github:nix-community/nix4vscode";
@@ -66,6 +61,11 @@
       url = "github:xinux-org/nix-data";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # auto_profile_tg = {
+    #   url = "github:bahrom04/auto-profile-tg";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {self, ...} @ inputs:
