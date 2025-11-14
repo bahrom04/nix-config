@@ -52,7 +52,5 @@
 
   programs.home-manager.enable = true;
 
-  # services.tarjimonlar.enable = true;
-
   home.stateVersion = "25.11";
 }

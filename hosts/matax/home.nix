@@ -28,6 +28,4 @@
   };
 
   programs.home-manager.enable = true;
-
-  # services.tarjimonlar.enable = true;
 }
