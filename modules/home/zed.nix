@@ -108,17 +108,17 @@
     tab_size = 2;
     preferred_line_length = 100;
 
-    autosave = "after_delay";
+    autosave = "on_focus_change";
     format_on_save = "language_server";
     enable_language_server = true;
 
     soft_wrap = "editor_width";
 
     buffer_font_size = 16;
-    buffer_font_family = "mononoki";
+    # buffer_font_family = "mononoki";
 
     ui_font_size = 16;
-    ui_font_family = "mononoki";
+    # ui_font_family = "mononoki";
 
     confirm_quit = false;
     use_autoclose = false;
@@ -136,9 +136,9 @@
       button = false;
     };
 
-    chat_panel = {
-      button = "never";
-    };
+    # chat_panel = {
+    #   button = "never";
+    # };
 
     agent = {
       enabled = false;
