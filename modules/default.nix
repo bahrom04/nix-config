@@ -2,8 +2,8 @@
   home = import ./home;
   users = import ./users;
   sops = import ./sops.nix;
-  services = import ./services;
   direnv = import ./direnv.nix;
+  keyboard = import ./keyboard;
   desktop = import ./desktop.nix;
   nixpkgs = import ./nixpkgs.nix;
   packages = import ./packages.nix;

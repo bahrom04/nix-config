@@ -20,6 +20,7 @@ in {
     inputs.self.homeModules.nixpkgs
     inputs.self.homeModules.desktop
     inputs.self.homeModules.wallpapers
+    inputs.self.homeModules.keyboard
     inputs.self.homeModules.users.bahrom04
 
     inputs.nix-data.nixosModules.nix-data
