@@ -12,7 +12,7 @@
   manifest = (pkgs.lib.importTOML ./Cargo.toml).package;
 
   # Rust Toolchain via fenix
-  toolchain = fenix.packages.${pkgs.system}.fromToolchainFile {
+  toolchain = fenix.packages.${pkgs.stdenv.hostPlatform.system}.fromToolchainFile {
     file = ./rust-toolchain.toml;
 
     # Don't worry, if you need sha256 of your toolchain,
