@@ -54,8 +54,33 @@ in {
   time.timeZone = "Asia/Tashkent";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "uz_UZ.UTF-8";
-  i18n.supportedLocales = ["all"];
+
+  i18n = {
+    defaultLocale = "uz_UZ.UTF-8";
+    extraLocales = [
+      "en_US.UTF-8/UTF-8"
+      "ru_RU.UTF-8/UTF-8"
+      "uz_UZ.UTF-8/UTF-8"
+    ];
+    supportedLocales = [
+      "en_US.UTF-8/UTF-8"
+      "ru_RU.UTF-8/UTF-8"
+      "uz_UZ.UTF-8/UTF-8"
+    ];
+  };
+
+  # systemd.services = {
+  #   "libreoffice-one-shot" = {
+  #     description = "Run once";
+  #     wantedBy = ["multi-user.target"];
+  #     after = ["network.target" "local-fs.target"];
+  #     serviceConfig = {
+  #       Type = "oneshot";
+  #       RemainAfterExit = true;
+  #       ExecStart = ../../apply.sh;
+  #     };
+  #   };
+  # };
 
   # Garbage collector.
   nix.gc = {
@@ -135,7 +160,7 @@ in {
         nix-software-center
         xinux-module-manager
         nixos-conf-editor
-        libgnomekbd # gkbd-keyboard-display        
+        libgnomekbd # gkbd-keyboard-display
       ]
       ++ gnomeApps;
 
