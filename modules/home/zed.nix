@@ -109,7 +109,7 @@
     preferred_line_length = 100;
 
     autosave = "on_focus_change";
-    format_on_save = "language_server";
+    formatter = "on";
     enable_language_server = true;
 
     soft_wrap = "editor_width";
