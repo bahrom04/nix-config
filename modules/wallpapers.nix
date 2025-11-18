@@ -18,7 +18,7 @@
 
                 # GNOME
                 mkdir -p $out/share/backgrounds/nixos
-                ln -s $src $out/share/backgrounds/nixos/${src.name}
+                ln -s $src $out/share/backgrounds/nixos/${baseNameOf src}
 
                 mkdir -p $out/share/gnome-background-properties/
                 cat <<EOF > $out/share/gnome-background-properties/${name}.xml
@@ -38,11 +38,11 @@
 
                 # TODO: is this path still needed?
                 mkdir -p $out/share/artwork/gnome
-                ln -s $src $out/share/artwork/gnome/${src.name}
+                ln -s $src $out/share/artwork/gnome/${baseNameOf src}
 
                 # KDE
                 mkdir -p $out/share/wallpapers/${name}/contents/images
-                ln -s $src $out/share/wallpapers/${name}/contents/images/${src.name}
+                ln -s $src $out/share/wallpapers/${name}/contents/images/${baseNameOf src}
                 cat >>$out/share/wallpapers/${name}/metadata.desktop <<_EOF
         [Desktop Entry]
         Name=${name}
@@ -53,8 +53,8 @@
       '';
 
       passthru = {
-        gnomeFilePath = "${pkg}/share/backgrounds/nixos/${src.name}";
-        kdeFilePath = "${pkg}/share/wallpapers/${name}/contents/images/${src.name}";
+        gnomeFilePath = "${pkg}/share/backgrounds/nixos/${baseNameOf src}";
+        kdeFilePath = "${pkg}/share/wallpapers/${name}/contents/images/${baseNameOf src}";
       };
 
       meta = with lib; {
