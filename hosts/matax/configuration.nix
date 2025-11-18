@@ -10,7 +10,8 @@
   nix-software-center = inputs.nix-software-center.packages."${pkgs.stdenv.hostPlatform.system}".nix-software-center;
   xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
   nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
-  hunspell-uz = inputs.hunspell-uz.packages."${pkgs.stdenv.hostPlatform.system}".default;
+  xinux-wallpapers = lib.recurseIntoAttrs (pkgs.callPackage inputs.self.homeModules.wallpapers { });
+
 in {
   imports = [
     ./hardware-configuration.nix
@@ -19,7 +20,7 @@ in {
     inputs.home-manager.nixosModules.home-manager
     inputs.self.homeModules.nixpkgs
     inputs.self.homeModules.desktop
-    inputs.self.homeModules.wallpapers
+    # inputs.self.homeModules.wallpapers
     inputs.self.homeModules.keyboard
     inputs.self.homeModules.users.bahrom04
 
@@ -141,8 +142,7 @@ in {
         age
         sops
         hunspell
-        hunspell-uz # todo: add pkgs.hunspell.uz-UZ
-        hunspellDicts.uk_UA
+        hunspellDicts.uz_UZ 
         rng-tools
         pinentry-gnome3
         haveged
@@ -156,11 +156,15 @@ in {
         android-studio
         # Services
         redis
-        # Xinux
+
+        # Xinux apps
         nix-software-center
         xinux-module-manager
         nixos-conf-editor
-        libgnomekbd # gkbd-keyboard-display
+        # xinux-wallpapers
+        xinux-wallpapers.xinux-blue-light
+        xinux-wallpapers.xinux-blue-dark
+        xinux-wallpapers.xinux-orange
       ]
       ++ gnomeApps;
 
