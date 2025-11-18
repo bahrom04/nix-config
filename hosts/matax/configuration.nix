@@ -10,8 +10,7 @@
   nix-software-center = inputs.nix-software-center.packages."${pkgs.stdenv.hostPlatform.system}".nix-software-center;
   xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
   nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
-  xinux-wallpapers = lib.recurseIntoAttrs (pkgs.callPackage inputs.self.homeModules.wallpapers { });
-
+  xinux-wallpapers = lib.recurseIntoAttrs (pkgs.callPackage inputs.self.homeModules.wallpapers {});
 in {
   imports = [
     ./hardware-configuration.nix
@@ -142,7 +141,7 @@ in {
         age
         sops
         hunspell
-        hunspellDicts.uz_UZ 
+        hunspellDicts.uz_UZ
         rng-tools
         pinentry-gnome3
         haveged
@@ -182,6 +181,7 @@ in {
     DICTIONARY_PATH = "/run/current-system/sw/share/hunspell";
     NIXPKGS_ALLOW_UNFREE = 1;
   };
+
   # android_sdk.accept_license = true;
   programs = {
     zsh.enable = true;
