@@ -61,12 +61,16 @@
       url = "github:xinux-org/nix-data";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    e-imzo-manager  = {
+
+    e-imzo-manager = {
       url = "github:xinux-org/e-imzo-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
+    mac-style-plymouth = {
+      url = "github:SergioRibera/s4rchiso-plymouth-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # auto_profile_tg = {
     #   url = "github:bahrom04/auto-profile-tg";
     #   inputs.nixpkgs.follows = "nixpkgs";

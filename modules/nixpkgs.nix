@@ -10,6 +10,7 @@
       #outputs.overlays.additions
       #outputs.overlays.modifications
       inputs.nix4vscode.overlays.default
+      inputs.mac-style-plymouth.overlays.default
     ];
     config = {
       # Disable if you don't want unfree packages

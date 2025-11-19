@@ -11,6 +11,7 @@
   xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
   nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
   xinux-wallpapers = lib.recurseIntoAttrs (pkgs.callPackage inputs.self.homeModules.wallpapers {});
+  e-imzo-manager = inputs.e-imzo-manager.packages."${pkgs.stdenv.hostPlatform.system}".default;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -27,9 +28,16 @@ in {
   ];
 
   # Bootloader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    plymouth = {
+      enable = true;
+      theme = "mac-style";
+      themePackages = [pkgs.mac-style-plymouth];
+    };
   };
 
   # Enable networking
@@ -160,6 +168,7 @@ in {
         nix-software-center
         xinux-module-manager
         nixos-conf-editor
+        e-imzo-manager
         # xinux-wallpapers
         xinux-wallpapers.xinux-blue-light
         xinux-wallpapers.xinux-blue-dark
