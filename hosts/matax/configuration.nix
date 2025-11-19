@@ -14,7 +14,7 @@
 in {
   imports = [
     ./hardware-configuration.nix
-
+    ../../systems/x86_64-install-iso/matax/default.nix
     # Home manager darwin modules
     inputs.home-manager.nixosModules.home-manager
     inputs.self.homeModules.nixpkgs
