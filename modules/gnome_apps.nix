@@ -22,4 +22,7 @@
   pkgs.thunderbird
   # some apps
   pkgs.onlyoffice-desktopeditors
+
+  # utils
+  pkgs.desktop-file-utils
 ]
