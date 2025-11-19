@@ -8,6 +8,8 @@
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
   gnomeApps = inputs.self.homeModules.gnome_apps {inherit pkgs;};
   hunspell-uz = inputs.hunspell-uz.packages."${pkgs.stdenv.hostPlatform.system}".default;
+  e-imzo-manager = inputs.e-imzo-manager.packages."${pkgs.stdenv.hostPlatform.system}".default;
+
 in {
   imports = [
     ./hardware-configuration.nix
@@ -117,7 +119,7 @@ in {
         # Services
         redis
         # Xinux
-        libgnomekbd # gkbd-keyboard-display
+        e-imzo-manager
       ]
       ++ gnomeApps;
   };
