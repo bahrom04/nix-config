@@ -49,7 +49,7 @@ in {
     plymouth = {
       enable = true;
       theme = "mac-style";
-      themePackages = [pkgs.mac-style-plymouth];
+      themePackages = [inputs.mac-style-plymouth.packages."${pkgs.stdenv.hostPlatform.system}".default];
     };
   };
 
