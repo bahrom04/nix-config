@@ -68,7 +68,7 @@
     };
 
     mac-style-plymouth = {
-      url = "github:SergioRibera/s4rchiso-plymouth-theme";
+      url = "github:xinux-org/xinux-plymouth-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # auto_profile_tg = {
