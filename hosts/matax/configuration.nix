@@ -29,8 +29,22 @@ in {
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+      systemd-boot.enable = false;
+      grub = {
+        enable = true;
+        devices = ["nodev"];
+        #splashImage = ./background.png;
+        useOSProber = true;
+        efiSupport = true;
+        theme = "${
+          (pkgs.fetchFromGitHub {
+            owner = "xinux-org";
+            repo = "bootloader-theme";
+            tag = "v1.0.3";
+            hash = "sha256-ipaiJiQ3r2B3si1pFKdp/qykcpaGV+EqXRwl6UkCohs=";
+          })
+        }/xinux";
+      };
     };
     plymouth = {
       enable = true;
