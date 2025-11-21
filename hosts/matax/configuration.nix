@@ -15,7 +15,7 @@
 in {
   imports = [
     ./hardware-configuration.nix
-    ../../systems/x86_64-install-iso/matax/default.nix
+    ./../../systems/x86_64-lixux/matax/default.nix
     # Home manager darwin modules
     inputs.home-manager.nixosModules.home-manager
     inputs.self.homeModules.nixpkgs
@@ -182,6 +182,7 @@ in {
         xinux-module-manager
         nixos-conf-editor
         e-imzo-manager
+        snowfallorg.drift
         # xinux-wallpapers
         xinux-wallpapers.xinux-blue-light
         xinux-wallpapers.xinux-blue-dark

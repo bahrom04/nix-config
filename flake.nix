@@ -71,6 +71,11 @@
       url = "github:xinux-org/xinux-plymouth-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    snowfall-drift = {
+      url = "github:snowfallorg/drift";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # auto_profile_tg = {
     #   url = "github:bahrom04/auto-profile-tg";
     #   inputs.nixpkgs.follows = "nixpkgs";
