@@ -15,14 +15,13 @@
 in {
   imports = [
     ./hardware-configuration.nix
-    ./../../systems/x86_64-lixux/matax/default.nix
+    ./modules.nix
     # Home manager darwin modules
     inputs.home-manager.nixosModules.home-manager
     inputs.self.homeModules.nixpkgs
     inputs.self.homeModules.desktop
     inputs.self.homeModules.keyboard
     inputs.self.homeModules.users.bahrom04
-
     inputs.nix-data.nixosModules.nix-data
   ];
 
@@ -232,7 +231,7 @@ in {
 
   programs.nix-data = {
     enable = true;
-    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/matax/configuration.nix";
+    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/matax/default.nix";
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
     flakearg = "matax";
   };

@@ -13,8 +13,10 @@
     };
 
     # Flake utils for eachSystem
-    # flake-utils.url = "github:numtide/flake-utils";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Home manager
     home-manager = {
@@ -71,9 +73,13 @@
       url = "github:xinux-org/xinux-plymouth-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     snowfall-drift = {
       url = "github:snowfallorg/drift";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    xinux-modules = {
+      url = "github:xinux-org/modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # auto_profile_tg = {
@@ -82,28 +88,56 @@
     # };
   };
 
-  outputs = {self, ...} @ inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux" "aarch64-darwin"];
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      # Nix script formatter
+      formatter = pkgs.alejandra;
 
-      imports = [
-        # inputs.flake-parts.flakeModules.modules
-        # ./hosts/darwin/flake.nix
-        ./hosts/matax/flake.nix
-        ./hosts/dell/flake.nix
+      devShells.default = import ./shell.nix {inherit pkgs inputs;};
+    })
+    // {
+      homeModules = import ./modules;
+
+      systems.modules.nixos = with inputs; [
+        nix-data.nixosModules.nix-data
+        xinux-modules.nixosModules.efiboot
+        xinux-modules.nixosModules.gnome
+        xinux-modules.nixosModules.kernel
+        xinux-modules.nixosModules.networking
+        xinux-modules.nixosModules.packagemanagers
+        xinux-modules.nixosModules.pipewire
+        xinux-modules.nixosModules.printing
+        xinux-modules.nixosModules.xinux
+        xinux-modules.nixosModules.metadata
       ];
 
-      flake = {
-        homeModules = import ./modules;
+      nixosConfigurations.matax = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/matax/configuration.nix
+        ];
+
+        specialArgs = {
+          inherit inputs;
+        };
       };
 
-      perSystem = {
-        inputs,
-        pkgs,
-        ...
-      }: {
-        devShells.default = import ./shell.nix {inherit pkgs inputs;};
-        formatter = pkgs.alejandra;
+      nixosConfigurations.dell = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/dell/configuration.nix
+        ];
+
+        specialArgs = {
+          inherit inputs;
+        };
       };
     };
 }
