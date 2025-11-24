@@ -1,9 +1,6 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
+    ./boot.nix
     ./apps.nix
     ./utils.nix
     ./fonts.nix
@@ -12,33 +9,6 @@
     ./extensions.nix
   ];
   config = {
-    # Bootloader.
-    boot = {
-      loader = {
-        systemd-boot.enable = false;
-        grub = {
-          enable = true;
-          devices = ["nodev"];
-          #splashImage = ./background.png;
-          useOSProber = true;
-          efiSupport = true;
-          theme = "${
-            (pkgs.fetchFromGitHub {
-              owner = "xinux-org";
-              repo = "bootloader-theme";
-              tag = "v1.0.3";
-              hash = "sha256-ipaiJiQ3r2B3si1pFKdp/qykcpaGV+EqXRwl6UkCohs=";
-            })
-          }/xinux";
-        };
-      };
-      plymouth = {
-        enable = true;
-        theme = "mac-style";
-        themePackages = [inputs.mac-style-plymouth.packages."${pkgs.stdenv.hostPlatform.system}".default];
-      };
-    };
-
     console.keyMap = "us";
 
     # Enable sound with pipewire.
