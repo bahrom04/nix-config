@@ -987,11 +987,11 @@
         "systems": "systems_8"
       },
       "locked": {
-        "lastModified": 1763864112,
-        "narHash": "sha256-ou/5CnTJiWjl2KR6z5VGactfDlaovuvoZyJ4g/Iwdr4=",
+        "lastModified": 1763950115,
+        "narHash": "sha256-wZAygrQW8IWrEDWMuTbHVVnnAnfrj66xHIPToMrT3hk=",
         "owner": "nix-community",
         "repo": "nix4vscode",
-        "rev": "bc4e01dbc2a751ca6c380429672cd0aad94c4b78",
+        "rev": "cef9e8ad7dc0aaf145f79cb327ae985f61b16d3a",
         "type": "github"
       },
       "original": {
