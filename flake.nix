@@ -93,13 +93,35 @@
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
+      # mkLinux = {
+      #   hostname,
+      #   system,
+      #   modules,
+      # }: {
+      #   nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
+      #     system = system;
+      #     modules = [
+      #       modules
+      #     ];
+
+      #     specialArgs = {
+      #       inherit inputs;
+      #     };
+      #   };
+      # };
     in {
+      # matax = mkLinux {
+      #   hostname = "matax";
+      #   system = "x86_64-linux";
+      #   modules = ./hosts/matax/configuration.nix;
+      # };
       # Nix script formatter
       formatter = pkgs.alejandra;
 
       devShells.default = import ./shell.nix {inherit pkgs inputs;};
     })
     // {
+      # inherit matax;
       homeModules = import ./modules;
 
       systems.modules.nixos = with inputs; [
@@ -115,6 +137,7 @@
         xinux-modules.nixosModules.metadata
       ];
 
+      # mkLinux {matax, "x86_64-linux", ./hosts/matax/configuration.nix};
       nixosConfigurations.matax = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
