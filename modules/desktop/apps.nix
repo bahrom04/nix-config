@@ -59,10 +59,10 @@ in {
         xinux-wallpapers.xinux-orange
       ];
       # exclude apps
-      gnome.excludePackages = with pkgs; [
-        # gnome-tour
-        # gnome-backgrounds
-      ];
+      # gnome.excludePackages = with pkgs; [
+      #   # gnome-tour
+      #   # gnome-backgrounds
+      # ];
     };
   };
 }
