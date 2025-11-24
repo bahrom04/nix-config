@@ -13,10 +13,7 @@
     };
 
     # Flake utils for eachSystem
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-utils.url = "github:numtide/flake-utils";
 
     # Home manager
     home-manager = {
