@@ -69,21 +69,21 @@ in {
   xinux-blue-light = mkNixBackground {
     name = "xinux-blue-light";
     description = "xinux-blue-light";
-    src = ../.github/assets/wallpapers/xinux-l.jpg;
+    src = ../../.github/assets/wallpapers/xinux-l.jpg;
     license = lib.licenses.cc-by-sa-40;
   };
 
   xinux-blue-dark = mkNixBackground {
     name = "xinux-blue-dark";
     description = "xinux-blue-dark";
-    src = ../.github/assets/wallpapers/xinux-d.jpg;
+    src = ../../.github/assets/wallpapers/xinux-d.jpg;
     license = lib.licenses.cc-by-sa-40;
   };
 
   xinux-orange = mkNixBackground {
     name = "xinux-orange";
     description = "xinux-orange";
-    src = ../.github/assets/wallpapers/xinux-orange.jpg;
+    src = ../../.github/assets/wallpapers/xinux-orange.jpg;
     license = lib.licenses.cc-by-sa-40;
   };
 }
