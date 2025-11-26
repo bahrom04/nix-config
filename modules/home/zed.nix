@@ -3,7 +3,8 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   extensions = [
     "assembly"
     "deno"
@@ -17,7 +18,6 @@
     "lua"
     "make"
     "material-icon-theme"
-    "vscode-icons"
     "neocmake"
     "nginx"
     "nix"
@@ -54,13 +54,13 @@
 
     languages = {
       Markdown = {
-        formatter = "auto";
+        format_on_save = "on";
         use_on_type_format = true;
         remove_trailing_whitespace_on_save = true;
       };
 
       Nix = {
-        formatter = "on";
+        formatter = "language_server";
         language_servers = [
           "nixd"
           "!nil"
@@ -74,7 +74,7 @@
           "!vtsls"
           "!eslint"
         ];
-        formatter = "on";
+        formatter = "language_server";
       };
 
       TSX = {
@@ -84,7 +84,7 @@
           "!eslint"
           "!vtsls"
         ];
-        formatter = "on";
+        formatter = "language_server";
       };
     };
 
@@ -140,17 +140,16 @@
 
     theme = {
       mode = "system";
-      light = "Ayu Light";
-      dark = "VSCode Dark Modern";
+      light = "Vercel Light";
+      dark = "Vercel Dark";
     };
-    icon_theme = "VSCode Icons for Zed (Dark)";
+    icon_theme = "Material Icon Theme";
 
     tab_size = 2;
     preferred_line_length = 100;
 
     autosave = "off";
-    formatter = "auto";
-
+    format_on_save = "language_server";
     enable_language_server = true;
 
     soft_wrap = "editor_width";
@@ -185,7 +184,8 @@
       enabled = false;
     };
   };
-in {
+in
+{
   config = {
     programs.zed-editor = {
       enable = true;
