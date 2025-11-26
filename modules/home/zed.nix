@@ -17,6 +17,7 @@
     "lua"
     "make"
     "material-icon-theme"
+    "vscode-icons"
     "neocmake"
     "nginx"
     "nix"
@@ -139,10 +140,10 @@
 
     theme = {
       mode = "system";
-      light = "Vercel Light";
-      dark = "Vercel Dark";
+      light = "Ayu Light";
+      dark = "VSCode Dark Modern";
     };
-    icon_theme = "Material Icon Theme";
+    icon_theme = "VSCode Icons for Zed (Dark)";
 
     tab_size = 2;
     preferred_line_length = 100;
