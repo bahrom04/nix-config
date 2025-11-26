@@ -60,7 +60,7 @@
       };
 
       Nix = {
-        formatter = "language_server";
+        formatter = "on";
         language_servers = [
           "nixd"
           "!nil"
@@ -74,7 +74,7 @@
           "!vtsls"
           "!eslint"
         ];
-        formatter = "language_server";
+        formatter = "on";
       };
 
       TSX = {
@@ -84,7 +84,7 @@
           "!eslint"
           "!vtsls"
         ];
-        formatter = "language_server";
+        formatter = "on";
       };
     };
 
