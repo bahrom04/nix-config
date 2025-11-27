@@ -103,7 +103,6 @@
       #     modules = [
       #       modules
       #     ];
-
       #     specialArgs = {
       #       inherit inputs;
       #     };
@@ -123,6 +122,7 @@
     // {
       # inherit matax;
       homeModules = import ./modules;
+      modules = [inputs.xinux-modules.nixosModules.xinux];
 
       systems.modules.nixos = with inputs; [
         nix-data.nixosModules.nix-data

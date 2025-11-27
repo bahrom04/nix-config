@@ -1,0 +1,45 @@
+---
+name: Xinux
+id: modules.xinux
+flake: xinux-modules
+description: "Xinux default options."
+version: 0.0.1
+icon:
+  type: system
+  path: weather-xinux-symbolic
+
+options:
+  - label: "Enable Nix Software Center"
+    id: modules.xinux.nixSoftwareCenter.enable
+    description: "Enable Nix Software Center, a graphical software center for Nix."
+    type: !switch
+      default: true
+  - label: "Enable Configuration Editor"
+    id: modules.xinux.nixosConfEditor.enable
+    description: "Enable NixOS Configuration Editor, a graphical editor for NixOS configurations."
+    type: !switch
+      default: true
+  - label: "Enable Xinux Module Manager"
+    id: modules.xinux.xinuxModuleManager.enable
+    description: "Enable Xinux Module Manager, a graphical tool for managing Xinux modules"
+    type: !switch
+      default: true
+  - label: "Enable FHS binary compatibility"
+    id: modules.xinux.binaryCompat.enable
+    description: "Enable FHS binary compatibility, allowing you to run binaries from other Linux distributions. This still may not work for all binaries."
+    type: !switch
+      default: false
+  - label: "Enable E-IMZO integration"
+    id: modules.xinux.eimzoIntegraion.enable
+    description: "Enable services and install software of E-IMZO for easier management of keys."
+    type: !switch
+      default: false
+  - label: "change language"
+    id: modules.xinux.language
+    description: "set language"
+    type: !enum
+      default: '"ru_RU.UTF-8"'
+      options:
+        '"ru_RU.UTF-8"': "ruscha"
+        '"en_US.UTF-8"': "inglizcha"
+        '"uz_UZ.UTF-8"': "oʻzbekcha"
