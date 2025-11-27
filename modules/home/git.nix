@@ -10,6 +10,11 @@
         init.defaultBranch = "main";
         http.sslVerify = false;
         pull.rebase = false;
+
+        safe.directory = [
+          "/home/bahrom/workplace/bahrom04/nix-config"
+          # Add other safe directories here if needed
+        ];
       };
     };
 
