@@ -28,11 +28,4 @@
   };
 
   programs.home-manager.enable = true;
-
-  programs.nix-data = {
-    enable = true;
-    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/matax/configuration.nix";
-    flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
-    flakearg = "matax";
-  };
 }

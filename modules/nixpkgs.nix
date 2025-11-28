@@ -7,6 +7,7 @@
   nixpkgs = {
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
+      
       inputs.nix4vscode.overlays.default
       inputs.snowfall-drift.overlays.default
     ];
