@@ -24,7 +24,6 @@
     flakearg = "dell";
   };
 
-  # services.e-imzo.enable = false;
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;

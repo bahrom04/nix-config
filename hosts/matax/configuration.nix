@@ -24,7 +24,6 @@
     flakearg = "matax";
   };
   
-  services.e-imzo.enable = true;
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;
