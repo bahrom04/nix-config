@@ -5,6 +5,10 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    # configs for module manager
+    ./modules.nix
+    # options for module manager
+    ../../nixos/xinux/default.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-data.nixosModules.nix-data
     inputs.self.homeModules.nixpkgs
@@ -13,7 +17,14 @@
     inputs.self.homeModules.users.bahrom04
   ];
 
-  services.e-imzo.enable = false;
+  programs.nix-data = {
+    enable = true;
+    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/dell/configuration.nix";
+    flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
+    flakearg = "dell";
+  };
+
+  # services.e-imzo.enable = false;
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;
