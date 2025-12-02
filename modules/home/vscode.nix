@@ -39,7 +39,7 @@ in {
 
       userSettings = {
         "files.autoSave" = "afterDelay";
-        "[nix]"."editor.tabSize" = 2;
+
         "[python]"."editor.tabSize" = 4;
         "editor.fontSize" = 16;
         "terminal.integrated.fontSize" = 14;
@@ -122,8 +122,17 @@ in {
           "markdown" = false;
           "scminput" = false;
         };
+        "[nix]" = {
+          "editor.tabSize" = 2;
+          "editor.defaultFormatter" = "kamadorueda.alejandra";
+          "editor.formatOnPaste" = true;
+          "editor.formatOnSave" = true;
+          "editor.formatOnType" = false;
+        };
+        "alejandra.program" = "alejandra";
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
+        "nix.formatterPath" = "alejandra";
         "nix.serverSettings" = {
           "nixd" = {
             "formatting" = {

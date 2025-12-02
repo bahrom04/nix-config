@@ -11,6 +11,7 @@
   nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
   e-imzo-manager = inputs.e-imzo-manager.packages."${pkgs.stdenv.hostPlatform.system}".default;
   xinux-wallpapers = lib.recurseIntoAttrs (pkgs.callPackage ./wallpapers.nix {});
+  alejandra = inputs.alejandra.defaultPackage.${pkgs.stdenv.hostPlatform.system};
 in {
   config = {
     # APPS
@@ -40,6 +41,8 @@ in {
         # some apps
         pkgs.onlyoffice-desktopeditors
 
+        #formatter
+        alejandra
         # utils
         pkgs.desktop-file-utils
 
