@@ -85,40 +85,45 @@
     # };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    ...
-  } @ inputs:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-      # mkLinux = {
-      #   hostname,
-      #   system,
-      #   modules,
-      # }: {
-      #   nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
-      #     system = system;
-      #     modules = [
-      #       modules
-      #     ];
-      #     specialArgs = {
-      #       inherit inputs;
-      #     };
-      #   };
-      # };
-    in {
-      # matax = mkLinux {
-      #   hostname = "matax";
-      #   system = "x86_64-linux";
-      #   modules = ./hosts/matax/configuration.nix;
-      # };
-      # Nix script formatter
-      formatter = pkgs.alejandra;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      ...
+    }@inputs:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+        # mkLinux = {
+        #   hostname,
+        #   system,
+        #   modules,
+        # }: {
+        #   nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
+        #     system = system;
+        #     modules = [
+        #       modules
+        #     ];
+        #     specialArgs = {
+        #       inherit inputs;
+        #     };
+        #   };
+        # };
+      in
+      {
+        # matax = mkLinux {
+        #   hostname = "matax";
+        #   system = "x86_64-linux";
+        #   modules = ./hosts/matax/configuration.nix;
+        # };
+        # Nix script formatter
+        formatter = pkgs.alejandra;
 
-      devShells.default = import ./shell.nix {inherit pkgs inputs;};
-    })
+        devShells.default = import ./shell.nix { inherit pkgs inputs; };
+      }
+    )
     // {
       # inherit matax;
       homeModules = import ./modules;

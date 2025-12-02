@@ -3,8 +3,7 @@
   pkgs,
   config,
   ...
-}:
-let
+}: let
   extensions = [
     "assembly"
     "deno"
@@ -140,22 +139,22 @@ let
 
     theme = {
       mode = "system";
-      light = "Vercel Light";
-      dark = "Vercel Dark";
+      light = "VSCode Dark Modern";
+      dark = "VSCode Dark Modern";
     };
-    icon_theme = "Material Icon Theme";
+    icon_theme = "VSCode Icons for Zed (Dark)";
 
     tab_size = 2;
     preferred_line_length = 100;
 
-    autosave = "off";
-    format_on_save = "language_server";
+    autosave.after_delay.milliseconds = 500;
+    format_on_save = "on";
     enable_language_server = true;
 
     soft_wrap = "editor_width";
 
     buffer_font_size = 16;
-    buffer_font_family = "Liga SFMono Nerd Font";
+    buffer_font_family = "Adwaita Mono";
 
     ui_font_size = 16;
     ui_font_family = ".SystemUIFont";
@@ -176,16 +175,15 @@ let
       button = false;
     };
 
-    chat_panel = {
-      button = "never";
-    };
+    # chat_panel = {
+    #   button = "never";
+    # };
 
     agent = {
       enabled = false;
     };
   };
-in
-{
+in {
   config = {
     programs.zed-editor = {
       enable = true;
