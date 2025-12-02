@@ -14,8 +14,16 @@
     inputs.self.homeModules.desktop
     inputs.self.homeModules.keyboard
     inputs.self.homeModules.users.bahrom04
+
+    inputs.nix-data.nixosModules.nix-data
   ];
 
+  programs.nix-data = {
+    enable = true;
+    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/matax/configuration.nix";
+    flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
+    flakearg = "matax";
+  };
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;
