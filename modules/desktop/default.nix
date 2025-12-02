@@ -137,8 +137,6 @@
       zsh.enable = true;
       mtr.enable = true;
       steam.enable = true;
-
-      
     };
   };
 }

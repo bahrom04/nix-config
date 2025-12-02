@@ -1,8 +1,5 @@
 # reference: https://maksar.github.io/posts/code/2021-09-19-vscode/
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   inherit
     (pkgs.nix4vscode)
     forVscodeVersion
@@ -131,20 +128,20 @@ in {
           "nixd" = {
             "formatting" = {
               "command" = [
-                "nixfmt"
+                "alejandra"
               ];
             };
-            "options" = {
-              "nixos" = {
-                "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
-              };
-              "home-manager" = {
-                "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
-              };
-              "nix-darwin" = {
-                "expr" = "(builtins.getFlake \"$\{workspaceFolder}/path/to/flake\").darwinConfigurations.<name>.options";
-              };
-            };
+            # "options" = {
+            #   "nixos" = {
+            #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
+            #   };
+            #   "home-manager" = {
+            #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
+            #   };
+            #   "nix-darwin" = {
+            #     "expr" = "(builtins.getFlake \"$\{workspaceFolder}/path/to/flake\").darwinConfigurations.<name>.options";
+            #   };
+            # };
           };
         };
       };

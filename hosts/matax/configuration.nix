@@ -16,8 +16,6 @@
     inputs.self.homeModules.users.bahrom04
   ];
 
-  
-  
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;

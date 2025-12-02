@@ -20,7 +20,7 @@
   home = {
     username = "bahrom";
     homeDirectory = "/home/bahrom";
-    
+
     keyboard = {
       layout = "uz";
       variant = "latin";

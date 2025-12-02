@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   h = pkgs.haskell.packages."ghc910";
-in
-{
+in {
   home.file.".ghci".source = ../../.github/assets/.ghci;
 
   home.packages = [

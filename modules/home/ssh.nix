@@ -16,7 +16,7 @@ in {
       # enableDefaultConfig = false;
       enable = true;
       inherit extraConfig;
-      
+
       matchBlocks = {
         # Uzinfocom
         kolyma-1 = {
