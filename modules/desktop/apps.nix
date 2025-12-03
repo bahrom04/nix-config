@@ -49,6 +49,7 @@ in {
         # Browsers
         pkgs.google-chrome
         pkgs.chromium
+        pkgs.ungoogled-chromium
 
         # Xinux apps
         nix-software-center
