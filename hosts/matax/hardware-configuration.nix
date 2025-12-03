@@ -44,7 +44,7 @@
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     # GPU (Nvidia)
     nvidia = {
-      open = false;
+      open = true;
     };
     graphics.enable = true;
   };
