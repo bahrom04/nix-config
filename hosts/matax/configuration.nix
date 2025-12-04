@@ -47,8 +47,10 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
+  programs.nix-ld.enable = true;
   environment.systemPackages = [
     pkgs.sqlitebrowser
     pkgs.boltbrowser
+    pkgs.kstars
   ];
 }
