@@ -38,6 +38,7 @@ in {
 
         pkgs.element-desktop
         pkgs.telegram-desktop
+        pkgs.discord
         # some apps
         pkgs.onlyoffice-desktopeditors
 
