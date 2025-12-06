@@ -976,11 +976,11 @@
         "xinux-lib": "xinux-lib"
       },
       "locked": {
-        "lastModified": 1765005243,
-        "narHash": "sha256-0xp0Z4SemagJl2FSuCaEb+zIWpiT+lvcfv8IWtJqOk0=",
+        "lastModified": 1765062273,
+        "narHash": "sha256-5pChr5+5Xg5atmWsPKfe+i6euQ+xz6LtwECG0cDl79c=",
         "owner": "xinux-org",
         "repo": "nix-data",
-        "rev": "50639bd2f44b680339d536055b8c54111ffa457c",
+        "rev": "c72476447ee654ea02482e8af6f53558c0327cc4",
         "type": "github"
       },
       "original": {
@@ -999,11 +999,11 @@
         "xinux-lib": "xinux-lib_2"
       },
       "locked": {
-        "lastModified": 1765006906,
-        "narHash": "sha256-YY2pbcuPRugFCwfSYiyOQ1ug3OvbB4t/HwQY51SxnnY=",
+        "lastModified": 1765062460,
+        "narHash": "sha256-1IYjyo7D9RRjQmAg/0KM59ae9ZnTS7jKg2BDMkfwYUU=",
         "owner": "xinux-org",
         "repo": "software-center",
-        "rev": "dfe6190e804e5358c2ed262c535240529b247e23",
+        "rev": "830a53fe5622719fc119c83c1e0e31824591d843",
         "type": "github"
       },
       "original": {
@@ -1023,11 +1023,11 @@
         "xinux-lib": "xinux-lib_5"
       },
       "locked": {
-        "lastModified": 1765006906,
-        "narHash": "sha256-YY2pbcuPRugFCwfSYiyOQ1ug3OvbB4t/HwQY51SxnnY=",
+        "lastModified": 1765062460,
+        "narHash": "sha256-1IYjyo7D9RRjQmAg/0KM59ae9ZnTS7jKg2BDMkfwYUU=",
         "owner": "xinux-org",
         "repo": "software-center",
-        "rev": "dfe6190e804e5358c2ed262c535240529b247e23",
+        "rev": "830a53fe5622719fc119c83c1e0e31824591d843",
         "type": "github"
       },
       "original": {
@@ -1974,11 +1974,11 @@
         "xinux-tour": "xinux-tour"
       },
       "locked": {
-        "lastModified": 1765008922,
-        "narHash": "sha256-6IL38tsEPxOoGA79tZfvhJm8brZbYhPL02cWEn6436s=",
+        "lastModified": 1765062686,
+        "narHash": "sha256-trN7ahS1eBTe10yj5mTv8QTXLo5xB+q40VHgJjieL8w=",
         "owner": "xinux-org",
         "repo": "modules",
-        "rev": "3867660e9e7389d0a2fa52d7242a5185ade90ea3",
+        "rev": "441c8f31afa1699ee0f6c78fba9ec696cce8dd3b",
         "type": "github"
       },
       "original": {
