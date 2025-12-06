@@ -47,8 +47,10 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
+  
   environment.systemPackages = [
     pkgs.cpu-x
-    pkgs.gnome-solanum
+    pkgs.sqlitebrowser
+    pkgs.gnome-feeds
   ];
 }
