@@ -27,6 +27,7 @@
     "sql"
     "swift"
     "toml"
+    # "cargo-tom"
     "typst"
     "vercel-theme"
     "wgsl"

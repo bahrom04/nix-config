@@ -51,5 +51,6 @@
   environment.systemPackages = [
     pkgs.cpu-x
     pkgs.sqlitebrowser
+    pkgs.gnome-solanum
   ];
 }
