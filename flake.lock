@@ -999,11 +999,11 @@
         "xinux-lib": "xinux-lib_2"
       },
       "locked": {
-        "lastModified": 1765131889,
-        "narHash": "sha256-aqjMV1GrQLsGp8nvVgqgfcS5f4IAdPnwzL9CU7f1hWk=",
+        "lastModified": 1765178423,
+        "narHash": "sha256-GEMrKlsf8O4EVr0X3XTSdIsF/SgOMfMLP1tg3iDy2oE=",
         "owner": "xinux-org",
         "repo": "software-center",
-        "rev": "b4316d3095b7239d017e2878e8656685a06d7da1",
+        "rev": "d3bc6ef0cb0cfd141a72bc70afecef7ff5d923b7",
         "type": "github"
       },
       "original": {
