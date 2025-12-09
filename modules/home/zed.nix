@@ -33,6 +33,7 @@
     "wgsl"
     "xml"
     "zig"
+    "meson"
   ];
 
   settings = {
