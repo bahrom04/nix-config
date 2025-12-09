@@ -27,7 +27,7 @@
     "sql"
     "swift"
     "toml"
-    # "cargo-tom"
+    "cargo-tom"
     "typst"
     "vercel-theme"
     "wgsl"
@@ -36,9 +36,9 @@
     "meson"
   ];
 
-  settings = {
+  userSettings = {
     auto_update = false;
-    colorize_brackets = true;
+    # colorize_brackets = true;
     disable_ai = true;
 
     telemetry = {
@@ -62,6 +62,7 @@
 
       Nix = {
         formatter = "language_server";
+        # colorize_brackets = true;
         language_servers = [
           "nixd"
           "!nil"
@@ -176,11 +177,7 @@
     collaboration_panel = {
       button = false;
     };
-
-    # chat_panel = {
-    #   button = "never";
-    # };
-
+    
     agent = {
       enabled = false;
     };
@@ -189,8 +186,7 @@ in {
   config = {
     programs.zed-editor = {
       enable = true;
-      inherit extensions;
-      userSettings = settings;
+      inherit extensions userSettings;
       installRemoteServer = true;
       package = pkgs.zed-editor;
       extraPackages = config.programs.helix.extraPackages;
