@@ -37,7 +37,7 @@
 
   settings = {
     auto_update = false;
-
+    colorize_brackets = true;
     disable_ai = true;
 
     telemetry = {

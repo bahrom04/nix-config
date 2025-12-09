@@ -52,5 +52,6 @@
     pkgs.cpu-x
     pkgs.sqlitebrowser
     pkgs.gnome-solanum
+    pkgs.icon-library
   ];
 }
