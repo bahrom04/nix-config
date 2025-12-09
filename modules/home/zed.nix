@@ -35,7 +35,7 @@
     "zig"
   ];
 
-  settings = {
+  userSettings = {
     auto_update = false;
     colorize_brackets = true;
     disable_ai = true;
@@ -188,8 +188,7 @@ in {
   config = {
     programs.zed-editor = {
       enable = true;
-      inherit extensions;
-      userSettings = settings;
+      inherit extensions userSettings;
       installRemoteServer = true;
       package = pkgs.zed-editor;
       extraPackages = config.programs.helix.extraPackages;
