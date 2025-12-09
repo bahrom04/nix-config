@@ -51,5 +51,6 @@
     pkgs.sqlitebrowser
     pkgs.boltbrowser
     pkgs.kstars
+    pkgs.gnome-solanum
   ];
 }

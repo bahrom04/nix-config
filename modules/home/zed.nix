@@ -37,7 +37,7 @@
 
   userSettings = {
     auto_update = false;
-    colorize_brackets = true;
+    # colorize_brackets = true;
     disable_ai = true;
 
     telemetry = {
@@ -61,6 +61,7 @@
 
       Nix = {
         formatter = "language_server";
+        # colorize_brackets = true;
         language_servers = [
           "nixd"
           "!nil"
@@ -175,11 +176,7 @@
     collaboration_panel = {
       button = false;
     };
-
-    # chat_panel = {
-    #   button = "never";
-    # };
-
+    
     agent = {
       enabled = false;
     };
