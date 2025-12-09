@@ -7,7 +7,7 @@
     homeModules.home.zed
     homeModules.home.ssh
     homeModules.home.fish
-    homeModules.home.vscode
+    # homeModules.home.vscode
     #homeModules.home.haskell
     homeModules.home.starship
     homeModules.home.packages
