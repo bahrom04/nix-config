@@ -143,8 +143,8 @@
       ];
 
       # mkLinux {matax, "x86_64-linux", ./hosts/matax/configuration.nix};
+      # see: https://isabelroses.com/blog/im-not-mad-im-disappointed/
       nixosConfigurations.matax = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           ./hosts/matax/configuration.nix
         ];
@@ -155,7 +155,6 @@
       };
 
       nixosConfigurations.dell = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           ./hosts/dell/configuration.nix
         ];
