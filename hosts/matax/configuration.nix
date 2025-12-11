@@ -52,5 +52,6 @@
     pkgs.boltbrowser
     pkgs.kstars
     pkgs.gnome-solanum
+    pkgs.nextcloud-client
   ];
 }
