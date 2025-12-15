@@ -6,7 +6,7 @@
   ...
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-  nix-software-center = inputs.nix-software-center.packages."${pkgs.stdenv.hostPlatform.system}".nix-software-center;
+  nix-software-center = inputs.nix-software-center.packages."${pkgs.stdenv.hostPlatform.system}".default;
   xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
   nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
   e-imzo-manager = inputs.e-imzo-manager.packages."${pkgs.stdenv.hostPlatform.system}".default;

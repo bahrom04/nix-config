@@ -17,7 +17,7 @@
 
     # Home manager
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -80,7 +80,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xinux-modules = {
-      url = "github:xinux-org/modules";
+      url = "github:xinux-org/modules/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     auto_profile_tg = {
