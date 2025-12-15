@@ -29,6 +29,8 @@
       ".DS_Store"
       "nohup.out"
       "node_modules"
+      "result"
+      ".direnv"
     ];
   };
 }
