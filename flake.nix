@@ -4,7 +4,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     # Nixpkgs for darwin
     # nix-darwin = {
@@ -83,10 +83,10 @@
       url = "github:xinux-org/modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # auto_profile_tg = {
-    #   url = "github:bahrom04/auto-profile-tg";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    auto_profile_tg = {
+      url = "github:bahrom04/auto-profile-tg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -114,11 +114,6 @@
         #   };
         # };
       in {
-        # matax = mkLinux {
-        #   hostname = "matax";
-        #   system = "x86_64-linux";
-        #   modules = ./hosts/matax/configuration.nix;
-        # };
         # Nix script formatter
         formatter = pkgs.alejandra;
 
@@ -142,7 +137,6 @@
         xinux-modules.nixosModules.metadata
       ];
 
-      # mkLinux {matax, "x86_64-linux", ./hosts/matax/configuration.nix};
       # see: https://isabelroses.com/blog/im-not-mad-im-disappointed/
       nixosConfigurations.matax = inputs.nixpkgs.lib.nixosSystem {
         modules = [
