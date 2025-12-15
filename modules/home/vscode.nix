@@ -2,7 +2,7 @@
 {pkgs, ...}: let
   inherit
     (pkgs.nix4vscode)
-    forVscodeVersion
+    forVscode
     ;
 in {
   programs.vscode = {
@@ -12,7 +12,9 @@ in {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
 
-      extensions = forVscodeVersion "1.100.2" [
+      # when using nixos-unstable use forVscodeVersion
+      # to prevent coming new version every nixos-rebuild
+      extensions = forVscode [
         "mkhl.direnv"
         "dracula-theme.theme-dracula"
         "yzhang.markdown-all-in-one"
@@ -88,6 +90,8 @@ in {
         "terminal.integrated.inheritEnv" = false;
         "editor.accessibilitySupport" = "off";
         "remote.SSH.configFile" = "~/.ssh/id_ed25519";
+        "extensions.ignoreRecommendations" = true;
+        "terminal.integrated.suggest" = false;
 
         # Language-specific settings
         "[javascript]" = {
@@ -130,27 +134,29 @@ in {
           "editor.formatOnType" = false;
         };
         "alejandra.program" = "alejandra";
-        "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nixd";
-        "nix.formatterPath" = "alejandra";
-        "nix.serverSettings" = {
-          "nixd" = {
-            "formatting" = {
-              "command" = [
-                "alejandra"
-              ];
+        "nix" = {
+          "enableLanguageServer" = true;
+          "serverPath" = "nixd";
+          "formatterPath" = "alejandra";
+          "serverSettings" = {
+            "nixd" = {
+              "formatting" = {
+                "command" = [
+                  "alejandra"
+                ];
+              };
+              # "options" = {
+              #   "nixos" = {
+              #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
+              #   };
+              #   "home-manager" = {
+              #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
+              #   };
+              #   "nix-darwin" = {
+              #     "expr" = "(builtins.getFlake \"$\{workspaceFolder}/path/to/flake\").darwinConfigurations.<name>.options";
+              #   };
+              # };
             };
-            # "options" = {
-            #   "nixos" = {
-            #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
-            #   };
-            #   "home-manager" = {
-            #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
-            #   };
-            #   "nix-darwin" = {
-            #     "expr" = "(builtins.getFlake \"$\{workspaceFolder}/path/to/flake\").darwinConfigurations.<name>.options";
-            #   };
-            # };
           };
         };
       };

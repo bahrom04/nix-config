@@ -4,7 +4,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     # Nixpkgs for darwin
     # nix-darwin = {
@@ -17,7 +17,7 @@
 
     # Home manager
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -80,13 +80,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xinux-modules = {
-      url = "github:xinux-org/modules";
+      url = "github:xinux-org/modules/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # auto_profile_tg = {
-    #   url = "github:bahrom04/auto-profile-tg";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    auto_profile_tg = {
+      url = "github:bahrom04/auto-profile-tg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -114,11 +114,6 @@
         #   };
         # };
       in {
-        # matax = mkLinux {
-        #   hostname = "matax";
-        #   system = "x86_64-linux";
-        #   modules = ./hosts/matax/configuration.nix;
-        # };
         # Nix script formatter
         formatter = pkgs.alejandra;
 
@@ -142,7 +137,6 @@
         xinux-modules.nixosModules.metadata
       ];
 
-      # mkLinux {matax, "x86_64-linux", ./hosts/matax/configuration.nix};
       # see: https://isabelroses.com/blog/im-not-mad-im-disappointed/
       nixosConfigurations.matax = inputs.nixpkgs.lib.nixosSystem {
         modules = [
