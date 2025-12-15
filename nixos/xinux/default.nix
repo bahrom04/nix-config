@@ -46,7 +46,7 @@ in {
   config = mkMerge [
     (mkIf cfg.nixSoftwareCenter.enable {
       environment.systemPackages = with inputs; [
-        nix-software-center.packages.${pkgs.stdenv.hostPlatform.system}.nix-software-center
+        nix-software-center.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
     })
     (mkIf cfg.nixosConfEditor.enable {

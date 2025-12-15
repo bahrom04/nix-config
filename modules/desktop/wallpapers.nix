@@ -1,3 +1,4 @@
+# Wallpaper implementation inside ./utils.nix
 {
   lib,
   stdenv,

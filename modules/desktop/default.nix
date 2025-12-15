@@ -39,7 +39,7 @@
 
           # Favorite apps in gnome-shell
           [org.gnome.shell]
-          favorite-apps=['org.gnome.Nautilus.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Console.desktop', 'org.gnome.gitg.desktop']
+          favorite-apps=['org.gnome.Nautilus.desktop','org.gnome.SystemMonitor.desktop','org.gnome.Console.desktop','org.gnome.gitg.desktop','org.xinux.NixSoftwareCenter.desktop','org.xinux.NixosConfEditor.desktop','org.xinux.XinuxModuleManager.desktop','uz.xinux.EIMZOManager.desktop']
 
           # Enable user extensions
           [org.gnome.shell]

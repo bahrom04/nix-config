@@ -80,7 +80,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xinux-modules = {
-      url = "github:xinux-org/modules/release-25.11";
+      url = "github:xinux-org/modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     auto_profile_tg = {
