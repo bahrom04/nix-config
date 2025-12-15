@@ -92,7 +92,7 @@ in {
         "remote.SSH.configFile" = "~/.ssh/id_ed25519";
         "extensions.ignoreRecommendations" = true;
         "terminal.integrated.suggest" = false;
-        
+
         # Language-specific settings
         "[javascript]" = {
           "editor.defaultFormatter" = "typescript-language-features";
@@ -134,27 +134,29 @@ in {
           "editor.formatOnType" = false;
         };
         "alejandra.program" = "alejandra";
-        "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nixd";
-        "nix.formatterPath" = "alejandra";
-        "nix.serverSettings" = {
-          "nixd" = {
-            "formatting" = {
-              "command" = [
-                "alejandra"
-              ];
+        "nix" = {
+          "enableLanguageServer" = true;
+          "serverPath" = "nixd";
+          "formatterPath" = "alejandra";
+          "serverSettings" = {
+            "nixd" = {
+              "formatting" = {
+                "command" = [
+                  "alejandra"
+                ];
+              };
+              # "options" = {
+              #   "nixos" = {
+              #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
+              #   };
+              #   "home-manager" = {
+              #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
+              #   };
+              #   "nix-darwin" = {
+              #     "expr" = "(builtins.getFlake \"$\{workspaceFolder}/path/to/flake\").darwinConfigurations.<name>.options";
+              #   };
+              # };
             };
-            # "options" = {
-            #   "nixos" = {
-            #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
-            #   };
-            #   "home-manager" = {
-            #     "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
-            #   };
-            #   "nix-darwin" = {
-            #     "expr" = "(builtins.getFlake \"$\{workspaceFolder}/path/to/flake\").darwinConfigurations.<name>.options";
-            #   };
-            # };
           };
         };
       };
