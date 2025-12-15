@@ -1909,11 +1909,11 @@
         "xinux-tour": "xinux-tour"
       },
       "locked": {
-        "lastModified": 1765793802,
-        "narHash": "sha256-h+fOprCYv3YcLrOYveVLX41wyyZw9EqpSJ9p7pNwLog=",
+        "lastModified": 1765811573,
+        "narHash": "sha256-qCHpJYxngEUf25mnnv2/LSXM5oID67WnEK9cDnwAl7E=",
         "owner": "xinux-org",
         "repo": "modules",
-        "rev": "5941bc0ed277dcc62341b130df6000875a66e047",
+        "rev": "f2f8849b7f758ea2dbdd15b5579c8aea3c5ee315",
         "type": "github"
       },
       "original": {
