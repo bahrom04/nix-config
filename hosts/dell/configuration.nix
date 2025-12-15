@@ -24,7 +24,8 @@
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
     flakearg = "dell";
   };
-
+  
+  services.e-imzo.enable = true;
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;
