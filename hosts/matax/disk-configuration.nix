@@ -4,7 +4,8 @@
     "/dev/sda"
 
     # 2TB HDD
-    "/dev/sdb"
+    # this storega now used for windows
+    # "/dev/sdb"
   ],
   ...
 }: {
@@ -46,31 +47,31 @@
         };
       };
 
-      storage = {
-        device = builtins.elemAt disks 1;
-        type = "disk";
-        content = {
-          type = "gpt";
-          partitions = {
-            MEDIA = {
-              size = "900G";
-              content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/media";
-              };
-            };
-            SERVER = {
-              size = "100%";
-              content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/srv";
-              };
-            };
-          };
-        };
-      };
+      # storage = {
+      #   device = builtins.elemAt disks 1;
+      #   type = "disk";
+      #   content = {
+      #     type = "gpt";
+      #     partitions = {
+      #       MEDIA = {
+      #         size = "900G";
+      #         content = {
+      #           type = "filesystem";
+      #           format = "ext4";
+      #           mountpoint = "/media";
+      #         };
+      #       };
+      #       SERVER = {
+      #         size = "100%";
+      #         content = {
+      #           type = "filesystem";
+      #           format = "ext4";
+      #           mountpoint = "/srv";
+      #         };
+      #       };
+      #     };
+      #   };
+      # };
     };
   };
 }
