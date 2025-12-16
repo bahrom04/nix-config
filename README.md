@@ -34,7 +34,7 @@ sudo darwin-rebuild switch --flake .#air
 nix build .#darwinConfigurations.bahrom04.config.system.build.toplevel --show-trace
 ```
 
-## Code formatter and checkers
+## Code formatter and checkers & delete cache
 ```bash
 nix fmt .
 nix flake check --all-systems --show-trace
@@ -45,6 +45,9 @@ nix repl :lf .
 nix flake prefetch "github:xinux-org/modules"
 # getting rev
 git rev-parse main
+
+## delete old generations
+sudo nix-collect-garbage -d
 ```
 
 ## Edit secrets 
