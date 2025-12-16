@@ -30,7 +30,7 @@ in {
         haveged
         xorg.setxkbmap
         pkgs.flatpak-builder
-        woeusb
+        woeusb # for creating windows usb
 
         # git/hub
         age
