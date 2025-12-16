@@ -30,6 +30,7 @@ in {
         haveged
         xorg.setxkbmap
         pkgs.flatpak-builder
+        woeusb
 
         # git/hub
         age
