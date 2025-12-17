@@ -11,12 +11,11 @@
     # options for module manager
     ../../nixos/xinux/default.nix
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-data.nixosModules.nix-data
     inputs.self.homeModules.nixpkgs
     inputs.self.homeModules.desktop
     inputs.self.homeModules.keyboard
     inputs.self.homeModules.users.bahrom04
-
-    inputs.nix-data.nixosModules.nix-data
   ];
 
   programs.nix-data = {

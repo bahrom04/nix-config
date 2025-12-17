@@ -1,11 +1,10 @@
 {
   lib,
-  config,
   inputs,
   pkgs,
   ...
 }: let
-  age_keys = "${config.users.users.bahrom04.home}/.config/sops/age/keys.txt";
+  # age_keys = "${config.users.users.bahrom04.home}/.config/sops/age/keys.txt";
 in {
   imports = [
     inputs.home-manager.darwinModules.home-manager
@@ -17,7 +16,7 @@ in {
   environment = {
     variables = {
       EDITOR = "vim";
-      SOPS_AGE_KEY_FILE = age_keys;
+      # SOPS_AGE_KEY_FILE = age_keys;
     };
     systemPackages = with pkgs; [
       nixfmt-rfc-style

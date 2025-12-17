@@ -1,22 +1,8 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
-  extraConfig = ''
-    IdentityFile ~/.ssh/id_ed25519
-    ${(lib.optionalString pkgs.stdenv.isDarwin
-      ''
-        UseKeychain yes
-      '')}
-  '';
-in {
+{...}: {
   config = {
     programs.ssh = {
-      # enableDefaultConfig = false;
+      enableDefaultConfig = false;
       enable = true;
-      inherit extraConfig;
-
       matchBlocks = {
         # Uzinfocom
         kolyma-1 = {

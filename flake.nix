@@ -11,6 +11,10 @@
     #   url = "github:lnl7/nix-darwin/master";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    # sops-nix = {
+    #   url = "github:Mic92/sops-nix";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # Flake utils for eachSystem
     flake-utils.url = "github:numtide/flake-utils";
@@ -21,10 +25,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
     # Disko for easier partition management
     disko = {
       url = "github:nix-community/disko";
@@ -90,7 +90,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     flake-utils,
     ...
@@ -98,21 +97,6 @@
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
-        # mkLinux = {
-        #   hostname,
-        #   system,
-        #   modules,
-        # }: {
-        #   nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
-        #     system = system;
-        #     modules = [
-        #       modules
-        #     ];
-        #     specialArgs = {
-        #       inherit inputs;
-        #     };
-        #   };
-        # };
       in {
         # Nix script formatter
         formatter = pkgs.alejandra;
@@ -121,7 +105,6 @@
       }
     )
     // {
-      # inherit matax;
       homeModules = import ./modules;
 
       systems.modules.nixos = with inputs; [

@@ -2,7 +2,7 @@
 {pkgs, ...}: let
   inherit
     (pkgs.nix4vscode)
-    forVscode
+    forVscodeVersion
     ;
 in {
   programs.vscode = {
@@ -11,10 +11,9 @@ in {
     profiles.default = {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
-
       # when using nixos-unstable use forVscodeVersion
       # to prevent coming new version every nixos-rebuild
-      extensions = forVscode [
+      extensions = forVscodeVersion "1.106.2" [
         "mkhl.direnv"
         "dracula-theme.theme-dracula"
         "yzhang.markdown-all-in-one"
