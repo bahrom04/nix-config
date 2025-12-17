@@ -52,5 +52,6 @@
     pkgs.kstars
     pkgs.gnome-solanum
     pkgs.nextcloud-client
+    pkgs.icon-library
   ];
 }
