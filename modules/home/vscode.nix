@@ -1,39 +1,32 @@
 # reference: https://maksar.github.io/posts/code/2021-09-19-vscode/
-{pkgs, ...}: let
-  inherit
-    (pkgs.nix4vscode)
-    forVscodeVersion
-    ;
-in {
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
     profiles.default = {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
-      # when using nixos-unstable use forVscodeVersion
-      # to prevent coming new version every nixos-rebuild
       extensions = with pkgs.vscode-extensions; [
-        "mkhl.direnv"
-        "yzhang.markdown-all-in-one"
-        "ecmel.vscode-html-css"
-        "fill-labs.dependi"
-        "ms-python.vscode-pylance"
-        "ms-python.python"
-        "ms-vscode-remote.vscode-remote-extensionpack"
-        "ms-vscode-remote.remote-ssh"
-        "ms-python.black-formatter"
-        "rust-lang.rust-analyzer"
-        "zguolee.tabler-icons"
-        "vscode-icons-team.vscode-icons"
-        "tal7aouy.icons"
-        "tamasfe.even-better-toml"
-        "kubukoz.nickel-syntax"
-        "jnoortheen.nix-ide"
-        "mesonbuild.mesonbuild"
-        "kamadorueda.alejandra"
-        "haskell.haskell"
-        "justusadam.language-haskell"
+        # "mkhl.direnv"
+        # "yzhang.markdown-all-in-one"
+        # "ecmel.vscode-html-css"
+        # "fill-labs.dependi"
+        # "ms-python.vscode-pylance"
+        # "ms-python.python"
+        # "ms-vscode-remote.vscode-remote-extensionpack"
+        # "ms-vscode-remote.remote-ssh"
+        # "ms-python.black-formatter"
+        # "rust-lang.rust-analyzer"
+        # "zguolee.tabler-icons"
+        # "vscode-icons-team.vscode-icons"
+        # "tal7aouy.icons"
+        # "tamasfe.even-better-toml"
+        # "kubukoz.nickel-syntax"
+        # "jnoortheen.nix-ide"
+        # "mesonbuild.mesonbuild"
+        # "kamadorueda.alejandra"
+        # "haskell.haskell"
+        # "justusadam.language-haskell"
       ];
 
       userSettings = {
