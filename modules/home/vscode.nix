@@ -13,9 +13,8 @@ in {
       enableUpdateCheck = false;
       # when using nixos-unstable use forVscodeVersion
       # to prevent coming new version every nixos-rebuild
-      extensions = forVscodeVersion "1.106.2" [
+      extensions = with pkgs.vscode-extensions; [
         "mkhl.direnv"
-        "dracula-theme.theme-dracula"
         "yzhang.markdown-all-in-one"
         "ecmel.vscode-html-css"
         "fill-labs.dependi"
@@ -30,7 +29,6 @@ in {
         "tal7aouy.icons"
         "tamasfe.even-better-toml"
         "kubukoz.nickel-syntax"
-        "bbenoist.nix"
         "jnoortheen.nix-ide"
         "mesonbuild.mesonbuild"
         "kamadorueda.alejandra"
