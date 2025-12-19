@@ -31,10 +31,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # VSCode extension marketplace
-    nix4vscode = {
-      url = "github:nix-community/nix4vscode";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     alejandra = {
       url = "github:kamadorueda/alejandra/4.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
