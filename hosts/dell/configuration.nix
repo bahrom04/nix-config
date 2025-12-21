@@ -17,6 +17,8 @@
     inputs.self.homeModules.keyboard
     inputs.self.homeModules.users.bahrom04
   ];
+  
+  networking.hostName = "dell";
 
   programs.nix-data = {
     enable = true;

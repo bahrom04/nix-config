@@ -3,7 +3,7 @@
     # Enable networking
     networking = {
       networkmanager.enable = true;
-      hostName = "matax"; # Define your hostname.
+      # hostName = "matax"; # Define your hostname.
 
       firewall = {
         allowedTCPPorts = [

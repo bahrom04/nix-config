@@ -18,6 +18,8 @@
     inputs.self.homeModules.users.bahrom04
   ];
 
+  networking.hostName = "matax";
+  
   programs.nix-data = {
     enable = true;
     systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/matax/configuration.nix";
