@@ -55,5 +55,6 @@
     pkgs.gnome-solanum
     pkgs.nextcloud-client
     pkgs.icon-library
+    pkgs.calamares-nixos
   ];
 }
