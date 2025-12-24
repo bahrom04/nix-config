@@ -7,6 +7,8 @@
     # Bootloader.
     boot = {
       loader = {
+        # After going back to bootloader, run this: 
+        # nixos-rebuild switch --install-bootloader
         systemd-boot.enable = false;
         efi.canTouchEfiVariables = true;
         grub = {
