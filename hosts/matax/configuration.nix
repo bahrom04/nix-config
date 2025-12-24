@@ -56,5 +56,6 @@
     pkgs.nextcloud-client
     pkgs.icon-library
     pkgs.calamares-nixos
+    pkgs.gnome-podcasts
   ];
 }
