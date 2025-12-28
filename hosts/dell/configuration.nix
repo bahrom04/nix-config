@@ -57,6 +57,5 @@
     pkgs.gnome-solanum
     pkgs.icon-library
     pkgs.dialect
-    pkgs.forge-sparks
   ];
 }
