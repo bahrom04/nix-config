@@ -17,6 +17,8 @@ in {
         SOPS_AGE_KEY_FILE = age_keys;
       };
       systemPackages = with pkgs; [
+        # fonts
+        freefont_ttf
         #formatter
         alejandra
         nixfmt-rfc-style
