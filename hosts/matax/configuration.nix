@@ -57,5 +57,6 @@
     pkgs.icon-library
     pkgs.calamares-nixos
     pkgs.gnome-podcasts
+    pkgs.cambalache
   ];
 }
