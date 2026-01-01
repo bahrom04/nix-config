@@ -16,27 +16,22 @@ in {
         pkgs.fractal
         pkgs.authenticator
         pkgs.libreoffice
+        pkgs.gnome-boxes
+        pkgs.prismlauncher
+        pkgs.thunderbird
+        pkgs.onlyoffice-desktopeditors
         pkgs.postman
         pkgs.poedit
 
-        pkgs.gnome-boxes
         pkgs.googleearth-pro
-        pkgs.prismlauncher
+        pkgs.google-chrome
+        pkgs.chromium
         pkgs.github-desktop
-        pkgs.thunderbird
-        # pkgs.android-studio
-
         pkgs.element-desktop
         pkgs.telegram-desktop
         pkgs.discord
-        # some apps
-        pkgs.onlyoffice-desktopeditors
-
-        # Browsers
-        pkgs.google-chrome
-        pkgs.chromium
-        pkgs.ungoogled-chromium
-
+        # pkgs.android-studio
+        
         # Xinux apps
         nix-software-center
         xinux-module-manager
