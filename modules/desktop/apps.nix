@@ -24,7 +24,7 @@ in {
         pkgs.prismlauncher
         pkgs.github-desktop
         pkgs.thunderbird
-        pkgs.android-studio
+        # pkgs.android-studio
 
         pkgs.element-desktop
         pkgs.telegram-desktop
