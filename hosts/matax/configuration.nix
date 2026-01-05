@@ -58,5 +58,7 @@
     pkgs.calamares-nixos
     pkgs.gnome-podcasts
     pkgs.cambalache
+    pkgs.adwsteamgtk
+    pkgs.bustle
   ];
 }
