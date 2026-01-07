@@ -60,5 +60,6 @@
     pkgs.cambalache
     pkgs.adwsteamgtk
     pkgs.bustle
+    pkgs.firefox
   ];
 }

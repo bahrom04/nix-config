@@ -21,7 +21,7 @@ in {
         pkgs.thunderbird
         pkgs.onlyoffice-desktopeditors
         pkgs.postman
-        pkgs.poedit
+        # pkgs.poedit
 
         pkgs.googleearth-pro
         pkgs.google-chrome
