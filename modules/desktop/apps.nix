@@ -3,6 +3,7 @@
   inputs,
   ...
 }: let
+  xeonitte = inputs.xeonitte.packages."${pkgs.stdenv.hostPlatform.system}".default;
   nix-software-center = inputs.nix-software-center.packages."${pkgs.stdenv.hostPlatform.system}".default;
   xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
   nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
@@ -33,6 +34,7 @@ in {
         # pkgs.android-studio
         
         # Xinux apps
+        xeonitte
         nix-software-center
         xinux-module-manager
         nixos-conf-editor

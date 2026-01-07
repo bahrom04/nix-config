@@ -36,6 +36,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Xinux
+    xeonitte = {
+      url = "github:xinux-org/xeonitte";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     nix-software-center = {
       url = "github:xinux-org/software-center";
       inputs.nixpkgs.follows = "nixpkgs";
