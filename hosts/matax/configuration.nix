@@ -61,5 +61,6 @@
     pkgs.adwsteamgtk
     pkgs.bustle
     pkgs.firefox
+    pkgs.gradia
   ];
 }
