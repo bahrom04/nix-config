@@ -1,20 +1,10 @@
 # ./flake.nix
 {
-  description = "My macOS config with nix-darwin + Home Manager";
+  description = "bahrom04ʼs nix-config";
 
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    # Nixpkgs for darwin
-    # nix-darwin = {
-    #   url = "github:lnl7/nix-darwin/master";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # sops-nix = {
-    #   url = "github:Mic92/sops-nix";
-    #   # inputs.nixpkgs.follows = "nixpkgs";
-    # };
 
     # Flake utils for eachSystem
     flake-utils.url = "github:numtide/flake-utils";
@@ -82,10 +72,6 @@
     };
     xinux-modules = {
       url = "github:xinux-org/modules";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    auto_profile_tg = {
-      url = "github:bahrom04/auto-profile-tg";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
