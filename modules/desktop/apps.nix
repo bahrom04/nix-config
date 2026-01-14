@@ -23,6 +23,7 @@ in {
         pkgs.onlyoffice-desktopeditors
         pkgs.postman
         # pkgs.poedit
+        pkgs.gtranslator
 
         pkgs.googleearth-pro
         pkgs.google-chrome
