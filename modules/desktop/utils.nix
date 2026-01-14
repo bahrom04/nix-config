@@ -21,7 +21,7 @@ in {
         freefont_ttf
         #formatter
         alejandra
-        nixfmt-rfc-style
+        nixfmt
 
         pkgs.desktop-file-utils
         neovim
