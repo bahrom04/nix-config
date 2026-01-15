@@ -57,5 +57,6 @@
     pkgs.gnome-solanum
     pkgs.icon-library
     pkgs.dialect
+    pkgs.blanket
   ];
 }
