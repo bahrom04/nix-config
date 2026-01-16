@@ -40,7 +40,7 @@ in {
         xinux-module-manager
         nixos-conf-editor
         e-imzo-manager
-        pkgs.snowfallorg.drift
+        # pkgs.snowfallorg.drift
       ];
       # exclude apps
       # gnome.excludePackages = with pkgs; [
