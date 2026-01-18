@@ -30,7 +30,7 @@
       url = "github:xinux-org/xeonitte";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     nix-software-center = {
       url = "github:xinux-org/software-center";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,6 +73,10 @@
     xinux-modules = {
       url = "github:xinux-org/modules";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    uzbek-keyboard = {
+      url = "github:bahrom04/uzbek-linux-keyboard/fix-default-latin";
     };
   };
 

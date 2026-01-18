@@ -90,11 +90,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766150702,
-        "narHash": "sha256-P0kM+5o+DKnB6raXgFEk3azw8Wqg5FL6wyl9jD+G5a4=",
+        "lastModified": 1768727946,
+        "narHash": "sha256-le2GY+ZR6uRHMuOAc60sBR3gBD2BEk1qOZ3S5C/XFpU=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "916506443ecd0d0b4a0f4cf9d40a3c22ce39b378",
+        "rev": "558e84658d0eafc812497542ad6ca0d9654b3b0f",
         "type": "github"
       },
       "original": {
@@ -913,11 +913,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768530555,
-        "narHash": "sha256-EBXKDho4t1YSgodAL6C8M3UTm8MGMZNQ9rQnceR5+6c=",
+        "lastModified": 1768707181,
+        "narHash": "sha256-GdwFfnwdUgABFpc4sAmX7GYx8eQs6cEjOPo6nBJ0YaI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d21bee5abf9fb4a42b2fa7728bf671f8bb246ba6",
+        "rev": "83bcb17377f0242376a327e742e9404e9a528647",
         "type": "github"
       },
       "original": {
@@ -1182,11 +1182,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1768305791,
-        "narHash": "sha256-AIdl6WAn9aymeaH/NvBj0H9qM+XuAuYbGMZaP0zcXAQ=",
+        "lastModified": 1768564909,
+        "narHash": "sha256-Kell/SpJYVkHWMvnhqJz/8DqQg2b6PguxVWOuadbHCc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1412caf7bf9e660f2f962917c14b1ea1c3bc695e",
+        "rev": "e4bae1bd10c9c57b2cf517953ab70060a828ee6f",
         "type": "github"
       },
       "original": {
@@ -1210,6 +1210,7 @@
         "nixos-conf-editor": "nixos-conf-editor",
         "nixpkgs": "nixpkgs",
         "snowfall-drift": "snowfall-drift",
+        "uzbek-keyboard": "uzbek-keyboard",
         "xeonitte": "xeonitte",
         "xinux-module-manager": "xinux-module-manager",
         "xinux-modules": "xinux-modules"
@@ -1576,6 +1577,22 @@
         "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "uzbek-keyboard": {
+      "locked": {
+        "lastModified": 1768729370,
+        "narHash": "sha256-GPu+Xpmy8ywpW47i5ttHEEXclaTANTY0uKRix67Vlcc=",
+        "owner": "bahrom04",
+        "repo": "uzbek-linux-keyboard",
+        "rev": "935ceda6cfbe04a64d43cc80ac399e5ec7ac59e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bahrom04",
+        "ref": "fix-default-latin",
+        "repo": "uzbek-linux-keyboard",
         "type": "github"
       }
     },
