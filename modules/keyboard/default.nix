@@ -1,22 +1,37 @@
-{inputs, ...}: {
-  imports = [
-    inputs.uzbek-keyboard.nixosModules.module
-  ];
+{inputs, ...}: let
+  xkbPath = ./xkb;
+in {
+  services.xserver = {
+    enable = true;
 
-  # services.xserver = {
-  #   enable = true;
+    xkb = {
+      variant = "latin";
+      layout = "uz,uz(latin),us,ru";
 
-  #   # Configure keymap in X11
-  #   xkb = {
-  #     extraLayouts.uz = {
-  #       description = "Uzbek (Oʻzbekiston)";
-  #       languages = ["eng" "uzb"];
-  #       symbolsFile = ./uz;
-  #     };
-  #     layout = "uz,us";
-  #     variant = "latin";
-  #   };
-  # };
+      extraLayouts = {
+        uz = {
+          description = "Uzbek";
+          languages = ["uzb"];
+          symbolsFile = "${xkbPath}/uz";
+        };
+        uz-us = {
+          description = "Uzbek (US)";
+          languages = ["uzb"];
+          symbolsFile = "${xkbPath}/uz_us";
+        };
+        uz-2023 = {
+          description = "Uzbek (2023)";
+          languages = ["uzb"];
+          symbolsFile = "${xkbPath}/uz_2023";
+        };
+        uz-cyrillic = {
+          description = "Uzbek (Cyrillic)";
+          languages = ["uzb"];
+          symbolsFile = "${xkbPath}/uz_cyrillic";
+        };
+      };
+    };
+  };
 
-  services.xserver.xkb.uz-enhanced.enable = true;
+  # services.xserver.xkb.uz-enhanced.enable = true;
 }
