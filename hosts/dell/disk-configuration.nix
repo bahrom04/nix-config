@@ -1,6 +1,6 @@
 {
   disks ? [
-    # 256 NVME
+    # 512 NVME
     "/dev/nvme0n1"
   ],
   ...
