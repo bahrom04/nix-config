@@ -27,46 +27,46 @@
     flakearg = "matax";
   };
 
-  services.samba = {
-    enable = true;
-    package = pkgs.samba4Full;
-    openFirewall = true;
+  services = {
+    samba = {
+      enable = true;
+      package = pkgs.samba4Full;
+      openFirewall = true;
 
-    settings = {
-      global = {
-        "server smb encrypt" = "required";
-        "server min protocol" = "SMB3_00";
-        "workgroup" = "WORKGROUP";
-        "security" = "user";
-      };
+      settings = {
+        global = {
+          "server smb encrypt" = "required";
+          "server min protocol" = "SMB3_00";
+          "workgroup" = "WORKGROUP";
+          "security" = "user";
+        };
 
-      testshare = {
-        "path" = "/home/bahrom/Public";
-        "writable" = "yes";
-        "comment" = "Hello World!";
-        "browseable" = "yes";
+        testshare = {
+          "path" = "/home/bahrom/Public";
+          "writable" = "yes";
+          "comment" = "Hello World!";
+          "browseable" = "yes";
+        };
+        # fayllar = {
+        #   "path" = "/media/fayllar";
+        #   "writable" = "yes";
+        #   "comment" = "Hello World!";
+        #   "browseable" = "yes";
+        # };
       };
-      fayllar = {
-        "path" = "/media/fayllar";
-        "writable" = "yes";
-        "comment" = "Hello World!";
-        "browseable" = "yes";
-      };
+    };
+    samba-wsdd = {
+      enable = true;
+      openFirewall = true;
+    };
+    avahi = {
+      enable = true;
+      publish.enable = true;
+      publish.userServices = true;
+      openFirewall = true;
     };
   };
 
-  # Keep your avahi and wsdd settings as they were
-  services.avahi = {
-    enable = true;
-    publish.enable = true;
-    publish.userServices = true;
-    openFirewall = true;
-  };
-
-  services.samba-wsdd = {
-    enable = true;
-    openFirewall = true;
-  };
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;
