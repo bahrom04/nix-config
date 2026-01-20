@@ -26,6 +26,8 @@
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
     flakearg = "matax";
   };
+  
+  
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;

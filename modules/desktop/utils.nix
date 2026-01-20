@@ -23,7 +23,8 @@ in {
         alejandra
         nixfmt
 
-        pkgs.desktop-file-utils
+        gnome-user-share
+        desktop-file-utils
         neovim
         vim
         fastfetch
