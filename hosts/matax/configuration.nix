@@ -19,15 +19,54 @@
   ];
 
   networking.hostName = "matax";
-  
+
   programs.nix-data = {
     enable = true;
     systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/matax/configuration.nix";
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
     flakearg = "matax";
   };
-  
-  
+
+  services.samba = {
+    enable = true;
+    package = pkgs.samba4Full;
+    openFirewall = true;
+
+    settings = {
+      global = {
+        "server smb encrypt" = "required";
+        "server min protocol" = "SMB3_00";
+        "workgroup" = "WORKGROUP";
+        "security" = "user";
+      };
+
+      testshare = {
+        "path" = "/home/bahrom/Public";
+        "writable" = "yes";
+        "comment" = "Hello World!";
+        "browseable" = "yes";
+      };
+      fayllar = {
+        "path" = "/media/fayllar";
+        "writable" = "yes";
+        "comment" = "Hello World!";
+        "browseable" = "yes";
+      };
+    };
+  };
+
+  # Keep your avahi and wsdd settings as they were
+  services.avahi = {
+    enable = true;
+    publish.enable = true;
+    publish.userServices = true;
+    openFirewall = true;
+  };
+
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
   #auto_profile_tg = {
   #  enable = false;
   #  api_id = config.sops.secrets.api_id.path;
