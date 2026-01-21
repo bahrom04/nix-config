@@ -12,7 +12,6 @@
     homeModules.home.starship
     homeModules.home.packages
     homeModules.home.fastfetch
-    #outputs.homeModules.home.zen-browser
     # outputs.homeModules.services.espanso
   ];
 

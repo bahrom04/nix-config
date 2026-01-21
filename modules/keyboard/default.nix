@@ -1,4 +1,4 @@
-{inputs, ...}: let
+{...}: let
   xkbPath = ./xkb;
 in {
   services.xserver = {

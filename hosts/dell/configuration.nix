@@ -16,6 +16,9 @@
     inputs.self.homeModules.desktop
     inputs.self.homeModules.keyboard
     inputs.self.homeModules.users.bahrom04
+    
+    # system wide apps
+    inputs.self.homeModules.nixos.firejail
   ];
   
   networking.hostName = "dell";

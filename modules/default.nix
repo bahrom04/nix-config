@@ -1,5 +1,6 @@
 {
   home = import ./home;
+  nixos = import ./nixos;
   users = import ./users;
   sops = import ./sops.nix;
   desktop = import ./desktop;

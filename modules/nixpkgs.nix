@@ -37,7 +37,7 @@
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
     settings = {
       # download-buffer-size = 524288000; # 500 MiB to prevent buffer warnings
-      
+
       experimental-features = "nix-command flakes pipe-operators";
       substituters = [
         "https://cache.xinux.uz/"

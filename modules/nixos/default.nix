@@ -1,0 +1,3 @@
+{
+  firejail = import ./firejail.nix;
+}

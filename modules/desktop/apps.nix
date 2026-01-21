@@ -32,6 +32,7 @@ in {
         pkgs.element-desktop
         pkgs.telegram-desktop
         pkgs.discord
+        # pkgs.ciscoPacketTracer8 waiting for 9 come out
         # pkgs.android-studio
         
         # Xinux apps
