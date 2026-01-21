@@ -6,6 +6,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }: {
   imports = [
@@ -45,8 +46,19 @@
     # GPU (Nvidia)
     nvidia = {
       open = true;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        mesa
+        libvdpau
+        libva-vdpau-driver
+        libva
+        vulkan-loader
+        vulkan-validation-layers
+      ];
+    };
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
