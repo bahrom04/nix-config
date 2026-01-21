@@ -30,6 +30,19 @@
       ];
 
       userSettings = {
+        # This seem to not working??
+        # keybindings = [
+        #   {
+        #     key = "ctrl+mate+down";
+        #     command = "workbench.action.terminal.focusNext";
+        #     when = "terminalFocus";
+        #   }
+        #   {
+        #     key = "ctrl+meta+up";
+        #     command = "workbench.action.terminal.focusPrevious";
+        #     when = "terminalFocus";
+        #   }
+        # ];
         "files.autoSave" = "afterDelay";
 
         "[python]"."editor.tabSize" = 4;
