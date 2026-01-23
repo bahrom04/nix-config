@@ -40,12 +40,12 @@
 
       experimental-features = "nix-command flakes pipe-operators";
       substituters = [
-        "https://cache.xinux.uz/"
         "https://cache.nixos.org/"
+        "https://cache.xinux.uz/"
       ];
       trusted-public-keys = [
-        "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0=" # xinux
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0=" # xinux
       ];
       trusted-users = [
         "root"
