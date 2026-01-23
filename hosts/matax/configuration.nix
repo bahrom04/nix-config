@@ -103,5 +103,6 @@
     pkgs.bustle
     pkgs.firefox
     pkgs.gradia
+    pkgs.dialect
   ];
 }
