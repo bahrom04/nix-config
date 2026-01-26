@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: let
   xeonitte = inputs.xeonitte.packages."${pkgs.stdenv.hostPlatform.system}".default;
@@ -8,6 +9,19 @@
   xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
   nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
   e-imzo-manager = inputs.e-imzo-manager.packages."${pkgs.stdenv.hostPlatform.system}".default;
+
+  # poedit = pkgs.poedit.overrideDerivation (oldAttrs: {
+  #   pname = "poedit";
+  #   version = "3.6.2";
+
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "vslavik";
+  #     repo = "poedit";
+  #     rev = "v3.5.2-oss";
+  #     hash = "sha256-Lb1R7GMB0GeS2xZASR7w4ee33mMEKP9gPabRHkHlIJI=";
+  #   };
+  #   patches = [];
+  # });
 in {
   config = {
     # APPS
@@ -22,8 +36,8 @@ in {
         pkgs.thunderbird
         pkgs.onlyoffice-desktopeditors
         pkgs.postman
-        # pkgs.poedit
         pkgs.gtranslator
+        # poedit
 
         pkgs.googleearth-pro
         pkgs.google-chrome
@@ -34,7 +48,7 @@ in {
         pkgs.discord
         # pkgs.ciscoPacketTracer8 waiting for 9 come out
         # pkgs.android-studio
-        
+
         # Xinux apps
         xeonitte
         nix-software-center
