@@ -75,8 +75,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    uzbek-keyboard = {
-      url = "github:bahrom04/uzbek-linux-keyboard/fix-default-latin";
+    uz-xkb = {
+      url = "github:itsbilolbek/uzbek-linux-keyboard";
+      flake = false;
     };
   };
 

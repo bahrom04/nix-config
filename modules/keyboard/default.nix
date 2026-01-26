@@ -1,4 +1,4 @@
-{...}: let
+{inputs, ...}: let
   xkbPath = ./xkb;
 in {
   services.xserver = {
@@ -6,13 +6,13 @@ in {
 
     xkb = {
       variant = "latin";
-      layout = "uz,uz(latin),us,ru";
+      layout = "uz,us,ru";
 
       extraLayouts = {
         uz = {
           description = "Uzbek";
           languages = ["uzb"];
-          symbolsFile = "${xkbPath}/uz";
+          symbolsFile = "${inputs.uz-xkb}/uz_compat";
         };
         uz-us = {
           description = "Uzbek (US)";
