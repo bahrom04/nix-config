@@ -1,41 +1,41 @@
 {pkgs, ...}: {
   # APPS
-  environment.systemPackages = [
-    pkgs.gnome-builder
-    pkgs.fractal
-    pkgs.authenticator
-    pkgs.libreoffice
-    pkgs.gnome-boxes
-    pkgs.prismlauncher
-    pkgs.thunderbird
-    pkgs.onlyoffice-desktopeditors
-    pkgs.postman
-    pkgs.gtranslator
+  environment.systemPackages = with pkgs;[
+    gnome-builder
+    fractal
+    authenticator
+    libreoffice
+    gnome-boxes
+    prismlauncher
+    thunderbird
+    onlyoffice-desktopeditors
+    postman
+    gtranslator
     # poedit
-    pkgs.googleearth-pro
-    pkgs.google-chrome
-    pkgs.chromium
-    pkgs.github-desktop
-    pkgs.element-desktop
-    pkgs.telegram-desktop
-    pkgs.discord
-    # pkgs.ciscoPacketTracer8 waiting for 9 come out
-    # pkgs.android-studio
-    pkgs.boltbrowser
-    pkgs.kstars
-    pkgs.gnome-solanum
-    pkgs.nextcloud-client
-    pkgs.icon-library
-    pkgs.calamares-nixos
-    pkgs.gnome-podcasts
-    pkgs.cambalache
-    pkgs.adwsteamgtk
-    pkgs.bustle
-    pkgs.firefox
-    pkgs.gradia
-    pkgs.dialect
-    pkgs.cpu-x
-    pkgs.sqlitebrowser
-    pkgs.blanket
+    googleearth-pro
+    google-chrome
+    chromium
+    github-desktop
+    element-desktop
+    telegram-desktop
+    discord
+    # ciscoPacketTracer8 waiting for 9 come out
+    # android-studio
+    boltbrowser
+    kstars
+    gnome-solanum
+    nextcloud-client
+    icon-library
+    calamares-nixos
+    gnome-podcasts
+    cambalache
+    adwsteamgtk
+    bustle
+    firefox
+    gradia
+    dialect
+    cpu-x
+    sqlitebrowser
+    blanket
   ];
 }
