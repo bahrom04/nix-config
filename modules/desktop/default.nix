@@ -1,4 +1,25 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  xeonitte = inputs.xeonitte.packages."${pkgs.stdenv.hostPlatform.system}".default;
+  nix-software-center = inputs.nix-software-center.packages."${pkgs.stdenv.hostPlatform.system}".default;
+  xinux-module-manager = inputs.xinux-module-manager.packages."${pkgs.stdenv.hostPlatform.system}".xinux-module-manager;
+  nixos-conf-editor = inputs.nixos-conf-editor.packages."${pkgs.stdenv.hostPlatform.system}".nixos-conf-editor;
+  e-imzo-manager = inputs.e-imzo-manager.packages."${pkgs.stdenv.hostPlatform.system}".default;
+  # poedit = pkgs.poedit.overrideDerivation (oldAttrs: {
+  #   pname = "poedit";
+  #   version = "3.6.2";
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "vslavik";
+  #     repo = "poedit";
+  #     rev = "v3.5.2-oss";
+  #     hash = "sha256-Lb1R7GMB0GeS2xZASR7w4ee33mMEKP9gPabRHkHlIJI=";
+  #   };
+  #   patches = [];
+  # });
+in {
   imports = [
     ./boot.nix
     ./apps.nix
@@ -9,6 +30,16 @@
     ./extensions.nix
   ];
   config = {
+    environment.systemPackages = [
+      # Xinux apps
+      xeonitte
+      nix-software-center
+      xinux-module-manager
+      nixos-conf-editor
+      e-imzo-manager
+      # pkgs.snowfallorg.drift
+    ];
+
     console.keyMap = "us";
 
     # Enable sound with pipewire.
