@@ -40,6 +40,10 @@
     # colorize_brackets = true;
     disable_ai = true;
 
+    preview_tabs = {
+      enabled = false;
+    };
+
     telemetry = {
       metrics = false;
       diagnostics = false;
@@ -176,7 +180,7 @@
     collaboration_panel = {
       button = false;
     };
-    
+
     agent = {
       enabled = false;
     };

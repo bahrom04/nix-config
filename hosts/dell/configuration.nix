@@ -26,24 +26,12 @@
 
   programs.nix-data = {
     enable = true;
-    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/hosts/dell/configuration.nix";
+    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/modules/desktop/apps.nix";
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
     flakearg = "dell";
   };
   
   services.e-imzo.enable = true;
-  #auto_profile_tg = {
-  #  enable = false;
-  #  api_id = config.sops.secrets.api_id.path;
-  #  api_hash = config.sops.secrets.api_hash.path;
-  #  phone_number = config.sops.secrets.phone_number.path;
-  #  first_name = config.sops.secrets.first_name.path;
-  #  lat = config.sops.secrets.lat.path;
-  #  lon = config.sops.secrets.lon.path;
-  #  timezone = config.sops.secrets.timezone.path;
-  #  city = config.sops.secrets.city.path;
-  #  weather_api_key = config.sops.secrets.weather_api_key.path;
-  #};
 
   # remove all gnome utility apps
   # services.gnome.core-utilities.enable = false;
@@ -54,13 +42,4 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
-  
-  environment.systemPackages = [
-    pkgs.cpu-x
-    pkgs.sqlitebrowser
-    pkgs.gnome-solanum
-    pkgs.icon-library
-    pkgs.dialect
-    pkgs.blanket
-  ];
 }
