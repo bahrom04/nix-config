@@ -13,7 +13,7 @@
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-data.nixosModules.nix-data
     inputs.self.homeModules.nixpkgs
-    inputs.self.homeModules.remote-builder
+    # inputs.self.homeModules.remote-builder
 
     inputs.self.homeModules.desktop
     inputs.self.homeModules.keyboard

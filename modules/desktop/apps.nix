@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # APPS
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     gnome-builder
     fractal
     authenticator
