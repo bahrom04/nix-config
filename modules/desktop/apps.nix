@@ -37,5 +37,6 @@
     cpu-x
     sqlitebrowser
     blanket
+    calls
   ];
 }
