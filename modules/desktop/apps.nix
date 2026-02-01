@@ -41,5 +41,8 @@
 
     # support both 32-bit and 64-bit applications
     wineWowPackages.stable
+    samba # Provides ntlm_auth
+    krb5 # Provides Kerberos support libraries
+    winetricks # Useful for further troubleshooting
   ];
 }

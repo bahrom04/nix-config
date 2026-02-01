@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   config,
+  lib,
   ...
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
@@ -9,7 +10,29 @@
   alejandra = inputs.alejandra.defaultPackage.${pkgs.stdenv.hostPlatform.system};
 in {
   config = {
-    programs.nix-ld.enable = true;
+    programs.nix-ld = {
+      enable = lib.mkDefault true;
+      libraries = with pkgs; [
+        acl
+        attr
+        bzip2
+        curl
+        libglvnd
+        libsodium
+        libssh
+        libxml2
+        mesa
+        openssl
+        stdenv.cc.cc
+        systemd
+        util-linux
+        vulkan-loader
+        xz
+        zlib
+        zstd
+      ];
+    };
+    services.envfs.enable = lib.mkDefault true;
 
     environment = {
       variables = {
