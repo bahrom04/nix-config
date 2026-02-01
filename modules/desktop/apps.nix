@@ -38,5 +38,8 @@
     sqlitebrowser
     blanket
     calls
+
+    # support both 32-bit and 64-bit applications
+    wineWowPackages.stable
   ];
 }
