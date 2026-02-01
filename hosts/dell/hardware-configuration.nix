@@ -6,6 +6,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }: {
   imports = [
@@ -30,6 +31,18 @@
 
   # List packages system hardware configuration
   hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        mesa
+        libvdpau
+        libva-vdpau-driver
+        libva
+        vulkan-loader
+        vulkan-validation-layers
+      ];
+    };
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
