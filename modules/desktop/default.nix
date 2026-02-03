@@ -112,6 +112,9 @@ in {
           [org.gnome.shell.extensions.dash-to-dock]
           apply-custom-theme=true
 
+          [org.gnome.shell.extensions.dash-to-dock]
+          click-action='minimize'
+          
           # Don't hibernate on delay
           [org.gnome.settings-daemon.plugins.power]
           sleep-inactive-ac-type='nothing'
