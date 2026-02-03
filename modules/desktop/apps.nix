@@ -38,7 +38,7 @@
     sqlitebrowser
     blanket
     calls
-    # ciscoPacketTracer9
+    ciscoPacketTracer9
     
     # support both 32-bit and 64-bit applications
     wineWowPackages.stable
