@@ -9,11 +9,6 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       inputs.snowfall-drift.overlays.default
     ];
-    config = {
-      permittedInsecurePackages = [
-        "googleearth-pro-7.3.6.10201"
-      ];
-    };
   };
 
   nix = {

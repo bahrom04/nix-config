@@ -27,11 +27,6 @@ in {
       default = true;
       description = "Enable Xinux Module Manager, a graphical tool for managing Xinux modules";
     };
-    binaryCompat.enable = mkOption {
-      type = bool;
-      default = false;
-      description = "Enables FHS binary compatibility (may not work in all cases)";
-    };
     eimzoIntegraion.enable = mkOption {
       type = bool;
       default = false;
@@ -83,30 +78,5 @@ in {
           defaultLocale = "ru_RU.UTF-8";
         };
       })
-    (mkIf cfg.binaryCompat.enable {
-      programs.nix-ld = {
-        enable = mkDefault true;
-        libraries = with pkgs; [
-          acl
-          attr
-          bzip2
-          curl
-          libglvnd
-          libsodium
-          libssh
-          libxml2
-          mesa
-          openssl
-          stdenv.cc.cc
-          systemd
-          util-linux
-          vulkan-loader
-          xz
-          zlib
-          zstd
-        ];
-      };
-      services.envfs.enable = mkDefault true;
-    })
   ];
 }

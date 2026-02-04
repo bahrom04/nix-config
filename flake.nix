@@ -101,26 +101,15 @@
         # Workaround for https://github.com/nix-community/home-manager/issues/2942
         allowUnfreePredicate = _: true;
         allowBroken = true;
+
+        permittedInsecurePackages = [
+          "googleearth-pro-7.3.6.10201"
+        ];
       };
 
       # Add modules to all NixOS systems.
       systems.modules.nixos = with inputs; [
         # packages
-        self.nixosModules.apps
-        self.nixosModules.boot
-        self.nixosModules.desktop
-        self.nixosModules.direnv
-        self.nixosModules.extension
-        self.nixosModules.fonts
-        self.nixosModules.keyboard
-        self.nixosModules.l10n
-        self.nixosModules.network
-        self.nixosModules.nixpkgs
-        self.nixosModules.users
-        self.nixosModules.utils
-        self.nixosModules.wallpapers
-        self.nixosModules.openssh
-        self.nixosModules.xinux
         disko.nixosModules.disko
 
         # a lot of module.nix
@@ -137,17 +126,17 @@
       ];
 
       # Default imported modules for all home-manager targets
-      homes.modules = with inputs; [
-        self.homeModules.zsh
-        self.homeModules.git
-        self.homeModules.ssh
-        self.homeModules.zed
-        self.homeModules.fish
-        self.homeModules.vscode
-        self.homeModules.packages
-        self.homeModules.starship
-        self.homeModules.fastfetch
-      ];
+      # homes.modules = with inputs; [
+      #   self.homeModules.zsh
+      #   self.homeModules.git
+      #   self.homeModules.ssh
+      #   self.homeModules.zed
+      #   self.homeModules.fish
+      #   self.homeModules.vscode
+      #   self.homeModules.packages
+      #   self.homeModules.starship
+      #   self.homeModules.fastfetch
+      # ];
 
       # Extra project metadata
       xinux = {
