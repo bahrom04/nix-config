@@ -1,14 +1,7 @@
-{
-  lib,
-  inputs,
-  pkgs,
-  ...
-}: {
+{lib, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./modules.nix
-    inputs.nix-data.nixosModules.nix-data
-
   ];
   networking.hostName = "dell";
 

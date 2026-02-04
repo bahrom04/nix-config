@@ -1,14 +1,17 @@
 {
   lib,
-  inputs,
   pkgs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     ./modules.nix
-    inputs.nix-data.nixosModules.nix-data
   ];
+
+  services.relago = {
+    enable = true;
+    # user = users.users.lambdajon;
+  };
 
   networking.hostName = "matax";
 

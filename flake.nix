@@ -82,6 +82,14 @@
       url = "github:itsbilolbek/uzbek-linux-keyboard";
       flake = false;
     };
+
+    relago = {
+      url = "github:xinux-org/relago/bootstrap-relago-module";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        # nixpkgs-unstable.follows = "nixpkgs-unstable";
+      };
+    };
   };
 
   outputs = inputs:
@@ -98,7 +106,6 @@
       channels-config = {
         allowUnfree = true;
         allowUnsupportedSystem = true;
-        # Workaround for https://github.com/nix-community/home-manager/issues/2942
         allowUnfreePredicate = _: true;
         allowBroken = true;
 
@@ -107,35 +114,19 @@
         ];
       };
 
-      # Add modules to all NixOS systems.
+      # Add modules to all NixOS systems. 
+      # output should be something meaningfull {}: {}
+      # Locals imported autom automaticly
+      # a lot of module.nix from remote repos.
       systems.modules.nixos = with inputs; [
-        # packages
         disko.nixosModules.disko
-
-        # a lot of module.nix
-        # nix-data.nixosModules.nix-data
-        # xinux-modules.nixosModules.efiboot
-        # xinux-modules.nixosModules.gnome
-        # xinux-modules.nixosModules.kernel
-        # xinux-modules.nixosModules.networking
-        # xinux-modules.nixosModules.packagemanagers
-        # xinux-modules.nixosModules.pipewire
-        # xinux-modules.nixosModules.printing
-        # xinux-modules.nixosModules.xinux
-        # xinux-modules.nixosModules.metadata
+        nix-data.nixosModules.nix-data
+        relago.nixosModules.relago
       ];
 
-      # Default imported modules for all home-manager targets
       # homes.modules = with inputs; [
-      #   self.homeModules.zsh
-      #   self.homeModules.git
-      #   self.homeModules.ssh
-      #   self.homeModules.zed
-      #   self.homeModules.fish
-      #   self.homeModules.vscode
-      #   self.homeModules.packages
-      #   self.homeModules.starship
-      #   self.homeModules.fastfetch
+        # nix-data.nixosModules.nix-data
+        # relago.nixosModules.relago
       # ];
 
       # Extra project metadata
