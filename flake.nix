@@ -6,8 +6,11 @@
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # Flake utils for eachSystem
-    flake-utils.url = "github:numtide/flake-utils";
+    # Xinux library
+    xinux-lib = {
+      url = "github:xinux-org/lib/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Home manager
     home-manager = {
@@ -81,25 +84,45 @@
     };
   };
 
-  outputs = {
-    nixpkgs,
-    flake-utils,
-    ...
-  } @ inputs:
-    flake-utils.lib.eachDefaultSystem (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in {
-        # Nix script formatter
-        formatter = pkgs.alejandra;
+  outputs = inputs:
+    inputs.xinux-lib.mkFlake {
+      inherit inputs;
+      src = ./.;
 
-        devShells.default = import ./shell.nix {inherit pkgs inputs;};
-      }
-    )
-    // {
-      homeModules = import ./modules;
+      # Extra nix flags to set
+      outputs-builder = channels: {
+        formatter = channels.nixpkgs.alejandra;
+      };
 
+      # Globally applied nixpkgs settings
+      channels-config = {
+        allowUnfree = true;
+        allowUnsupportedSystem = true;
+        # Workaround for https://github.com/nix-community/home-manager/issues/2942
+        allowUnfreePredicate = _: true;
+        allowBroken = true;
+      };
+
+      # Add modules to all NixOS systems.
       systems.modules.nixos = with inputs; [
+        # packages
+        self.nixosModules.apps
+        self.nixosModules.boot
+        self.nixosModules.desktop
+        self.nixosModules.direnv
+        self.nixosModules.extension
+        self.nixosModules.fonts
+        self.nixosModules.keyboard
+        self.nixosModules.l10n
+        self.nixosModules.network
+        self.nixosModules.nixpkgs
+        self.nixosModules.users
+        self.nixosModules.utils
+        self.nixosModules.wallpapers
+        self.nixosModules.xinux
+        disko.nixosModules.disko
+
+        # a lot of module.nix
         nix-data.nixosModules.nix-data
         xinux-modules.nixosModules.efiboot
         xinux-modules.nixosModules.gnome
@@ -112,24 +135,30 @@
         xinux-modules.nixosModules.metadata
       ];
 
-      # see: https://isabelroses.com/blog/im-not-mad-im-disappointed/
-      nixosConfigurations.matax = inputs.nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/matax/configuration.nix
-        ];
+      # Default imported modules for all home-manager targets
+      homes.modules = with inputs; [
+        self.homeModules.zsh
+        self.homeModules.git
+        self.homeModules.ssh
+        self.homeModules.zed
+        self.homeModules.fish
+        self.homeModules.vscode
+        self.homeModules.openssh
+        self.homeModules.packages
+        self.homeModules.starship
+        self.homeModules.fastfetch
+      ];
 
-        specialArgs = {
-          inherit inputs;
-        };
-      };
+      # Extra project metadata
+      xinux = {
+        # Namespace for overlay, lib, packages
+        namespace = "bahrom";
+        # Example: lib.orzklv.match ...
 
-      nixosConfigurations.dell = inputs.nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/dell/configuration.nix
-        ];
-
-        specialArgs = {
-          inherit inputs;
+        # For data extraction
+        meta = {
+          name = "bahrom04";
+          title = "bahrom04ʼs Personal Flake Configuration";
         };
       };
     };
