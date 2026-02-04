@@ -119,20 +119,21 @@
         self.nixosModules.users
         self.nixosModules.utils
         self.nixosModules.wallpapers
+        self.nixosModules.openssh
         self.nixosModules.xinux
         disko.nixosModules.disko
 
         # a lot of module.nix
-        nix-data.nixosModules.nix-data
-        xinux-modules.nixosModules.efiboot
-        xinux-modules.nixosModules.gnome
-        xinux-modules.nixosModules.kernel
-        xinux-modules.nixosModules.networking
-        xinux-modules.nixosModules.packagemanagers
-        xinux-modules.nixosModules.pipewire
-        xinux-modules.nixosModules.printing
-        xinux-modules.nixosModules.xinux
-        xinux-modules.nixosModules.metadata
+        # nix-data.nixosModules.nix-data
+        # xinux-modules.nixosModules.efiboot
+        # xinux-modules.nixosModules.gnome
+        # xinux-modules.nixosModules.kernel
+        # xinux-modules.nixosModules.networking
+        # xinux-modules.nixosModules.packagemanagers
+        # xinux-modules.nixosModules.pipewire
+        # xinux-modules.nixosModules.printing
+        # xinux-modules.nixosModules.xinux
+        # xinux-modules.nixosModules.metadata
       ];
 
       # Default imported modules for all home-manager targets
@@ -143,7 +144,6 @@
         self.homeModules.zed
         self.homeModules.fish
         self.homeModules.vscode
-        self.homeModules.openssh
         self.homeModules.packages
         self.homeModules.starship
         self.homeModules.fastfetch

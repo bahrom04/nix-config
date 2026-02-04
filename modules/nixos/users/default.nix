@@ -6,10 +6,8 @@
   hashedPassword = "$2b$05$QgiAihjGOtxfGZ06pfm2u.dMR6522sT2Pmy4mt//Rf2x5YonDcD.2";
 in {
   config = {
-    xinux-org.users.bahrom = {
-      home.config = {};
-    };
-    
+    home-manager.backupFileExtension = "hbak";
+
     users.users = {
       bahrom = {
         inherit hashedPassword;
@@ -35,17 +33,6 @@ in {
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFEJjeEUMVe4fyRXVGbG4UvQiSACjPv/AEdyytIazfgT magdiyevbahrom@gmail.com"
           # add more
         ];
-      };
-    };
-
-    home-manager = {
-      backupFileExtension = "hbak";
-      extraSpecialArgs = {
-        inherit inputs;
-      };
-      users = {
-        # Import your home-manager configuration
-        bahrom = import ../../hosts/matax/home.nix;
       };
     };
   };

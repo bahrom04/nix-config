@@ -6,7 +6,6 @@
   ...
 }: let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-  xinux-wallpapers = pkgs.lib.recurseIntoAttrs (pkgs.callPackage ../wallpapers/default.nix {});
   alejandra = inputs.alejandra.defaultPackage.${pkgs.stdenv.hostPlatform.system};
 in {
   config = {
@@ -68,11 +67,6 @@ in {
         hunspellDicts.uz_UZ
         # Services
         # redis
-        #
-        # xinux-wallpapers
-        xinux-wallpapers.xinux-blue-light
-        xinux-wallpapers.xinux-blue-dark
-        xinux-wallpapers.xinux-orange
       ];
     };
   };
