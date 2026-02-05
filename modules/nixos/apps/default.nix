@@ -11,7 +11,7 @@
     onlyoffice-desktopeditors
     postman
     gtranslator
-    # poedit
+    (poedit.override { boost = boost188; })
     googleearth-pro
     google-chrome
     chromium
