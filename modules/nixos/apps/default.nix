@@ -43,6 +43,6 @@
     ciscoPacketTracer9
     autopsy
     obs-studio
-    poedit
+    # poedit.override { boo}
   ];
 }
