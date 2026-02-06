@@ -6,6 +6,8 @@
     samba # Provides ntlm_auth
     krb5 # Provides Kerberos support libraries
     winetricks # Useful for further troubleshooting
+    protontricks
+    
     gnome-builder
     fractal
     authenticator
