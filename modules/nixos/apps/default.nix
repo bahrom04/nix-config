@@ -43,6 +43,7 @@
     ciscoPacketTracer9
     autopsy
     obs-studio
+    e-imzo-manager
     # poedit.override { boo}
   ];
 }
