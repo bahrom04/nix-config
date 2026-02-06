@@ -1,6 +1,11 @@
 {pkgs, ...}: {
   # APPS
   environment.systemPackages = with pkgs; [
+    # support both 32-bit and 64-bit applications
+    wineWowPackages.stable
+    samba # Provides ntlm_auth
+    krb5 # Provides Kerberos support libraries
+    winetricks # Useful for further troubleshooting
     gnome-builder
     fractal
     authenticator
@@ -11,7 +16,6 @@
     onlyoffice-desktopeditors
     postman
     gtranslator
-    (poedit.override { boost = boost188; })
     googleearth-pro
     google-chrome
     chromium
@@ -19,8 +23,6 @@
     element-desktop
     telegram-desktop
     discord
-    # ciscoPacketTracer8 waiting for 9 come out
-    # android-studio
     boltbrowser
     kstars
     gnome-solanum
@@ -40,11 +42,7 @@
     calls
     ciscoPacketTracer9
     autopsy
-    
-    # support both 32-bit and 64-bit applications
-    wineWowPackages.stable
-    samba # Provides ntlm_auth
-    krb5 # Provides Kerberos support libraries
-    winetricks # Useful for further troubleshooting
+    obs-studio
+    poedit
   ];
 }
