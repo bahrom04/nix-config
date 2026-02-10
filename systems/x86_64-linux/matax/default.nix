@@ -8,6 +8,14 @@
     ./modules.nix
   ];
 
+  # useful when debugging xeonitte (xinux installer)
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (subject.isInGroup("wheel"))
+        return polkit.Result.YES;
+    });
+  '';
+
   services.relago = {
     enable = true;
     # user = users.users.lambdajon;
