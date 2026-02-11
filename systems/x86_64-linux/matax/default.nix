@@ -17,7 +17,7 @@
   '';
 
   services.relago = {
-    enable = true;
+    enable = false;
     # user = users.users.lambdajon;
   };
 
