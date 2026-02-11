@@ -46,7 +46,7 @@
         "files.autoSave" = "afterDelay";
 
         "[python]"."editor.tabSize" = 4;
-        "editor.fontSize" = 15;
+        "editor.fontSize" = 14;
         "terminal.integrated.fontSize" = 14;
         "editor.defaultFormatter" = "ms-python.black-formatter";
         "editor.formatOnSave" = true;
