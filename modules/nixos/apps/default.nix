@@ -48,5 +48,6 @@
     e-imzo-manager
     obsidian
     # poedit.override { boo}
+    nixpkgs-review
   ];
 }
