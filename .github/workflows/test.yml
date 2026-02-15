@@ -1,3 +1,5 @@
+name: Test nix-config
+
 on:
   push:
     branches: [main, x86_64-linux]
@@ -9,10 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       
       - name: Install nix
         uses: DeterminateSystems/nix-installer-action@main
+      
+      - name: magic-nix-cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Test flake check     
         run: nix flake check --show-trace
