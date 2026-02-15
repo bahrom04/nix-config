@@ -2,7 +2,7 @@
   # APPS
   environment.systemPackages = with pkgs; [
     # support both 32-bit and 64-bit applications
-    wineWowPackages.stable
+    wineWow64Packages.stable
     samba # Provides ntlm_auth
     krb5 # Provides Kerberos support libraries
     winetricks # Useful for further troubleshooting
@@ -42,7 +42,7 @@
     sqlitebrowser
     blanket
     calls
-    ciscoPacketTracer9
+    cisco-packet-tracer_9
     autopsy
     obs-studio
     e-imzo-manager

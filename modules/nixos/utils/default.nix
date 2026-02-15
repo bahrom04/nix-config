@@ -50,11 +50,11 @@ in {
         neovim
         vim
         fastfetch
-        xorg.xkbcomp
+        xkbcomp
+        setxkbmap
         rng-tools
         haveged
-        xorg.setxkbmap
-        pkgs.flatpak-builder
+        flatpak-builder
         woeusb # for creating windows usb
 
         # git/hub
