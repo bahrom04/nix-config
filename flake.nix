@@ -4,7 +4,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:xinux-org/nixpkgs/nixos-unstable";
 
     # Xinux library
     xinux-lib = {
@@ -29,21 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Xinux
-    xeonitte = {
-      url = "github:xinux-org/xeonitte";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-software-center = {
-      url = "github:xinux-org/software-center";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    xinux-module-manager = {
-      url = "github:xinux-org/module-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-conf-editor = {
       url = "github:xinux-org/conf-editor";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -56,11 +41,6 @@
 
     nix-data = {
       url = "github:xinux-org/nix-data";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    e-imzo-manager = {
-      url = "github:xinux-org/e-imzo-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

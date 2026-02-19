@@ -40,8 +40,8 @@ in {
   };
   config = mkMerge [
     (mkIf cfg.nixSoftwareCenter.enable {
-      environment.systemPackages = with inputs; [
-        nix-software-center.packages.${pkgs.stdenv.hostPlatform.system}.default
+      environment.systemPackages = with pkgs; [
+        software-center
       ];
     })
     (mkIf cfg.nixosConfEditor.enable {
@@ -51,13 +51,13 @@ in {
     })
     (mkIf cfg.eimzoIntegraion.enable {
       services.e-imzo.enable = mkForce true;
-      environment.systemPackages = with inputs; [
-        e-imzo-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
+      environment.systemPackages = with pkgs; [
+        e-imzo-manager
       ];
     })
     (mkIf cfg.xinuxModuleManager.enable {
-      environment.systemPackages = with inputs; [
-        xinux-module-manager.packages.${pkgs.stdenv.hostPlatform.system}.xinux-module-manager
+      environment.systemPackages = with pkgs; [
+        xinux-module-manager
       ];
     })
     (mkIf (cfg.language == "uz_UZ.UTF-8")

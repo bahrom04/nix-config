@@ -50,5 +50,6 @@
     obsidian
     # poedit.override { boo}
     nixpkgs-review
+    xeonitte
   ];
 }
