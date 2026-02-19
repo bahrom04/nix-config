@@ -14,11 +14,12 @@
     libreoffice
     gnome-boxes
     prismlauncher
+    gparted
+    googleearth-pro
     thunderbird
     onlyoffice-desktopeditors
     postman
     gtranslator
-    googleearth-pro
     google-chrome
     chromium
     github-desktop
