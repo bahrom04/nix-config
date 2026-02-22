@@ -56,6 +56,8 @@
           };
         };
         "files.associations" = {
+          "*.hs" = "haskell";
+
           "*.dump-simpl" = "haskell";
           "*.dump-ds" = "haskell";
           "*.project.local" = "haskell";
@@ -95,8 +97,14 @@
         "remote.SSH.configFile" = "~/.ssh/id_ed25519";
         "extensions.ignoreRecommendations" = true;
         "terminal.integrated.suggest" = false;
+        "alejandra.program" = "alejandra";
 
         # Language-specific settings
+        "haskell.manageHLS" = "PATH";
+        haskell = {
+          formattingProvider = "fourmolu";
+          manageHLS = "PATH";
+        };
         "[javascript]" = {
           "editor.defaultFormatter" = "typescript-language-features";
         };
@@ -136,7 +144,6 @@
           "editor.formatOnSave" = true;
           "editor.formatOnType" = false;
         };
-        "alejandra.program" = "alejandra";
         "nix" = {
           "enableLanguageServer" = true;
           "serverPath" = "nixd";
