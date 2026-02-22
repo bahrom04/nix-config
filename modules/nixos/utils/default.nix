@@ -33,6 +33,21 @@ in {
     };
     services.envfs.enable = lib.mkDefault true;
 
+    programs.fuse = {
+      enable = true;
+      userAllowOther = true;
+    };
+    programs.appimage = {
+      enable = true;
+      binfmt = true;
+      package = pkgs.appimage-run.override {
+        extraPkgs = pkgs: [
+          pkgs.fuse # Provides FUSE 2 support
+          pkgs.libpulseaudio # Often needed for sound in AppImages
+        ];
+      };
+    };
+
     environment = {
       variables = {
         EDITOR = "vim";
@@ -56,6 +71,9 @@ in {
         haveged
         flatpak-builder
         woeusb # for creating windows usb
+
+        fuse # version 2 for appimages
+        appimage-run
 
         # git/hub
         age

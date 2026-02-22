@@ -18,7 +18,7 @@
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = []; # "nvme"
-  boot.kernelModules = ["kvm-amd" "vboxdrv" "vboxnetflt" "vboxnetadp"];
+  boot.kernelModules = ["kvm-amd" "vboxdrv" "vboxnetflt" "vboxnetadp" "fuse"];
   boot.extraModulePackages = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
