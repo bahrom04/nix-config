@@ -51,5 +51,7 @@
     # poedit.override { boo}
     nixpkgs-review
     xeonitte
+    burpsuite
+    zap
   ];
 }
