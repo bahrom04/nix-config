@@ -53,5 +53,6 @@
     xeonitte
     burpsuite
     zap
+    cloudflared
   ];
 }
