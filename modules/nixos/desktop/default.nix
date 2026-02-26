@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./utils.nix
   ];
@@ -11,6 +6,7 @@
   console.keyMap = "us";
   # Enable sound with pipewire.
   security = {
+    sudo-rs.enable = true;
     rtkit.enable = true;
   };
 
