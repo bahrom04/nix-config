@@ -8,7 +8,8 @@
   modulesPath,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.disko.nixosModules.disko
     ./disk-configuration.nix
@@ -16,10 +17,22 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = []; # "nvme"
-  boot.kernelModules = ["kvm-amd" "vboxdrv" "vboxnetflt" "vboxnetadp" "fuse"];
-  boot.extraModulePackages = [];
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+  ];
+  boot.initrd.kernelModules = [ ]; # "nvme"
+  boot.kernelModules = [
+    "kvm-amd"
+    "vboxdrv"
+    "vboxnetflt"
+    "vboxnetadp"
+    "fuse"
+  ];
+  boot.extraModulePackages = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

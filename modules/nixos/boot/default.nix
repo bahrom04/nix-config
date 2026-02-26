@@ -2,18 +2,19 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   config = {
     # Bootloader.
     boot = {
       loader = {
-        # After going back to bootloader, run this: 
+        # After going back to bootloader, run this:
         # nixos-rebuild switch --install-bootloader
         systemd-boot.enable = false;
         efi.canTouchEfiVariables = true;
         grub = {
           enable = true;
-          devices = ["nodev"];
+          devices = [ "nodev" ];
           useOSProber = true;
           efiSupport = true;
           theme = "${
@@ -29,7 +30,7 @@
       plymouth = {
         enable = true;
         theme = "mac-style";
-        themePackages = [inputs.mac-style-plymouth.packages."${pkgs.stdenv.hostPlatform.system}".default];
+        themePackages = [ inputs.mac-style-plymouth.packages."${pkgs.stdenv.hostPlatform.system}".default ];
       };
       consoleLogLevel = 3;
       initrd.systemd.enable = true;

@@ -5,9 +5,11 @@
   lib,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.xinux;
-in {
+in
+{
   imports = [
   ];
 
@@ -33,7 +35,11 @@ in {
       description = "Enable services and install software of E-IMZO for easier management of keys";
     };
     language = mkOption {
-      type = enum ["uz_UZ.UTF-8" "en_US.UTF-8" "ru_RU.UTF-8"];
+      type = enum [
+        "uz_UZ.UTF-8"
+        "en_US.UTF-8"
+        "ru_RU.UTF-8"
+      ];
       default = "uz_UZ.UTF-8";
       description = "set language";
     };
@@ -60,23 +66,20 @@ in {
         xinux-module-manager
       ];
     })
-    (mkIf (cfg.language == "uz_UZ.UTF-8")
-      {
-        i18n = {
-          defaultLocale = "uz_UZ.UTF-8";
-        };
-      })
-    (mkIf (cfg.language == "en_US.UTF-8")
-      {
-        i18n = {
-          defaultLocale = "en_US.UTF-8";
-        };
-      })
-    (mkIf (cfg.language == "ru_RU.UTF-8")
-      {
-        i18n = {
-          defaultLocale = "ru_RU.UTF-8";
-        };
-      })
+    (mkIf (cfg.language == "uz_UZ.UTF-8") {
+      i18n = {
+        defaultLocale = "uz_UZ.UTF-8";
+      };
+    })
+    (mkIf (cfg.language == "en_US.UTF-8") {
+      i18n = {
+        defaultLocale = "en_US.UTF-8";
+      };
+    })
+    (mkIf (cfg.language == "ru_RU.UTF-8") {
+      i18n = {
+        defaultLocale = "ru_RU.UTF-8";
+      };
+    })
   ];
 }

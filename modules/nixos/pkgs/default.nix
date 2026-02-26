@@ -1,8 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # APPS
   environment.systemPackages = with pkgs; [
     # formatter
-    alejandra
+    nixfmt-tree
+    nixfmt
     # fonts
     freefont_ttf
     nixfmt

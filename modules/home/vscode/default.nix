@@ -1,5 +1,6 @@
 # reference: https://maksar.github.io/posts/code/2021-09-19-vscode/
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
@@ -24,9 +25,9 @@
         kubukoz.nickel-syntax
         jnoortheen.nix-ide
         mesonbuild.mesonbuild
-        kamadorueda.alejandra
         haskell.haskell
         justusadam.language-haskell
+        brettm12345.nixfmt-vscode
       ];
 
       userSettings = {
@@ -97,7 +98,7 @@
         "remote.SSH.configFile" = "~/.ssh/id_ed25519";
         "extensions.ignoreRecommendations" = true;
         "terminal.integrated.suggest" = false;
-        "alejandra.program" = "alejandra";
+        # "alejandra.program" = "alejandra";
 
         # Language-specific settings
         "haskell.manageHLS" = "PATH";
@@ -126,7 +127,7 @@
         "[python]" = {
           "diffEditor.ignoreTrimWhitespace" = false;
           "editor.defaultColorDecorators" = "never";
-          "gitlens.codeLens.symbolScopes" = ["!Module"];
+          "gitlens.codeLens.symbolScopes" = [ "!Module" ];
           "editor.formatOnType" = true;
           "editor.wordBasedSuggestions" = "off";
         };
@@ -139,7 +140,7 @@
         };
         "[nix]" = {
           "editor.tabSize" = 2;
-          "editor.defaultFormatter" = "kamadorueda.alejandra";
+          "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
           "editor.formatOnPaste" = true;
           "editor.formatOnSave" = true;
           "editor.formatOnType" = false;
@@ -147,12 +148,12 @@
         "nix" = {
           "enableLanguageServer" = true;
           "serverPath" = "nixd";
-          "formatterPath" = "alejandra";
+          "formatterPath" = "nixfmt";
           "serverSettings" = {
             "nixd" = {
               "formatting" = {
                 "command" = [
-                  "alejandra"
+                  "nixfmt"
                 ];
               };
               # "options" = {

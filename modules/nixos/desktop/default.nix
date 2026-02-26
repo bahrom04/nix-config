@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./utils.nix
   ];
@@ -112,7 +113,7 @@
     };
 
     # NVIDIA driver support
-    xserver.videoDrivers = ["nvidia"];
+    xserver.videoDrivers = [ "nvidia" ];
     pcscd.enable = true;
   };
 

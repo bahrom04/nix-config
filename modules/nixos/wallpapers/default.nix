@@ -1,6 +1,8 @@
-{pkgs, ...}: let
-  xinux-wallpapers = pkgs.lib.recurseIntoAttrs (pkgs.callPackage ../wallpapers/options.nix {});
-in {
+{ pkgs, ... }:
+let
+  xinux-wallpapers = pkgs.lib.recurseIntoAttrs (pkgs.callPackage ../wallpapers/options.nix { });
+in
+{
   config = {
     environment = {
       systemPackages = with pkgs; [

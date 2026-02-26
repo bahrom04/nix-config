@@ -23,11 +23,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # VSCode extension marketplace
-    alejandra = {
-      url = "github:kamadorueda/alejandra/4.0.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # Xinux
     nixos-conf-editor = {
       url = "github:xinux-org/conf-editor";
@@ -53,7 +48,7 @@
       url = "github:snowfallorg/drift";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     xinux-modules = {
       url = "github:xinux-org/modules";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,14 +68,15 @@
     };
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.xinux-lib.mkFlake {
       inherit inputs;
       src = ./.;
 
       # Extra nix flags to set
       outputs-builder = channels: {
-        formatter = channels.nixpkgs.alejandra;
+        formatter = channels.nixpkgs.nixfmt-tree;
       };
 
       # Globally applied nixpkgs settings
@@ -94,8 +90,7 @@
           "googleearth-pro-7.3.6.10201"
         ];
       };
-
-      # Add modules to all NixOS systems. 
+      # Add modules to all NixOS systems.
       # output should be something meaningfull {}: {}
       # Locals imported autom automaticly
       # a lot of module.nix from remote repos.
@@ -106,8 +101,8 @@
       ];
 
       # homes.modules = with inputs; [
-        # nix-data.nixosModules.nix-data
-        # relago.nixosModules.relago
+      # nix-data.nixosModules.nix-data
+      # relago.nixosModules.relago
       # ];
 
       # Extra project metadata

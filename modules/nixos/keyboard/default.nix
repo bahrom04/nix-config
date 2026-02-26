@@ -1,6 +1,8 @@
-{inputs, ...}: let
+{ inputs, ... }:
+let
   xkbPath = ./xkb;
-in {
+in
+{
   services.xserver = {
     enable = true;
 
@@ -13,22 +15,22 @@ in {
       extraLayouts = {
         uz = {
           description = "Uzbek";
-          languages = ["uzb"];
+          languages = [ "uzb" ];
           symbolsFile = "${inputs.uz-xkb}/uz_compat";
         };
         uz-us = {
           description = "Uzbek (US)";
-          languages = ["uzb"];
+          languages = [ "uzb" ];
           symbolsFile = "${xkbPath}/uz_us";
         };
         uz-2023 = {
           description = "Uzbek (2023)";
-          languages = ["uzb"];
+          languages = [ "uzb" ];
           symbolsFile = "${xkbPath}/uz_2023";
         };
         uz-cyrillic = {
           description = "Uzbek (Cyrillic)";
-          languages = ["uzb"];
+          languages = [ "uzb" ];
           symbolsFile = "${xkbPath}/uz_cyrillic";
         };
       };

@@ -8,7 +8,8 @@
   modulesPath,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.disko.nixosModules.disko
     ./disk-configuration.nix
@@ -25,11 +26,11 @@
     "usb_storage"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = ["nvme"];
+  boot.initrd.kernelModules = [ "nvme" ];
   boot.kernelModules = [
     "kvm-intel"
   ];
-  boot.extraModulePackages = [];
+  boot.extraModulePackages = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

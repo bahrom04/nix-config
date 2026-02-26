@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   config = {
     # Enable networking
     networking = {

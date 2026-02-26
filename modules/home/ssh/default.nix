@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   config = {
     programs.ssh = {
       enableDefaultConfig = false;

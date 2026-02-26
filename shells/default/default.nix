@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 pkgs.stdenv.mkDerivation {
   name = "nix";
 
@@ -6,7 +6,8 @@ pkgs.stdenv.mkDerivation {
     nixd
     statix
     deadnix
-    alejandra
+    nixfmt
+    nixfmt-tree
     age
     sops
     rng-tools

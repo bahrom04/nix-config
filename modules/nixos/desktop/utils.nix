@@ -3,9 +3,11 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-in {
+in
+{
   programs.nix-ld = {
     enable = lib.mkDefault true;
     libraries = with pkgs; [

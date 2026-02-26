@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   config = {
     fonts.packages = with pkgs; [
       corefonts
@@ -12,7 +13,7 @@
       wqy_zenhei
       # Other potential CJK fonts
       mplus-outline-fonts.osdnRelease
-      
+
     ];
   };
 }

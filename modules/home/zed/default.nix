@@ -3,7 +3,8 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   extensions = [
     "assembly"
     "deno"
@@ -101,7 +102,7 @@
         settings = {
           formatting = {
             command = [
-              "alejandra"
+              "nixfmt"
             ];
           };
           diagnostic = {
@@ -185,7 +186,8 @@
       enabled = false;
     };
   };
-in {
+in
+{
   config = {
     programs.zed-editor = {
       enable = true;
