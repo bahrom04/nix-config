@@ -80,6 +80,7 @@
     obs-studio
     e-imzo-manager
     obsidian
+    crosswords
     # poedit.override { boo}
     nixpkgs-review
     xeonitte
