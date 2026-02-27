@@ -64,7 +64,6 @@
     gnome-solanum
     nextcloud-client
     icon-library
-    calamares-nixos
     gnome-podcasts
     cambalache
     adwsteamgtk
@@ -75,7 +74,6 @@
     cpu-x
     sqlitebrowser
     blanket
-    calls
     cisco-packet-tracer_9
     autopsy
     obs-studio
@@ -86,5 +84,7 @@
     xeonitte
     burpsuite
     zap
+    cosmic-settings
+    cosmic-settings-daemon
   ];
 }
