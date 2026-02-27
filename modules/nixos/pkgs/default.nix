@@ -68,6 +68,7 @@
     cambalache
     adwsteamgtk
     bustle
+    d-spy
     firefox
     gradia
     dialect
@@ -84,7 +85,6 @@
     xeonitte
     burpsuite
     zap
-    d-spy
     cosmic-settings
     cosmic-settings-daemon
   ];
