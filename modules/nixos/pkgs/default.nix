@@ -84,6 +84,7 @@
     xeonitte
     burpsuite
     zap
+    d-spy
     cosmic-settings
     cosmic-settings-daemon
   ];
