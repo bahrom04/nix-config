@@ -84,10 +84,14 @@
     # poedit.override { boo}
     nixpkgs-review
     xeonitte
+    cosmic-settings
+    cosmic-settings-daemon
     burpsuite
     zap
     seclists
-    cosmic-settings
-    cosmic-settings-daemon
+    veracrypt
+    cryptomator
+    kdePackages.kleopatra
+    hashcat
   ];
 }
