@@ -93,5 +93,8 @@
     cryptomator
     kdePackages.kleopatra
     hashcat
+    rocmPackages.llvm.bintools
+    wireshark
+    tshark
   ];
 }
