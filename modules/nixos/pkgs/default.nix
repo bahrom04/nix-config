@@ -86,6 +86,7 @@
     xeonitte
     burpsuite
     zap
+    seclists
     cosmic-settings
     cosmic-settings-daemon
   ];
