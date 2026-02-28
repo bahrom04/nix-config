@@ -64,6 +64,13 @@ let
         remove_trailing_whitespace_on_save = true;
       };
 
+      Python = {
+        language_servers = [
+          "basedpyright"
+          "!pyright"
+        ];
+      };
+
       Nix = {
         formatter = "language_server";
         # colorize_brackets = true;
@@ -110,6 +117,17 @@ let
               "sema-extra-with"
               "sema-extra-rec"
             ];
+          };
+        };
+      };
+
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              pythonPath = "python";
+              diagnosticMode = "workspace";
+            };
           };
         };
       };
