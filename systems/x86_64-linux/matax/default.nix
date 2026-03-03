@@ -9,6 +9,11 @@
     ./modules.nix
   ];
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  };
+  
   # useful when debugging xeonitte (xinux installer)
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
