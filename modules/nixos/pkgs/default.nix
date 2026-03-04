@@ -97,5 +97,6 @@
     wireshark
     tshark
     sysprof
+    constrict
   ];
 }
