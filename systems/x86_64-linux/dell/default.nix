@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./modules.nix
   ];
+
   networking.hostName = "dell";
 
   programs.nix-data = {
