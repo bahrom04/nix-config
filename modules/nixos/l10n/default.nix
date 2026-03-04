@@ -6,14 +6,10 @@
   # Select internationalisation properties.
   i18n = {
     extraLocales = [
-      "en_US.UTF-8/UTF-8"
-      "ru_RU.UTF-8/UTF-8"
-      "uz_UZ.UTF-8/UTF-8"
+      "all"
     ];
     supportedLocales = [
-      "en_US.UTF-8/UTF-8"
-      "ru_RU.UTF-8/UTF-8"
-      "uz_UZ.UTF-8/UTF-8"
+      "all"
     ];
   };
 }
