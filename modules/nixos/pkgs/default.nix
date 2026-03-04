@@ -96,5 +96,6 @@
     rocmPackages.llvm.bintools
     wireshark
     tshark
+    sysprof
   ];
 }
