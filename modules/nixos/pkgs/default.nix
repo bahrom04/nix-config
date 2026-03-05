@@ -79,11 +79,12 @@
     autopsy
     obs-studio
     e-imzo-manager
+    software-center
+    xeonitte
     obsidian
     crosswords
     # poedit.override { boo}
     nixpkgs-review
-    xeonitte
     cosmic-settings
     cosmic-settings-daemon
     burpsuite
