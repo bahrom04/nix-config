@@ -83,7 +83,7 @@
     xeonitte
     obsidian
     crosswords
-    # poedit.override { boo}
+    poedit
     nixpkgs-review
     cosmic-settings
     cosmic-settings-daemon
