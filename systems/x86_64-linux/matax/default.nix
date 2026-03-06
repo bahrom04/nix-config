@@ -31,7 +31,7 @@
 
   programs.nix-data = {
     enable = true;
-    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/modules/nixos/apps/default.nix";
+    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/systems/x86_64-linux/matax/default.nix";
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
     flakearg = "matax";
   };
