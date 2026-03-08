@@ -76,7 +76,7 @@
     sqlitebrowser
     blanket
     cisco-packet-tracer_9
-    autopsy
+    # autopsy
     obs-studio
     e-imzo-manager
     software-center
@@ -85,8 +85,8 @@
     crosswords
     (poedit.override { boost = boost188; })
     nixpkgs-review
-    cosmic-settings
-    cosmic-settings-daemon
+    # cosmic-settings
+    # cosmic-settings-daemon
     burpsuite
     zap
     seclists
@@ -99,5 +99,8 @@
     tshark
     sysprof
     constrict
+    winboat
+    pods
+    podman
   ];
 }
