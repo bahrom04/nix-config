@@ -22,10 +22,10 @@
     });
   '';
 
-  services.relago = {
-    enable = false;
-    # user = users.users.lambdajon;
-  };
+  # services.relago = {
+  #   enable = false;
+  #   # user = users.users.lambdajon;
+  # };
 
   networking.hostName = "matax";
 
@@ -36,45 +36,45 @@
     flakearg = "matax";
   };
 
-  # services = {
-  #   samba = {
-  #     enable = true;
-  #     package = pkgs.samba4Full;
-  #     openFirewall = true;
+  services = {
+    samba = {
+      enable = true;
+      package = pkgs.samba;
+      openFirewall = true;
 
-  #     settings = {
-  #       global = {
-  #         "server smb encrypt" = "required";
-  #         "server min protocol" = "SMB3_00";
-  #         "workgroup" = "WORKGROUP";
-  #         "security" = "user";
-  #       };
+      settings = {
+        global = {
+          "server smb encrypt" = "required";
+          "server min protocol" = "SMB3_00";
+          "workgroup" = "WORKGROUP";
+          "security" = "user";
+        };
 
-  #       testshare = {
-  #         "path" = "/home/bahrom/Public";
-  #         "writable" = "yes";
-  #         "comment" = "Hello World!";
-  #         "browseable" = "yes";
-  #       };
-  #       # fayllar = {
-  #       #   "path" = "/media/fayllar";
-  #       #   "writable" = "yes";
-  #       #   "comment" = "Hello World!";
-  #       #   "browseable" = "yes";
-  #       # };
-  #     };
-  #   };
-  #   samba-wsdd = {
-  #     enable = true;
-  #     openFirewall = true;
-  #   };
-  #   avahi = {
-  #     enable = true;
-  #     publish.enable = true;
-  #     publish.userServices = true;
-  #     openFirewall = true;
-  #   };
-  # };
+        testshare = {
+          "path" = "/home/bahrom/Public";
+          "writable" = "yes";
+          "comment" = "Hello World!";
+          "browseable" = "yes";
+        };
+        # fayllar = {
+        #   "path" = "/media/fayllar";
+        #   "writable" = "yes";
+        #   "comment" = "Hello World!";
+        #   "browseable" = "yes";
+        # };
+      };
+    };
+    samba-wsdd = {
+      enable = true;
+      openFirewall = true;
+    };
+    avahi = {
+      enable = true;
+      publish.enable = true;
+      publish.userServices = true;
+      openFirewall = true;
+    };
+  };
 
   # remove all gnome utility apps
   # services.gnome.core-utilities.enable = false;

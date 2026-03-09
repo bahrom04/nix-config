@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     git
     gnupg # gpg key uchun
-    neofetch
     curl
     zip
     xz

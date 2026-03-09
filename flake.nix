@@ -59,13 +59,13 @@
       flake = false;
     };
 
-    relago = {
-      url = "github:xinux-org/relago/bootstrap-relago-module";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        # nixpkgs-unstable.follows = "nixpkgs-unstable";
-      };
-    };
+    # relago = {
+    #   url = "github:xinux-org/relago/bootstrap-relago-module";
+    #   inputs = {
+    #     nixpkgs.follows = "nixpkgs";
+    #     # nixpkgs-unstable.follows = "nixpkgs-unstable";
+    #   };
+    # };
   };
 
   outputs =
@@ -97,7 +97,7 @@
       systems.modules.nixos = with inputs; [
         disko.nixosModules.disko
         nix-data.nixosModules.nix-data
-        relago.nixosModules.relago
+        # relago.nixosModules.relago
         # xinux-modules.nixosModules.efiboot
         # xinux-modules.nixosModules.gnome
         # xinux-modules.nixosModules.kernel
