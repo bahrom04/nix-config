@@ -67,8 +67,8 @@
         move-to-monitor-left=@as []
         move-to-monitor-right=@as []
 
-        move-to-workspace-left=['<Super><Shift>Left']
-        move-to-workspace-right=['<Super><Shift>Right']
+        move-to-workspace-left=['<Super><Shift>Left', '<Shift><Control><Alt>Left']
+        move-to-workspace-right=['<Super><Shift>Right', '<Shift><Control><Alt>Right']
 
         [org.gnome.desktop.peripherals.touchpad]
         click-method='areas'
