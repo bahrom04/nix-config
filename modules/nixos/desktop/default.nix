@@ -24,12 +24,18 @@
     };
     desktopManager.gnome = {
       enable = true;
+
+      # gsettings reset org.gnome.desktop.calendar show-weekdate
+      # or other properties can be tested with reset-recursively
       extraGSettingsOverrides = ''
         # Prefer dark theme
         [org.gnome.desktop.interface]
         color-scheme='prefer-dark'
         icon-theme='Papirus-Dark'
         show-battery-percentage=true
+
+        [org.gnome.desktop.calendar]
+        show-weekdate=true
 
         # Favorite apps in gnome-shell
         [org.gnome.shell]
