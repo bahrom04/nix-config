@@ -28,33 +28,22 @@
         # Prefer dark theme
         [org.gnome.desktop.interface]
         color-scheme='prefer-dark'
-
-        [org.gnome.desktop.interface]
         icon-theme='Papirus-Dark'
+        show-battery-percentage=true
 
         # Favorite apps in gnome-shell
         [org.gnome.shell]
         favorite-apps=['org.gnome.Nautilus.desktop','org.gnome.SystemMonitor.desktop','org.gnome.Console.desktop','org.gnome.gitg.desktop','org.xinux.NixSoftwareCenter.desktop','org.xinux.NixosConfEditor.desktop','org.xinux.XinuxModuleManager.desktop','uz.xinux.EIMZOManager.desktop']
 
-        # Enable user extensions
-        [org.gnome.shell]
         disable-user-extensions=false
 
-        # List of enabled extensions
-        [org.gnome.shell]
         enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'appindicatorsupport@rgcjonas.gmail.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com']
 
         # Workspace should grow dynamically
-        [org.gnome.mutter]
-        dynamic-workspaces=true
-
         # Edge Tiling with mouse
         [org.gnome.mutter]
+        dynamic-workspaces=true
         edge-tiling=true
-
-        # Use default color scheme
-        [org.gnome.desktop.interface]
-        color-scheme='default'
 
         # Automatic timezone
         [org.gnome.desktop.datetime]
@@ -68,15 +57,20 @@
         [org.gnome.desktop.wm.preferences]
         button-layout='appmenu:minimize,maximize,close'
 
+        [org.gnome.desktop.wm.keybindings]
+        move-to-monitor-left=@as []
+        move-to-monitor-right=@as []
+
+        move-to-workspace-left=['<Super><Shift>Left']
+        move-to-workspace-right=['<Super><Shift>Right']
+
+        [org.gnome.desktop.peripherals.touchpad]
+        click-method='areas'
+
         # Dash to dock for multiple monitors
         [org.gnome.shell.extensions.dash-to-dock]
         multi-monitor=true
-
-        # Custom theme on Dash to dock
-        [org.gnome.shell.extensions.dash-to-dock]
         apply-custom-theme=true
-
-        [org.gnome.shell.extensions.dash-to-dock]
         click-action='minimize'
 
         # Don't hibernate on delay
