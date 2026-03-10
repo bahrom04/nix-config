@@ -20,6 +20,7 @@
     haveged
     flatpak-builder
     woeusb # for creating windows usb
+    ntfs-3g
 
     fuse # version 2 for appimages
     appimage-run
