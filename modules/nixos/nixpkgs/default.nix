@@ -15,6 +15,13 @@
   nix = {
     enable = true;
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+
+    # Garbage collector.
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 10d";
+    };
+
     settings = {
       # download-buffer-size = 524288000; # 500 MiB to prevent buffer warnings
 

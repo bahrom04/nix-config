@@ -1,0 +1,21 @@
+{ pkgs, ... }:
+{
+  # Virtualization (also for GNOME Boxes)
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+      };
+    };
+    # https://wiki.nixos.org/wiki/Podman
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
+    };
+  };
+}
