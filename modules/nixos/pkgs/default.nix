@@ -100,8 +100,9 @@
     tshark
     sysprof
     constrict
-    winboat
-    pods
-    podman
+    # winboat
+    # pods
+    # podman
+    opensnitch-ui
   ];
 }
