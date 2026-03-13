@@ -1,4 +1,7 @@
 { ... }:
 {
-  services.opensnitch.enable = true;
+  services = {
+    e-imzo.enable = true;
+    opensnitch.enable = true;
+  };
 }
