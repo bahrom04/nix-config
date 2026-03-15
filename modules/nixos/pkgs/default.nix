@@ -81,6 +81,7 @@
     obs-studio
     e-imzo-manager
     software-center
+    xinux-module-manager
     xeonitte
     obsidian
     crosswords

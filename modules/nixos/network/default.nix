@@ -1,7 +1,5 @@
 { ... }:
 {
-  services.blueman.enable = true;
-  hardware.bluetooth.enable = true;
   # Enable networking
   networking = {
     networkmanager.enable = true;
