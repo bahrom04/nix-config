@@ -1434,11 +1434,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1773555485,
-        "narHash": "sha256-TnRvQVD1QAWxXi9E51JvJdtcIAD9V3414PdFTNyuJ9A=",
+        "lastModified": 1773660689,
+        "narHash": "sha256-CBJ2u6n+hyHhTT+y6xvTvgYlBCX6NiFEtWfzldsxwfE=",
         "owner": "xinux-org",
         "repo": "nixpkgs",
-        "rev": "81c89dc33731f8f01ab6d1a2c388b6618fe2c694",
+        "rev": "a36b6701b160d79cc906110f31ae26b0e4b6fed5",
         "type": "github"
       },
       "original": {
