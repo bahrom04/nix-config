@@ -50,7 +50,6 @@
     prismlauncher
     gparted
     googleearth-pro
-    thunderbird
     onlyoffice-desktopeditors
     postman
     gtranslator
@@ -105,5 +104,7 @@
     # pods
     # podman
     opensnitch-ui
+    virtualbox
+    vmware-workstation
   ];
 }
