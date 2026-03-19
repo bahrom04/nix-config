@@ -41,14 +41,13 @@
     krb5 # Provides Kerberos support libraries
     winetricks # Useful for further troubleshooting
     protontricks
-
     gnome-builder
     fractal
     authenticator
     libreoffice
     gnome-boxes
     prismlauncher
-    gparted
+    # gparted
     googleearth-pro
     onlyoffice-desktopeditors
     postman
@@ -66,7 +65,6 @@
     icon-library
     gnome-podcasts
     cambalache
-    adwsteamgtk
     bustle
     d-spy
     firefox
@@ -77,7 +75,6 @@
     blanket
     cisco-packet-tracer_9
     # autopsy
-    obs-studio
     e-imzo-manager
     software-center
     xinux-module-manager
@@ -91,7 +88,7 @@
     burpsuite
     zap
     seclists
-    veracrypt
+    # veracrypt
     cryptomator
     kdePackages.kleopatra
     hashcat
@@ -106,5 +103,25 @@
     opensnitch-ui
     virtualbox
     vmware-workstation
+    droidcam
   ];
+
+  programs = {
+    obs-studio = {
+      enable = true;
+      enableVirtualCamera = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        droidcam-obs
+      ];
+    };
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      pinentryPackage = pkgs.pinentry-gnome3;
+    };
+    atop.enable = true;
+    zsh.enable = true;
+    mtr.enable = true;
+    steam.enable = true;
+  };
 }
