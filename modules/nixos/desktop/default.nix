@@ -5,7 +5,7 @@
   ];
 
   console.keyMap = "us";
-  # Enable sound with pipewire.
+
   security = {
     sudo-rs.enable = true;
     rtkit.enable = true;
@@ -13,8 +13,6 @@
 
   # Enable the GNOME Desktop Environment.
   services = {
-    flatpak.enable = true;
-
     displayManager = {
       gdm = {
         wayland = true;
@@ -101,19 +99,5 @@
         pkgs.gnome-shell
       ];
     };
-    # Enable CUPS to print documents.
-    printing.enable = true;
-
-    pulseaudio.enable = false;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
-    # NVIDIA driver support
-    xserver.videoDrivers = [ "nvidia" ];
-    pcscd.enable = true;
   };
 }

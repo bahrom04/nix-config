@@ -14,8 +14,6 @@
     flakearg = "dell";
   };
 
-  services.e-imzo.enable = true;
-
   # Select host type for the system
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 

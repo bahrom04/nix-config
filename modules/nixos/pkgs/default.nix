@@ -2,6 +2,12 @@
 {
   # APPS
   environment.systemPackages = with pkgs; [
+    gnome-tweaks
+    gnome-extension-manager
+    gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.clipboard-indicator
+    papirus-icon-theme
     # formatter
     nixfmt-tree
     nixfmt
@@ -104,6 +110,10 @@
   ];
 
   programs = {
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
     obs-studio = {
       enable = true;
       enableVirtualCamera = true;
