@@ -7,8 +7,6 @@
     nixfmt
     # fonts
     freefont_ttf
-    nixfmt
-
     gnome-user-share
     desktop-file-utils
     neovim
@@ -53,18 +51,18 @@
     postman
     gtranslator
     google-chrome
+    brave
     chromium
     github-desktop
     element-desktop
     telegram-desktop
     discord
-    boltbrowser
-    kstars
+    # kstars
     gnome-solanum
     nextcloud-client
     icon-library
     gnome-podcasts
-    cambalache
+    # cambalache
     bustle
     d-spy
     firefox
@@ -92,7 +90,6 @@
     cryptomator
     kdePackages.kleopatra
     hashcat
-    rocmPackages.llvm.bintools
     wireshark
     tshark
     sysprof
