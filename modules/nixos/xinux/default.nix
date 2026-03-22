@@ -48,5 +48,10 @@ in
         xinux-module-manager
       ];
     })
+    {
+      xinux = {
+        osInfo.enable = mkDefault true;
+      };
+    }
   ];
 }
