@@ -50,7 +50,7 @@ in
     })
     {
       xinux = {
-        osInfo.enable = mkDefault true;
+        osInfo.enable = mkForce true;
       };
     }
   ];
