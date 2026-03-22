@@ -18,6 +18,7 @@
     neovim
     vim
     fastfetch
+    onefetch
     xkbcomp
     setxkbmap
     rng-tools
