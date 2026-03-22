@@ -109,6 +109,7 @@
     droidcam
   ];
 
+  # advansed option. Adding just pkgs.x is not enough
   programs = {
     direnv = {
       enable = true;
