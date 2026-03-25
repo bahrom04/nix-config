@@ -11,7 +11,6 @@
     # formatter
     nixfmt-tree
     nixfmt
-    nixos-rebuild-ng
     # fonts
     freefont_ttf
     gnome-user-share
