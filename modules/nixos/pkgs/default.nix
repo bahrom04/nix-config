@@ -11,6 +11,7 @@
     # formatter
     nixfmt-tree
     nixfmt
+    nixos-rebuild-ng
     # fonts
     freefont_ttf
     gnome-user-share
@@ -96,11 +97,11 @@
     # veracrypt
     cryptomator
     kdePackages.kleopatra
-    hashcat
+    # hashcat
     wireshark
     tshark
     sysprof
-    constrict
+    # constrict
     # winboat
     # pods
     # podman
