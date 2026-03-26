@@ -128,7 +128,7 @@
       enableSSHSupport = true;
       pinentryPackage = pkgs.pinentry-gnome3;
     };
-    atop.enable = true;
+    atop.enable = false;
     zsh.enable = true;
     mtr.enable = true;
     steam.enable = true;
