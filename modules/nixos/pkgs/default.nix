@@ -131,6 +131,6 @@
     atop.enable = false;
     zsh.enable = true;
     mtr.enable = true;
-    steam.enable = true;
+    steam.enable = false;
   };
 }
