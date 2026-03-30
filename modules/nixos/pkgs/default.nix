@@ -104,7 +104,7 @@
     # winboat
     # pods
     # podman
-    opensnitch-ui
+    # opensnitch-ui
     virtualbox
     vmware-workstation
     droidcam

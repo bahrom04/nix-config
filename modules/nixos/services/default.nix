@@ -17,7 +17,7 @@
     printing.enable = true;
     flatpak.enable = true;
     e-imzo.enable = true;
-    opensnitch.enable = true;
+    opensnitch.enable = false;
 
     openssh = {
       enable = true;

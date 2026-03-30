@@ -95,16 +95,17 @@
       systems.modules.nixos = with inputs; [
         disko.nixosModules.disko
         nix-data.nixosModules.nix-data
-        # relago.nixosModules.relago
+        xinux-modules.nixosModules.branding
+        xinux-modules.nixosModules.kernel
+        xinux-modules.nixosModules.xinux
         # xinux-modules.nixosModules.efiboot
         # xinux-modules.nixosModules.gnome
-        # xinux-modules.nixosModules.kernel
         # xinux-modules.nixosModules.networking
         # xinux-modules.nixosModules.packagemanagers
         # xinux-modules.nixosModules.pipewire
         # xinux-modules.nixosModules.printing
-        # xinux-modules.nixosModules.xinux
         # xinux-modules.nixosModules.metadata
+        # relago.nixosModules.relago
       ];
 
       # homes.modules = with inputs; [

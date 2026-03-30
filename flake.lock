@@ -1219,11 +1219,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774738535,
-        "narHash": "sha256-2jfBEZUC67IlnxO5KItFCAd7Oc+1TvyV/jQlR+2ykGQ=",
+        "lastModified": 1774875815,
+        "narHash": "sha256-PzqwM4njoB3aznqwPZUawD4uOcJeu7N6GBTJKg81EQ4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "769e07ef8f4cf7b1ec3b96ef015abec9bc6b1e2a",
+        "rev": "9340f51314713c83360bf72d75c8b404778ab5b1",
         "type": "github"
       },
       "original": {
@@ -1336,15 +1336,17 @@
       "locked": {
         "lastModified": 1773014120,
         "narHash": "sha256-7EeW50+Avym+H6Ha/vSgEXT1IlXpMCq+4iesVB0p1Ss=",
-        "owner": "xinux-org",
-        "repo": "software-center",
+        "ref": "main",
         "rev": "e9a2c3584b82fbcb636098bbb6c40305f9325af6",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/software-center"
       },
       "original": {
-        "owner": "xinux-org",
-        "repo": "software-center",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/software-center"
       }
     },
     "nixos-appstream-data": {
@@ -1399,10 +1401,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1774604890,
-        "narHash": "sha256-FEuvGWSdsFeGlrJ2fLziJqtmfb9gJknUOOXjy45Td58=",
+        "lastModified": 1774868798,
+        "narHash": "sha256-t5dttnVsfRSm7+0WLjLn4JFDwErF3TCE+R5YIVqpBLE=",
         "ref": "nixos-unstable",
-        "rev": "07f80999d815732724695a39bd22664b03dc8d30",
+        "rev": "5464c97106ce348581b4d93bfea95ea71e2dd5ea",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
@@ -1992,15 +1994,17 @@
       "locked": {
         "lastModified": 1773014165,
         "narHash": "sha256-KjOF4wZv2JTGoVZXsCuVTZjoyn18+6Lk/IIM49CoUpE=",
-        "owner": "xinux-org",
-        "repo": "xin",
+        "ref": "main",
         "rev": "1a1ee9ce95db9969b4d26bfebbd856d327c25396",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xin"
       },
       "original": {
-        "owner": "xinux-org",
-        "repo": "xin",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xin"
       }
     },
     "xinux-lib": {
@@ -2252,10 +2256,10 @@
         "xinux-tour": "xinux-tour"
       },
       "locked": {
-        "lastModified": 1774608121,
-        "narHash": "sha256-R0Wt+5c6w3TMlwaSM5hRDtzAG61LFAqZEcmvo/xS+XE=",
+        "lastModified": 1774876739,
+        "narHash": "sha256-kml9Y8cZAVmH4vxD6P20dfjzqD4WCCSlqxV6MbDTSVc=",
         "ref": "main",
-        "rev": "29241b9e3e48864b63d69e59f4365eac5fb90a85",
+        "rev": "5343bce7436f60c2fa14508a6ad790153f896be5",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/modules"

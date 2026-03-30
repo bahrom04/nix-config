@@ -31,6 +31,8 @@
         color-scheme='prefer-dark'
         icon-theme='Papirus-Dark'
         show-battery-percentage=true
+        color-scheme='default'
+        monospace-font-name='JetBrainsMono Nerd Font 10'
 
         [org.gnome.desktop.calendar]
         show-weekdate=true
@@ -84,15 +86,6 @@
         # Don't sleep, don't sleep!
         [org.gnome.desktop.session]
         idle-delay=0
-
-        [org.gnome.settings-daemon.plugins.media-keys]
-        custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
-        screensaver=['<Control><Alt>l']
-
-        [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0]
-        binding='<Shift><Control>t'
-        command='kgx --tab'
-        name='open terminal'
       '';
       extraGSettingsOverridePackages = [
         pkgs.gsettings-desktop-schemas
