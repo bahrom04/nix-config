@@ -4,11 +4,13 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:xinux-org/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:xinux-org/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "git+https://git.oss.uzinfocom.uz/xinux/nixpkgs?ref=nixos-unstable&lfs=1";
+    nixpkgs.url = "git+https://git.oss.uzinfocom.uz/xinux/nixpkgs?ref=nixos-unstable&shallow=1";
 
     # Xinux library
     xinux-lib = {
-      url = "github:xinux-org/lib/main";
+      url = "git+https://git.oss.uzinfocom.uz/xinux/lib?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,18 +31,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hunspell-uz = {
-      url = "github:uzbek-net/uz-hunspell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-data = {
-      url = "github:xinux-org/nix-data";
+      url = "git+https://git.oss.uzinfocom.uz/xinux/nix-data?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     mac-style-plymouth = {
-      url = "github:xinux-org/xinux-plymouth-theme";
+      url = "git+https://git.oss.uzinfocom.uz/xinux/xinux-plymouth-theme?ref=master&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -50,7 +47,7 @@
     };
 
     xinux-modules = {
-      url = "github:xinux-org/modules";
+      url = "git+https://git.oss.uzinfocom.uz/xinux/modules?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
