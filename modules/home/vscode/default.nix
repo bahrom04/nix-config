@@ -76,6 +76,7 @@
         "terminal.integrated.defaultProfile.osx" = "zsh";
         "terminal.integrated.defaultProfile.linux" = "zsh";
         "workbench.iconTheme" = "vscode-icons";
+        "workbench.colorTheme" = "Visual Studio Dark";
         "diffEditor.ignoreTrimWhitespace" = false;
         "vsicons.dontShowNewVersionMessage" = true;
         "liveServer.settings.donotShowInfoMsg" = true;
