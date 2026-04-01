@@ -108,6 +108,9 @@
     virtualbox
     vmware-workstation
     droidcam
+    # tailor_gui
+    openscad-lsp
+    openscad
   ];
 
   # advansed option. Adding just pkgs.x is not enough
