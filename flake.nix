@@ -90,7 +90,7 @@
       };
       # Add modules to all NixOS systems.
       # output should be something meaningfull {}: {}
-      # Locals imported autom automaticly
+      # Local ./modules/nixos and ./modules/home imported automaticly
       # a lot of module.nix from remote repos.
       systems.modules.nixos = with inputs; [
         disko.nixosModules.disko
@@ -98,8 +98,8 @@
         xinux-modules.nixosModules.branding
         xinux-modules.nixosModules.kernel
         xinux-modules.nixosModules.xinux
+        xinux-modules.nixosModules.gnome
         # xinux-modules.nixosModules.efiboot
-        # xinux-modules.nixosModules.gnome
         # xinux-modules.nixosModules.networking
         # xinux-modules.nixosModules.packagemanagers
         # xinux-modules.nixosModules.pipewire
