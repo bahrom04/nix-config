@@ -3,9 +3,7 @@
   description = "bahrom04ʼs nix-config";
 
   inputs = {
-    # Nixpkgs
     # nixpkgs.url = "github:xinux-org/nixpkgs/nixos-unstable";
-    # nixpkgs.url = "git+https://git.oss.uzinfocom.uz/xinux/nixpkgs?ref=nixos-unstable&lfs=1";
     nixpkgs.url = "git+https://git.oss.uzinfocom.uz/xinux/nixpkgs?ref=nixos-unstable&shallow=1";
 
     # Xinux library
@@ -26,11 +24,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Xinux
-    nixos-conf-editor = {
-      url = "github:xinux-org/conf-editor";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-data = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/nix-data?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,12 +31,6 @@
 
     mac-style-plymouth = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/xinux-plymouth-theme?ref=master&shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    
-    snowfall-drift = {
-      url = "github:snowfallorg/drift";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -57,6 +44,11 @@
       flake = false;
     };
 
+    # snowfall-drift = {
+    #   url = "github:snowfallorg/drift";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    #
     # relago = {
     #   url = "github:xinux-org/relago/bootstrap-relago-module";
     #   inputs = {
