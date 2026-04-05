@@ -48,7 +48,6 @@ in
     samba # Provides ntlm_auth
     krb5 # Provides Kerberos support libraries
     winetricks # Useful for further troubleshooting
-    # protontricks
     gnome-builder
     fractal
     # authenticator
@@ -111,10 +110,9 @@ in
     # opensnitch-ui
     virtualbox
     vmware-workstation
-    droidcam
     # tailor_gui
-    openscad-lsp
-    openscad
+    # openscad-lsp
+    # openscad
   ];
 
   # advansed option. Adding just pkgs.x is not enough
@@ -135,7 +133,6 @@ in
       enableSSHSupport = true;
       pinentryPackage = pkgs.pinentry-gnome3;
     };
-    atop.enable = false;
     zsh.enable = true;
     mtr.enable = true;
     steam.enable = true;
