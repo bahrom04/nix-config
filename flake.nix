@@ -39,6 +39,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    xinux-settings = {
+      url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     uz-xkb = {
       url = "github:itsbilolbek/uzbek-linux-keyboard";
       flake = false;

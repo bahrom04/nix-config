@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+let
+  xinux-settings = inputs.xinux-settings.packages.${pkgs.stdenv.hostPlatform.system}.xinux-settings;
+in
 {
   # APPS
   environment.systemPackages = with pkgs; [
@@ -83,6 +86,7 @@
     e-imzo-manager
     software-center
     xinux-module-manager
+    xinux-settings
     xeonitte
     obsidian
     crosswords
@@ -134,6 +138,6 @@
     atop.enable = false;
     zsh.enable = true;
     mtr.enable = true;
-    steam.enable = false;
+    steam.enable = true;
   };
 }
