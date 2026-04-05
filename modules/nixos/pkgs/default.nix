@@ -48,27 +48,27 @@ in
     samba # Provides ntlm_auth
     krb5 # Provides Kerberos support libraries
     winetricks # Useful for further troubleshooting
-    protontricks
+    # protontricks
     gnome-builder
     fractal
-    authenticator
+    # authenticator
     libreoffice
     gnome-boxes
-    prismlauncher
+    # prismlauncher
     # gparted
     googleearth-pro
     onlyoffice-desktopeditors
-    postman
+    # postman
     gtranslator
     google-chrome
     brave
-    chromium
+    # chromium
     github-desktop
     element-desktop
     telegram-desktop
     discord
     # kstars
-    gnome-solanum
+    # gnome-solanum
     nextcloud-client
     icon-library
     gnome-podcasts
@@ -98,8 +98,8 @@ in
     zap
     seclists
     # veracrypt
-    cryptomator
-    kdePackages.kleopatra
+    # cryptomator
+    # kdePackages.kleopatra
     # hashcat
     wireshark
     tshark
