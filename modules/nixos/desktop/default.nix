@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  imports = [
-    ./utils.nix
-  ];
-
   console.keyMap = "us";
 
   security = {

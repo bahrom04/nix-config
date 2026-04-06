@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   services = {
     pulseaudio.enable = false;
@@ -18,6 +18,8 @@
     flatpak.enable = true;
     e-imzo.enable = true;
     opensnitch.enable = false;
+
+    envfs.enable = lib.mkDefault true;
 
     openssh = {
       enable = true;
