@@ -992,11 +992,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775360939,
-        "narHash": "sha256-XUBlSgUFdvTh6+K5LcI5mJu5F5L8scmJDMRiZM484TM=",
+        "lastModified": 1775556024,
+        "narHash": "sha256-j1u/859OVS54rGlsvFqJdwKPEnFYCI+4pyfTiSfv1Xc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2097a5c82bdc099c6135eae4b111b78124604554",
+        "rev": "4bdfeff1d9b7473e6e58f73f5809576e8a69e406",
         "type": "github"
       },
       "original": {
@@ -1876,10 +1876,10 @@
         "xinux-lib": "xinux-lib_7"
       },
       "locked": {
-        "lastModified": 1775215120,
-        "narHash": "sha256-RtN+4I1IopzQ+tERNP+j16p3lEQ1XkjPNUV35eHTpuM=",
+        "lastModified": 1775556241,
+        "narHash": "sha256-aiuaRqW0938q66rMHyHk26+8w2x4a5iGGEth62U3yZY=",
         "ref": "main",
-        "rev": "6e50d4478ec25f1a2390337f7d08013611928f64",
+        "rev": "a9b90e8dc794702bd17d85e0eec10fbf10dd41e3",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/settings"
