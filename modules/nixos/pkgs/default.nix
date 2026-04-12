@@ -183,6 +183,6 @@ in
     };
     zsh.enable = true;
     mtr.enable = true;
-    steam.enable = false;
+    steam.enable = true;
   };
 }
