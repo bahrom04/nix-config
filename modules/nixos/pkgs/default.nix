@@ -128,6 +128,8 @@ in
   };
 
   # advansed option. Adding just pkgs.x is not enough
+  services.thermald.enable = true;
+  programs.gamemode.enable = true;
   programs = {
     direnv = {
       enable = true;
