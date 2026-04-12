@@ -8,5 +8,6 @@
 
 final: prev: {
   # # Has small chance of kernel modules not being compatible with kernel version.
-  linux-cachyos-latest-lto-x86_64-v3 = inputs.nix-cachyos-kernel.overlays.default;
+  linux-cachyos-latest-lto-x86_64-v3 =
+    inputs.nix-cachyos-kernel.legacyPackages.${prev.system}.linuxPackages-cachyos-latest-lto-x86_64-v3;
 }

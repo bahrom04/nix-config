@@ -6,7 +6,7 @@
 {
   # Bootloader.
   boot = {
-    boot.kernelPackages = pkgs.linuxKernel.packagesFor pkgs.linux-cachyos-latest-lto-x86_64-v3;
+    kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
 
     loader = {
