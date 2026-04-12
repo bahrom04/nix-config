@@ -53,6 +53,9 @@
     };
     enableRedistributableFirmware = true;
   };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

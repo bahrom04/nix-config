@@ -42,10 +42,10 @@ in
       flatpak-builder
       woeusb # for creating windows usb
       ntfs3g
-
+      libva-utils
+      intel-gpu-tools
       fuse # version 2 for appimages
       appimage-run
-
       # git/hub
       age
       sops
