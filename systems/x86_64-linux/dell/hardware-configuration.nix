@@ -26,7 +26,7 @@
   ];
   boot.initrd.kernelModules = [ ]; # "nvme"
   boot.kernelModules = [
-    "kvm-amd"
+    "kvm-intel"
     "vboxdrv"
     "vboxnetflt"
     "vboxnetadp"
@@ -48,6 +48,9 @@
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
+        intel-media-driver # For Broadwell (2014) or newer processors (includes 10th Gen)
+        intel-vaapi-driver # Optional, for older applications
+        vpl-gpu-rt # For modern QSV
         mesa
         libvdpau
         libva-vdpau-driver
@@ -57,17 +60,7 @@
       ];
     };
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
-    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-    # GPU (Nvidia)
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = true;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
+    enableRedistributableFirmware = true;
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

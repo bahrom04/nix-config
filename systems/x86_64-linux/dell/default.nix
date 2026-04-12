@@ -2,7 +2,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules.nix
   ];
 
   networking.hostName = "dell";

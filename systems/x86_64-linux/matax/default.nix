@@ -37,6 +37,9 @@
   };
 
   services = {
+    # NVIDIA driver support
+    xserver.videoDrivers = [ "nvidia" ];
+
     samba = {
       enable = true;
       package = pkgs.samba;

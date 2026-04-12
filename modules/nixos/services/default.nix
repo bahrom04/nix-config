@@ -10,8 +10,6 @@
       pulse.enable = true;
     };
 
-    # NVIDIA driver support
-    xserver.videoDrivers = [ "nvidia" ];
     pcscd.enable = true;
     # Enable CUPS to print documents.
     printing.enable = true;
