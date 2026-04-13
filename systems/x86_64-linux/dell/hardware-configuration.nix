@@ -51,6 +51,7 @@
         vulkan-validation-layers
       ];
     };
+    cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
   };
   environment.sessionVariables = {
