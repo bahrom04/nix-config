@@ -30,12 +30,17 @@
       powerline-fonts
       roboto
       roboto-slab
+      montserrat
+      inter
+      lato
       eb-garamond
       fira-code
       fira-code-symbols
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
+      oswald
+      rubik
     ];
   };
 }
