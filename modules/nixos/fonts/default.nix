@@ -2,6 +2,7 @@
 {
   fonts.packages = with pkgs; [
     corefonts
+    vista-fonts-chs
     # General Noto fonts
     noto-fonts
     noto-fonts-color-emoji
