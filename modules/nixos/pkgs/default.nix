@@ -50,11 +50,8 @@ in
       age
       sops
       pinentry-gnome3
-
-      # l10n
       hunspell
       hunspellDicts.uz_UZ
-      # Services
       # redis
       # support both 32-bit and 64-bit applications
       wineWow64Packages.stable
@@ -63,6 +60,7 @@ in
       winetricks # Useful for further troubleshooting
       gnome-builder
       fractal
+      putty
       # authenticator
       libreoffice
       gnome-boxes
