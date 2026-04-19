@@ -99,7 +99,7 @@ in
       software-center
       xinux-module-manager
       xinux-settings
-      xeonitte
+      # xeonitte
       obsidian
       crosswords
       (poedit.override { boost = boost188; })
