@@ -41,6 +41,7 @@
       proggyfonts
       oswald
       rubik
+      freefont_ttf
     ];
   };
 }

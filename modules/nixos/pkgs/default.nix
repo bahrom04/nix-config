@@ -23,12 +23,11 @@ in
       gnomeExtensions.dash-to-dock
       gnomeExtensions.clipboard-indicator
       papirus-icon-theme
+      gnome-power-manager
       # formatter
       nixfmt-tree
       nixfmt
       nixpkgs-review
-      # fonts
-      freefont_ttf
       gnome-user-share
       desktop-file-utils
       neovim
@@ -65,7 +64,6 @@ in
       libreoffice
       gnome-boxes
       # prismlauncher
-      # gparted
       googleearth-pro
       onlyoffice-desktopeditors
       # postman
@@ -77,7 +75,6 @@ in
       element-desktop
       telegram-desktop
       discord
-      # kstars
       # gnome-solanum
       nextcloud-client
       icon-library
