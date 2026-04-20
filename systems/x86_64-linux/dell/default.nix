@@ -4,6 +4,9 @@
     ./hardware-configuration.nix
   ];
 
+  time.timeZone = "Asia/Tashkent";
+  i18n.defaultLocale = "uz_UZ.UTF-8";
+
   networking.hostName = "dell";
 
   programs.nix-data = {
