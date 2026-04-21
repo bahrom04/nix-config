@@ -30,7 +30,7 @@
         brettm12345.nixfmt-vscode
         bodil.blueprint-gtk
         ms-vscode.cpptools
-        relm4.relm4-snippets
+        # relm4.relm4-snippets # todo: release to nixpkgs
       ];
 
       userSettings = {
