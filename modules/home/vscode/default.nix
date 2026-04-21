@@ -137,6 +137,7 @@
           "markdown" = false;
           "scminput" = false;
         };
+        "chat.disableAIFeatures" = true;
         "[nix]" = {
           "editor.tabSize" = 2;
           "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
