@@ -28,55 +28,50 @@
         haskell.haskell
         justusadam.language-haskell
         brettm12345.nixfmt-vscode
+        bodil.blueprint-gtk
+        ms-vscode.cpptools
+        relm4.relm4-snippets
       ];
 
       userSettings = {
-        # This seem to not working??
-        # keybindings = [
-        #   {
-        #     key = "ctrl+mate+down";
-        #     command = "workbench.action.terminal.focusNext";
-        #     when = "terminalFocus";
-        #   }
-        #   {
-        #     key = "ctrl+meta+up";
-        #     command = "workbench.action.terminal.focusPrevious";
-        #     when = "terminalFocus";
-        #   }
-        # ];
-        "files.autoSave" = "afterDelay";
-
-        "[python]"."editor.tabSize" = 4;
-        "editor.fontSize" = 14;
-        "terminal.integrated.fontSize" = 14;
-        "editor.defaultFormatter" = "ms-python.black-formatter";
-        "editor.formatOnSave" = true;
-        "terminal.integrated.profiles.osx" = {
-          "fish (nix)" = {
-            path = "/run/current-system/sw/bin/fish";
+        "editor" = {
+          "fontSize" = 14;
+          "formatOnSave" = true;
+          # "defaultFormatter" = "ms-python.black-formatter";
+          "accessibilitySupport" = "off";
+        };
+        "terminal" = {
+          "integrated.fontSize" = 14;
+          "integrated.suggest" = false;
+          "integrated.inheritEnv" = false;
+          "integrated.defaultProfile.linux" = "zsh";
+          "integrated.defaultProfile.osx" = "zsh";
+          "integrated.profiles.osx" = {
+            "fish (nix)" = {
+              path = "/run/current-system/sw/bin/fish";
+            };
           };
         };
-        "files.associations" = {
-          "*.hs" = "haskell";
+        "files" = {
+          "autoSave" = "afterDelay";
+          "associations" = {
+            "*.hs" = "haskell";
 
-          "*.dump-simpl" = "haskell";
-          "*.dump-ds" = "haskell";
-          "*.project.local" = "haskell";
+            "*.dump-simpl" = "haskell";
+            "*.dump-ds" = "haskell";
+            "*.project.local" = "haskell";
+          };
+          "exclude" = {
+            "**/.DS_Store" = true;
+            "**/.git" = true;
+            "**/.hg" = true;
+            "**/.lsp" = true;
+            "**/.svn" = true;
+            "**/.idea" = true;
+            "**/CVS" = true;
+            "**/Thumbs.db" = true;
+          };
         };
-        "files.exclude" = {
-          "**/.DS_Store" = true;
-          "**/.git" = true;
-          "**/.hg" = true;
-          "**/.lsp" = true;
-          "**/.svn" = true;
-          "**/.idea" = true;
-          "**/CVS" = true;
-          "**/Thumbs.db" = true;
-        };
-        "terminal.integrated.defaultProfile.osx" = "zsh";
-        "terminal.integrated.defaultProfile.linux" = "zsh";
-        "workbench.iconTheme" = "vscode-icons";
-        "workbench.colorTheme" = "Dark Modern";
         "diffEditor.ignoreTrimWhitespace" = false;
         "vsicons.dontShowNewVersionMessage" = true;
         "liveServer.settings.donotShowInfoMsg" = true;
@@ -94,18 +89,17 @@
           "*.sdb" = "\${capture}.\${extname}-*";
           "*.s3db" = "\${capture}.\${extname}-*";
         };
-        "terminal.integrated.inheritEnv" = false;
-        "editor.accessibilitySupport" = "off";
         "remote.SSH.configFile" = "~/.ssh/id_ed25519";
         "extensions.ignoreRecommendations" = true;
-        "terminal.integrated.suggest" = false;
-        # "alejandra.program" = "alejandra";
-
+        "workbench" = {
+          "colorTheme" = "Dark Modern";
+          "iconTheme" = "vscode-icons";
+          "secondarySideBar.defaultVisibility" = "hidden";
+        };
         # Language-specific settings
-        "haskell.manageHLS" = "PATH";
-        haskell = {
-          formattingProvider = "fourmolu";
-          manageHLS = "PATH";
+        "haskell" = {
+          "formattingProvider" = "fourmolu";
+          "manageHLS" = "PATH";
         };
         "[javascript]" = {
           "editor.defaultFormatter" = "typescript-language-features";
@@ -126,11 +120,15 @@
           "editor.defaultFormatter" = "vscode.json-language-features";
         };
         "[python]" = {
+          "editor.tabSize" = 4;
           "diffEditor.ignoreTrimWhitespace" = false;
           "editor.defaultColorDecorators" = "never";
           "gitlens.codeLens.symbolScopes" = [ "!Module" ];
           "editor.formatOnType" = true;
           "editor.wordBasedSuggestions" = "off";
+        };
+        "[c]" = {
+          "editor.defaultFormatter" = "xaver.clang-format";
         };
         "mesonbuild.configureOnOpen" = false;
         "github.copilot.enable" = {
