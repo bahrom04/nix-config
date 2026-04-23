@@ -61,7 +61,8 @@ in
       fractal
       putty
       # authenticator
-      libreoffice
+      # libreoffice
+      libreoffice-fresh
       gnome-boxes
       # prismlauncher
       googleearth-pro
