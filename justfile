@@ -8,4 +8,4 @@ update:
   nix flake update --show-trace
 
 commit message:
-  git commit -m {{message}}
+  git commit -m "{{message}}"
