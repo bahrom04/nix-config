@@ -1,8 +1,6 @@
 { pkgs, ... }:
-pkgs.stdenv.mkDerivation {
-  name = "nix";
-
-  nativeBuildInputs = with pkgs; [
+pkgs.mkShell {
+  packages = with pkgs; [
     nixd
     statix
     deadnix
