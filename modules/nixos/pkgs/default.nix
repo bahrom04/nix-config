@@ -120,6 +120,7 @@ in
       # tailor_gui
       # openscad-lsp
       # openscad
+      impression
     ];
   };
 
