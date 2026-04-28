@@ -85,7 +85,7 @@ in
       d-spy
       firefox
       gradia
-      dialect
+      # dialect
       cpu-x
       sqlitebrowser
       blanket
