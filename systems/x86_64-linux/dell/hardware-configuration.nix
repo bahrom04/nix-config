@@ -52,7 +52,6 @@
       ];
     };
     cpu.intel.updateMicrocode = true;
-    enableRedistributableFirmware = true;
   };
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
