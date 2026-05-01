@@ -98,7 +98,7 @@ in
       # xeonitte
       obsidian
       crosswords
-      (poedit.override { boost = boost188; })
+      # poedit
       # cosmic-settings
       # cosmic-settings-daemon
       burpsuite

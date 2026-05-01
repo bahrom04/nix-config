@@ -1,25 +1,17 @@
-# ./flake.nix
 {
   description = "bahrom04ʼs nix-config";
 
   inputs = {
-    # nixpkgs.url = "github:xinux-org/nixpkgs/nixos-unstable";
     nixpkgs.url = "git+https://git.oss.uzinfocom.uz/xinux/nixpkgs?ref=nixos-unstable&shallow=1";
-
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-
-    # Xinux library
     xinux-lib = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/lib?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # Disko for easier partition management
     disko = {
       url = "github:nix-community/disko";
@@ -30,22 +22,18 @@
       url = "git+https://git.oss.uzinfocom.uz/xinux/nix-data?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     mac-style-plymouth = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/xinux-plymouth-theme?ref=master&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     xinux-modules = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/modules?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     xinux-settings = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     uz-xkb = {
       url = "github:itsbilolbek/uzbek-linux-keyboard";
       flake = false;
@@ -98,11 +86,14 @@
         xinux-modules.nixosModules.kernel
         xinux-modules.nixosModules.xinux
         xinux-modules.nixosModules.gnome
+        xinux-modules.nixosModules.graphical
+        xinux-modules.nixosModules.shell
+        xinux-modules.nixosModules.gaming
+        xinux-modules.nixosModules.networking
+        xinux-modules.nixosModules.packagemanagers
+        xinux-modules.nixosModules.pipewire
+        xinux-modules.nixosModules.printing
         # xinux-modules.nixosModules.efiboot
-        # xinux-modules.nixosModules.networking
-        # xinux-modules.nixosModules.packagemanagers
-        # xinux-modules.nixosModules.pipewire
-        # xinux-modules.nixosModules.printing
         # xinux-modules.nixosModules.metadata
         # relago.nixosModules.relago
       ];
