@@ -93,8 +93,8 @@
         xinux-modules.nixosModules.packagemanagers
         xinux-modules.nixosModules.pipewire
         xinux-modules.nixosModules.printing
+        xinux-modules.nixosModules.metadata
         # xinux-modules.nixosModules.efiboot
-        # xinux-modules.nixosModules.metadata
         # relago.nixosModules.relago
       ];
 
