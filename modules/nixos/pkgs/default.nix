@@ -91,9 +91,9 @@ in
       blanket
       cisco-packet-tracer_9
       # autopsy
-      e-imzo-manager
-      software-center
-      xinux-module-manager
+      # e-imzo-manager
+      # software-center
+      # xinux-module-manager
       xinux-settings
       # xeonitte
       obsidian
