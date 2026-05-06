@@ -89,7 +89,7 @@
           "*.sdb" = "\${capture}.\${extname}-*";
           "*.s3db" = "\${capture}.\${extname}-*";
         };
-        "remote.SSH.configFile" = "~/.ssh/id_ed25519";
+        "remote.SSH.configFile" = "~/.ssh/config";
         "extensions.ignoreRecommendations" = true;
         "workbench" = {
           "colorTheme" = "Dark Modern";
@@ -137,7 +137,7 @@
           "markdown" = false;
           "scminput" = false;
         };
-        "chat.disableAIFeatures" = true;
+        "chat.disableAIFeatures" = false;
         "[nix]" = {
           "editor.tabSize" = 2;
           "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
