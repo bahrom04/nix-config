@@ -6,7 +6,6 @@
   ...
 }:
 let
-  xinux-settings = inputs.xinux-settings.packages.${pkgs.stdenv.hostPlatform.system}.xinux-settings;
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
 in
 {
@@ -91,10 +90,11 @@ in
       blanket
       cisco-packet-tracer_9
       # autopsy
-      # e-imzo-manager
-      # software-center
-      # xinux-module-manager
+      e-imzo-manager
+      nix-software-center
+      xinux-module-manager
       xinux-settings
+      xinux-tour
       # xeonitte
       obsidian
       crosswords

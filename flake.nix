@@ -34,6 +34,23 @@
       url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-software-center = {
+      # url = "github:xinux-org/software-center";
+      url = "git+https://git.oss.uzinfocom.uz/xinux/software-center?ref=main&shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    xinux-module-manager = {
+      url = "github:xinux-org/module-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    e-imzo-manager = {
+      url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    xinux-tour = {
+      url = "github:xinux-org/xinux-tour";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     uz-xkb = {
       url = "github:itsbilolbek/uzbek-linux-keyboard";
       flake = false;
