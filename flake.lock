@@ -3052,15 +3052,17 @@
       "locked": {
         "lastModified": 1764772891,
         "narHash": "sha256-3BDE4UghbOKkC/RD44PkyJnz/tnjqPzSZqZnGASXftI=",
-        "owner": "xinux-org",
-        "repo": "xinux-tour",
+        "ref": "main",
         "rev": "8e19cf6eb823b3a166ad6401a7af469a010863fa",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xinux-tour"
       },
       "original": {
-        "owner": "xinux-org",
-        "repo": "xinux-tour",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/xinux-tour"
       }
     },
     "zen-browser": {
