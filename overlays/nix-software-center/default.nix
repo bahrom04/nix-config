@@ -7,5 +7,5 @@
 }:
 
 final: prev: {
-  e-imzo-manager = inputs.e-imzo-manager.packages.${prev.stdenv.hostPlatform.system}.default;
+  nix-software-center = inputs.nix-software-center.packages.${prev.stdenv.hostPlatform.system}.default;
 }
