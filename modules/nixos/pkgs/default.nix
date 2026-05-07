@@ -95,6 +95,7 @@ in
       xinux-module-manager
       xinux-settings
       xinux-tour
+      bleur
       # xeonitte
       obsidian
       crosswords
