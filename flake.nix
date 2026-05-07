@@ -48,7 +48,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xinux-tour = {
-      url = "github:xinux-org/xinux-tour";
+      url = "git+https://git.oss.uzinfocom.uz/xinux/xinux-tour?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     uz-xkb = {
