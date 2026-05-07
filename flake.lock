@@ -57,6 +57,21 @@
     },
     "crane": {
       "locked": {
+        "lastModified": 1776635034,
+        "narHash": "sha256-OEOJrT3ZfwbChzODfIH4GzlNTtOFuZFWPtW7jIeR8xU=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "dc7496d8ea6e526b1254b55d09b966e94673750f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
+    "crane_2": {
+      "locked": {
         "lastModified": 1777335812,
         "narHash": "sha256-bEg5xoAxAwsyfnGhkEX7RJViTIBIYPd8ISg4O1c0HFc=",
         "owner": "ipetkov",
@@ -70,7 +85,7 @@
         "type": "github"
       }
     },
-    "crane_2": {
+    "crane_3": {
       "locked": {
         "lastModified": 1776635034,
         "narHash": "sha256-OEOJrT3ZfwbChzODfIH4GzlNTtOFuZFWPtW7jIeR8xU=",
@@ -85,7 +100,7 @@
         "type": "github"
       }
     },
-    "crane_3": {
+    "crane_4": {
       "locked": {
         "lastModified": 1777335812,
         "narHash": "sha256-bEg5xoAxAwsyfnGhkEX7RJViTIBIYPd8ISg4O1c0HFc=",
@@ -122,30 +137,31 @@
     },
     "e-imzo-manager": {
       "inputs": {
+        "crane": "crane",
         "nixpkgs": [
           "nixpkgs"
         ],
         "xinux-lib": "xinux-lib"
       },
       "locked": {
-        "lastModified": 1777096111,
-        "narHash": "sha256-5FDfWaKMOT9jxLXaHsOqF5ZPYMWMtNe5OC3/oh7c9kA=",
+        "lastModified": 1777961826,
+        "narHash": "sha256-6GqvIcuIK7T9oRsHbodSFy6y91TO5JTNsckP5pqCFFQ=",
         "ref": "main",
-        "rev": "bcf413bc084c19845713ad305556b11d109d4f6d",
+        "rev": "7425f564cd9476b4d3e783e96bdc1bdcda47188d",
         "shallow": true,
         "type": "git",
-        "url": "https://git.oss.uzinfocom.uz/xinux/settings"
+        "url": "https://git.oss.uzinfocom.uz/xinux/e-imzo-manager"
       },
       "original": {
         "ref": "main",
         "shallow": true,
         "type": "git",
-        "url": "https://git.oss.uzinfocom.uz/xinux/settings"
+        "url": "https://git.oss.uzinfocom.uz/xinux/e-imzo-manager"
       }
     },
     "e-imzo-manager_2": {
       "inputs": {
-        "crane": "crane_2",
+        "crane": "crane_3",
         "nixpkgs": [
           "xinux-modules",
           "nixpkgs"
@@ -1753,7 +1769,7 @@
     },
     "nix-software-center": {
       "inputs": {
-        "crane": "crane",
+        "crane": "crane_2",
         "flake-utils": "flake-utils_4",
         "nixos-appstream-data": "nixos-appstream-data",
         "nixpkgs": [
@@ -1778,7 +1794,7 @@
     },
     "nix-software-center_2": {
       "inputs": {
-        "crane": "crane_3",
+        "crane": "crane_4",
         "flake-utils": "flake-utils_9",
         "nixos-appstream-data": "nixos-appstream-data_2",
         "nixpkgs": [
@@ -2593,17 +2609,16 @@
       "locked": {
         "lastModified": 1773736097,
         "narHash": "sha256-vrnTlpJqQZg/hlct3dyvp2cBwj4cIsTrv3ylqjQNByM=",
-        "ref": "main",
+        "owner": "xinux-org",
+        "repo": "lib",
         "rev": "d0ebe6137d95d53c4e060517108a7902b0920535",
-        "shallow": true,
-        "type": "git",
-        "url": "https://git.oss.uzinfocom.uz/xinux/lib"
+        "type": "github"
       },
       "original": {
+        "owner": "xinux-org",
         "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "https://git.oss.uzinfocom.uz/xinux/lib"
+        "repo": "lib",
+        "type": "github"
       }
     },
     "xinux-lib_10": {

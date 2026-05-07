@@ -44,7 +44,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     e-imzo-manager = {
-      url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
+      url = "git+https://git.oss.uzinfocom.uz/xinux/e-imzo-manager?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xinux-tour = {
