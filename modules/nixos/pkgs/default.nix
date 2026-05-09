@@ -50,6 +50,7 @@ in
       pinentry-gnome3
       hunspell
       hunspellDicts.uz_UZ
+      helix
       # redis
       # support both 32-bit and 64-bit applications
       wineWow64Packages.stable
