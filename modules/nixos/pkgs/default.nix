@@ -56,7 +56,7 @@ in
       wineWow64Packages.stable
       samba # Provides ntlm_auth
       krb5 # Provides Kerberos support libraries
-      winetricks # Useful for further troubleshooting
+      winetricks
       gnome-builder
       fractal
       putty
@@ -71,7 +71,6 @@ in
       gtranslator
       google-chrome
       brave
-      # chromium
       github-desktop
       element-desktop
       telegram-desktop
@@ -100,7 +99,7 @@ in
       # xeonitte
       obsidian
       crosswords
-      # poedit
+      poedit
       # cosmic-settings
       # cosmic-settings-daemon
       burpsuite
