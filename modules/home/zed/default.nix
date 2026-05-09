@@ -193,10 +193,6 @@ let
       # show_background = true;
     };
 
-    title_bar = {
-      show_branch_icon = true;
-    };
-
     collaboration_panel = {
       button = false;
     };
