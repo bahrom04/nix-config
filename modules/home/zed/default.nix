@@ -34,6 +34,7 @@ let
     "xml"
     "zig"
     "meson"
+    "dependi"
   ];
 
   userSettings = {
