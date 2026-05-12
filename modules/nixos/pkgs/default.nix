@@ -205,6 +205,7 @@ in
       histSize = 5000;
       vteIntegration = true;
       shellInit = ''
+        eval "$(starship init zsh)"
         export GPG_TTY="$(tty)"
       '';
     };
