@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   config,
   lib,
   ...
@@ -196,7 +195,60 @@ in
         zstd
       ];
     };
-    zsh.enable = true;
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      autosuggestion.enable = true;
+      initContent = ''
+        eval "$(starship init zsh)"
+        export GPG_TTY="$(tty)"
+      '';
+    };
+    fastfetch = {
+      enable = true;
+      settings = {
+        modules = [
+          {
+            type = "datetime";
+            key = "Date";
+            format = "{1}-{3}-{11}";
+          }
+          "title"
+          "os"
+          "host"
+          "kernel"
+          "uptime"
+          "packages"
+          "shell"
+          "display"
+          "de"
+          "wm"
+          "terminal"
+          "cpu"
+          "gpu"
+          "memory"
+          "swap"
+          "disk"
+          "localip"
+          "PublicIp"
+          "battery"
+          "locale"
+        ];
+      };
+    };
+    zoxide = {
+      enable = true;
+      zoxide.enableZshIntegration = true;
+    };
+    starship = {
+      enable = true;
+      settings = {
+        add_newline = false;
+        character.success_symbol = "[➜](green)";
+        directory.truncation_length = 3;
+      };
+    };
     mtr.enable = true;
     steam.enable = false;
   };
