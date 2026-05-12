@@ -208,6 +208,8 @@ in
         export GPG_TTY="$(tty)"
       '';
     };
+    # prettier terminal prompt
+    starship.enable = true;
     zoxide = {
       enable = true;
       enableZshIntegration = true;
