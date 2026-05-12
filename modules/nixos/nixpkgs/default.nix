@@ -23,7 +23,7 @@
     settings = {
       # download-buffer-size = 524288000; # 500 MiB to prevent buffer warnings
 
-      experimental-features = lib.mkDefault [
+      experimental-features = [
         "nix-command"
         "flakes"
         "pipe-operators"
