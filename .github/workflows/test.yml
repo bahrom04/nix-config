@@ -12,12 +12,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      
+
       - name: Install nix
         uses: DeterminateSystems/nix-installer-action@main
-      
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
+
       - name: magic-nix-cache
         uses: DeterminateSystems/magic-nix-cache-action@main
 
-      - name: Test flake check     
+      - name: Test flake check
         run: nix flake check --show-trace
