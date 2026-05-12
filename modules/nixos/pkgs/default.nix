@@ -146,6 +146,7 @@ in
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+      enableZshIntegration = true;
     };
     obs-studio = {
       enable = true;
@@ -203,7 +204,6 @@ in
       # History file
       histSize = 5000;
       vteIntegration = true;
-      direnv.enableZshIntegration = true;
       shellInit = ''
         export GPG_TTY="$(tty)"
       '';
