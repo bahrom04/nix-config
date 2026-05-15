@@ -3,18 +3,18 @@
 
   inputs = {
     nixpkgs.url = "git+https://git.oss.uzinfocom.uz/xinux/nixpkgs?ref=nixos-unstable&shallow=1";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    nix-cachyos-kernel.url = "git+https://git.oss.uzinfocom.uz/mirrors/nix-cachyos-kernel?ref=release&shallow=1";
     xinux-lib = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/lib?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/";
+      url = "git+https://git.oss.uzinfocom.uz/mirrors/home-manager?ref=master&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Disko for easier partition management
     disko = {
-      url = "github:nix-community/disko";
+      url = "git+https://git.oss.uzinfocom.uz/mirrors/disko?ref=master&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Xinux
