@@ -68,6 +68,7 @@ in
       onlyoffice-desktopeditors
       # postman
       gtranslator
+      resources
       google-chrome
       brave
       github-desktop
