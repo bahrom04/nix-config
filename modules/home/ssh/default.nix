@@ -7,7 +7,7 @@
   programs.ssh = {
     enableDefaultConfig = false;
     enable = true;
-    matchBlocks = {
+    settings = {
       # Uzinfocom
       "*" = {
         user = "bahrom04";
