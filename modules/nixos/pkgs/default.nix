@@ -70,6 +70,7 @@ in
       gtranslator
       resources
       google-chrome
+      epiphany
       brave
       github-desktop
       element-desktop
