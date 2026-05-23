@@ -141,6 +141,19 @@ let
           check = {
             command = "clippy";
           };
+          files = {
+            excludeDirs = [
+              ".direnv"
+              ".devenv"
+              ".nix-mix"
+              ".git"
+              "target"
+              "_build"
+              ".blueprint"
+              "builddir"
+              "build"
+            ];
+          };
         };
       };
 
