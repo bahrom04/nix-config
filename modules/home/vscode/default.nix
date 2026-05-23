@@ -12,11 +12,11 @@
         mkhl.direnv
         ecmel.vscode-html-css
         fill-labs.dependi
-        ms-python.vscode-pylance
-        ms-python.python
+        # ms-python.vscode-pylance
+        # ms-python.python
         ms-vscode-remote.vscode-remote-extensionpack
         ms-vscode-remote.remote-ssh
-        ms-python.black-formatter
+        # ms-python.black-formatter
         rust-lang.rust-analyzer
         zguolee.tabler-icons
         vscode-icons-team.vscode-icons
