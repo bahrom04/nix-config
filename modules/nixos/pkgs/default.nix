@@ -57,12 +57,15 @@ in
       krb5 # Provides Kerberos support libraries
       winetricks
       gnome-builder
+      gnome-boxes
+      gnome-graphs
+      gnome-podcasts
+      # gnome-solanum
       fractal
       putty
       # authenticator
       # libreoffice
       libreoffice-fresh
-      gnome-boxes
       # prismlauncher
       googleearth-pro
       onlyoffice-desktopeditors
@@ -76,10 +79,8 @@ in
       element-desktop
       telegram-desktop
       discord
-      # gnome-solanum
       nextcloud-client
       icon-library
-      gnome-podcasts
       # cambalache
       bustle
       d-spy
