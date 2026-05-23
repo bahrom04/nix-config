@@ -11,7 +11,6 @@
   services = {
     displayManager = {
       gdm = {
-        wayland = true;
         enable = true;
         autoSuspend = false;
       };
