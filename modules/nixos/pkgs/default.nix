@@ -51,17 +51,27 @@ in
       hunspellDicts.uz_UZ
       helix
       # redis
-      # support both 32-bit and 64-bit applications
       wineWow64Packages.stable
       samba # Provides ntlm_auth
       krb5 # Provides Kerberos support libraries
       winetricks
+      ############################ GNOME
       gnome-builder
       gnome-boxes
       gnome-graphs
       gnome-podcasts
-      # gnome-solanum
+      icon-library
+      resources
+      gtranslator
+      blanket
       fractal
+      crosswords
+      impression
+      bustle
+      d-spy
+      gradia
+      cpu-x
+      # gnome-solanum
       putty
       # authenticator
       # libreoffice
@@ -70,48 +80,36 @@ in
       googleearth-pro
       onlyoffice-desktopeditors
       # postman
-      gtranslator
-      resources
       google-chrome
       epiphany
-      brave
       github-desktop
       element-desktop
       telegram-desktop
       discord
       nextcloud-client
-      icon-library
-      # cambalache
-      bustle
-      d-spy
-      gradia
-      # dialect
-      cpu-x
       sqlitebrowser
-      blanket
       cisco-packet-tracer_9
-      # autopsy
       e-imzo-manager
       nix-software-center
       xinux-module-manager
       xinux-settings
       xinux-tour
       bleur
-      # xeonitte
       obsidian
-      crosswords
       poedit
-      # cosmic-settings
-      # cosmic-settings-daemon
+      wireshark
+      sysprof
       burpsuite
       zap
       seclists
-      # veracrypt
-      # cryptomator
+      # cambalache
+      # dialect
+      # autopsy
+      # xeonitte
+      # cosmic-settings
+      # cosmic-settings-daemon
       # kdePackages.kleopatra
       # hashcat
-      wireshark
-      sysprof
       # constrict
       # winboat
       # pods
@@ -122,7 +120,6 @@ in
       # tailor_gui
       # openscad-lsp
       # openscad
-      impression
     ];
   };
 
