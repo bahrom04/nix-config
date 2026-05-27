@@ -116,24 +116,6 @@ in
 
   # advansed option. Adding just pkgs.x is not enough
   programs = {
-    firefox = {
-      enable = true;
-      preferences = {
-        "spellchecker.dictionary_path" =
-          let
-            dictionary = pkgs.symlinkJoin {
-              name = "firefox-hunspell-dicts";
-              paths = with pkgs.hunspellDicts; [
-                en-us-large
-                ru-ru
-                uz-uz
-              ];
-            };
-          in
-          "${dictionary}/share/hunspell";
-        "layout.spellcheckDefault" = 2;
-      };
-    };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
