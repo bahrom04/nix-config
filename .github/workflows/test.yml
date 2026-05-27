@@ -21,6 +21,12 @@ jobs:
 
       - name: magic-nix-cache
         uses: DeterminateSystems/magic-nix-cache-action@main
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
 
       - name: Test flake check
         run: nix flake check --show-trace
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
