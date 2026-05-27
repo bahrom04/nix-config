@@ -1751,10 +1751,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1779879551,
-        "narHash": "sha256-rEQcMQgASnUUCQGwPy+AgF3XUI6lfTfIC0o8ehHaGLo=",
+        "lastModified": 1779897982,
+        "narHash": "sha256-Sg33f58G5uZKKpyS0O9zw17CDPKJSIheqIVdgXerkc0=",
         "ref": "main",
-        "rev": "84a76d40510b4cf4e73e26978b8c6254d9c79f29",
+        "rev": "1cd49482c135e69edae106ae49260e004071919e",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/software-center"
@@ -1778,17 +1778,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1712858390,
-        "narHash": "sha256-XE7gr+zU3N4SHPAhsgk8cVAFp1iBg+Lxxp3y4dUF1vE=",
-        "owner": "korfuri",
-        "repo": "nixos-appstream-data",
-        "rev": "0465d42a4433faa63b7a5eb0b8d397937c9fc13a",
+        "lastModified": 1779897478,
+        "narHash": "sha256-XvfEuWs3XglA8F8pcZJs6Dt2HGTUEOrldkbZ+LKWcaw=",
+        "owner": "bahrom04-lab",
+        "repo": "nixos-appstream-data-fork",
+        "rev": "a76fc5b7a61bca4f7a0b6890eb1aa22169a692d0",
         "type": "github"
       },
       "original": {
-        "owner": "korfuri",
-        "ref": "flake",
-        "repo": "nixos-appstream-data",
+        "owner": "bahrom04-lab",
+        "ref": "update-icons",
+        "repo": "nixos-appstream-data-fork",
         "type": "github"
       }
     },
@@ -2794,10 +2794,10 @@
         "xinux-lib": "xinux-lib_8"
       },
       "locked": {
-        "lastModified": 1779829613,
-        "narHash": "sha256-sFTF23HwE9X10IfyUPzeMEV3jpzY2BxeBBZ4sippVNo=",
+        "lastModified": 1779893159,
+        "narHash": "sha256-rAMw5dFn358dbk00i4JFVN/zXi4ivV61jYxaKUC3ejU=",
         "ref": "main",
-        "rev": "f55c87996fa66ddfd7eb0c704fa4f2705796aa56",
+        "rev": "682dd5ea8fb0e4b237962cff201e1b6f6ceba40f",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/module-manager"
@@ -2839,10 +2839,10 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1779880310,
-        "narHash": "sha256-DtB2wIKL9BpSoM9U56WvgzhBzZGJYCBbyObEBpTdvx0=",
+        "lastModified": 1779894041,
+        "narHash": "sha256-D+5AeuFIv2TWctPDu5MijaDJdTwBONa8Kx1osaxATW0=",
         "ref": "main",
-        "rev": "e8406d84446bfbe9f6d59109ac4ae956081636fb",
+        "rev": "db1b439c86ab86c86db6c9b7055edace2675cc7b",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/modules"
@@ -2909,11 +2909,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779781734,
-        "narHash": "sha256-c2FZ7S/rhnCHcwPkc82GOxlCw88HKYBaJkLtMgi72p8=",
+        "lastModified": 1779858952,
+        "narHash": "sha256-3GwipanR5N8jvEe6CyQXvO0dWUHD77udH+gL8vYz91o=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "ef7c137fea3d0d0624864db7aa1f068eed79b0fb",
+        "rev": "3f714494e7514108056d3317c9148b9b7ff08022",
         "type": "github"
       },
       "original": {

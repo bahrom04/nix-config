@@ -21,6 +21,7 @@ in
       nixfmt-tree
       nixfmt
       nixpkgs-review
+      nix-output-monitor
       gnome-user-share
       desktop-file-utils
       neovim
