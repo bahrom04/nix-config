@@ -26,4 +26,4 @@ jobs:
             experimental-features = nix-command flakes pipe-operators
 
       - name: Test flake check
-        run: nix flake check --show-trace
+        run: nix flake check --show-trace --extra-experimental-features pipe-operators
