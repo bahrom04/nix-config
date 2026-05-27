@@ -22,7 +22,6 @@ in
       nixfmt
       nixpkgs-review
       nix-output-monitor
-      nh
       gnome-user-share
       desktop-file-utils
       neovim
@@ -118,6 +117,10 @@ in
 
   # advansed option. Adding just pkgs.x is not enough
   programs = {
+    nh = {
+      enable = true;
+      flake = "/home/bahrom/workplace/bahrom04/nix-config"; # sets NH_OS_FLAKE variable for you
+    };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
