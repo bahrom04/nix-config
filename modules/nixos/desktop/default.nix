@@ -2,11 +2,6 @@
 {
   console.keyMap = "us";
 
-  security = {
-    sudo-rs.enable = true;
-    rtkit.enable = true;
-  };
-
   # Enable the GNOME Desktop Environment.
   services = {
     displayManager = {

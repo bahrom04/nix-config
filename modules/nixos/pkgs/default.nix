@@ -11,16 +11,11 @@ in
   # APPS
   environment = {
     variables = {
-      EDITOR = "vim";
+      EDITOR = "hx";
       SOPS_AGE_KEY_FILE = age_keys;
     };
     systemPackages = with pkgs; [
       gnome-tweaks
-      gnome-extension-manager
-      gnomeExtensions.appindicator
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.clipboard-indicator
-      papirus-icon-theme
       gnome-power-manager
       # formatter
       nixfmt-tree
@@ -29,7 +24,7 @@ in
       gnome-user-share
       desktop-file-utils
       neovim
-      vim
+      helix
       fastfetch
       onefetch
       xkbcomp
@@ -43,14 +38,11 @@ in
       intel-gpu-tools
       fuse # version 2 for appimages
       appimage-run
-      # git/hub
       age
       sops
       pinentry-gnome3
       hunspell
       hunspellDicts.uz_UZ
-      helix
-      # redis
       wineWow64Packages.stable
       samba # Provides ntlm_auth
       krb5 # Provides Kerberos support libraries
@@ -62,7 +54,6 @@ in
       gnome-podcasts
       icon-library
       resources
-      gtranslator
       blanket
       fractal
       crosswords
@@ -70,15 +61,15 @@ in
       bustle
       d-spy
       gradia
+      # gtranslator
       cpu-x
-      # gnome-solanum
-      putty
+      # putty
       # authenticator
       # libreoffice
       libreoffice-fresh
+      # onlyoffice-desktopeditors
       # prismlauncher
       googleearth-pro
-      onlyoffice-desktopeditors
       # postman
       google-chrome
       epiphany
@@ -95,13 +86,13 @@ in
       xinux-settings
       xinux-tour
       bleur
-      obsidian
       poedit
       wireshark
       sysprof
       burpsuite
       zap
       seclists
+      bitwarden-desktop
       # cambalache
       # dialect
       # autopsy

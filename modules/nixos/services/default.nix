@@ -1,23 +1,7 @@
-{ lib, ... }:
 {
   services = {
-    pulseaudio.enable = false;
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
     pcscd.enable = true;
-    # Enable CUPS to print documents.
-    printing.enable = true;
-    flatpak.enable = true;
-    e-imzo.enable = true;
     opensnitch.enable = false;
-
-    envfs.enable = lib.mkDefault true;
 
     openssh = {
       enable = true;

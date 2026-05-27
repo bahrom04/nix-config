@@ -1,9 +1,17 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./modules.nix
     ./hardware-configuration.nix
   ];
+
+  boot = {
+    kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
+    supportedFilesystems = [ "ntfs" ];
+    consoleLogLevel = 3;
+    initrd.systemd.enable = true;
+    initrd.verbose = false;
+  };
 
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";

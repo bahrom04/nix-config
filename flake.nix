@@ -106,23 +106,23 @@
       # Local ./modules/nixos and ./modules/home imported automaticly
       # a lot of module.nix from remote repos.
       systems.modules.nixos = with inputs; [
+        # relago.nixosModules.relago
         disko.nixosModules.disko
         nix-data.nixosModules.nix-data
+        xinux-modules.nixosModules.efiboot
         xinux-modules.nixosModules.branding
         xinux-modules.nixosModules.kernel
-        xinux-modules.nixosModules.xinux
         xinux-modules.nixosModules.gnome
         xinux-modules.nixosModules.graphical
-        # xinux-modules.nixosModules.shell
+        xinux-modules.nixosModules.developer
         xinux-modules.nixosModules.gaming
         xinux-modules.nixosModules.networking
         xinux-modules.nixosModules.packagemanagers
         xinux-modules.nixosModules.pipewire
         xinux-modules.nixosModules.printing
         xinux-modules.nixosModules.metadata
-        # xinux-modules.nixosModules.developer
-        # xinux-modules.nixosModules.efiboot
-        # relago.nixosModules.relago
+        xinux-modules.nixosModules.xinux
+        # xinux-modules.nixosModules.shell
       ];
 
       # homes.modules = with inputs; [
