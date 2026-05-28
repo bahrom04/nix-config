@@ -1,5 +1,5 @@
 rebuild hostname:
-    sudo true && nixos-rebuild switch --flake .#{{ hostname }} --show-trace
+    sudo nixos-rebuild switch --flake .#{{ hostname }} --show-trace
 
 check:
     nix flake check --show-trace
