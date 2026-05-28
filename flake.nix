@@ -44,10 +44,10 @@
       url = "git+https://git.oss.uzinfocom.uz/xinux/software-center?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    xinux-module-manager = {
-      url = "github:xinux-org/module-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # xinux-module-manager = {
+    #   url = "github:xinux-org/module-manager";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     e-imzo-manager = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/e-imzo-manager?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -110,19 +110,20 @@
         disko.nixosModules.disko
         nix-data.nixosModules.nix-data
         xinux-modules.nixosModules.efiboot
-        xinux-modules.nixosModules.branding
-        xinux-modules.nixosModules.kernel
-        xinux-modules.nixosModules.gnome
-        xinux-modules.nixosModules.graphical
-        xinux-modules.nixosModules.developer
-        xinux-modules.nixosModules.gaming
-        xinux-modules.nixosModules.networking
-        xinux-modules.nixosModules.packagemanagers
-        xinux-modules.nixosModules.pipewire
-        xinux-modules.nixosModules.printing
-        xinux-modules.nixosModules.metadata
-        xinux-modules.nixosModules.xinux
+        # xinux-modules.nixosModules.branding
+        # xinux-modules.nixosModules.kernel
+        # xinux-modules.nixosModules.gnome
+        # xinux-modules.nixosModules.graphical
+        # xinux-modules.nixosModules.container
+        # xinux-modules.nixosModules.gaming
+        # xinux-modules.nixosModules.networking
+        # xinux-modules.nixosModules.packagemanagers
+        # xinux-modules.nixosModules.pipewire
+        # xinux-modules.nixosModules.printing
+        # xinux-modules.nixosModules.metadata
+        # xinux-modules.nixosModules.xinux
         # xinux-modules.nixosModules.shell
+        xinux-modules.nixosModules.meta
       ];
 
       # homes.modules = with inputs; [

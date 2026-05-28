@@ -83,7 +83,6 @@ in
       cisco-packet-tracer_9
       e-imzo-manager
       nix-software-center
-      xinux-module-manager
       xinux-settings
       xinux-tour
       bleur

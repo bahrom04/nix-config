@@ -5,6 +5,14 @@
     ./hardware-configuration.nix
   ];
 
+  # useful when debugging xeonitte (xinux installer)
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (subject.isInGroup("wheel"))
+        return polkit.Result.YES;
+    });
+  '';
+  
   boot = {
     kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
