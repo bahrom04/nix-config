@@ -9,7 +9,7 @@
 ```bash
 sudo nixos-rebuild switch --flake .#nixos #use hostname here
 
-nix build .#nixosConfigurations.bahrom04.config.system.build.toplevel --show-trace
+nix build .#nixosConfigurations.bahrom04.config.system.build.toplevel --show-trace --option tarball-ttl 0 # no caching
 ```
 
 ### Install from live iso. Disko
@@ -22,17 +22,9 @@ git clone https://github.com/bahrom04/nix-config.git
 # Please use it inside bootlable usb to prevent disco used disk being busy
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode disko ./hosts/?/disk-configuration.nix
 
-# Install using flake configurations on top of partitioned disks
+# Then install using flake configurations on top of partitioned disks
 # Replace ? with available hostname
 sudo nixos-install --flake .#?
-```
-
-# nix-darwin
-```bash
-sudo darwin-rebuild switch --flake .#air
---option tarball-ttl 0 # no caching
-
-nix build .#darwinConfigurations.bahrom04.config.system.build.toplevel --show-trace
 ```
 
 ## Code formatter and checkers & delete cache
@@ -51,7 +43,7 @@ git rev-parse main
 sudo nix-collect-garbage -d
 ```
 
-## Edit secrets 
+## Edit secrets
 ```bash
 nix develop
 EDITOR=vim sops ./secrets/secrets.yaml
