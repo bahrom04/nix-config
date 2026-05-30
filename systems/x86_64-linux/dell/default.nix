@@ -6,12 +6,12 @@
   ];
 
   # useful when debugging xeonitte (xinux installer)
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (subject.isInGroup("wheel"))
-        return polkit.Result.YES;
-    });
-  '';
+  # security.polkit.extraConfig = ''
+  #   polkit.addRule(function(action, subject) {
+  #     if (subject.isInGroup("wheel"))
+  #       return polkit.Result.YES;
+  #   });
+  # '';
   
   boot = {
     kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
@@ -39,4 +39,6 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
+  environment.systemPackages = [
+  ];
 }
