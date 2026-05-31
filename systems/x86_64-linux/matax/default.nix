@@ -101,6 +101,7 @@
   system.stateVersion = "25.11";
   environment.systemPackages = [
     pkgs.imgbrd-grabber
+    pkgs.malcontent-ui
   ];
 
   # # Define a user account. Don't forget to set a password with ‘passwd’.
