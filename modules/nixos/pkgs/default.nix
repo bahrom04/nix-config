@@ -81,7 +81,6 @@ in
       nextcloud-client
       sqlitebrowser
       cisco-packet-tracer_9
-      e-imzo-manager
       nix-software-center
       xinux-settings
       xinux-tour
