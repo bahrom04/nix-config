@@ -12,7 +12,7 @@
   #       return polkit.Result.YES;
   #   });
   # '';
-  
+
   boot = {
     kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
@@ -39,6 +39,7 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
+    cryptsetup
   ];
 }
