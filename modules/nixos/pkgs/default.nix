@@ -91,7 +91,7 @@ in
       burpsuite
       zap
       seclists
-      bitwarden-desktop
+      # bitwarden-desktop
       # cambalache
       # dialect
       # autopsy
