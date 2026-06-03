@@ -28,10 +28,7 @@ in
       helix
       fastfetch
       onefetch
-      xkbcomp
-      setxkbmap
-      rng-tools
-      haveged
+      tree
       flatpak-builder
       woeusb # for creating windows usb
       ntfs3g
