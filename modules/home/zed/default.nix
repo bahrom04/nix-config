@@ -59,6 +59,10 @@ let
     };
 
     languages = {
+      Rust = {
+        tab_size = 4;
+      };
+
       Markdown = {
         format_on_save = "on";
         use_on_type_format = true;
