@@ -30,7 +30,7 @@
     enable = true;
     systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/systems/x86_64-linux/dell/default.nix";
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
-    flakearg = "dell";
+    hostname = "dell";
   };
 
   # Select host type for the system

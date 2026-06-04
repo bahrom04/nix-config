@@ -44,7 +44,7 @@
     enable = true;
     systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/systems/x86_64-linux/matax/default.nix";
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
-    flakearg = "matax";
+    hostname = "matax";
   };
 
   services = {
