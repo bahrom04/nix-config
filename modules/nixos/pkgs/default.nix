@@ -29,6 +29,9 @@ in
       fastfetch
       onefetch
       tree
+      jq
+      jq-zsh-plugin
+      jq-lsp
       flatpak-builder
       woeusb # for creating windows usb
       ntfs3g
@@ -154,9 +157,6 @@ in
         attr
         bzip2
         curl
-        jq
-        jq-zsh-plugin
-        jq-lsp
         libglvnd
         libsodium
         libssh
