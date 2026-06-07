@@ -154,6 +154,9 @@ in
         attr
         bzip2
         curl
+        jq
+        jq-zsh-plugin
+        jq-lsp
         libglvnd
         libsodium
         libssh
