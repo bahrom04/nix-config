@@ -189,6 +189,6 @@ in
       enableZshIntegration = true;
     };
     mtr.enable = true;
-    steam.enable = false;
+    steam.enable = true;
   };
 }
