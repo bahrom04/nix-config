@@ -99,9 +99,12 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
-  environment.systemPackages = [
-    pkgs.imgbrd-grabber
-    pkgs.malcontent-ui
+  environment.systemPackages = with pkgs; [
+    imgbrd-grabber
+    calamares-nixos-extensions
+    calamares-nixos
+    # calamares
+    gnomeExtensions.pop-shell
   ];
 
   # # Define a user account. Don't forget to set a password with ‘passwd’.
