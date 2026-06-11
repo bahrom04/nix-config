@@ -32,6 +32,7 @@ in
       jq
       jq-zsh-plugin
       jq-lsp
+      asciinema
       flatpak-builder
       woeusb # for creating windows usb
       ntfs3g
