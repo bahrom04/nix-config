@@ -22,6 +22,9 @@ git clone https://github.com/bahrom04/nix-config.git
 # Please use it inside bootlable usb to prevent disco used disk being busy
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode disko ./hosts/?/disk-configuration.nix
 
+# For incremental/imperative change of disk (if you desided to remove some / partition)
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode format,mount ./hosts/?/disk-configuration.nix
+
 # Then install using flake configurations on top of partitioned disks
 # Replace ? with available hostname
 sudo nixos-install --flake .#?

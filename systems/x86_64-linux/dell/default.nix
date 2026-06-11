@@ -13,6 +13,8 @@
   #   });
   # '';
 
+  zramSwap.enable = true;
+
   boot = {
     kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];

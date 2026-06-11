@@ -28,14 +28,6 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            SWAP = {
-              size = "69G";
-              content = {
-                type = "swap";
-                discardPolicy = "both";
-                resumeDevice = true;
-              };
-            };
             ROOT = {
               size = "100%";
               content = {
