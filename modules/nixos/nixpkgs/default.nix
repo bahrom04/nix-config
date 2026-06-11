@@ -29,13 +29,9 @@
         "pipe-operators"
       ];
       substituters = [
-        "https://cache.xinux.uz/" # xinux
-        "https://cache.nixos.org/"
         "https://attic.xuyh0120.win/lantian" # cachy
       ];
       trusted-public-keys = [
-        "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       ];
       trusted-users = [

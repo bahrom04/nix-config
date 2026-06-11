@@ -62,16 +62,9 @@ in
       bustle
       d-spy
       gradia
-      # gtranslator
       cpu-x
-      # putty
-      # authenticator
-      # libreoffice
       libreoffice-fresh
-      # onlyoffice-desktopeditors
-      # prismlauncher
       googleearth-pro
-      # postman
       google-chrome
       epiphany
       github-desktop
@@ -80,7 +73,6 @@ in
       discord
       nextcloud-client
       sqlitebrowser
-      cisco-packet-tracer_9
       nix-software-center
       xinux-settings
       xinux-tour
@@ -88,9 +80,17 @@ in
       poedit
       wireshark
       sysprof
-      burpsuite
       zap
       seclists
+      burpsuite
+      # gtranslator
+      # putty
+      # authenticator
+      # libreoffice
+      # onlyoffice-desktopeditors
+      # prismlauncher
+      # postman
+      # cisco-packet-tracer_9
       # bitwarden-desktop
       # cambalache
       # dialect
@@ -191,7 +191,6 @@ in
       enable = true;
       enableZshIntegration = true;
     };
-    mtr.enable = true;
     steam.enable = true;
   };
 }
