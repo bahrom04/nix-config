@@ -85,6 +85,7 @@ in
       seclists
       burpsuite
       uchar
+      geekbench
       # gtranslator
       # putty
       # authenticator
