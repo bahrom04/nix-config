@@ -4,12 +4,6 @@
   ...
 }:
 {
-  # nixpkgs = {
-  #   overlays = [
-  #     # Add overlays your own flake exports (from overlays and pkgs dir):
-  #   ];
-  # };
-
   nix = {
     enable = true;
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
