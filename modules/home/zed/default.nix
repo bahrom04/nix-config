@@ -18,6 +18,8 @@ let
     "lua"
     "make"
     "material-icon-theme"
+    "vscode-icons"
+    "vscode-dark-modern"
     "neocmake"
     "nginx"
     "nix"
@@ -38,6 +40,9 @@ let
   ];
 
   userSettings = {
+    project_panel = {
+      dock = "left";
+    };
     auto_update = false;
     # colorize_brackets = true;
     disable_ai = true;
