@@ -1,6 +1,6 @@
 { ... }:
 {
-  modules.xinux.eimzoIntegraion.enable = true;
+  modules.xinux.eimzoIntegraion.enable = false;
   modules.shell.rusted-tools = true;
   services.flatpak.enable = true;
   modules.xinux.browser = "firefox";
