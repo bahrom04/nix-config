@@ -69,6 +69,7 @@ in
       google-chrome
       epiphany
       github-desktop
+      gitte
       element-desktop
       telegram-desktop
       discord
