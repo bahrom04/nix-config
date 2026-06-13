@@ -22,6 +22,7 @@ in
       nixfmt
       nixpkgs-review
       nix-output-monitor
+      nix-nix-fast-build
       gnome-user-share
       desktop-file-utils
       neovim
