@@ -102,6 +102,7 @@
 
         permittedInsecurePackages = [
           "googleearth-pro-7.3.7.1155"
+          "olm-3.2.16"
         ];
       };
       # Add modules to all NixOS systems.
