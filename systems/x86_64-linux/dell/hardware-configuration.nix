@@ -67,10 +67,7 @@
     system = "x86_64-linux";
   };
 
-  # powerManagement.cpuFreqGovernor = "performance";
-  services.auto-cpufreq.enable = true;
   services.thermald.enable = true;
-
   # List packages system hardware configuration
   # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
   hardware = {
