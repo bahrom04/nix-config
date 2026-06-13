@@ -16,7 +16,19 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  # default 50% ram
+  zramSwap.enable = true;
+
   boot = {
+    kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
+    supportedFilesystems = [ "ntfs" ];
+    consoleLogLevel = 3;
+    initrd.systemd.enable = true;
+    initrd.verbose = false;
+    kernel.sysctl = {
+      "net.core.default_qdisc" = "fq";
+      "net.ipv4.tcp_congestion_control" = "bbr";
+    };
     initrd.availableKernelModules = [
       "nvme"
       "xhci_pci"
@@ -35,6 +47,25 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
+
+  # Select host type for the system
+  # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  # Hardware optimized compilation
+  # https://nixos.wiki/wiki/Build_flags
+  nix.settings.system-features = [
+    "nixos-test"
+    "benchmark"
+    "big-parallel"
+    "kvm"
+    "gccarch-x86-64-v3"
+    "gccarch-x86-64-v2"
+    "gccarch-x86-64"
+  ];
+  nixpkgs.localSystem = {
+    gcc.arch = "x86-64-v3";
+    gcc.tune = "skylake";
+    system = "x86_64-linux";
+  };
 
   # List packages system hardware configuration
   # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
