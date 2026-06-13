@@ -39,6 +39,16 @@
   # List packages system hardware configuration
   # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
   hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings = {
+        General = {
+          Experimental = true; # Needed for certain Bluetooth LE devices (like modern mice)
+          FastConnectable = "true";
+        };
+      };
+    };
     graphics = {
       enable = true;
       enable32Bit = true;

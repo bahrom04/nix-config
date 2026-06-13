@@ -17,7 +17,7 @@
     settings = {
       # download-buffer-size = 524288000; # 500 MiB to prevent buffer warnings
       substituters = [
-        "https://cache.xinux.uz/?priority=10"
+        "https://cache.xinux.uz?priority=10"
         "https://cache.nixos.org/"
         "https://attic.xuyh0120.win/lantian" # cachy
       ];
