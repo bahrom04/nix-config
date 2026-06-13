@@ -95,9 +95,6 @@
   # remove all gnome utility apps
   # services.gnome.core-utilities.enable = false;
 
-  # Select host type for the system
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
