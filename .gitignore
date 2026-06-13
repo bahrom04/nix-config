@@ -95,7 +95,7 @@ $RECYCLE.BIN/
 # Direnv
 .direnv
 
-result
+result*
 test.yaml
 
 venv
