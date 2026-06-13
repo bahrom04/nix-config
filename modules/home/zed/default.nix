@@ -83,7 +83,7 @@ let
 
       Nix = {
         formatter = "language_server";
-        # colorize_brackets = true;
+        colorize_brackets = true;
         language_servers = [
           "nixd"
           "!nil"
