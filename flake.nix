@@ -64,7 +64,10 @@
       url = "git+https://git.oss.uzinfocom.uz/bleur/bleur?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    uchar = {
+      url = "git+https://git.oss.uzinfocom.uz/uchar/cross?ref=uchar/app/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # snowfall-drift = {
     #   url = "github:snowfallorg/drift";
     #   inputs.nixpkgs.follows = "nixpkgs";

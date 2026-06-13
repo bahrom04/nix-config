@@ -1,5 +1,5 @@
 # https://github.com/Momi-V/NixOS/compare/main...v3-fix
-
+# https://discourse.nixos.org/t/pre-rfc-gradual-transition-of-nixos-x86-64-baseline-to-x86-64-v3-with-an-intermediate-step-to-x86-64-v2/35924/72
 {
   # Inputs from your flake.
   ...

@@ -84,6 +84,7 @@ in
       zap
       seclists
       burpsuite
+      uchar
       # gtranslator
       # putty
       # authenticator
