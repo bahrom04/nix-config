@@ -30,6 +30,7 @@
         brettm12345.nixfmt-vscode
         bodil.blueprint-gtk
         ms-vscode.cpptools
+        vscode-extensions.nefrob.vscode-just-syntax
         # relm4.relm4-snippets # todo: release to nixpkgs
       ];
 
