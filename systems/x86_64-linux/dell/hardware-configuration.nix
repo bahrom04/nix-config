@@ -67,7 +67,8 @@
     system = "x86_64-linux";
   };
 
-  powerManagement.cpuFreqGovernor = "performance";
+  # powerManagement.cpuFreqGovernor = "performance";
+  services.auto-cpufreq.enable = true;
   services.thermald.enable = true;
 
   # List packages system hardware configuration
