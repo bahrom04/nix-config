@@ -32,6 +32,7 @@
 
   environment.systemPackages = with pkgs; [
     cryptsetup
+    blackbox-terminal
   ];
 
   # Used for backwards compatibility, please read the changelog before changing.
