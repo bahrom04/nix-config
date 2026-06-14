@@ -19,6 +19,12 @@
     priority = 100;
   };
 
+  # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
+  services.scx = {
+    enable = true;
+    # scheduler = "scx_lavd"; # default is "scx_rustland"
+  };
+
   boot = {
     kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
