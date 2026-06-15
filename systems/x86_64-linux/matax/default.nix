@@ -106,6 +106,7 @@
     gnomeExtensions.pop-shell
     aurea
     gnome-firmware
+    footage
   ];
 
   # # Define a user account. Don't forget to set a password with ‘passwd’.
