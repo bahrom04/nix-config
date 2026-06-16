@@ -22,6 +22,7 @@
         "vboxusers"
         "docker"
         "podman"
+        "relago"
       ];
 
       openssh.authorizedKeys.keys = [
