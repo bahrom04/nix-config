@@ -88,6 +88,7 @@ in
       burpsuite
       uchar
       geekbench
+      wl-clipboard
       # gtranslator
       # putty
       # authenticator

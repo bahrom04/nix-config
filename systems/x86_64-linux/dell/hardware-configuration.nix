@@ -78,7 +78,7 @@
     "gccarch-x86-64"
   ];
   nixpkgs.localSystem = {
-    gcc.arch = "x86-64-v3";
+    gcc.arch = "skylake";
     gcc.tune = "skylake";
     system = "x86_64-linux";
   };
