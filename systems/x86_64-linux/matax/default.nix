@@ -9,6 +9,12 @@
     ./modules.nix
   ];
 
+  # Relago service
+  services.relago = {
+    enable = true;
+    nix-config = "/home/bahrom/workplace/bahrom04/nix-config/";
+  };
+
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";
 

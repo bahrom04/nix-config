@@ -22,10 +22,6 @@
       url = "git+https://git.oss.uzinfocom.uz/xinux/nix-data?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mac-style-plymouth = {
-      url = "git+https://git.oss.uzinfocom.uz/xinux/xinux-plymouth-theme?ref=master&shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     xinux-modules = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/modules?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,13 +69,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     #
-    # relago = {
-    #   url = "github:xinux-org/relago/bootstrap-relago-module";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #     # nixpkgs-unstable.follows = "nixpkgs-unstable";
-    #   };
-    # };
+    relago.url = "git+https://git.oss.uzinfocom.uz/xinux/relago";
   };
 
   outputs =
@@ -110,7 +100,7 @@
       # Local ./modules/nixos and ./modules/home imported automaticly
       # a lot of module.nix from remote repos.
       systems.modules.nixos = with inputs; [
-        # relago.nixosModules.relago
+        relago.nixosModules.relago
         disko.nixosModules.disko
         nix-data.nixosModules.nix-data
         xinux-modules.nixosModules.efiboot
