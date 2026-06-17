@@ -1,8 +1,12 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }:
+let
+  relago = inputs.relago.packages."${pkgs.stdenv.hostPlatform.system}".default;
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -103,6 +107,7 @@
     aurea
     gnome-firmware
     footage
+    relago
   ];
 
   # # Define a user account. Don't forget to set a password with ‘passwd’.
