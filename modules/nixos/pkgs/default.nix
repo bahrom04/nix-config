@@ -87,7 +87,6 @@ in
       zap
       seclists
       burpsuite
-      uchar
       geekbench
       wl-clipboard
       # gtranslator
