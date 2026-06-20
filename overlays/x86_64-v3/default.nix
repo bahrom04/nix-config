@@ -21,17 +21,18 @@ final: prev: {
   # });
 
   # https://lists.xenproject.org/archives/html/xen-devel/2025-01/msg00439.html
-  xen = prev.xen.overrideAttrs (old: {
-    patches = (old.patches or [ ]) ++ [
-      (prev.writeText "xen-text-alignment.patch" ''
-        --- a/xen/arch/x86/boot/Makefile
-        +++ b/xen/arch/x86/boot/Makefile
-        @@ -44,2 +44,2 @@
-        -text_gap := 0x010200
-        -text_diff := 0x408020
-        +text_gap := 0x010240
-        +text_diff := 0x608040
-      '')
-    ];
-  });
+  # FIX for gcc.tune = "generic";
+  # xen = prev.xen.overrideAttrs (old: {
+  #   patches = (old.patches or [ ]) ++ [
+  #     (prev.writeText "xen-text-alignment.patch" ''
+  #       --- a/xen/arch/x86/boot/Makefile
+  #       +++ b/xen/arch/x86/boot/Makefile
+  #       @@ -44,2 +44,2 @@
+  #       -text_gap := 0x010200
+  #       -text_diff := 0x408020
+  #       +text_gap := 0x010240
+  #       +text_diff := 0x608040
+  #     '')
+  #   ];
+  # });
 }
