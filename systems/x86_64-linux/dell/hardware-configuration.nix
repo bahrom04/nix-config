@@ -19,15 +19,17 @@
   #   priority = 100;
   # };
 
-  # hybernation
-  # systemd.sleep.settings.Sleep = {
-  #   HibernateDelaySec = "30m";
-  # };
+  # https://nixos.wiki/wiki/Hibernation
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "30m";
+    SuspendState = "mem";
+  };
+  services.logind.settings.Login.LidSwitch = "suspend-then-hibernate";
 
   # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
   services.scx.enable = true;
   services.thermald.enable = true;
-  
+
   boot = {
     zswap = {
       enable = true;
@@ -43,6 +45,7 @@
       "udev.log_level=3"
       "systemd.show_status=auto"
       "intel_pstate=active"
+      "mem_sleep_default=deep"
     ];
     kernel.sysctl = {
       "vm.dirty_ratio" = 10;
