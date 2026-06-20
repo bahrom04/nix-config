@@ -25,7 +25,7 @@
               };
             };
             SWAP = {
-              size = "8G";
+              size = "25G";
               content = {
                 type = "swap";
                 discardPolicy = "both";

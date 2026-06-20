@@ -14,18 +14,24 @@
   ];
 
   # default 50% ram
-  zramSwap = {
-    enable = true;
-    priority = 100;
-  };
+  # zramSwap = {
+  #   enable = true;
+  #   priority = 100;
+  # };
+
+  # hybernation
+  # systemd.sleep.settings.Sleep = {
+  #   HibernateDelaySec = "30m";
+  # };
 
   # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
-  services.scx = {
-    enable = true;
-    # scheduler = "scx_lavd"; # default is "scx_rustland"
-  };
-
+  services.scx.enable = true;
+  services.thermald.enable = true;
+  
   boot = {
+    zswap = {
+      enable = true;
+    };
     kernelPackages = pkgs.linux-cachyos-bore-lto-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
     consoleLogLevel = 3;
@@ -46,7 +52,6 @@
       "net.core.default_qdisc" = "fq";
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
-
     initrd.availableKernelModules = [
       "nvme"
       "xhci_pci"
@@ -54,7 +59,6 @@
       "usb_storage"
       "sd_mod"
     ];
-
     kernelModules = [
       "kvm-intel"
       "fuse"
@@ -83,7 +87,6 @@
     system = "x86_64-linux";
   };
 
-  services.thermald.enable = true;
   # List packages system hardware configuration
   # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
   hardware = {
