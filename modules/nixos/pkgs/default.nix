@@ -18,6 +18,7 @@ in
       gnome-tweaks
       gnome-power-manager
       gnomeExtensions.gtk4-desktop-icons-ng-ding
+      gnome-shell-extensions
       # formatter
       nixfmt-tree
       nixfmt
