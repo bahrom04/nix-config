@@ -44,7 +44,7 @@ let
       dock = "left";
     };
     auto_update = false;
-    # colorize_brackets = true;
+    colorize_brackets = true;
     disable_ai = true;
 
     preview_tabs = {
