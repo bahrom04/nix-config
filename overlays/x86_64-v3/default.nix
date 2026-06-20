@@ -7,18 +7,18 @@
 # x64_v3 Fixes
 final: prev: {
   # https://github.com/assimp/assimp/issues/6342
-  assimp = prev.assimp.overrideAttrs (old: {
-    NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -ffp-contract=on";
-  });
+  # assimp = prev.assimp.overrideAttrs (old: {
+  #   NIX_CFLAGS_COMPILE = (old.NIX_CFLAGS_COMPILE or "") + " -ffp-contract=on";
+  # });
 
   # https://github.com/godotengine/godot/issues/91217
   # https://github.com/godotengine/godot/pull/95158
-  embree = prev.embree.overrideAttrs (old: {
-    cmakeFlags = (old.cmakeFlags or [ ]) ++ [
-      "-DEMBREE_ISA_SSE2=OFF"
-      "-DEMBREE_ISA_SSE42=OFF"
-    ];
-  });
+  # embree = prev.embree.overrideAttrs (old: {
+  #   cmakeFlags = (old.cmakeFlags or [ ]) ++ [
+  #     "-DEMBREE_ISA_SSE2=OFF"
+  #     "-DEMBREE_ISA_SSE42=OFF"
+  #   ];
+  # });
 
   # https://lists.xenproject.org/archives/html/xen-devel/2025-01/msg00439.html
   xen = prev.xen.overrideAttrs (old: {
