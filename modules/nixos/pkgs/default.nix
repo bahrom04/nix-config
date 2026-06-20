@@ -17,6 +17,7 @@ in
     systemPackages = with pkgs; [
       gnome-tweaks
       gnome-power-manager
+      gnomeExtensions.gtk4-desktop-icons-ng-ding
       # formatter
       nixfmt-tree
       nixfmt
