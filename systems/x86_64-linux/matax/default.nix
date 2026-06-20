@@ -19,6 +19,7 @@ in
     nix-config = "/home/bahrom/workplace/bahrom04/nix-config/";
   };
 
+  console.keyMap = "us";
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";
 

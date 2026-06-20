@@ -17,7 +17,8 @@
   #       return polkit.Result.YES;
   #   });
   # '';
-  
+
+  console.keyMap = "us";
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";
 
