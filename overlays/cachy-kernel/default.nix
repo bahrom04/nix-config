@@ -10,4 +10,6 @@ final: prev: {
   # # Has small chance of kernel modules not being compatible with kernel version.
   linux-cachyos-latest-lto-x86_64-v3 =
     inputs.nix-cachyos-kernel.legacyPackages.${prev.stdenv.hostPlatform.system}.linuxPackages-cachyos-latest-lto-x86_64-v3;
+  linux-cachyos-bore-lto-x86_64-v3 =
+    inputs.nix-cachyos-kernel.legacyPackages.${prev.stdenv.hostPlatform.system}.linuxPackages-cachyos-bore-lto-x86_64-v3;
 }
