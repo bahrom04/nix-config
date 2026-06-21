@@ -68,6 +68,7 @@ in
       gradia
       cpu-x
       qdiskinfo
+      kdiskmark
       libreoffice-fresh
       googleearth-pro
       google-chrome
