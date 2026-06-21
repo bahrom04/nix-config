@@ -24,7 +24,7 @@
     # 30 minute
     HibernateDelaySec = "1800";
   };
-  services.logind.settings.Login.LidSwitch = "suspend-then-hibernate";
+  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
 
   # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
   services.scx.enable = true;
