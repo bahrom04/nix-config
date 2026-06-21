@@ -19,6 +19,9 @@ in
       gnome-power-manager
       gnomeExtensions.gtk4-desktop-icons-ng-ding
       gnome-shell-extensions
+      nautilus-python
+      python3
+      glib
       # formatter
       nixfmt-tree
       nixfmt
