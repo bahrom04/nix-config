@@ -38,7 +38,6 @@ in
       asciinema
       flatpak-builder
       woeusb # for creating windows usb
-      ntfs3g
       libva-utils
       intel-gpu-tools
       fuse # version 2 for appimages
