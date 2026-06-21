@@ -21,7 +21,8 @@
 
   # https://nixos.wiki/wiki/Hibernation
   systemd.sleep.settings.Sleep = {
-    HibernateDelaySec = "30min";
+    # 30 minute
+    HibernateDelaySec = "1800";
   };
   services.logind.settings.Login.LidSwitch = "suspend-then-hibernate";
 
