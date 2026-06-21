@@ -76,7 +76,7 @@ in
       element-desktop
       telegram-desktop
       discord
-      nextcloud-client
+      # nextcloud-client
       sqlitebrowser
       nix-software-center
       xinux-settings
