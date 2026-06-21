@@ -67,6 +67,7 @@ in
       d-spy
       gradia
       cpu-x
+      qdiskinfo
       libreoffice-fresh
       googleearth-pro
       google-chrome
