@@ -57,6 +57,7 @@ in
       gnome-boxes
       gnome-graphs
       gnome-podcasts
+      dconf-editor
       icon-library
       resources
       blanket
@@ -76,7 +77,6 @@ in
       element-desktop
       telegram-desktop
       discord
-      # nextcloud-client
       sqlitebrowser
       nix-software-center
       xinux-settings
@@ -90,6 +90,7 @@ in
       burpsuite
       geekbench
       wl-clipboard
+      # nextcloud-client
       # gtranslator
       # putty
       # authenticator
