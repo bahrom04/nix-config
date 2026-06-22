@@ -75,10 +75,6 @@
   # Hardware optimized compilation
   # https://nixos.wiki/wiki/Build_flags
   nix.settings.system-features = [
-    "nixos-test"
-    "benchmark"
-    "big-parallel"
-    "kvm"
     "gccarch-x86-64-v3"
     "gccarch-x86-64-v2"
     "gccarch-x86-64"
