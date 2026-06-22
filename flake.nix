@@ -65,7 +65,8 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     #
-    relago.url = "git+https://git.oss.uzinfocom.uz/xinux/relago";
+    # relago.url = "git+https://git.oss.uzinfocom.uz/xinux/relago";
+    relago.url = "path:/home/bahrom/workplace/xinux/relago";
   };
 
   outputs =
