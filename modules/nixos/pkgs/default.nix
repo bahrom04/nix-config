@@ -20,6 +20,8 @@ in
       gnomeExtensions.gtk4-desktop-icons-ng-ding
       gnome-shell-extensions
       nautilus-python
+      code-nautilus
+      nautilus-open-any-terminal
       # formatter
       nixfmt-tree
       nixfmt
