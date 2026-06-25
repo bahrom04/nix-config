@@ -1,6 +1,6 @@
 { ... }:
 {
-  modules.xinux.eimzoIntegraion.enable = false;
+  modules.xinux.eimzoIntegraion.enable = true;
   modules.shell.rusted-tools = true;
   services.flatpak.enable = true;
   services.gnome.games.enable = true;
