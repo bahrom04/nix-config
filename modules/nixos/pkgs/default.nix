@@ -94,6 +94,7 @@ in
       burpsuite
       geekbench
       wl-clipboard
+      stress-ng
       # nextcloud-client
       # gtranslator
       # putty
