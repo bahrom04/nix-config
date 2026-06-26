@@ -95,6 +95,7 @@ in
       geekbench
       wl-clipboard
       stress-ng
+      rt-tests
       # nextcloud-client
       # gtranslator
       # putty
