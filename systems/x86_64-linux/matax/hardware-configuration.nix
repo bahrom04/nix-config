@@ -32,13 +32,9 @@
   boot = {
     kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
-    consoleLogLevel = 3;
     initrd.systemd.enable = true;
-    initrd.verbose = false;
 
     kernelParams = [
-      "quiet"
-      "udev.log_level=3"
       "systemd.show_status=auto"
       "intel_pstate=active"
     ];
