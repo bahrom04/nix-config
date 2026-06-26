@@ -25,16 +25,16 @@
     HibernateDelaySec = "1800";
   };
   services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
+  services.thermald.enable = true;
 
   # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
   services.scx.enable = true;
-  services.thermald.enable = true;
 
   boot = {
     zswap = {
       enable = true;
     };
-    kernelPackages = pkgs.linux-cachyos-bore-lto-x86_64-v3;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
     initrd.systemd.enable = true;
 

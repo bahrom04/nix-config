@@ -30,7 +30,7 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linux-cachyos-latest-lto-x86_64-v3;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
     initrd.systemd.enable = true;
 
