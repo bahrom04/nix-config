@@ -73,6 +73,7 @@ in
       qdiskinfo
       kdiskmark
       libreoffice-fresh
+      collabora-online
       googleearth-pro
       google-chrome
       epiphany
@@ -100,7 +101,6 @@ in
       # gtranslator
       # putty
       # authenticator
-      # libreoffice
       # onlyoffice-desktopeditors
       # prismlauncher
       # postman
