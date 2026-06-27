@@ -74,6 +74,7 @@ in
       kdiskmark
       libreoffice-fresh
       collabora-online
+      collabora-desktop
       googleearth-pro
       google-chrome
       epiphany
