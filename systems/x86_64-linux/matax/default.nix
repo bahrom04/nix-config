@@ -109,6 +109,7 @@ in
     gnome-firmware
     footage
     relago
+    bazaar
   ];
 
   # # Define a user account. Don't forget to set a password with ‘passwd’.
