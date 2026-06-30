@@ -93,9 +93,6 @@ in
     };
   };
 
-  # remove all gnome utility apps
-  # services.gnome.core-utilities.enable = false;
-
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = "25.11";
