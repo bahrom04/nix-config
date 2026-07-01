@@ -16,7 +16,7 @@ in
   # Relago service
   services.relago = {
     enable = true;
-    nix-config = "/home/bahrom/workplace/bahrom04/nix-config/";
+    # nix-config = "/home/bahrom/workplace/bahrom04/nix-config/";
   };
 
   console.keyMap = "us";
@@ -105,9 +105,9 @@ in
     aurea
     gnome-firmware
     footage
-    relago
     bazaar
     cambalache
+    # relago
   ];
 
   # # Define a user account. Don't forget to set a password with ‘passwd’.
