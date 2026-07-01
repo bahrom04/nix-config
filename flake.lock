@@ -2232,14 +2232,17 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1782891299,
-        "narHash": "sha256-6epAPQ5gGmTztBTcBQIRcsWV6Vd3h1jwm19uTvyqsIM=",
-        "path": "/home/bahrom/workplace/xinux/relago",
-        "type": "path"
+        "lastModified": 1781248985,
+        "narHash": "sha256-TNdSy9lNpJ23qZviUqTUsCP8Lt8khcmjXaNM4lzf6lk=",
+        "ref": "refs/heads/main",
+        "rev": "5341588190db9420553f8aa15e43d7a4f8b5cb6d",
+        "revCount": 53,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/relago"
       },
       "original": {
-        "path": "/home/bahrom/workplace/xinux/relago",
-        "type": "path"
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/relago"
       }
     },
     "root": {
