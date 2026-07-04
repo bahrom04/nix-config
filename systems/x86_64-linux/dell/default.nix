@@ -31,6 +31,7 @@
 
   environment.systemPackages = with pkgs; [
     bazaar
+    phoronix-test-suite
   ];
 
   # Used for backwards compatibility, please read the changelog before changing.
