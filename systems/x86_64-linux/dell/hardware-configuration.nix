@@ -34,7 +34,7 @@
     zswap = {
       enable = true;
     };
-    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
     initrd.systemd.enable = true;
     kernelParams = [
@@ -76,6 +76,7 @@
     gcc.tune = "skylake";
     system = "x86_64-linux";
   };
+  # nixpkgs.hostPlatform = "x86_64-linux";
 
   # List packages system hardware configuration
   # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
