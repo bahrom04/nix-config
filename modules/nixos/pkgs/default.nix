@@ -98,7 +98,6 @@ in
       wl-clipboard
       stress-ng
       rt-tests
-      geekbench_6
       # nextcloud-client
       # gtranslator
       # putty
