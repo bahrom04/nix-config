@@ -78,7 +78,6 @@ in
       googleearth-pro
       google-chrome
       epiphany
-      github-desktop
       gitte
       element-desktop
       telegram-desktop

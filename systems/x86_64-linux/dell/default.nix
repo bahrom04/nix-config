@@ -32,6 +32,7 @@
   environment.systemPackages = with pkgs; [
     bazaar
     phoronix-test-suite
+    distroshelf
   ];
 
   # Used for backwards compatibility, please read the changelog before changing.
