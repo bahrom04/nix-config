@@ -23,6 +23,7 @@
         "docker"
         "podman"
         "relago"
+        "samba"
       ];
 
       openssh.authorizedKeys.keys = [
