@@ -34,6 +34,8 @@ in
       helix
       fastfetch
       onefetch
+      ffmpeg
+      mpv
       tree
       jq
       jq-zsh-plugin
