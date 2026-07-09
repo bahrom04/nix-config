@@ -21,7 +21,6 @@ in
       gnome-shell-extensions
       nautilus-python
       code-nautilus
-      nautilus-open-any-terminal
       # formatter
       nixfmt-tree
       nixfmt
@@ -29,7 +28,6 @@ in
       nix-output-monitor
       nix-fast-build
       gnome-user-share
-      desktop-file-utils
       neovim
       helix
       fastfetch
