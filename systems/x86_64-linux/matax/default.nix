@@ -29,12 +29,12 @@ in
   };
 
   # useful when debugging xeonitte (xinux installer)
-  # security.polkit.extraConfig = ''
-  #   polkit.addRule(function(action, subject) {
-  #     if (subject.isInGroup("wheel"))
-  #       return polkit.Result.YES;
-  #   });
-  # '';
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (subject.isInGroup("wheel"))
+        return polkit.Result.YES;
+    });
+  '';
 
   # services.relago = {
   #   enable = false;
@@ -50,48 +50,106 @@ in
     hostname = "matax";
   };
 
-  services = {
-    # NVIDIA driver support
-    xserver.videoDrivers = [ "nvidia" ];
+  # services.samba = {
+  #   enable = true;
+  #   openFirewall = true;
+  #   settings = {
+  #     global = {
+  #       "workgroup" = "WORKGROUP";
+  #       "server string" = "smbnix";
+  #       "netbios name" = "smbnix";
+  #       "security" = "user";
+  #       #"use sendfile" = "yes";
+  #       #"max protocol" = "smb2";
+  #       # note: localhost is the ipv6 localhost ::1
+  #       "hosts allow" = "192.168.0. 127.0.0.1 localhost";
+  #       "hosts deny" = "0.0.0.0/0";
+  #       "guest account" = "nobody";
+  #       "map to guest" = "bad user";
+  #     };
+  #     "public" = {
+  #       "path" = "/home/bahrom/Public";
+  #       "browseable" = "yes";
+  #       "read only" = "no";
+  #       "guest ok" = "yes";
+  #       "create mask" = "0644";
+  #       "directory mask" = "0755";
+  #       "force user" = "username";
+  #       "force group" = "groupname";
+  #     };
+  #     # "private" = {
+  #     #   "path" = "/mnt/Shares/Private";
+  #     #   "browseable" = "yes";
+  #     #   "read only" = "no";
+  #     #   "guest ok" = "no";
+  #     #   "create mask" = "0644";
+  #     #   "directory mask" = "0755";
+  #     #   "force user" = "username";
+  #     #   "force group" = "groupname";
+  #     # };
+  #   };
+  # };
+  
+  # services.samba-wsdd = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
+  
+  # services.avahi = {
+  #   publish.enable = true;
+  #   publish.userServices = true;
+  #   # ^^ Needed to allow samba to automatically register mDNS records (without the need for an `extraServiceFile`
+  #   nssmdns4 = true;
+  #   # ^^ Not one hundred percent sure if this is needed- if it aint broke, don't fix it
+  #   enable = true;
+  #   openFirewall = true;
+  # };
+  
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
+  
+  # services = {
+  #   # NVIDIA driver support
+  #   xserver.videoDrivers = [ "nvidia" ];
 
-    samba = {
-      enable = true;
-      package = pkgs.samba;
-      openFirewall = true;
+  #   samba = {
+  #     enable = true;
+  #     package = pkgs.samba;
+  #     openFirewall = true;
 
-      settings = {
-        global = {
-          "server smb encrypt" = "required";
-          "server min protocol" = "SMB3_00";
-          "workgroup" = "WORKGROUP";
-          "security" = "user";
-        };
+  #     settings = {
+  #       global = {
+  #         "server smb encrypt" = "required";
+  #         "server min protocol" = "SMB3_00";
+  #         "workgroup" = "WORKGROUP";
+  #         "security" = "user";
+  #       };
 
-        testshare = {
-          "path" = "/home/bahrom/Public";
-          "writable" = "yes";
-          "comment" = "Hello World!";
-          "browseable" = "yes";
-        };
-        # fayllar = {
-        #   "path" = "/media/fayllar";
-        #   "writable" = "yes";
-        #   "comment" = "Hello World!";
-        #   "browseable" = "yes";
-        # };
-      };
-    };
-    samba-wsdd = {
-      enable = true;
-      openFirewall = true;
-    };
-    avahi = {
-      enable = true;
-      publish.enable = true;
-      publish.userServices = true;
-      openFirewall = true;
-    };
-  };
+  #       testshare = {
+  #         "path" = "/home/bahrom/Public";
+  #         "writable" = "yes";
+  #         "comment" = "Hello World!";
+  #         "browseable" = "yes";
+  #       };
+  #       # fayllar = {
+  #       #   "path" = "/media/fayllar";
+  #       #   "writable" = "yes";
+  #       #   "comment" = "Hello World!";
+  #       #   "browseable" = "yes";
+  #       # };
+  #     };
+  #   };
+  #   samba-wsdd = {
+  #     enable = true;
+  #     openFirewall = true;
+  #   };
+  #   avahi = {
+  #     enable = true;
+  #     publish.enable = true;
+  #     publish.userServices = true;
+  #     openFirewall = true;
+  #   };
+  # };
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
@@ -108,6 +166,8 @@ in
     bazaar
     cambalache
     # relago
+    ffmpeg
+    mpv
   ];
 
   # # Define a user account. Don't forget to set a password with ‘passwd’.
