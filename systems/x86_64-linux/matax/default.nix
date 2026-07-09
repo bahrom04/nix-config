@@ -13,7 +13,6 @@ in
     ./modules.nix
   ];
 
-  # Relago service
   services.relago = {
     enable = true;
     # nix-config = "/home/bahrom/workplace/bahrom04/nix-config/";
@@ -36,13 +35,6 @@ in
     });
   '';
 
-  # services.relago = {
-  #   enable = false;
-  #   # user = users.users.lambdajon;
-  # };
-
-  networking.hostName = "matax";
-
   programs.nix-data = {
     enable = true;
     systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/systems/x86_64-linux/matax/default.nix";
@@ -50,7 +42,41 @@ in
     hostname = "matax";
   };
 
-  # services.samba = {
+  networking.hostName = "matax";
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
+
+  system.stateVersion = "25.11";
+  environment.systemPackages = with pkgs; [
+    imgbrd-grabber
+    calamares-nixos-extensions
+    calamares-nixos
+    # calamares
+    gnomeExtensions.pop-shell
+    aurea
+    gnome-firmware
+    footage
+    bazaar
+    cambalache
+    # relago
+  ];
+
+  # users.users = {
+  #   "@USERNAME@" = {
+  #     isNormalUser = true;
+  #     description = "@FULLNAME@";
+  #     extraGroups = [
+  #       "wheel"
+  #       "networkmanager"
+  #       "dialout"
+  #     ];
+  #   };
+  # };
+  # users.users = "";
+  #
+  #
+  #
+  # # services.samba = {
   #   enable = true;
   #   openFirewall = true;
   #   settings = {
@@ -89,12 +115,12 @@ in
   #     # };
   #   };
   # };
-  
+
   # services.samba-wsdd = {
   #   enable = true;
   #   openFirewall = true;
   # };
-  
+
   # services.avahi = {
   #   publish.enable = true;
   #   publish.userServices = true;
@@ -104,10 +130,8 @@ in
   #   enable = true;
   #   openFirewall = true;
   # };
-  
-  networking.firewall.enable = true;
-  networking.firewall.allowPing = true;
-  
+  #
+  #
   # services = {
   #   # NVIDIA driver support
   #   xserver.videoDrivers = [ "nvidia" ];
@@ -150,35 +174,4 @@ in
   #     openFirewall = true;
   #   };
   # };
-
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-  system.stateVersion = "25.11";
-  environment.systemPackages = with pkgs; [
-    imgbrd-grabber
-    calamares-nixos-extensions
-    calamares-nixos
-    # calamares
-    gnomeExtensions.pop-shell
-    aurea
-    gnome-firmware
-    footage
-    bazaar
-    cambalache
-    # relago
-  ];
-
-  # # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users = {
-  #   "@USERNAME@" = {
-  #     isNormalUser = true;
-  #     description = "@FULLNAME@";
-  #     extraGroups = [
-  #       "wheel"
-  #       "networkmanager"
-  #       "dialout"
-  #     ];
-  #   };
-  # };
-  # users.users = "";
 }
