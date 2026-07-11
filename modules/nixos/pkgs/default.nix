@@ -84,7 +84,7 @@ in
       discord
       sqlitebrowser
       nix-software-center
-      xinux-settings
+      # xinux-settings
       xinux-tour
       bleur
       poedit
@@ -180,7 +180,7 @@ in
         stdenv.cc.cc
         systemd
         util-linux
-        vulkan-loader
+        # vulkan-loader
         xz
         zlib
         zstd
@@ -205,6 +205,6 @@ in
       enable = true;
       enableZshIntegration = true;
     };
-    steam.enable = true;
+    steam.enable = false;
   };
 }
