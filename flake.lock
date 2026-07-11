@@ -1705,10 +1705,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1783711151,
-        "narHash": "sha256-232L3Nku2nLch/TQHsJEIhiZJKr+VTehnVUs1NZ0SNc=",
+        "lastModified": 1783744526,
+        "narHash": "sha256-yYVxW+uIbCx0Nt870fbErQbz+b2+3Gwpppe+JbIU+Co=",
         "ref": "master",
-        "rev": "f938277527aa084929261879d50d9832b9eab6d3",
+        "rev": "2afec152df4e284d264f8489d16004c264aebf4c",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/home-manager"
@@ -2178,10 +2178,10 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1783224372,
-        "narHash": "sha256-8i/87eeoqiGE4yOTjwSA3Eh/ziJRQEmd/unYU+K27sk=",
+        "lastModified": 1783522502,
+        "narHash": "sha256-iffAls3iaNTyJC2faYcUXSI+Gp02cDjYl+MygxKl2GI=",
         "ref": "nixos-unstable",
-        "rev": "d407951447dcd00442e97087bf374aad70c04cea",
+        "rev": "0bb7ec54c8483066ec9d7720e780a5caa71f8612",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
