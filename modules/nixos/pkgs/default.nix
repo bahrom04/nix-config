@@ -61,6 +61,7 @@ in
       gnome-podcasts
       dconf-editor
       icon-library
+      app-icon-preview
       resources
       blanket
       fractal
