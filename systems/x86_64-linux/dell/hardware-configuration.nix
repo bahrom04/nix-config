@@ -28,7 +28,7 @@
   services.thermald.enable = true;
 
   # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
-  services.scx.enable = true;
+  # services.scx.enable = true;
 
   boot = {
     zswap = {
