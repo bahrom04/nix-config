@@ -96,7 +96,7 @@
         vpl-gpu-rt # For modern QSV
         libvdpau
         libva-vdpau-driver
-        vulkan-validation-layers
+        # vulkan-validation-layers
       ];
     };
     cpu.intel.updateMicrocode = true;
