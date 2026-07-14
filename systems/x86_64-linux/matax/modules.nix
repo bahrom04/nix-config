@@ -1,5 +1,6 @@
-{ ... }:
+{ lib, ... }:
 {
+  systemd.user.services.e-imzo.wantedBy = lib.mkForce [ ];
   modules.xinux.eimzoIntegraion.enable = true;
   modules.gaming.aagl = true;
   modules.xinux.libreofficePack.enable = false;
