@@ -2,12 +2,16 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }:
 let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
 in
 {
+  # imports = [
+  #   inputs.chaotic.nixosModules.default
+  # ];
   # APPS
   environment = {
     variables = {
@@ -204,6 +208,20 @@ in
       enable = true;
       enableZshIntegration = true;
     };
-    steam.enable = true;
+    steam = {
+      enable = true;
+      # extraCompatPackages = with pkgs; [ proton-cachyos-x86_64_v3 ];
+      # https://www.nyx.chaotic.cx/#:~:text=proton%2Dcachyos%5Fx86%5F64%5Fv3
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      extraCompatPackages = [
+        inputs.chaotic.packages.${pkgs.system}.proton-cachyos_x86_64_v3
+      ];
+    };
   };
 }

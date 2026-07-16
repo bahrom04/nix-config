@@ -67,6 +67,9 @@
     #
     relago.url = "git+https://git.oss.uzinfocom.uz/xinux/relago";
     # relago.url = "path:/home/bahrom/workplace/xinux/relago";
+
+    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs =
@@ -89,7 +92,6 @@
 
         permittedInsecurePackages = [
           "googleearth-pro-7.3.7.1155"
-          "olm-3.2.16"
         ];
       };
       # Add modules to all NixOS systems.
@@ -101,6 +103,10 @@
         nix-data.nixosModules.nix-data
         xinux-modules.nixosModules.efiboot
         xinux-modules.nixosModules.meta
+        # chaotic.nixosModules.default
+        chaotic.nixosModules.nyx-cache
+        chaotic.nixosModules.nyx-overlay
+        chaotic.nixosModules.nyx-registry
       ];
 
       # homes.modules = with inputs; [

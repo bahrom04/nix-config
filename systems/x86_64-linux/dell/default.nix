@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -8,6 +9,8 @@
     ./hardware-configuration.nix
   ];
 
+  chaotic.nyx.cache.enable = true;
+
   # useful when debugging xeonitte (xinux installer)
   # security.polkit.extraConfig = ''
   #   polkit.addRule(function(action, subject) {
@@ -15,7 +18,7 @@
   #       return polkit.Result.YES;
   #   });
   # '';
-
+  
   console.keyMap = "us";
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";
