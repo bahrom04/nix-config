@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
   ];
 
-  chaotic.nyx.cache.enable = true;
+  # chaotic.nyx.cache.enable = true;
 
   # useful when debugging xeonitte (xinux installer)
   # security.polkit.extraConfig = ''

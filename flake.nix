@@ -104,9 +104,9 @@
         xinux-modules.nixosModules.efiboot
         xinux-modules.nixosModules.meta
         # chaotic.nixosModules.default
-        chaotic.nixosModules.nyx-cache
-        chaotic.nixosModules.nyx-overlay
-        chaotic.nixosModules.nyx-registry
+        # chaotic.nixosModules.nyx-cache
+        # chaotic.nixosModules.nyx-overlay
+        # chaotic.nixosModules.nyx-registry
       ];
 
       # homes.modules = with inputs; [
