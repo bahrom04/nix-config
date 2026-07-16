@@ -206,6 +206,6 @@ in
       enable = true;
       enableZshIntegration = true;
     };
-    steam.enable = false;
+    steam.enable = true;
   };
 }
