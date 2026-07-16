@@ -192,8 +192,6 @@ in
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       autosuggestions.enable = true;
-      # History file
-      histSize = 5000;
       vteIntegration = true;
       shellInit = ''
         eval "$(starship init zsh)"
