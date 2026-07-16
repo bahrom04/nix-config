@@ -183,7 +183,7 @@ in
       # 2 option. chaotic
       # https://www.nyx.chaotic.cx/#:~:text=proton%2Dcachyos%5Fx86%5F64%5Fv3
       extraCompatPackages = [
-        inputs.chaotic.packages.${pkgs.system}.proton-cachyos_x86_64_v3
+        inputs.chaotic.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos_x86_64_v3
       ];
     };
   };
