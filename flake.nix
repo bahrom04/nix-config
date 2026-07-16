@@ -89,7 +89,6 @@
         allowUnsupportedSystem = true;
         allowUnfreePredicate = _: true;
         allowBroken = true;
-
         permittedInsecurePackages = [
           "googleearth-pro-7.3.7.1155"
         ];

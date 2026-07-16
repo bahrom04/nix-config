@@ -12,7 +12,6 @@ in
   # imports = [
   #   inputs.chaotic.nixosModules.default
   # ];
-  # APPS
   environment = {
     variables = {
       EDITOR = "hx";
@@ -138,11 +137,6 @@ in
       enable = true;
       flake = "/home/bahrom/workplace/bahrom04/nix-config"; # sets NH_OS_FLAKE variable for you
     };
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-      enableZshIntegration = true;
-    };
     obs-studio = {
       enable = true;
       enableVirtualCamera = true;
@@ -169,28 +163,6 @@ in
         ];
       };
     };
-    nix-ld = {
-      enable = lib.mkDefault true;
-      libraries = with pkgs; [
-        acl
-        attr
-        bzip2
-        curl
-        libglvnd
-        libsodium
-        libssh
-        libxml2
-        mesa
-        openssl
-        stdenv.cc.cc
-        systemd
-        util-linux
-        # vulkan-loader
-        xz
-        zlib
-        zstd
-      ];
-    };
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -204,21 +176,12 @@ in
     };
     # prettier terminal prompt
     starship.enable = true;
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-    };
     steam = {
       enable = true;
+      # 1 option
       # extraCompatPackages = with pkgs; [ proton-cachyos-x86_64_v3 ];
+      # 2 option. chaotic
       # https://www.nyx.chaotic.cx/#:~:text=proton%2Dcachyos%5Fx86%5F64%5Fv3
-      #
-      #
-      #
-      #
-      #
-      #
-      #
       extraCompatPackages = [
         inputs.chaotic.packages.${pkgs.system}.proton-cachyos_x86_64_v3
       ];
