@@ -18,7 +18,16 @@
   #       return polkit.Result.YES;
   #   });
   # '';
-  
+
+  # https://nixos.wiki/wiki/Hibernation
+  systemd.sleep.settings.Sleep = {
+    # 30 minute
+    HibernateDelaySec = "1800";
+  };
+  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
+  services.thermald.enable = true;
+
+
   console.keyMap = "us";
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";

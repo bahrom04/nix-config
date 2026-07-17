@@ -9,26 +9,14 @@
   imports = [
     inputs.disko.nixosModules.disko
     ./disk-configuration.nix
-
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  # default 50% ram
-  # zramSwap = {
-  #   enable = true;
-  #   priority = 100;
-  # };
-
-  # https://nixos.wiki/wiki/Hibernation
-  systemd.sleep.settings.Sleep = {
-    # 30 minute
-    HibernateDelaySec = "1800";
+  hardware.facter = {
+    enable = true;
+    reportPath = ./facter.json;
+    detected.graphics.enable = true;
   };
-  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
-  services.thermald.enable = true;
-
-  # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
-  # services.scx.enable = true;
 
   boot = {
     zswap = {
@@ -66,16 +54,16 @@
   # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   # Hardware optimized compilation
   # https://nixos.wiki/wiki/Build_flags
-  nix.settings.system-features = [
-    "gccarch-x86-64-v3"
-    "gccarch-x86-64-v2"
-    "gccarch-x86-64"
-  ];
-  nixpkgs.localSystem = {
-    gcc.arch = "skylake";
-    gcc.tune = "skylake";
-    system = "x86_64-linux";
-  };
+  # nix.settings.system-features = [
+  #   "gccarch-x86-64-v3"
+  #   "gccarch-x86-64-v2"
+  #   "gccarch-x86-64"
+  # ];
+  # nixpkgs.localSystem = {
+  #   gcc.arch = "skylake";
+  #   gcc.tune = "skylake";
+  #   system = "x86_64-linux";
+  # };
   # nixpkgs.hostPlatform = "x86_64-linux";
 
   # List packages system hardware configuration

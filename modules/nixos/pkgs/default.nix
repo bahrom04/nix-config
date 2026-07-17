@@ -174,6 +174,11 @@ in
         export GPG_TTY="$(tty)"
       '';
     };
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      enableZshIntegration = true;
+    };
     # prettier terminal prompt
     starship.enable = true;
     steam = {
