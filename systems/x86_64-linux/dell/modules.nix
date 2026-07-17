@@ -1,5 +1,6 @@
 { ... }:
 {
+  systemd.user.services.e-imzo.wantedBy = lib.mkForce [ ];
   modules.xinux.eimzoIntegraion.enable = true;
   modules.shell.rusted-tools = true;
   services.flatpak.enable = true;
