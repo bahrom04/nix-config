@@ -9,5 +9,5 @@
   modules.xinux.browser = "firefox";
   modules.xinux.xinuxModuleManager.enable = true;
   modules.xinux.binaryCompat.enable = true;
-  modules.shell.direnv = true;
+  # modules.shell.direnv = true;
 }
