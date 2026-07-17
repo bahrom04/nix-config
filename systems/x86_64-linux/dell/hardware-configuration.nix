@@ -14,7 +14,7 @@
 
   hardware.facter = {
     enable = true;
-    reportPath = ./facter.json;
+    reportPath = ./dell.json;
     detected.graphics.enable = true;
   };
 
@@ -25,7 +25,6 @@
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     supportedFilesystems = [ "ntfs" ];
     kernelParams = [
-      "systemd.show_status=auto"
       "intel_pstate=active"
       "mem_sleep_default=deep"
     ];
