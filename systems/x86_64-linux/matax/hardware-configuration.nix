@@ -29,9 +29,8 @@
       enable = true;
     };
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
-    supportedFilesystems = [ "ntfs" ];
     initrd.systemd.enable = true;
-
+    kernelModules = [ "fuse" ];
     kernelParams = [
       "intel_pstate=active"
     ];
@@ -39,21 +38,7 @@
       "net.core.default_qdisc" = "fq";
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
-
-    initrd.availableKernelModules = [
-      "nvme"
-      "xhci_pci"
-      "usbhid"
-      "usb_storage"
-      "sd_mod"
-    ];
-
-    kernelModules = [
-      "kvm-intel"
-      "fuse"
-      "v4l2loopback"
-      "nvme"
-    ];
+    supportedFilesystems = [ "ntfs" ];
     extraModulePackages = with config.boot.kernelPackages; [
       v4l2loopback
     ];

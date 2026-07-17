@@ -23,7 +23,8 @@
       enable = true;
     };
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
-    supportedFilesystems = [ "ntfs" ];
+    initrd.systemd.enable = true;
+    kernelModules = [ "fuse" ];
     kernelParams = [
       "intel_pstate=active"
       "mem_sleep_default=deep"
@@ -32,30 +33,23 @@
       "net.core.default_qdisc" = "fq";
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
-    initrd.systemd.enable = true;
-    initrd.availableKernelModules = [
-      "nvme"
-      "xhci_pci"
-      "usbhid"
-      "usb_storage"
-      "sd_mod"
-    ];
-    kernelModules = [
-      "kvm-intel"
-      "fuse"
-    ];
+    supportedFilesystems = [ "ntfs" ];
   };
-
-  networking.useDHCP = lib.mkDefault true;
 
   # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   # Hardware optimized compilation
   # https://nixos.wiki/wiki/Build_flags
-  nix.settings.system-features = [
-    "gccarch-x86-64-v3"
-    "gccarch-x86-64-v2"
-    "gccarch-x86-64"
-  ];
+  nix.settings.system-features = lib.systems.architectures.features.skylake;
+  # nixpkgs.hostPlatform = {
+  #   gcc.arch = "skylake";
+  #   gcc.tune = "skylake";
+  #   system = "x86_64-linux";
+  # };
+  nixpkgs.buildPlatform = {
+    gcc.arch = "skylake";
+    gcc.tune = "skylake";
+    system = "x86_64-linux";
+  };
   nixpkgs.localSystem = {
     gcc.arch = "skylake";
     gcc.tune = "skylake";
