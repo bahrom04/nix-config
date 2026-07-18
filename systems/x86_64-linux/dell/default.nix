@@ -21,7 +21,7 @@
 
   services = {
     system76-scheduler = {
-      enable = true;
+      enable = false;
     };
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     thermald.enable = true;
