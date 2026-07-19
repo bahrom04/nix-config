@@ -2,6 +2,7 @@
 {
   systemd.user.services.e-imzo.wantedBy = lib.mkForce [ ];
   modules.xinux.eimzoIntegraion.enable = true;
+  modules.xinux.relago.enable = false;
   modules.shell.rusted-tools = true;
   services.flatpak.enable = true;
   services.gnome.games.enable = true;
