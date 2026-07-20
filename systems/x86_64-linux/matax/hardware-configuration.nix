@@ -49,7 +49,7 @@
   nix.settings.system-features = lib.systems.architectures.features.x86-64-v3;
   nixpkgs.hostPlatform = {
     gcc.arch = "x86-64-v3";
-    gcc.tune = "generic";
+    gcc.tune = "x86-64-v3";
     system = "x86_64-linux";
   };
   nixpkgs.buildPlatform = {
