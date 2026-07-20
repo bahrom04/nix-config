@@ -3,13 +3,14 @@
   config,
   modulesPath,
   pkgs,
+  lib,
   ...
 }:
 {
   imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
     inputs.disko.nixosModules.disko
     ./disk-configuration.nix
-    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   hardware.facter = {
@@ -21,7 +22,6 @@
   # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
   services.scx = {
     enable = true;
-    # scheduler = "scx_lavd"; # default is "scx_rustland"
   };
 
   boot = {
@@ -44,26 +44,29 @@
     ];
   };
 
-  # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   # Hardware optimized compilation
   # https://nixos.wiki/wiki/Build_flags
-  nix.settings.system-features = [
-    "gccarch-x86-64-v3"
-    "gccarch-x86-64-v2"
-    "gccarch-x86-64"
-  ];
-  nixpkgs.localSystem = {
+  nix.settings.system-features = lib.systems.architectures.features.x86-64-v3;
+  nixpkgs.hostPlatform = {
     gcc.arch = "x86-64-v3";
     gcc.tune = "generic";
     system = "x86_64-linux";
   };
+  nixpkgs.buildPlatform = {
+    gcc.arch = "x86-64-v3";
+    gcc.tune = "generic";
+    system = "x86_64-linux";
+  };
+  # nixpkgs.localSystem = {
+  #   gcc.arch = "x86-64-v3";
+  #   gcc.tune = "generic";
+  #   system = "x86_64-linux";
+  # };
 
   services.thermald.enable = true;
 
-  # List packages system hardware configuration
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
-    # GPU (Nvidia)
     nvidia = {
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;

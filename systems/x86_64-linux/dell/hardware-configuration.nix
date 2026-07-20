@@ -7,9 +7,9 @@
 }:
 {
   imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
     inputs.disko.nixosModules.disko
     ./disk-configuration.nix
-    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   hardware.facter = {
@@ -29,32 +29,31 @@
       "intel_pstate=active"
       "mem_sleep_default=deep"
     ];
+    supportedFilesystems = [ "ntfs" ];
     # kernel.sysctl = {
     #   "net.core.default_qdisc" = "fq";
     #   "net.ipv4.tcp_congestion_control" = "bbr";
     # };
-    supportedFilesystems = [ "ntfs" ];
   };
 
-  # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   # Hardware optimized compilation
   # https://nixos.wiki/wiki/Build_flags
   nix.settings.system-features = lib.systems.architectures.features.skylake;
-  # nixpkgs.hostPlatform = {
-  #   gcc.arch = "skylake";
-  #   gcc.tune = "skylake";
-  #   system = "x86_64-linux";
-  # };
+  nixpkgs.hostPlatform = {
+    gcc.arch = "skylake";
+    gcc.tune = "skylake";
+    system = "x86_64-linux";
+  };
   nixpkgs.buildPlatform = {
     gcc.arch = "skylake";
     gcc.tune = "skylake";
     system = "x86_64-linux";
   };
-  nixpkgs.localSystem = {
-    gcc.arch = "skylake";
-    gcc.tune = "skylake";
-    system = "x86_64-linux";
-  };
+  # nixpkgs.localSystem = {
+  #   gcc.arch = "skylake";
+  #   gcc.tune = "skylake";
+  #   system = "x86_64-linux";
+  # };
   # nixpkgs.hostPlatform = "x86_64-linux";
 
   # List packages system hardware configuration
