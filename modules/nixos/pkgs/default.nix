@@ -57,6 +57,7 @@ in
       samba # Provides ntlm_auth
       krb5 # Provides Kerberos support libraries
       winetricks
+      elfx86exts
       ############################ GNOME
       gnome-builder
       gnome-boxes
