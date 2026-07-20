@@ -47,23 +47,34 @@
   # Hardware optimized compilation
   # https://nixos.wiki/wiki/Build_flags
   nix.settings.system-features = lib.systems.architectures.features.x86-64-v3;
-  nixpkgs.hostPlatform = {
-    gcc.arch = "x86-64-v3";
-    gcc.tune = "x86-64-v3";
-    system = "x86_64-linux";
-  };
+  # nixpkgs.hostPlatform = {
+  #   gcc.arch = "x86-64-v3";
+  #   gcc.tune = "x86-64-v3";
+  #   system = "x86_64-linux";
+  # };
   nixpkgs.buildPlatform = {
     gcc.arch = "x86-64-v3";
     gcc.tune = "generic";
     system = "x86_64-linux";
   };
-  # nixpkgs.localSystem = {
-  #   gcc.arch = "x86-64-v3";
-  #   gcc.tune = "generic";
-  #   system = "x86_64-linux";
-  # };
+  nixpkgs.localSystem = {
+    gcc.arch = "x86-64-v3";
+    gcc.tune = "generic";
+    system = "x86_64-linux";
+  };
 
   services.thermald.enable = true;
+
+  # nixpkgs.overlays = [
+  #   (_: prev: {
+  #     stdenv = lib.recursiveUpdate prev.stdenv {
+  #       hostPlatform = {
+  #         gcc.arch = "x86-64-v3";
+  #         gcc.tune = "generic";
+  #       };
+  #     };
+  #   })
+  # ];
 
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
