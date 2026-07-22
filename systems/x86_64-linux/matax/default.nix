@@ -27,11 +27,18 @@ in
             "org/gnome/settings-daemon/plugins/media-keys" = {
               custom-keybindings = [
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
               ];
+
             };
             "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
               name = "open-terminal";
               binding = "<Shift><Alt>t";
+              command = "kgx";
+            };
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+              name = "open-nautilus";
+              binding = "<Super>e";
               command = "kgx";
             };
             "org/gnome/desktop/wm/preferences" = {
