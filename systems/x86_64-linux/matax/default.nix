@@ -33,7 +33,7 @@ in
             };
             "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
               name = "open-terminal";
-              binding = "<Control><Alt>t";
+              binding = "<Ctrl><Alt>t";
               command = "kgx";
             };
             "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
