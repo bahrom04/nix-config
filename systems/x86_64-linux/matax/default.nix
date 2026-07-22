@@ -31,7 +31,7 @@ in
             };
             "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
               name = "open-terminal";
-              binding = "<Shift><Control>t";
+              binding = "<Shift><Alt>t";
               command = "kgx";
             };
             "org/gnome/desktop/wm/preferences" = {
