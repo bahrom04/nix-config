@@ -2,6 +2,7 @@
 {
   systemd.user.services.e-imzo.wantedBy = lib.mkForce [ ];
   modules.xinux.eimzoIntegraion.enable = true;
+  modules.developer.android.enable = true;
   modules.gaming.aagl = true;
   modules.xinux.libreofficePack.enable = false;
   services.gnome.games.enable = true;

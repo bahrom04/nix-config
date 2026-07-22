@@ -18,6 +18,31 @@ in
     # nix-config = "/home/bahrom/workplace/bahrom04/nix-config/";
   };
 
+  programs = {
+    dconf = {
+      enable = true;
+      profiles.user.databases = [
+        {
+          settings = {
+            "org/gnome/settings-daemon/plugins/media-keys" = {
+              custom-keybindings = [
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+              ];
+            };
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+              name = "open-terminal";
+              binding = "<Shift><Control>t";
+              command = "kgx";
+            };
+            "org/gnome/desktop/wm/preferences" = {
+              resize-with-right-button = true;
+            };
+          };
+        }
+      ];
+    };
+  };
+
   console.keyMap = "us";
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";
