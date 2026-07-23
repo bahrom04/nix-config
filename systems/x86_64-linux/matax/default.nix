@@ -95,6 +95,7 @@ in
     bazaar
     cambalache
     # relago
+    figma-linux
   ];
 
   # users.users = {
