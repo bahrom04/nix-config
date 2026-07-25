@@ -13,7 +13,7 @@
       };
     };
     signing = {
-      signByDefault = true;
+      signByDefault = false;
       key = "F90FF3D1B272109172B3129483A14C9C2DBD6894";
     };
     # Git ignores
