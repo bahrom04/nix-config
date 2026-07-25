@@ -2,8 +2,8 @@
 # doc: https://btrfs.readthedocs.io/en/latest/ch-mount-options.html
 {
   disks ? [
-    # 512 NVME
-    "/dev/nvme0n1"
+    # Whatever
+    "/dev/sda"
   ],
   ...
 }:
