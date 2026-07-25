@@ -6,7 +6,7 @@
 {
   imports = [
     ./modules.nix
-    ./hardware-configuration-btrfs.nix
+    ./hardware-configuration.nix
   ];
 
   # chaotic.nyx.cache.enable = true;
