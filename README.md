@@ -6,6 +6,7 @@
 </p>
 
 # NixOS
+
 ```bash
 sudo nixos-rebuild switch --flake .#nixos #use hostname here
 
@@ -13,6 +14,7 @@ nix build .#nixosConfigurations.bahrom04.config.system.build.toplevel --show-tra
 ```
 
 ### Install from live iso. Disko
+
 ```bash
 # Clone the repository
 git clone https://github.com/bahrom04/nix-config.git
@@ -20,9 +22,9 @@ git clone https://github.com/bahrom04/nix-config.git
 # Partition disks regarding to configuration
 # Replace ? with available hostname
 # Please use it inside bootlable usb to prevent disco used disk being busy
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode disko ./hosts/?/disk-configuration.nix
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ./hosts/?/disk-configuration.nix
 
-# For incremental/imperative change of disk (if you desided to remove/add swap)
+# For incremental/imperative change of disk (if you desided to remove/add swap. DO NOT TRUST ME!)
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode format ./hosts/?/disk-configuration.nix
 
 # Then install using flake configurations on top of partitioned disks
@@ -31,6 +33,7 @@ sudo nixos-install --flake .#?
 ```
 
 ## Code formatter and checkers & delete cache
+
 ```bash
 nix fmt .
 nix flake check --all-systems --show-trace
@@ -47,6 +50,7 @@ sudo nix-collect-garbage -d
 ```
 
 ## Edit secrets
+
 ```bash
 nix develop
 EDITOR=vim sops ./secrets/secrets.yaml
