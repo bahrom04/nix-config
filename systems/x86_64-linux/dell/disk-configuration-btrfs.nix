@@ -18,11 +18,6 @@ in
         content = {
           type = "gpt";
           partitions = {
-            BOOT = {
-              priority = 1;
-              size = "1M";
-              type = "EF02";
-            };
             ESP = {
               size = "2G";
               type = "EF00";

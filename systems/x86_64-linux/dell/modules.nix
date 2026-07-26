@@ -2,6 +2,7 @@
 {
   systemd.user.services.e-imzo.wantedBy = lib.mkForce [ ];
   modules.xinux.eimzoIntegraion.enable = false;
+  modules.efiboot.bootloader = "grub";
   modules.xinux.relago.enable = false;
   modules.shell.rusted-tools = false;
   services.flatpak.enable = false;
