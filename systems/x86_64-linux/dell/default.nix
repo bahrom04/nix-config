@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -8,9 +7,9 @@
     ./modules.nix
     ./hardware-configuration.nix
   ];
-  
+
   # boot.loader.grub.default = "saved";
-  
+
   # chaotic.nyx.cache.enable = true;
 
   # useful when debugging xeonitte (xinux installer)
@@ -20,37 +19,6 @@
   #       return polkit.Result.YES;
   #   });
   # '';
-  programs = {
-    dconf = {
-      enable = true;
-      profiles.user.databases = [
-        {
-          settings = {
-            "org/gnome/settings-daemon/plugins/media-keys" = {
-              custom-keybindings = [
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-              ];
-
-            };
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-              name = "open-terminal";
-              binding = "<Ctrl><Alt>t";
-              command = "kgx";
-            };
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-              name = "open-nautilus";
-              binding = "<Super>e";
-              command = "nautilus";
-            };
-            "org/gnome/desktop/wm/preferences" = {
-              resize-with-right-button = true;
-            };
-          };
-        }
-      ];
-    };
-  };
 
   services = {
     system76-scheduler = {

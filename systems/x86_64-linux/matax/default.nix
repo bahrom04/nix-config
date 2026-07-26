@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   inputs,
   ...
@@ -16,41 +15,6 @@ in
   services.relago = {
     enable = true;
     # nix-config = "/home/bahrom/workplace/bahrom04/nix-config/";
-  };
-
-  programs = {
-    dconf = {
-      enable = true;
-      profiles.user.databases = [
-        {
-          settings = {
-            "org/gnome/settings-daemon/plugins/media-keys" = {
-              custom-keybindings = [
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-              ];
-
-            };
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-              name = "open-terminal";
-              binding = "<Ctrl><Alt>t";
-              command = "kgx";
-            };
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-              name = "open-nautilus";
-              binding = "<Super>e";
-              command = "nautilus";
-            };
-            "org/gnome/desktop/wm/preferences" = {
-              resize-with-right-button = true;
-            };
-            "org/gnome/desktop/wm/keybindings" = {
-              show-desktop = "<Super>d";
-            };
-          };
-        }
-      ];
-    };
   };
 
   console.keyMap = "us";

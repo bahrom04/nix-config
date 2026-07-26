@@ -15,6 +15,10 @@
     };
 
     settings = {
+      experimental-features = [
+        "ca-derivations"
+        "recursive-nix"
+      ];
       # download-buffer-size = 524288000; # 500 MiB to prevent buffer warnings
       # substituters = [
       #   # "https://cache.xinux.uz?priority=10"

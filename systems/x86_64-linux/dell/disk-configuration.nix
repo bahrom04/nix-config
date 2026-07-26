@@ -2,7 +2,7 @@
   ...
 }:
 let
-disks = [
+  disks = [
     # 512 NVME
     "/dev/nvme0n1"
   ];
