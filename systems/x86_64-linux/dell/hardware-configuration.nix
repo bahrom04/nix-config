@@ -9,7 +9,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     inputs.disko.nixosModules.disko
-    ./disk-configuration-btrf.nix
+    ./disk-configuration-btrfs.nix
   ];
 
   hardware.facter = {

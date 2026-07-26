@@ -2,7 +2,7 @@
   ...
 }:
 let
-disks = [
+  disks = [
     # 512 NVME
     "/dev/nvme0n1"
   ];
@@ -38,8 +38,11 @@ in
               size = "100%";
               content = {
                 type = "filesystem";
-                format = "ext4";
+                format = "xfs";
                 mountpoint = "/";
+                mountOptions = [
+                  "defaults"
+                ];
               };
             };
           };
