@@ -41,14 +41,26 @@
   # nix.settings.system-features = lib.systems.architectures.features.skylake;
   nix.settings.system-features = [
     "gccarch-skylake"
-    "gccarch-x86_64-v3"
+    "gccarch-x86-64-v3"
   ];
-  nixpkgs.hostPlatform = {
+  # nixpkgs.hostPlatform = lib.mkForce {
+  #   gcc.arch = "skylake";
+  #   gcc.tune = "skylake";
+  #   system = "x86_64-linux";
+  # };
+  nixpkgs.hostPlatform = lib.mkForce {
+    system = "x86_64-linux";
     gcc.arch = "skylake";
     gcc.tune = "skylake";
-    system = "x86_64-linux";
+    aesSupport = true;
+    avxSupport = true;
+    avx2Support = true;
+    sse3Support = true;
+    ssse3Support = true;
+    sse4_1Support = true;
+    sse4_2Support = true;
   };
-  nixpkgs.buildPlatform = {
+  nixpkgs.buildPlatform = lib.mkForce {
     gcc.arch = "skylake";
     gcc.tune = "skylake";
     system = "x86_64-linux";
