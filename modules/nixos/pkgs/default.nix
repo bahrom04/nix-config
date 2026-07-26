@@ -91,7 +91,7 @@ in
       #nix-software-center
       # xinux-settings
       #xinux-tour
-      bleur
+      #bleur
       #poedit
       #wireshark
       #sysprof
