@@ -12,7 +12,6 @@
       url = "git+https://git.oss.uzinfocom.uz/mirrors/home-manager?ref=master&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Disko for easier partition management
     disko = {
       url = "git+https://git.oss.uzinfocom.uz/mirrors/disko?ref=master&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -124,14 +123,8 @@
       # nix-data.nixosModules.nix-data
       # relago.nixosModules.relago
       # ];
-
-      # Extra project metadata
       xinux = {
-        # Namespace for overlay, lib, packages
         namespace = "bahrom";
-        # Example: lib.orzklv.match ...
-
-        # For data extraction
         meta = {
           name = "bahrom04";
           title = "bahrom04ʼs Personal Flake Configuration";
