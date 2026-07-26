@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
   ];
   
-  boot.loader.grub.default = "saved";
+  # boot.loader.grub.default = "saved";
   
   # chaotic.nyx.cache.enable = true;
 
