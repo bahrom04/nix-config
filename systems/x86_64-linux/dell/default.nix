@@ -47,6 +47,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    firefox
     bazaar
     phoronix-test-suite
     distroshelf

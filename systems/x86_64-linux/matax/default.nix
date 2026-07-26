@@ -47,6 +47,7 @@ in
 
   system.stateVersion = "25.11";
   environment.systemPackages = with pkgs; [
+    firefox
     uutils-coreutils-noprefix
     imgbrd-grabber
     calamares-nixos-extensions
