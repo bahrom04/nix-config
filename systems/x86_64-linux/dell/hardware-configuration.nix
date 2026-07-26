@@ -9,7 +9,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     inputs.disko.nixosModules.disko
-    ./disk-configuration.nix
+    ./disk-configuration-btrf.nix
   ];
 
   hardware.facter = {
@@ -22,7 +22,7 @@
     zswap = {
       enable = true;
     };
-    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
+    # kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     initrd.systemd.enable = true;
     kernelModules = [ "fuse" ];
     kernelParams = [

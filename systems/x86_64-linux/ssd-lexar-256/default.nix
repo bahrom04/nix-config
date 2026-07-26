@@ -64,7 +64,7 @@
   console.keyMap = "us";
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";
-  networking.hostName = "dell";
+  networking.hostName = "ssd-lexar-256";
 
   programs.nix-data = {
     enable = true;

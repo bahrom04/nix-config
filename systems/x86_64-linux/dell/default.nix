@@ -8,7 +8,9 @@
     ./modules.nix
     ./hardware-configuration.nix
   ];
-
+  
+  boot.loader.grub.default = "saved";
+  
   # chaotic.nyx.cache.enable = true;
 
   # useful when debugging xeonitte (xinux installer)

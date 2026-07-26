@@ -59,7 +59,7 @@ in
       winetricks
       elfx86exts
       ############################ GNOME
-      gnome-builder
+      #gnome-builder
       gnome-boxes
       gnome-graphs
       gnome-podcasts
@@ -78,30 +78,30 @@ in
       qdiskinfo
       kdiskmark
       libreoffice-fresh
-      collabora-online
-      collabora-desktop
+      #collabora-online
+      #collabora-desktop
       googleearth-pro
       google-chrome
-      epiphany
+      #epiphany
       gitte
-      element-desktop
+      #element-desktop
       telegram-desktop
       discord
       sqlitebrowser
-      nix-software-center
+      #nix-software-center
       # xinux-settings
-      xinux-tour
+      #xinux-tour
       bleur
-      poedit
-      wireshark
-      sysprof
-      zap
-      seclists
-      burpsuite
+      #poedit
+      #wireshark
+      #sysprof
+      #zap
+      #seclists
+      #burpsuite
       geekbench
       wl-clipboard
-      stress-ng
-      rt-tests
+      #stress-ng
+      #rt-tests
       # nextcloud-client
       # gtranslator
       # putty

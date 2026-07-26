@@ -1,10 +1,12 @@
 {
-  disks ? [
-    # 512 NVME
-    "/dev/nvme0n1"
-  ],
   ...
 }:
+let
+disks = [
+    # 512 NVME
+    "/dev/nvme0n1"
+  ];
+in
 {
   disko.devices = {
     disk = {

@@ -1,12 +1,14 @@
 # inspiration: https://github.com/wimpysworld/nix-config/blob/main/nixos/skrye/disks.nix
 # doc: https://btrfs.readthedocs.io/en/latest/ch-mount-options.html
 {
-  disks ? [
-    # 512 NVME
-    "/dev/nvme0n1"
-  ],
   ...
 }:
+let
+disks = [
+    # 512 NVME
+    "/dev/nvme0n1"
+  ];
+in
 {
   disko.devices = {
     disk = {
