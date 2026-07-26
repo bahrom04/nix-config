@@ -3367,10 +3367,10 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1784804737,
-        "narHash": "sha256-8FlBw5qcacVtk8VSoUIJBJVlStiuPM+Lmdrx6kmSmCE=",
+        "lastModified": 1785068887,
+        "narHash": "sha256-wSmK7LjaJOPn7IZLImt8cDGMLGmaRyeQIywpu+GAnYY=",
         "ref": "main",
-        "rev": "e969073e12c0048cc0b9204792fe2cbaea72e16f",
+        "rev": "e24bfe5af33b22e35353c086ec60a7ac04dd805f",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/modules"

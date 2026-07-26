@@ -41,6 +41,7 @@ in
       jq
       jq-zsh-plugin
       jq-lsp
+      htop
       asciinema
       flatpak-builder
       woeusb # for creating windows usb
@@ -58,6 +59,7 @@ in
       krb5 # Provides Kerberos support libraries
       winetricks
       elfx86exts
+      nvd
       ############################ GNOME
       #gnome-builder
       gnome-boxes

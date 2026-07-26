@@ -107,7 +107,19 @@
         # chaotic.nixosModules.nyx-overlay
         # chaotic.nixosModules.nyx-registry
       ];
-
+      systems.hosts.dell.modules = [
+        ({ ... }: {
+          nixpkgs.hostPlatform = {
+            gcc.arch = "skylake";
+            gcc.tune = "skylake";
+            system = "x86_64-linux";
+          };
+          nix.settings.system-features = [
+            "gccarch-skylake"
+            "gccarch-x86_64-v3"
+          ];
+        })
+      ];
       # homes.modules = with inputs; [
       # nix-data.nixosModules.nix-data
       # relago.nixosModules.relago

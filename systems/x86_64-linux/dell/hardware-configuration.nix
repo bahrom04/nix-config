@@ -38,7 +38,11 @@
 
   # Hardware optimized compilation
   # https://nixos.wiki/wiki/Build_flags
-  nix.settings.system-features = lib.systems.architectures.features.skylake;
+  # nix.settings.system-features = lib.systems.architectures.features.skylake;
+  nix.settings.system-features = [
+    "gccarch-skylake"
+    "gccarch-x86_64-v3"
+  ];
   nixpkgs.hostPlatform = {
     gcc.arch = "skylake";
     gcc.tune = "skylake";
