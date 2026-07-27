@@ -88,6 +88,7 @@ in
       qdiskinfo
       kdiskmark
       libreoffice-fresh
+      antimicrox
       #collabora-online
       #collabora-desktop
       googleearth-pro
