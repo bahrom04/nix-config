@@ -38,6 +38,7 @@ in
       ffmpeg
       mpv
       tree
+      file
       jq
       jq-zsh-plugin
       jq-lsp
