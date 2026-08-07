@@ -89,28 +89,29 @@ in
       kdiskmark
       libreoffice-fresh
       antimicrox
-      #collabora-online
-      #collabora-desktop
       googleearth-pro
       google-chrome
-      #epiphany
       gitte
-      #element-desktop
+      element-desktop
       telegram-desktop
       discord
       sqlitebrowser
+      poedit
+      geekbench
+      wl-clipboard
+      cargo-expand
+      #epiphany
+      #collabora-online
+      #collabora-desktop
       #nix-software-center
       # xinux-settings
       #xinux-tour
       #bleur
-      #poedit
       #wireshark
       #sysprof
       #zap
       #seclists
       #burpsuite
-      geekbench
-      wl-clipboard
       #stress-ng
       #rt-tests
       # nextcloud-client
