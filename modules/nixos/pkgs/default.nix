@@ -92,6 +92,7 @@ in
       googleearth-pro
       google-chrome
       gitte
+      radicle-desktop
       element-desktop
       telegram-desktop
       discord
