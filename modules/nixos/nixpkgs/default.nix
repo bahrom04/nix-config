@@ -20,7 +20,7 @@
         "recursive-nix"
       ];
       # download-buffer-size = 524288000; # 500 MiB to prevent buffer warnings
-      substituters = [
+      substituters = lib.mkAfter [
         # "https://cache.xinux.uz?priority=10"
         # "https://attic.xuyh0120.win/lantian" # cachy
         "https://nyx-cache.chaotic.cx/"
