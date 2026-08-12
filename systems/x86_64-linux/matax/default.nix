@@ -1,7 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
+{ pkgs
+, inputs
+, ...
 }:
 let
   relago = inputs.relago.packages."${pkgs.stdenv.hostPlatform.system}".default;

@@ -26,7 +26,7 @@
         "https://nyx-cache.chaotic.cx/"
         # "https://nix-community.cachix.org"
       ];
-      trusted-public-keys = lib.mkBefore [
+      trusted-public-keys = lib.mkAfter [
         #   "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0=" # xinux
         "nyx-cache.chaotic.cx:dJxTrgMC3V3cFfyIiBQDQorG6k1LsqurH/srpMSq7qk="
         #   # "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
