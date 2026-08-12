@@ -17,7 +17,6 @@ let
     "latex"
     "lua"
     "make"
-    "material-icon-theme"
     "vscode-icons"
     "vscode-dark-modern"
     "neocmake"
@@ -31,7 +30,6 @@ let
     "swift"
     "toml"
     "typst"
-    "vercel-theme"
     "wgsl"
     "xml"
     "zig"
@@ -191,34 +189,26 @@ let
       dark = "VSCode Dark Modern";
     };
     icon_theme = "VSCode Icons for Zed (Dark)";
-
     tab_size = 2;
     preferred_line_length = 100;
-
     autosave.after_delay.milliseconds = 500;
     format_on_save = "on";
     enable_language_server = true;
-
     soft_wrap = "editor_width";
-
     buffer_font_size = 14;
     buffer_font_family = "Adwaita Mono";
-
     ui_font_size = 14;
     ui_font_family = ".SystemUIFont";
 
     confirm_quit = false;
     use_autoclose = false;
-
     inlay_hints = {
       enabled = true;
       # show_background = true;
     };
-
     collaboration_panel = {
       button = false;
     };
-
     agent = {
       enabled = false;
     };
