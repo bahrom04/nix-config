@@ -99,7 +99,7 @@ in
       discord
       sqlitebrowser
       poedit
-      geekbench
+      # geekbench
       wl-clipboard
       cargo-expand
       #epiphany
