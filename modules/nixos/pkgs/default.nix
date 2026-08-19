@@ -102,6 +102,7 @@ in
       # geekbench
       wl-clipboard
       cargo-expand
+      disko
       #epiphany
       #collabora-online
       #collabora-desktop
