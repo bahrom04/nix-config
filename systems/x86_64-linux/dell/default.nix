@@ -1,5 +1,7 @@
-{ pkgs
-, ...
+{
+  pkgs,
+  lib,
+  ...
 }:
 {
   imports = [
@@ -7,6 +9,7 @@
     ./hardware-configuration.nix
   ];
 
+  boot.loader.efi.canTouchEfiVariables = lib.mkForce false;
   # boot.loader.grub.default = "saved";
 
   # chaotic.nyx.cache.enable = true;
