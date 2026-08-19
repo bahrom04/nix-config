@@ -49,6 +49,7 @@ in
       jq
       jq-zsh-plugin
       jq-lsp
+      xcp
       htop
       asciinema
       flatpak-builder
