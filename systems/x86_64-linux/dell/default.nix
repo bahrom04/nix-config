@@ -9,18 +9,18 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.efi.canTouchEfiVariables = lib.mkForce false;
+  boot.loader.efi.canTouchEfiVariables = lib.mkForce true;
   # boot.loader.grub.default = "saved";
 
   # chaotic.nyx.cache.enable = true;
 
   # useful when debugging xeonitte (xinux installer)
-  # security.polkit.extraConfig = ''
-  #   polkit.addRule(function(action, subject) {
-  #     if (subject.isInGroup("wheel"))
-  #       return polkit.Result.YES;
-  #   });
-  # '';
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (subject.isInGroup("wheel"))
+        return polkit.Result.YES;
+    });
+  '';
 
   services.dnsmasq = {
     enable = true;
