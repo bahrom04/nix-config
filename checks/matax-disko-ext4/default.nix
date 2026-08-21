@@ -1,5 +1,4 @@
 {
-  # diskoLib ? pkgs.callPackage ../lib { },
   pkgs,
   inputs,
   ...

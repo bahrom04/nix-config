@@ -16,7 +16,7 @@ in
     devices = {
       disk = {
         main = {
-          device = "ata-WDC_WD10SPZX-22Z10T1_WD-WX21A78237AS";
+          device = "/dev/disk/by-id/ata-WDC_WD10SPZX-22Z10T1_WD-WX21A78237AS";
           type = "disk";
           content = {
             type = "gpt";
