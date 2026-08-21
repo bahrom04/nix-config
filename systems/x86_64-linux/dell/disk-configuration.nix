@@ -1,17 +1,11 @@
 {
   ...
 }:
-let
-  disks = [
-    # 512 NVME
-    "/dev/nvme0n1"
-  ];
-in
 {
   disko.devices = {
     disk = {
       main = {
-        device = builtins.elemAt disks 0;
+        device = "/dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b474a86ac";
         type = "disk";
         content = {
           type = "gpt";
