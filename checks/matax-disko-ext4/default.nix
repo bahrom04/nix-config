@@ -9,7 +9,7 @@ in
 diskoLib.testLib.makeDiskoTest {
   inherit pkgs;
   name = "simple-efi";
-  disko-config = ../../systems/x86_64-linux/matax/disk-configuration.nix;
+  disko-config = ./disko-no-swap.nix;
   extraTestScript = ''
     machine.succeed("mountpoint /");
   '';
