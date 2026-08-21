@@ -64,6 +64,7 @@ in
       hunspell
       hunspellDicts.uz_UZ
       wineWow64Packages.stable
+      gamemode
       samba # Provides ntlm_auth
       krb5 # Provides Kerberos support libraries
       winetricks
