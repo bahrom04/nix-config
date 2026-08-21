@@ -6,7 +6,7 @@
     devices = {
       disk = {
         main = {
-          device = "/dev/disk/by-id/ata-WDC_WD10SPZX-22Z10T1_WD-WX21A78237AS";
+          device = "/dev/disk/by-id/wwn-0x50014ee608d9026d";
           type = "disk";
           content = {
             type = "gpt";
