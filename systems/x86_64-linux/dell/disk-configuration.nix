@@ -4,7 +4,7 @@
 {
   disko.devices = {
     disk = {
-      main = {
+      dell_main = {
         device = "/dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b474a86ac";
         type = "disk";
         content = {
