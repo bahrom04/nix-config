@@ -10,7 +10,7 @@
         content = {
           type = "gpt";
           partitions = {
-            BOOT = {
+            DELL_BOOT = {
               size = "2G";
               type = "EF00";
               content = {
@@ -20,7 +20,7 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            SWAP = {
+            DELL_SWAP = {
               size = "25G";
               content = {
                 type = "swap";
@@ -28,7 +28,7 @@
                 resumeDevice = true;
               };
             };
-            ROOT = {
+            DELL_ROOT = {
               size = "100%";
               content = {
                 type = "filesystem";
