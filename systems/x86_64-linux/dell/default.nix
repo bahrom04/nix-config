@@ -8,8 +8,10 @@
     ./modules.nix
     ./hardware-configuration.nix
   ];
-
-  boot.loader.efi.canTouchEfiVariables = lib.mkForce true;
+  # nix-repl> outputs.nixosConfigurations.dell.config.boot.loader.efi.efiSysMountPoint
+  # "/boot"
+  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  # boot.loader.efi.canTouchEfiVariables = lib.mkForce true;
   # boot.loader.grub.default = "saved";
 
   # chaotic.nyx.cache.enable = true;
