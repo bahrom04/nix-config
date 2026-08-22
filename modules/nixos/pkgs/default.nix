@@ -70,6 +70,7 @@ in
       winetricks
       elfx86exts
       nvd
+      bleur
       ############################ GNOME
       #gnome-builder
       gnome-boxes
