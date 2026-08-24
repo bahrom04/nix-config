@@ -1,16 +1,6 @@
 {
   ...
 }:
-let
-  disks = [
-    # 1TB SATA
-    "/dev/sda"
-
-    # 2TB HDD
-    # this storega now used for windows
-    # "/dev/sdb"
-  ];
-in
 {
   disko = {
     devices = {
