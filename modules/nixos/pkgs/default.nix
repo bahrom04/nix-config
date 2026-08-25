@@ -7,13 +7,13 @@
 }:
 let
   age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
-#   pkgs = inputs.nixpkgs> {
-#     localSystem = {
-#       gcc.arch = "x86-64-v3";
-#       gcc.tune = "generic";
-#       system = "x86_64-linux";
-#     };
-#   };
+  #   pkgs = inputs.nixpkgs> {
+  #     localSystem = {
+  #       gcc.arch = "x86-64-v3";
+  #       gcc.tune = "generic";
+  #       system = "x86_64-linux";
+  #     };
+  #   };
 in
 {
   # imports = [
@@ -33,6 +33,7 @@ in
       code-nautilus
       # formatter
       nixd
+      nil
       nixfmt-tree
       nixfmt
       nixpkgs-review
