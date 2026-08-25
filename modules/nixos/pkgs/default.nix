@@ -32,6 +32,8 @@ in
       nautilus-python
       code-nautilus
       # formatter
+      deadnix
+      statix
       nixd
       nil
       nixfmt-tree
