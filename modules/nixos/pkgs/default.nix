@@ -32,6 +32,7 @@ in
       nautilus-python
       code-nautilus
       # formatter
+      nixd
       nixfmt-tree
       nixfmt
       nixpkgs-review
