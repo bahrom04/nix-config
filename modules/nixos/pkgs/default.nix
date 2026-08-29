@@ -113,6 +113,7 @@ in
       libimobiledevice
       ifuse # optional, to mount using 'ifuse'
       localsend
+      video-trimmer
       #epiphany
       #collabora-online
       #collabora-desktop
