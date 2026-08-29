@@ -121,7 +121,6 @@ in
       #nix-software-center
       # xinux-settings
       #xinux-tour
-      #bleur
       #wireshark
       #sysprof
       #zap
