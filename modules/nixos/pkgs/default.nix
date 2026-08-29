@@ -112,6 +112,7 @@ in
       disko
       libimobiledevice
       ifuse # optional, to mount using 'ifuse'
+      localsend
       #epiphany
       #collabora-online
       #collabora-desktop
