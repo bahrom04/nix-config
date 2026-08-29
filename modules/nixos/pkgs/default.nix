@@ -110,6 +110,8 @@ in
       wl-clipboard
       cargo-expand
       disko
+      libimobiledevice
+      ifuse # optional, to mount using 'ifuse'
       #epiphany
       #collabora-online
       #collabora-desktop

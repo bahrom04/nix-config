@@ -3,6 +3,9 @@
     pcscd.enable = true;
     opensnitch.enable = false;
 
+    # iphone usb connection
+    usbmuxd.enable = true;
+    
     openssh = {
       enable = true;
       settings = {
