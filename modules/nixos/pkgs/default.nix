@@ -114,6 +114,7 @@ in
       ifuse # optional, to mount using 'ifuse'
       localsend
       footage
+      shotcut
       #epiphany
       #collabora-online
       #collabora-desktop
