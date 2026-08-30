@@ -7,6 +7,6 @@
 }:
 
 final: prev: {
-  xinux-module-manager =
-    inputs.xinux-module-manager.packages.${prev.stdenv.hostPlatform.system}.default;
+  # xinux-module-manager =
+  #   inputs.xinux-module-manager.packages.${prev.stdenv.hostPlatform.system}.default;
 }
