@@ -115,6 +115,7 @@ in
       localsend
       footage
       shotcut
+      davinci-resolve
       #epiphany
       #collabora-online
       #collabora-desktop
