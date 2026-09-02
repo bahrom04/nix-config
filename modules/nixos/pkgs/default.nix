@@ -73,6 +73,7 @@ in
       krb5 # Provides Kerberos support libraries
       winetricks
       elfx86exts
+      pciutils
       nvd
       bleur
       ############################ GNOME
