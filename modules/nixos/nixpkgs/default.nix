@@ -20,9 +20,9 @@
       ];
       # download-buffer-size = 524288000; # 500 MiB to prevent buffer warnings
       substituters = [
-        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         # "https://mirrors.ustc.edu.cn/nix-channels/store"
-        # "https://cache.xinux.uz?priority=10"
+        "https://cache.xinux.uz?priority=10"
         # "https://attic.xuyh0120.win/lantian" # cachy
         # "https://nyx-cache.chaotic.cx/"
         # "https://nix-community.cachix.org"
