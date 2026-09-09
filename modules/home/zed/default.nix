@@ -34,7 +34,7 @@ let
     "xml"
     "zig"
     "meson"
-    "dependi"
+    "depsy-lsp"
   ];
 
   userSettings = {
