@@ -107,7 +107,8 @@ in
       discord
       sqlitebrowser
       poedit
-      # geekbench
+      geekbench
+      mangohud
       wl-clipboard
       cargo-expand
       disko

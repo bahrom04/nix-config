@@ -73,8 +73,6 @@
   # };
   # nixpkgs.hostPlatform = "x86_64-linux";
 
-  # List packages system hardware configuration
-  # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
   services.xserver.videoDrivers = [
     "nvidia"
     "modesetting"
