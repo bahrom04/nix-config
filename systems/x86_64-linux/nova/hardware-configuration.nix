@@ -75,12 +75,21 @@
 
   # List packages system hardware configuration
   # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [
+    "nvidia"
+    "modesetting"
+  ];
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     nvidia = {
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
+      prime = {
+        intelBusId = "PCI:0@0:2:0";
+        nvidiaBusId = "PCI:1@0:0:0";
+        offload.enable = true;
+        offload.enableOffloadCmd = true;
+      };
     };
     graphics = {
       enable = true;
