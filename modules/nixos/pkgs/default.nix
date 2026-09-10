@@ -211,7 +211,7 @@ in
     # prettier terminal prompt
     starship.enable = true;
     steam = {
-      enable = false;
+      enable = true;
       # 1 option
       # extraCompatPackages = with pkgs; [ proton-cachyos-x86_64_v3 ];
       # 2 option. chaotic
