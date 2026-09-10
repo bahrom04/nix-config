@@ -75,6 +75,7 @@
 
   # List packages system hardware configuration
   # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     nvidia = {
