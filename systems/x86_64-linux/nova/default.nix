@@ -24,13 +24,6 @@
   #   });
   # '';
 
-  services.dnsmasq = {
-    enable = true;
-    # settings.server = nameservers;
-  };
-  networking.networkmanager.dns = "dnsmasq";
-  # networking.nameservers = nameservers;
-
   services = {
     system76-scheduler = {
       enable = false;
