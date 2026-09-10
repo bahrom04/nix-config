@@ -48,13 +48,13 @@
   console.keyMap = "us";
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "uz_UZ.UTF-8";
-  networking.hostName = "dell";
+  networking.hostName = "nova";
 
   programs.nix-data = {
     enable = true;
-    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/systems/x86_64-linux/dell/default.nix";
+    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/systems/x86_64-linux/nova/default.nix";
     flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
-    hostname = "dell";
+    hostname = "nova";
   };
 
   environment.systemPackages = with pkgs; [
