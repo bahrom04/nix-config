@@ -3,6 +3,7 @@
   lib,
   modulesPath,
   pkgs,
+  config,
   ...
 }:
 {
@@ -75,6 +76,11 @@
   # List packages system hardware configuration
   # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
   hardware = {
+    # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
+    nvidia = {
+      open = true;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
+    };
     graphics = {
       enable = true;
       enable32Bit = true;
