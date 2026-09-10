@@ -95,7 +95,4 @@
     };
     cpu.intel.updateMicrocode = true;
   };
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
-  };
 }
