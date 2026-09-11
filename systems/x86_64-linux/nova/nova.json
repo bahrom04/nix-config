@@ -1058,7 +1058,6 @@
         "fpu_exception": false,
         "cpuid_level": 35,
         "write_protect": false,
-        "tlb_size": 28840,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -1224,13 +1223,13 @@
           "secondary_bus": 0,
           "prog_if": 0
         },
-        "driver": "nouveau",
-        "driver_module": "nouveau",
+        "driver": "nvidia",
+        "driver_module": "nvidia",
         "drivers": [
-          "nouveau"
+          "nvidia"
         ],
         "driver_modules": [
-          "nouveau"
+          "nvidia"
         ],
         "module_alias": "pci:v000010DEd000028A0sv00001558sd0000A761bc03sc00i00",
         "label": "VGA compatible controller"
@@ -1298,13 +1297,13 @@
           "secondary_bus": 0,
           "prog_if": 0
         },
-        "driver": "i915",
-        "driver_module": "i915",
+        "driver": "xe",
+        "driver_module": "xe",
         "drivers": [
-          "i915"
+          "xe"
         ],
         "driver_modules": [
-          "i915"
+          "xe"
         ],
         "module_alias": "pci:v00008086d00007D55sv00001558sd0000A741bc03sc00i00",
         "label": "VGA compatible controller"
@@ -1799,9 +1798,9 @@
           "hex": "0222",
           "value": 546
         },
-        "sysfs_id": "/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-1/i2c-FTCS1000:00/0018:2808:0222.0001/input/input15",
+        "sysfs_id": "/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-15/i2c-FTCS1000:00/0018:2808:0222.0001/input/input12",
         "unix_device_names": [
-          "/dev/input/event6",
+          "/dev/input/event7",
           "/dev/input/ + handler"
         ]
       }
@@ -3512,7 +3511,7 @@
         "sysfs_iommu_group_id": 10,
         "detail": {
           "function": 0,
-          "command": 1026,
+          "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
           "prog_if": 48

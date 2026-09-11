@@ -13,11 +13,11 @@
     ./disk-configuration-btrfs.nix
   ];
 
-  # hardware.facter = {
-  #   enable = true;
-  #   reportPath = ./nova.json;
-  #   detected.graphics.enable = true;
-  # };
+  hardware.facter = {
+    enable = true;
+    reportPath = ./nova.json;
+    detected.graphics.enable = true;
+  };
 
   boot = {
     zswap = {
