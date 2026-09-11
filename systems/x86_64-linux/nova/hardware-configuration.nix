@@ -13,6 +13,13 @@
     ./disk-configuration-btrfs.nix
   ];
 
+  services.intel-lpmd = {
+    enable = true;
+    config.meteorLake = true;
+    mode = "ON";
+    debug = true;
+  };
+
   hardware.facter = {
     enable = true;
     reportPath = ./nova.json;

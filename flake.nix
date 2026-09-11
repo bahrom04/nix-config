@@ -72,6 +72,11 @@
 
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
+    intel-lpmd-flake = {
+      url = "github:dmfrpro/intel-lpmd-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -104,6 +109,7 @@
         nix-data.nixosModules.nix-data
         xinux-modules.nixosModules.efiboot
         xinux-modules.nixosModules.meta
+        intel-lpmd-flake.nixosModules.default
         # chaotic.nixosModules.default
         # chaotic.nixosModules.nyx-cache
         # chaotic.nixosModules.nyx-overlay
