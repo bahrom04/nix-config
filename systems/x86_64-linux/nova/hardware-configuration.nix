@@ -80,6 +80,7 @@
         intel-compute-runtime
         intel-media-driver
         intel-vaapi-driver
+        intel-npu-driver
         intel-ocl
         nvidia-vaapi-driver
         vpl-gpu-rt
