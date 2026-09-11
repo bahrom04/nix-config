@@ -16,7 +16,7 @@
   services.intel-lpmd = {
     enable = true;
     config.meteorLake = true;
-    mode = "ON";
+    mode = "AUTO";
     debug = true;
   };
 
