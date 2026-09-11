@@ -86,6 +86,7 @@ in
       icon-library
       app-icon-preview
       resources
+      mission-center
       blanket
       fractal
       crosswords
