@@ -13,11 +13,11 @@
     ./disk-configuration-btrfs.nix
   ];
 
-  hardware.facter = {
-    enable = true;
-    reportPath = ./nova.json;
-    detected.graphics.enable = true;
-  };
+  # hardware.facter = {
+  #   enable = true;
+  #   reportPath = ./nova.json;
+  #   detected.graphics.enable = true;
+  # };
 
   boot = {
     zswap = {
@@ -25,10 +25,12 @@
     };
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     initrd.systemd.enable = true;
-    kernelModules = [
+    initrd.kernelModules = [
       "xe"
-      "fuse"
       "nvidia"
+    ];
+    kernelModules = [
+      "fuse"
     ];
     kernelParams = [
       "intel_pstate=active"
