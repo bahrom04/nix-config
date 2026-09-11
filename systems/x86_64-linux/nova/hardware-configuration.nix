@@ -13,11 +13,11 @@
     ./disk-configuration-btrfs.nix
   ];
 
-  # hardware.facter = {
-  #   enable = true;
-  #   reportPath = ./nova.json;
-  #   detected.graphics.enable = true;
-  # };
+  hardware.facter = {
+    enable = true;
+    reportPath = ./nova.json;
+    detected.graphics.enable = true;
+  };
 
   boot = {
     zswap = {
@@ -35,6 +35,8 @@
     kernelParams = [
       "intel_pstate=active"
       "mem_sleep_default=deep"
+      "i915.force_probe=!7d55"
+      "xe.force_probe=7d45"
     ];
     supportedFilesystems = [ "ntfs" ];
   };
