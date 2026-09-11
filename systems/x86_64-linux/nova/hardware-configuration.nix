@@ -33,7 +33,7 @@
       "fuse"
     ];
     kernelParams = [
-      "xe.force_probe=7d45"
+      "xe.force_probe=7d55"
       "xe.enable_psr=1"
       "i915.force_probe=!7d55"
       "intel_pstate=active"
