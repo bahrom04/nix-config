@@ -96,7 +96,7 @@ in
       cpu-x
       qdiskinfo
       kdiskmark
-      libreoffice-fresh
+      libreoffice
       antimicrox
       googleearth-pro
       google-chrome
