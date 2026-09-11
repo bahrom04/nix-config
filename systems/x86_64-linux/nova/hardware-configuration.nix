@@ -33,10 +33,11 @@
       "fuse"
     ];
     kernelParams = [
+      "xe.force_probe=7d45"
+      "xe.enable_psr=1"
+      "i915.force_probe=!7d55"
       "intel_pstate=active"
       "mem_sleep_default=deep"
-      # "i915.force_probe=!7d55"
-      "xe.force_probe=7d45"
     ];
     supportedFilesystems = [ "ntfs" ];
   };
@@ -71,6 +72,7 @@
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
+        intel-compute-runtime
         intel-media-driver
         intel-vaapi-driver
         vpl-gpu-rt
