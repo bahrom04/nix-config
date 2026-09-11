@@ -55,8 +55,8 @@
       package = config.boot.kernelPackages.nvidiaPackages.latest;
       powerManagement.finegrained = true;
       prime = {
-        intelBusId = "PCI:0@0:2:0";
-        nvidiaBusId = "PCI:1@0:0:0";
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
         offload.enable = true;
         offload.enableOffloadCmd = true;
       };
