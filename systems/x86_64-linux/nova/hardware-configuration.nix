@@ -72,7 +72,6 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="drm", DRIVERS=="nvidia", TAG+="mutter-device-ignore"
 
-    # Force early runtime power management on hardware add phase, matching your 4060 dGPU parameters
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", ATTR{power/control}="auto"
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", ATTR{power/control}="auto"
     ACTION=="change", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", ATTR{power/control}="auto"
@@ -87,6 +86,11 @@
         finegrained = true;
       };
       dynamicBoost.enable = true;
+      moduleParams = {
+        nvidia = {
+          NVreg_DynamicPowerManagementVideoMemoryThreshold = 200;
+        };
+      };
       prime = {
         intelBusId = "PCI:0:2:0";
         nvidiaBusId = "PCI:1:0:0";
