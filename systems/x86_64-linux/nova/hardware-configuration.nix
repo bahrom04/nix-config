@@ -46,6 +46,9 @@
     ];
     supportedFilesystems = [ "ntfs" ];
   };
+  environment.variables = {
+    INTEL_XE_IGNORE_EXPERIMENTAL_WARNING = 1;
+  };
 
   nix.settings.system-features = [
     "gccarch-x86-64-v3"
