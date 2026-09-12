@@ -57,7 +57,12 @@
   ];
 
   services.gnome.gnome-remote-desktop.enable = false;
-  
+
+  # https://gitlab.gnome.org/GNOME/mutter/-/work_items/2310
+  services.udev.extraRules = ''
+    SUBSYSTEM=="drm", DRIVERS=="nvidia", TAG+="mutter-device-ignore"
+  '';
+
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     nvidia = {

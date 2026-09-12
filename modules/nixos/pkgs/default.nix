@@ -119,7 +119,7 @@ in
       localsend
       footage
       shotcut
-      libglvnd
+      powertop
       #epiphany
       #collabora-online
       #collabora-desktop
