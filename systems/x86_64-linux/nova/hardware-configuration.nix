@@ -46,22 +46,16 @@
     ];
     supportedFilesystems = [ "ntfs" ];
   };
+
   environment.variables = {
     INTEL_XE_IGNORE_EXPERIMENTAL_WARNING = 1;
   };
 
-  nix.settings.system-features = [
-    "gccarch-x86-64-v3"
-  ];
-  nixpkgs.buildPlatform = lib.mkForce {
-    gcc.arch = "x86-64-v3";
-    gcc.tune = "x86-64-v3";
-    system = "x86_64-linux";
-  };
   services.xserver.videoDrivers = [
     "nvidia"
     "modesetting"
   ];
+
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     nvidia = {
@@ -93,5 +87,14 @@
       ];
     };
     cpu.intel.updateMicrocode = true;
+  };
+
+  nix.settings.system-features = [
+    "gccarch-x86-64-v3"
+  ];
+  nixpkgs.buildPlatform = lib.mkForce {
+    gcc.arch = "x86-64-v3";
+    gcc.tune = "x86-64-v3";
+    system = "x86_64-linux";
   };
 }
