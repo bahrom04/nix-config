@@ -61,7 +61,10 @@
     nvidia = {
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
-      powerManagement.finegrained = true;
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
       dynamicBoost.enable = true;
       prime = {
         intelBusId = "PCI:0:2:0";
