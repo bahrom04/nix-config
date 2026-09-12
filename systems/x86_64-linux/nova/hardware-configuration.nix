@@ -52,8 +52,8 @@
   };
 
   environment.sessionVariables = {
-    # __GLX_VENDOR_LIBRARY_NAME = "mesa";
-    # __NV_PRIME_RENDER_OFFLOAD = "0";
+    __GLX_VENDOR_LIBRARY_NAME = "mesa";
+    __NV_PRIME_RENDER_OFFLOAD = "0";
     # GSK_RENDERER = "ngl";
     # VK_DRIVER_FILES = "/run/opengl-driver/share/vulkan/icd.d";
   };
@@ -73,8 +73,7 @@
     SUBSYSTEM=="drm", DRIVERS=="nvidia", TAG+="mutter-device-ignore"
 
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", ATTR{power/control}="auto"
-    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", ATTR{power/control}="auto"
-    ACTION=="change", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", ATTR{power/control}="auto"
+    ACTION=="add|change", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", ATTR{power/control}="auto"
   '';
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
