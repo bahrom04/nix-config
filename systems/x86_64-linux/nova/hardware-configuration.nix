@@ -51,18 +51,32 @@
     INTEL_XE_IGNORE_EXPERIMENTAL_WARNING = 1;
   };
 
-  services.xserver.videoDrivers = [
-    "nvidia"
-    "modesetting"
-  ];
+  environment.sessionVariables = {
+    # __GLX_VENDOR_LIBRARY_NAME = "mesa";
+    # __NV_PRIME_RENDER_OFFLOAD = "0";
+    # GSK_RENDERER = "ngl";
+    # VK_DRIVER_FILES = "/run/opengl-driver/share/vulkan/icd.d";
+  };
 
-  services.gnome.gnome-remote-desktop.enable = false;
+  services = {
+    xserver.videoDrivers = [
+      "nvidia"
+      "modesetting"
+    ];
+    gnome.gnome-remote-desktop.enable = false;
+  };
 
   # https://gitlab.gnome.org/GNOME/mutter/-/work_items/2310
+  #
+  # Actions from: https://github.com/jvdillon/rtx-laptop-linux#5-enable-runtime-pm-via-udev
   services.udev.extraRules = ''
     SUBSYSTEM=="drm", DRIVERS=="nvidia", TAG+="mutter-device-ignore"
-  '';
 
+    # Force early runtime power management on hardware add phase, matching your 4060 dGPU parameters
+    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", ATTR{power/control}="auto"
+    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", ATTR{power/control}="auto"
+    ACTION=="change", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", ATTR{power/control}="auto"
+  '';
   hardware = {
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     nvidia = {
