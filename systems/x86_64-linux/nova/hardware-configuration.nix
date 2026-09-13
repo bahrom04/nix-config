@@ -72,6 +72,7 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="drm", DRIVERS=="nvidia", TAG+="mutter-device-ignore"
 
+    # Enable runtime PM for NVIDIA VGA/3D controller devices on adding device
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", ATTR{power/control}="auto"
     ACTION=="add|change", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", ATTR{power/control}="auto"
   '';
