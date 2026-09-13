@@ -86,6 +86,7 @@
         finegrained = true;
       };
       dynamicBoost.enable = true;
+      nvidiaSettings = false;
       moduleParams = {
         nvidia = {
           NVreg_DynamicPowerManagementVideoMemoryThreshold = 200;
