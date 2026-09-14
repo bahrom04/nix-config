@@ -25,6 +25,9 @@
   # '';
 
   services = {
+    scx = {
+      enable = true;
+    };
     system76-scheduler = {
       enable = false;
     };
