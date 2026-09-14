@@ -54,7 +54,7 @@
   environment.sessionVariables = {
     __GLX_VENDOR_LIBRARY_NAME = "mesa";
     __NV_PRIME_RENDER_OFFLOAD = 0;
-    GSK_RENDERER = "ngl";
+    GSK_RENDERER = "gl";
     # VK_DRIVER_FILES = "/run/opengl-driver/share/vulkan/icd.d";
   };
 
@@ -86,7 +86,7 @@
         finegrained = true;
       };
       dynamicBoost.enable = true;
-      nvidiaSettings = false;
+      nvidiaSettings = true;
       moduleParams = {
         nvidia = {
           NVreg_DynamicPowerManagementVideoMemoryThreshold = 200;
