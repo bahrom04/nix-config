@@ -69,9 +69,8 @@
   # https://gitlab.gnome.org/GNOME/mutter/-/work_items/2310
   #
   # Actions from: https://github.com/jvdillon/rtx-laptop-linux#5-enable-runtime-pm-via-udev
+  # SUBSYSTEM=="drm", DRIVERS=="nvidia", TAG+="mutter-device-ignore"
   services.udev.extraRules = ''
-    SUBSYSTEM=="drm", DRIVERS=="nvidia", TAG+="mutter-device-ignore"
-
     # Enable runtime PM for NVIDIA VGA/3D controller devices on adding device
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
