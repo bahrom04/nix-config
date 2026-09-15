@@ -48,8 +48,8 @@
 
   programs.nix-data = {
     enable = true;
-    systemconfig = "/home/bahrom/workplace/bahrom04/nix-config/systems/x86_64-linux/nova/default.nix";
-    flake = "/home/bahrom/workplace/bahrom04/nix-config/flake.nix";
+    systemconfig = "/home/bahrom/Projects/bahrom04/nix-config/systems/x86_64-linux/nova/default.nix";
+    flake = "/home/bahrom/Projects/bahrom04/nix-config/flake.nix";
     hostname = "nova";
   };
 
