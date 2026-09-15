@@ -17,12 +17,27 @@
     });
   '';
 
+  powerManagement.powertop.enable = true;
   services = {
-    system76-scheduler = {
-      enable = false;
-    };
+    relago.enable = true;
+    scx.enable = true;
+    system76-scheduler.enable = false;
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     thermald.enable = true;
+    power-profiles-daemon.enable = false;
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        charger = {
+          governor = "performance";
+          turbo = "auto";
+        };
+        battery = {
+          governor = "powersave";
+          turbo = "auto";
+        };
+      };
+    };
   };
 
   # https://nixos.wiki/wiki/Hibernation
