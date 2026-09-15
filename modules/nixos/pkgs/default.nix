@@ -122,7 +122,6 @@ in
       footage
       shotcut
       powertop
-      scaphandre
       #epiphany
       #collabora-online
       #collabora-desktop
