@@ -64,7 +64,7 @@
     ];
     gnome.gnome-remote-desktop.enable = false;
   };
-  
+
   # https://gitlab.gnome.org/GNOME/mutter/-/work_items/2310
   #
   # Actions from: https://github.com/jvdillon/rtx-laptop-linux#5-enable-runtime-pm-via-udev
@@ -105,6 +105,7 @@
         libva-utils
       ];
     };
+    intel-gpu-tools.enable = true;
     cpu.intel = {
       npu.enable = true;
       sgx.enableDcapCompat = false;
