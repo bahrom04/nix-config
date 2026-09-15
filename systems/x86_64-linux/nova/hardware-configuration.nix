@@ -84,11 +84,6 @@
         finegrained = true;
       };
       dynamicBoost.enable = true;
-      moduleParams = {
-        nvidia = {
-          NVreg_DynamicPowerManagementVideoMemoryThreshold = 200;
-        };
-      };
       prime = {
         intelBusId = "PCI:0:2:0";
         nvidiaBusId = "PCI:1:0:0";
@@ -103,7 +98,6 @@
         intel-compute-runtime
         intel-media-driver
         intel-vaapi-driver
-        intel-npu-driver
         nvidia-vaapi-driver
         vpl-gpu-rt
         libvdpau
@@ -111,7 +105,10 @@
         libva-utils
       ];
     };
-    cpu.intel.updateMicrocode = true;
+    cpu.intel = {
+      npu.enable = true;
+      sgx.enableDcapCompat = false;
+    };
   };
 
   nix.settings.system-features = [
