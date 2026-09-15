@@ -34,7 +34,7 @@
     initrd.systemd.enable = true;
     initrd.kernelModules = [
       "xe"
-      "nvidia"
+      # "nvidia"
     ];
     kernelModules = [
       "fuse"
