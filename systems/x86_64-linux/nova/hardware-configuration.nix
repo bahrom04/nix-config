@@ -64,6 +64,7 @@
     ];
     gnome.gnome-remote-desktop.enable = false;
   };
+  powerManagement.powertop.enable = true;
 
   # https://gitlab.gnome.org/GNOME/mutter/-/work_items/2310
   #
