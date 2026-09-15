@@ -23,7 +23,7 @@
   hardware.facter = {
     enable = true;
     reportPath = ./nova.json;
-    detected.graphics.enable = true;
+    detected.graphics.enable = false;
   };
 
   boot = {
@@ -84,7 +84,6 @@
         finegrained = true;
       };
       dynamicBoost.enable = true;
-      nvidiaSettings = true;
       moduleParams = {
         nvidia = {
           NVreg_DynamicPowerManagementVideoMemoryThreshold = 200;
