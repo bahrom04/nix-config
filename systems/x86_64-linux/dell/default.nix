@@ -8,13 +8,6 @@
     ./modules.nix
     ./hardware-configuration.nix
   ];
-  # nix-repl> outputs.nixosConfigurations.dell.config.boot.loader.efi.efiSysMountPoint
-  # "/boot"
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # boot.loader.efi.canTouchEfiVariables = lib.mkForce true;
-  # boot.loader.grub.default = "saved";
-
-  # chaotic.nyx.cache.enable = true;
 
   # useful when debugging xeonitte (xinux installer)
   security.polkit.extraConfig = ''

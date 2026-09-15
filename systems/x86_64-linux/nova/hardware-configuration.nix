@@ -64,8 +64,7 @@
     ];
     gnome.gnome-remote-desktop.enable = false;
   };
-  powerManagement.powertop.enable = true;
-
+  
   # https://gitlab.gnome.org/GNOME/mutter/-/work_items/2310
   #
   # Actions from: https://github.com/jvdillon/rtx-laptop-linux#5-enable-runtime-pm-via-udev

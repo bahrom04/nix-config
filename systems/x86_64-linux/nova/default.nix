@@ -8,14 +8,7 @@
     ./modules.nix
     ./hardware-configuration.nix
   ];
-  # nix-repl> outputs.nixosConfigurations.dell.config.boot.loader.efi.efiSysMountPoint
-  # "/boot"
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # boot.loader.efi.canTouchEfiVariables = lib.mkForce true;
-  # boot.loader.grub.default = "saved";
-
-  # chaotic.nyx.cache.enable = true;
-
+  
   # useful when debugging xeonitte (xinux installer)
   # security.polkit.extraConfig = ''
   #   polkit.addRule(function(action, subject) {
@@ -25,14 +18,35 @@
   # '';
 
   services = {
-    scx = {
-      enable = true;
-    };
-    system76-scheduler = {
-      enable = false;
-    };
+    scx.enable = true;
+    system76-scheduler.enable = false;
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     thermald.enable = true;
+    # powerManagement.powertop.enable = true;
+    # powerManagement.enable = false;
+    power-profiles-daemon.enable = false;
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        charger = {
+          governor = "performance";
+          energy_performance_preference = "performance";
+          platform_profile = "performance";
+          turbo = "auto";
+          platform_profile_strict = true;
+          # enable_thresholds = true;
+          # start_threshold = 75;
+          # stop_threshold = 80;
+        };
+        battery = {
+          governor = "powersave";
+          energy_performance_preference = "balance_performance";
+          platform_profile = "balanced";
+          turbo = "auto";
+          platform_profile_strict = true;
+        };
+      };
+    };
   };
 
   # https://nixos.wiki/wiki/Hibernation
