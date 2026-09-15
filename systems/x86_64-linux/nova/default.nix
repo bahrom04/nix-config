@@ -8,7 +8,7 @@
     ./modules.nix
     ./hardware-configuration.nix
   ];
-  
+
   # useful when debugging xeonitte (xinux installer)
   # security.polkit.extraConfig = ''
   #   polkit.addRule(function(action, subject) {
@@ -18,6 +18,7 @@
   # '';
 
   services = {
+    relago.enable = true;
     scx.enable = true;
     system76-scheduler.enable = false;
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
@@ -28,22 +29,30 @@
     auto-cpufreq = {
       enable = true;
       settings = {
+        # charger = {
+        #   governor = "performance";
+        #   energy_performance_preference = "performance";
+        #   platform_profile = "performance";
+        #   turbo = "auto";
+        #   platform_profile_strict = true;
+        #   # enable_thresholds = true;
+        #   # start_threshold = 75;
+        #   # stop_threshold = 80;
+        # };
+        # battery = {
+        #   governor = "powersave";
+        #   energy_performance_preference = "balance_performance";
+        #   platform_profile = "balanced";
+        #   turbo = "auto";
+        #   platform_profile_strict = true;
+        # };
         charger = {
           governor = "performance";
-          energy_performance_preference = "performance";
-          platform_profile = "performance";
           turbo = "auto";
-          platform_profile_strict = true;
-          # enable_thresholds = true;
-          # start_threshold = 75;
-          # stop_threshold = 80;
         };
         battery = {
           governor = "powersave";
-          energy_performance_preference = "balance_performance";
-          platform_profile = "balanced";
           turbo = "auto";
-          platform_profile_strict = true;
         };
       };
     };
