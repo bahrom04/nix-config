@@ -60,7 +60,6 @@
   services = {
     xserver.videoDrivers = [
       "nvidia"
-      "modesetting"
     ];
     gnome.gnome-remote-desktop.enable = false;
   };

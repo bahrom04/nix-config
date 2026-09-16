@@ -17,24 +17,30 @@
   #   });
   # '';
 
-  powerManagement.powertop.enable = true;
+  powerManagement.powertop.enable = false;
   services = {
+    thermald.enable = false;
+    power-profiles-daemon.enable = false;
+    system76-scheduler.enable = false;
     relago.enable = true;
     scx.enable = true;
-    system76-scheduler.enable = false;
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
-    thermald.enable = true;
-    power-profiles-daemon.enable = false;
     auto-cpufreq = {
       enable = true;
       settings = {
         charger = {
           governor = "performance";
           turbo = "auto";
+          energy_performance_preference = "performance";
+          platform_profile = "performance";
+          platform_profile_strict = true;
         };
         battery = {
           governor = "powersave";
           turbo = "auto";
+          energy_performance_preference = "balance_performance";
+          platform_profile = "balanced";
+          platform_profile_strict = true;
         };
       };
     };
