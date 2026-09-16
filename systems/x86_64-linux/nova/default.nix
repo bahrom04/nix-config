@@ -19,11 +19,11 @@
 
   powerManagement.powertop.enable = false;
   services = {
-    thermald.enable = false;
-    power-profiles-daemon.enable = false;
-    system76-scheduler.enable = false;
     relago.enable = true;
     scx.enable = true;
+    system76-scheduler.enable = false;
+    power-profiles-daemon.enable = false;
+    thermald.enable = true;
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     auto-cpufreq = {
       enable = true;
@@ -48,8 +48,7 @@
 
   # https://nixos.wiki/wiki/Hibernation
   systemd.sleep.settings.Sleep = {
-    # 30 minute
-    HibernateDelaySec = "1800";
+    HibernateDelaySec = "1800"; # 30 minute
   };
 
   console.keyMap = "us";
