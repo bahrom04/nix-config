@@ -19,7 +19,6 @@
 
   powerManagement.powertop.enable = false;
   services = {
-    relago.enable = true;
     scx.enable = true;
     system76-scheduler.enable = false;
     power-profiles-daemon.enable = false;

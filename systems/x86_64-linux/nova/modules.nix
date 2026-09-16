@@ -3,7 +3,7 @@
   systemd.user.services.e-imzo.wantedBy = lib.mkForce [ ];
   modules.xinux.eimzoIntegraion.enable = true;
   modules.efiboot.bootloader = "grub";
-  modules.xinux.relago.enable = false;
+  modules.xinux.relago.enable = true;
   modules.shell.rusted-tools = false;
   services.flatpak.enable = true;
   services.gnome.games.enable = false;
