@@ -22,7 +22,7 @@
     scx.enable = true;
     system76-scheduler.enable = false;
     power-profiles-daemon.enable = false;
-    thermald.enable = false;
+    thermald.enable = true;
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     auto-cpufreq = {
       enable = true;
