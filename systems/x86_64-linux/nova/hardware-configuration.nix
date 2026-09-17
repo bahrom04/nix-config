@@ -13,8 +13,9 @@
     ./disk-configuration-btrfs.nix
   ];
 
+  # conflicting with auto-cpufreq
   services.intel-lpmd = {
-    enable = true;
+    enable = false;
     config.meteorLake = true;
     mode = "AUTO";
     debug = true;
