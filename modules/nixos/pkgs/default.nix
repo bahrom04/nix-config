@@ -104,7 +104,6 @@ in
       googleearth-pro
       google-chrome
       gitte
-      radicle-desktop
       radicle-node
       element-desktop
       telegram-desktop

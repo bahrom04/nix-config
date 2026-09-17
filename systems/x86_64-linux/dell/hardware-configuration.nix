@@ -26,7 +26,6 @@
     initrd.systemd.enable = true;
     kernelModules = [ "fuse" ];
     kernelParams = [
-      "intel_pstate=active"
       "mem_sleep_default=deep"
     ];
     supportedFilesystems = [ "ntfs" ];

@@ -41,7 +41,6 @@
     kernelParams = [
       "xe.force_probe=7d55"
       "i915.force_probe=!7d55"
-      "intel_pstate=active"
     ];
     supportedFilesystems = [ "ntfs" ];
   };
