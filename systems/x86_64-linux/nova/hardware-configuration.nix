@@ -6,6 +6,18 @@
   config,
   ...
 }:
+let
+  # https://discourse.nixos.org/t/random-freeze-of-system/44766/13
+  # https://github.com/NixOS/nixpkgs/pull/561660/changes
+  nvidia-615-71-09 = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    version = "615.71.09";
+    sha256_64bit = "sha256-zc7tIrvrYSSNGm3qvCWWZz46ZQFpjucayNL9wo87cP4=";
+    sha256_aarch64 = "sha256-IbekQhE7cFfmnPZaLY9NDYcF7CoNZ+2Qb7sRd4EOgWM=";
+    openSha256 = "sha256-3gByMYIwFzRaLdDG+roCEOuKRRJDrljG9AlLnRZTirM=";
+    settingsSha256 = "sha256-LK1LU8mDkM/XVRKPBtuOZh9nIP/lGFLAJnmasEX8jhg=";
+    persistencedSha256 = "sha256-qPRb+3d88+2RcpUkoBTbjIaImnQ+jX+/6p1vXcJ5geE=";
+  };
+in
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -77,7 +89,7 @@
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     nvidia = {
       open = true;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = nvidia-615-71-09; # 19.09.2026
       powerManagement = {
         enable = true;
         finegrained = true;
