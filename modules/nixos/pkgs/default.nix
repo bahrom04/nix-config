@@ -35,7 +35,6 @@ in
       deadnix
       statix
       nixd
-      nil
       nixfmt-tree
       nixfmt
       nixpkgs-review
@@ -111,16 +110,15 @@ in
       sqlitebrowser
       poedit
       geekbench
-      mangohud
       wl-clipboard
       cargo-expand
       disko
       libimobiledevice
       ifuse # optional, to mount using 'ifuse'
       localsend
-      footage
       shotcut
       powertop
+      lm_sensors
       #epiphany
       #collabora-online
       #collabora-desktop
