@@ -99,7 +99,6 @@ in
       qdiskinfo
       kdiskmark
       libreoffice
-      antimicrox
       googleearth-pro
       google-chrome
       gitte
@@ -119,6 +118,7 @@ in
       shotcut
       powertop
       lm_sensors
+      lact
       #epiphany
       #collabora-online
       #collabora-desktop
