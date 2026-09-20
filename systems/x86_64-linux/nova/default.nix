@@ -17,6 +17,8 @@
   #   });
   # '';
 
+  networking.useDHCP = false;
+
   powerManagement.powertop.enable = false;
   services = {
     scx.enable = true;
