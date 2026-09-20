@@ -7,7 +7,6 @@
   modules.shell.rusted-tools = false;
   services.flatpak.enable = true;
   services.gnome.games.enable = false;
-  modules.xinux.browser = "helium";
   modules.xinux.xinuxModuleManager.enable = true;
   modules.xinux.libreofficePack.enable = false;
   modules.xinux.binaryCompat.enable = true;
