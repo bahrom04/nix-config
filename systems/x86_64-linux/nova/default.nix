@@ -19,13 +19,21 @@
 
   networking.useDHCP = false;
 
+  # conflicting with auto-cpufreq
+  services.intel-lpmd = {
+    enable = false;
+    config.meteorLake = true;
+    mode = "AUTO";
+    debug = true;
+  };
+
   powerManagement.powertop.enable = false;
   services = {
+    logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     scx.enable = true;
     system76-scheduler.enable = false;
     power-profiles-daemon.enable = false;
     thermald.enable = true;
-    logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     auto-cpufreq = {
       enable = true;
       settings = {
@@ -38,7 +46,7 @@
         battery = {
           governor = "powersave";
           turbo = "auto";
-          energy_performance_preference = "balance_performance";
+          energy_performance_preference = "balanced";
         };
       };
     };

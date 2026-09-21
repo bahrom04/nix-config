@@ -25,14 +25,6 @@ in
     ./disk-configuration-btrfs.nix
   ];
 
-  # conflicting with auto-cpufreq
-  services.intel-lpmd = {
-    enable = false;
-    config.meteorLake = true;
-    mode = "AUTO";
-    debug = true;
-  };
-
   hardware.facter = {
     enable = true;
     reportPath = ./nova.json;
@@ -40,6 +32,9 @@ in
   };
 
   boot = {
+    extraModulePackages = [
+      # (config.boot.kernelPackages.callPackage ./acpi-dkms.nix { })
+    ];
     zswap = {
       enable = true;
     };
