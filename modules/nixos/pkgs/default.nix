@@ -80,11 +80,9 @@ in
       nvd
       bleur
       ############################ GNOME
-      #gnome-builder
       gnome-boxes
       gnome-graphs
       gnome-podcasts
-      dconf-editor
       icon-library
       app-icon-preview
       resources
@@ -94,7 +92,6 @@ in
       crosswords
       impression
       bustle
-      d-spy
       gradia
       cpu-x
       qdiskinfo
@@ -120,22 +117,16 @@ in
       powertop
       lm_sensors
       lact
-      #epiphany
-      #collabora-online
-      #collabora-desktop
+      epiphany
+      xinux-settings
       #nix-software-center
-      # xinux-settings
       #xinux-tour
       #wireshark
-      #sysprof
       #zap
       #seclists
       #burpsuite
-      #stress-ng
-      #rt-tests
       # nextcloud-client
       # gtranslator
-      # putty
       # authenticator
       # onlyoffice-desktopeditors
       # prismlauncher
@@ -163,11 +154,11 @@ in
     ];
   };
 
+  services.gnome.core-developer-tools.enable = true;
   # advansed option. Adding just pkgs.x is not enough
   programs = {
     nh = {
       enable = true;
-      flake = "/home/bahrom/workplace/bahrom04/nix-config"; # sets NH_OS_FLAKE variable for you
     };
     obs-studio = {
       enable = true;
