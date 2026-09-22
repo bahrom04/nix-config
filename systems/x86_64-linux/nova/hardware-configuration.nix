@@ -79,27 +79,27 @@ in
     # https://gitlab.com/asus-linux/nvidia-laptop-power-cfg/-/blob/main/nvidia.rules
     # Remove NVIDIA USB xHCI Host Controller devices, if present
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{remove}="1"
-    
+
     # Remove NVIDIA USB Type-C UCSI devices, if present
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{remove}="1"
-    
-    # Remove NVIDIA Audio devices, if present: 
+
+    # Remove NVIDIA Audio devices, if present:
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
-     
+
     # Enable runtime PM for NVIDIA VGA/3D controller devices on adding device
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
   '';
 
   # services.cardwired = {
-  #     enable = true;
-  #     settings = {
-  #         auto_apply_gpu_state = true;
-  #         experimental_nvidia_block = true;
-  #         battery_auto_switch = true;
-  #         battery_auto_switch_mode = "hybrid";
-  #         external_display_auto_switch = false;
-  #     };
+  #   enable = true;
+  #   settings = {
+  #     auto_apply_gpu_state = true;
+  #     experimental_nvidia_block = true;
+  #     battery_auto_switch = true;
+  #     battery_auto_switch_mode = "hybrid";
+  #     external_display_auto_switch = false;
+  #   };
   # };
 
   hardware = {

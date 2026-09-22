@@ -29,7 +29,7 @@
     debug = true;
   };
 
-  powerManagement.powertop.enable = false;
+  powerManagement.powertop.enable = true;
   services = {
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     scx.enable = true;
