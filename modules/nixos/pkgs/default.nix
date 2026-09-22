@@ -31,6 +31,7 @@ in
       gnome-shell-extensions
       nautilus-python
       code-nautilus
+      gnome-initial-setup
       # formatter
       deadnix
       statix
