@@ -1,13 +1,15 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
   imports = [
     ./modules.nix
     ./hardware-configuration.nix
-  ];
+  ]
+  ++ [ inputs.nixos-hardware.nixosModules.common-pc-laptop ];
 
   # useful when debugging xeonitte (xinux installer)
   # security.polkit.extraConfig = ''

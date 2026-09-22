@@ -1566,6 +1566,25 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_9"
+      },
+      "locked": {
+        "lastModified": 1790060333,
+        "narHash": "sha256-pnOPPgkhG1+gqzpmG6pTh4G7OVgUWQiG0aqvESZomko=",
+        "owner": "bahrom04-lab",
+        "repo": "nixos-hardware",
+        "rev": "00687db9b6ff3ede62d6d197bd9a6415de5f400f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bahrom04-lab",
+        "ref": "common-pc-laptop-tlp",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1789426278,
@@ -1704,6 +1723,23 @@
       "locked": {
         "lastModified": 1789546076,
         "narHash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4=",
+        "ref": "nixos-unstable",
+        "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
+      },
+      "original": {
+        "ref": "nixos-unstable",
+        "shallow": true,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
+      }
+    },
+    "nixpkgs_11": {
+      "locked": {
+        "lastModified": 1789546076,
+        "narHash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4=",
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
@@ -1716,7 +1752,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_11": {
+    "nixpkgs_12": {
       "locked": {
         "lastModified": 1780749050,
         "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
@@ -1847,23 +1883,19 @@
     "nixpkgs_9": {
       "locked": {
         "lastModified": 1789546076,
-        "narHash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4=",
-        "ref": "nixos-unstable",
+        "narHash": "sha256-vWkSk5bbfTqdtMoSgD9FshACO8JCvXTFi+3cqEp0mH0=",
         "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
-        "shallow": true,
-        "type": "git",
-        "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074753.b1b875982b17/nixexprs.tar.xz"
       },
       "original": {
-        "ref": "nixos-unstable",
-        "shallow": true,
-        "type": "git",
-        "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
     "proton-cachyos": {
       "inputs": {
-        "nixpkgs": "nixpkgs_10"
+        "nixpkgs": "nixpkgs_11"
       },
       "locked": {
         "lastModified": 1789593042,
@@ -1884,7 +1916,7 @@
         "crane": "crane",
         "flake-parts": "flake-parts_6",
         "git-hooks-nix": "git-hooks-nix",
-        "nixpkgs": "nixpkgs_11",
+        "nixpkgs": "nixpkgs_12",
         "treefmt-nix": "treefmt-nix_7"
       },
       "locked": {
@@ -1950,7 +1982,8 @@
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nix-data": "nix-data",
         "nix-software-center": "nix-software-center",
-        "nixpkgs": "nixpkgs_9",
+        "nixos-hardware": "nixos-hardware",
+        "nixpkgs": "nixpkgs_10",
         "proton-cachyos": "proton-cachyos",
         "relago": "relago",
         "uz-xkb": "uz-xkb",

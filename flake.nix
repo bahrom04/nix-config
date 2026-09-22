@@ -77,6 +77,7 @@
       url = "github:dmfrpro/intel-lpmd-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware.url = "github:bahrom04-lab/nixos-hardware/common-pc-laptop-tlp";
   };
 
   outputs =
