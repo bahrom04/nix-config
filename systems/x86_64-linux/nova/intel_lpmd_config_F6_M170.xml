@@ -22,7 +22,7 @@ Proxy WLT enabled with MTL specific epp values.
          1: Cgroup v2 isolate
          2: CPU idle injection
     -->
-    <Mode>-1</Mode>
+    <Mode>0</Mode>
 
     <!--
         Default behavior when Performance power setting is used
