@@ -27,6 +27,17 @@
     mode = "AUTO";
   };
 
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+    };
+  };
+
   powerManagement.powertop.enable = true;
   services = {
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
@@ -35,7 +46,7 @@
     power-profiles-daemon.enable = false;
     thermald.enable = true;
     auto-cpufreq = {
-      enable = true;
+      enable = false;
       settings = {
         charger = {
           governor = "performance";
