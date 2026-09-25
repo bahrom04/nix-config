@@ -38,7 +38,7 @@ Proxy WLT enabled with MTL specific epp values.
          1: force on. (Always stay in Low Power Mode)
          0: auto. (opportunistic Low Power Mode enter/exit)
     -->
-    <BalancedDef>-1</BalancedDef>
+    <BalancedDef>0</BalancedDef>
 
     <!--
         Default behavior when Power saver setting is used
@@ -46,14 +46,14 @@ Proxy WLT enabled with MTL specific epp values.
          1: force on. (Always stay in Low Power Mode)
          0: auto. (opportunistic Low Power Mode enter/exit)
     -->
-    <PowersaverDef>-1</PowersaverDef>
+    <PowersaverDef>0</PowersaverDef>
 
     <!--
         Use HFI LPM hints
         0 : No
         1 : Yes
     -->
-    <HfiLpmEnable>0</HfiLpmEnable>
+    <HfiLpmEnable>1</HfiLpmEnable>
 
     <!--
         Use WLT hints
@@ -128,50 +128,47 @@ Proxy WLT enabled with MTL specific epp values.
     -->
     <IntelPstateMode>0</IntelPstateMode>
 
+    <!--
+		Example WorkLoad Type hints based config states applied to
+		12Pcore-8Ecore-2Lcore 28W TDP Meteor Lake platform.
+		Need to set WLTHintEnable to make it work.
+		 -->
     <States>
-        <CPUFamily> 6 </CPUFamily>
-        <CPUModel> 170 </CPUModel>
-        <CPUConfig> * </CPUConfig>
-    <State>
-        <ID> 1 </ID> <!-- no significance. number can be anything -->
-        <Name> WLT_IDLE </Name>
-        <WLTType> 0 </WLTType> <!-- WLTType mapped to Name -->
-        <EPP> 255 </EPP>
-        <EPB> 15 </EPB>
-        <MinPollInterval>2000</MinPollInterval>
-        <ITMTState> -1 </ITMTState>
-        <IRQMigrate> -1 </IRQMigrate>
-    </State>
-    <State>
-        <ID> 2 </ID>
-        <Name> WLT_BATTERY_LIFE </Name>
-        <WLTType> 1 </WLTType>
-        <EPP> 178 </EPP>
-        <EPB> 6 </EPB>
-        <MinPollInterval>2000</MinPollInterval>
-        <ITMTState> -1 </ITMTState>
-        <IRQMigrate> -1 </IRQMigrate>
-    </State>
-    <State>
-        <ID> 3 </ID>
-        <Name> WLT_SUSTAINED </Name>
-        <WLTType> 2 </WLTType>
-        <EPP> 64 </EPP>
-        <EPB> 6 </EPB>
-        <MinPollInterval>2000</MinPollInterval>
-        <ITMTState> -1 </ITMTState>
-        <IRQMigrate> -1 </IRQMigrate>
-    </State>
-    <State>
-        <ID> 4 </ID>
-        <Name> WLT_BURSTY </Name>
-        <WLTType> 3 </WLTType>
-        <EPP> 64 </EPP>
-        <EPB> 4 </EPB>
-        <MinPollInterval>2000</MinPollInterval>
-        <ITMTState> -1 </ITMTState>
-        <IRQMigrate> -1 </IRQMigrate>
-    </State>
-</States>
+  		<CPUFamily> 6 </CPUFamily>
+  		<CPUModel> 170 </CPUModel>
+  		<CPUConfig> 12P8E2L-28W </CPUConfig>
+  		<State>
+     			<ID> 1 </ID>
+     			<Name> WLT_IDLE </Name>
+     			<WLTType> 0 </WLTType>
+     			<EPP> 255 </EPP>
+     			<ITMTState> -1 </ITMTState>
+     			<IRQMigrate> -1 </IRQMigrate>
+  		</State>
+  		<State>
+     			<ID> 2 </ID>
+     			<Name> WLT_BATTERY_LIFE </Name>
+     			<WLTType> 1 </WLTType>
+     			<EPP> 192 </EPP>
+     			<ITMTState> -1 </ITMTState>
+     			<IRQMigrate> -1 </IRQMigrate>
+  		</State>
+  		<State>
+     			<ID> 3 </ID>
+     			<Name> WLT_SUSTAINED </Name>
+     			<WLTType> 2 </WLTType>
+     			<EPP> 64 </EPP>
+     			<ITMTState> -1 </ITMTState>
+     			<IRQMigrate> -1 </IRQMigrate>
+  		</State>
+  		<State>
+     			<ID> 4 </ID>
+     			<Name> WLT_BURSTY </Name>
+     			<WLTType> 3 </WLTType>
+     			<EPP> 64 </EPP>
+     			<ITMTState> -1 </ITMTState>
+     			<IRQMigrate> -1 </IRQMigrate>
+  		</State>
+	</States>
 
 </Configuration>
