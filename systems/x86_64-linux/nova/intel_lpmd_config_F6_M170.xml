@@ -53,7 +53,7 @@ Proxy WLT enabled with MTL specific epp values.
         0 : No
         1 : Yes
     -->
-    <HfiLpmEnable>1</HfiLpmEnable>
+    <HfiLpmEnable>0</HfiLpmEnable>
 
     <!--
         Use WLT hints
