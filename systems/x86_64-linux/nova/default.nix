@@ -23,8 +23,9 @@
 
   services.intel-lpmd = {
     enable = true;
-    config.meteorLake = true;
+    # config.meteorLake = true;
     mode = "AUTO";
+    config.custom.filename = "intel_lpmd_config_F6_M170.xml";
   };
 
   services.tlp = {
