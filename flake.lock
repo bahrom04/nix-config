@@ -1380,15 +1380,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1780884504,
-        "narHash": "sha256-smhI9ZUqPJ1LHhE0a01C38AVg9Sz7OnMaSLHDt44Rco=",
-        "owner": "dmfrpro",
+        "lastModified": 1790340511,
+        "narHash": "sha256-CrYsBNG6+c0Ex0FGJl2HvKGVdO2Gj+H5ilqqGhVZTS4=",
+        "owner": "bahrom04-lab",
         "repo": "intel-lpmd-flake",
-        "rev": "226def6f3960505f2dfeabfb6b8299952ced856f",
+        "rev": "634671ae0962e2e2a02dd32751b6eba9c7058ca7",
         "type": "github"
       },
       "original": {
-        "owner": "dmfrpro",
+        "owner": "bahrom04-lab",
+        "ref": "update-september",
         "repo": "intel-lpmd-flake",
         "type": "github"
       }

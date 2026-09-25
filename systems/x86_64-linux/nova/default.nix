@@ -21,12 +21,10 @@
 
   networking.useDHCP = false;
 
-  # conflicting with auto-cpufreq
   services.intel-lpmd = {
-    enable = false;
+    enable = true;
     config.meteorLake = true;
     mode = "AUTO";
-    debug = true;
   };
 
   powerManagement.powertop.enable = true;
