@@ -39,6 +39,7 @@ in
       enable = true;
     };
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
+    # kernelPackages = pkgs.linuxPackages_latest;
     initrd.systemd.enable = true;
     initrd.kernelModules = [
       "xe"
