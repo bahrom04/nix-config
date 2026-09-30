@@ -46,7 +46,7 @@
       WIFI_PWR_ON_BAT = "on";
       AHCI_RUNTIME_PM_TIMEOUT = 5;
       AHCI_RUNTIME_PM_ON_BAT = "auto";
-      RUNTIME_PM_ON_BAT="auto";
+      RUNTIME_PM_ON_BAT = "auto";
 
       CPU_ENERGY_PERF_POLICY_ON_SAV = "power";
     };
