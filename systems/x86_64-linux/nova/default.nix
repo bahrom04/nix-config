@@ -44,7 +44,7 @@
       CPU_HWP_DYN_BOOST_ON_BAT = 0;
       CPU_HWP_DYN_BOOST_ON_SAV = 0;
       WIFI_PWR_ON_BAT = "on";
-      AHCI_RUNTIME_PM_TIMEOUT = 5;
+      # AHCI_RUNTIME_PM_TIMEOUT = 5;
       AHCI_RUNTIME_PM_ON_BAT = "auto";
       RUNTIME_PM_ON_BAT = "auto";
 

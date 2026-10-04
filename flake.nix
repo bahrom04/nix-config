@@ -74,7 +74,8 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     intel-lpmd-flake = {
-      url = "github:bahrom04-lab/intel-lpmd-flake/update-september";
+      url = "github:dmfrpro/intel-lpmd-flake";
+      # url = "github:bahrom04-lab/intel-lpmd-flake/update-september";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:bahrom04-lab/nixos-hardware/common-pc-laptop-tlp";
