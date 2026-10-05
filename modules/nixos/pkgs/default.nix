@@ -115,6 +115,7 @@ in
       localsend
       shotcut
       powertop
+      powerstat
       lm_sensors
       lact
       epiphany
