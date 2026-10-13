@@ -118,6 +118,7 @@ in
       powerstat
       lm_sensors
       lact
+      mangohud
       epiphany
       xinux-settings
       #nix-software-center
