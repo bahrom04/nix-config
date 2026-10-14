@@ -108,7 +108,6 @@ in
       poedit
       geekbench
       wl-clipboard
-      cargo-expand
       disko
       libimobiledevice
       ifuse # optional, to mount using 'ifuse'
@@ -121,6 +120,12 @@ in
       mangohud
       epiphany
       xinux-settings
+      cargo
+      cargo-expand
+      clippy
+      rust-analyzer
+      rustc
+      rustfmt
       #nix-software-center
       #xinux-tour
       #wireshark
