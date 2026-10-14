@@ -120,12 +120,28 @@ in
       mangohud
       epiphany
       xinux-settings
+
+      # gtk devel
       cargo
       cargo-expand
       clippy
       rust-analyzer
       rustc
       rustfmt
+      appstream
+      desktop-file-utils
+      cairo
+      gdk-pixbuf
+      gobject-introspection
+      gtk4
+      gtksourceview5
+      libadwaita
+      libxml2
+      meson
+      ninja
+      openssl
+      pango
+      pkg-config
       #nix-software-center
       #xinux-tour
       #wireshark
