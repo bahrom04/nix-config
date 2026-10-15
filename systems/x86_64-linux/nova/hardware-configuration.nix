@@ -32,12 +32,11 @@ in
   };
 
   boot = {
+    tmp.useTmpfs = true;
+    zswap.enable = true;
     extraModulePackages = [
       # (config.boot.kernelPackages.callPackage ./acpi-dkms.nix { })
     ];
-    zswap = {
-      enable = true;
-    };
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     # kernelPackages = pkgs.linuxPackages_latest;
     initrd.systemd.enable = true;
