@@ -57,6 +57,7 @@ in
       jq-lsp
       xcp
       htop
+      iotop
       asciinema
       flatpak-builder
       woeusb # for creating windows usb
