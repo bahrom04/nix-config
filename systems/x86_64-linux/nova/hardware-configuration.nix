@@ -9,14 +9,14 @@
 let
   # https://discourse.nixos.org/t/random-freeze-of-system/44766/13
   # https://github.com/NixOS/nixpkgs/pull/561660/changes
-  # nvidia-615-71-09 = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-  #   version = "615.71.09";
-  #   sha256_64bit = "sha256-zc7tIrvrYSSNGm3qvCWWZz46ZQFpjucayNL9wo87cP4=";
-  #   sha256_aarch64 = "sha256-IbekQhE7cFfmnPZaLY9NDYcF7CoNZ+2Qb7sRd4EOgWM=";
-  #   openSha256 = "sha256-3gByMYIwFzRaLdDG+roCEOuKRRJDrljG9AlLnRZTirM=";
-  #   settingsSha256 = "sha256-LK1LU8mDkM/XVRKPBtuOZh9nIP/lGFLAJnmasEX8jhg=";
-  #   persistencedSha256 = "sha256-qPRb+3d88+2RcpUkoBTbjIaImnQ+jX+/6p1vXcJ5geE=";
-  # };
+  nvidia-source = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    version = "615.78.08";
+    sha256_64bit = "sha256-Pj9t3cLudnoIGFMAr3vjyyhuznZpjS3eNSRZl4LQf/4=";
+    sha256_aarch64 = "";
+    openSha256 = "sha256-HBINiOjL0ZJLIAJeNIBYHBnwgUXtNwPPtnFpAI1YwF4=";
+    settingsSha256 = "sha256-inDRpG02sdDgHmlqgu/DsgK8OFdOt1fZIYyXdhlGC/c=";
+    persistencedSha256 = "";
+  };
 in
 {
   imports = [
@@ -106,8 +106,8 @@ in
     # CPU (Intel/Ryzen) luchshe kupi ryzen: https://www.youtube.com/watch?v=GOkm2C0rk-w
     nvidia = {
       open = true;
-      # package = nvidia-615-71-09; # 19.09.2026
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = nvidia-source;
+      # package = config.boot.kernelPackages.nvidiaPackages.latest;
       powerManagement = {
         enable = true;
         finegrained = true;
@@ -126,8 +126,6 @@ in
       extraPackages = with pkgs; [
         intel-compute-runtime
         intel-media-driver
-        intel-vaapi-driver
-        nvidia-vaapi-driver
         vpl-gpu-rt
         libvdpau
         libva-vdpau-driver
