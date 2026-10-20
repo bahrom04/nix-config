@@ -21,6 +21,8 @@
 
   networking.useDHCP = false;
 
+  virtualisation.podman.enable = true;
+  
   services.intel-lpmd = {
     enable = true;
     # config.meteorLake = true;
