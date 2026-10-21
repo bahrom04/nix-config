@@ -1,0 +1,15 @@
+// Keyboard layouts for Uzbekistan.
+
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "us"
+    name[Group1]= "Uzbek latin 2026";
+
+    key <AD11> { [ odiaeresis, Odiaeresis,  bracketleft,  braceleft ] };
+    key <AD12> { [     gbreve,     Gbreve, bracketright, braceright ] };
+    key <BKSL> { [      U02BC,      U02BB,    backslash,        bar ] };
+    key <AC10> { [   scedilla,   Scedilla,    semicolon,      colon ] };
+    key <AC11> { [   ccedilla,   Ccedilla,   apostrophe,   quotedbl ] };
+
+    include "level3(ralt_switch)"
+};
