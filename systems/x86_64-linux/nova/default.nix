@@ -19,14 +19,6 @@
   #   });
   # '';
 
-  services.xserver.xkb.extraLayouts = {
-    uz-2026 = {
-      description = "New 2026 uzbek keyboard layout";
-      languages = [ "uzb" ];
-      symbolsFile = ./uzbek_2026_keyboard;
-    };
-  };
-
   networking.useDHCP = false;
 
   virtualisation.podman.enable = true;

@@ -18,6 +18,11 @@ in
           languages = [ "uzb" ];
           symbolsFile = "${inputs.uz-xkb}/uz_compat";
         };
+        uz-2026 = {
+          description = "Uzbek 2026";
+          languages = [ "uzb" ];
+          symbolsFile = "${xkbPath}/uzbek_2026_keyboard";
+        };
         uz-us = {
           description = "Uzbek (US)";
           languages = [ "uzb" ];
@@ -27,11 +32,6 @@ in
           description = "Uzbek (2023)";
           languages = [ "uzb" ];
           symbolsFile = "${xkbPath}/uz_2023";
-        };
-        uz-cyrillic = {
-          description = "Uzbek (Cyrillic)";
-          languages = [ "uzb" ];
-          symbolsFile = "${xkbPath}/uz_cyrillic";
         };
       };
     };
