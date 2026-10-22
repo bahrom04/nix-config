@@ -52,6 +52,7 @@ in
       mpv
       tree
       file
+      uutils-coreutils-noprefix
       jq
       jq-zsh-plugin
       jq-lsp
