@@ -70,8 +70,8 @@
     relago.url = "git+https://git.oss.uzinfocom.uz/xinux/relago";
     # relago.url = "path:/home/bahrom/workplace/xinux/relago";
 
-    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    # proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
+    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     intel-lpmd-flake = {
       url = "github:dmfrpro/intel-lpmd-flake";
