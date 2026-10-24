@@ -56,6 +56,7 @@ in
       jq
       jq-zsh-plugin
       jq-lsp
+      jadx
       xcp
       htop
       iotop
