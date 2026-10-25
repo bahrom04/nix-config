@@ -29,7 +29,6 @@
       enable = true;
     };
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
-    initrd.systemd.enable = true;
     kernelModules = [ "fuse" ];
     kernelParams = [
       "intel_pstate=active"
