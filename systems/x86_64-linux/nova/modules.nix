@@ -10,5 +10,4 @@
   modules.xinux.xinuxModuleManager.enable = true;
   modules.xinux.libreofficePack.enable = false;
   modules.xinux.binaryCompat.enable = true;
-  # modules.shell.direnv = true;
 }
