@@ -143,6 +143,7 @@ in
       openssl
       pango
       pkg-config
+      inkscape-with-extensions
       #nix-software-center
       #xinux-tour
       #wireshark
