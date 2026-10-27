@@ -121,6 +121,8 @@ in
       mangohud
       epiphany
       xinux-settings
+      inkscape-with-extensions
+      constrict
 
       # gtk devel
       cargo
@@ -143,7 +145,6 @@ in
       openssl
       pango
       pkg-config
-      inkscape-with-extensions
       #nix-software-center
       #xinux-tour
       #wireshark
@@ -166,7 +167,6 @@ in
       # cosmic-settings-daemon
       # kdePackages.kleopatra
       # hashcat
-      # constrict
       # winboat
       # pods
       # podman
