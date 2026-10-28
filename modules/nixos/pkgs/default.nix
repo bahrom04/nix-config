@@ -214,21 +214,23 @@ in
     zsh = {
       enable = true;
       enableCompletion = true;
+      enableBashCompletion = true;
       syntaxHighlighting.enable = true;
       autosuggestions.enable = true;
       vteIntegration = true;
-      shellInit = ''
-        eval "$(starship init zsh)"
-        export GPG_TTY="$(tty)"
-      '';
     };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
     };
     # prettier terminal prompt
-    starship.enable = true;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
     steam = {
       enable = true;
       # 1 option
