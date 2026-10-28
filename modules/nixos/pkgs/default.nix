@@ -77,8 +77,8 @@ in
       winetricks
       elfx86exts
       pciutils
-      psmisc
       usbutils
+      psmisc
       nvd
       bleur
       ############################ GNOME
