@@ -24,7 +24,7 @@
   virtualisation.podman.enable = true;
 
   services.intel-lpmd = {
-    enable = true;
+    enable = false;
     # config.meteorLake = true;
     mode = "AUTO";
     config.custom = {
