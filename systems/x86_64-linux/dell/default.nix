@@ -19,7 +19,7 @@
 
   powerManagement.powertop.enable = true;
   services = {
-    relago.enable = true;
+    relago.enable = false;
     scx.enable = true;
     system76-scheduler.enable = false;
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";

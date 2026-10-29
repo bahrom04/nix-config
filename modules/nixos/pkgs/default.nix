@@ -123,6 +123,7 @@ in
       xinux-settings
       inkscape-with-extensions
       constrict
+      workbench
 
       # gtk devel
       cargo
