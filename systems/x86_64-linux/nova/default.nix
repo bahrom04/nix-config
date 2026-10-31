@@ -23,15 +23,10 @@
 
   virtualisation.podman.enable = true;
 
-  # services.intel-lpmd = {
-  #   enable = false;
-  #   # config.meteorLake = true;
-  #   mode = "AUTO";
-  #   config.custom = {
-  #     filename = "intel_lpmd_config_F6_M170.xml";
-  #     content = lib.readFile ./intel_lpmd_config_F6_M170.xml;
-  #   };
-  # };
+  services.intel-lpmd = {
+    enable = true;
+    configFile = lib.literalExpression "./intel_lpmd_config_F6_M170.xml";
+  };
 
   services.tlp = {
     enable = true;
