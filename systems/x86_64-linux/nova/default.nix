@@ -23,7 +23,7 @@
 
   services.intel-lpmd = {
     enable = true;
-    configFile = lib.literalExpression "./intel_lpmd_config_F6_M170.xml";
+    configFile = ./intel_lpmd_config_F6_M170.xml;
   };
 
   services.tlp = {
