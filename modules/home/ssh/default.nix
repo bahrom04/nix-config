@@ -20,12 +20,6 @@
           UseKeychain = "yes";
         };
       };
-
-      "kolyma-3" = {
-        port = 22;
-        hostname = "ns3.kolyma.uz";
-      };
-
       # "cloudflare-test" = {
       #   port = 22;
       #   hostname = "ssh.bahrom04.uz";

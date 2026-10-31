@@ -79,8 +79,8 @@ in
       winetricks
       elfx86exts
       pciutils
-      psmisc
       usbutils
+      psmisc
       nvd
       bleur
       ############################ GNOME
@@ -123,6 +123,8 @@ in
       mangohud
       epiphany
       xinux-settings
+      inkscape-with-extensions
+      constrict
 
       # gtk devel
       cargo
@@ -167,7 +169,6 @@ in
       # cosmic-settings-daemon
       # kdePackages.kleopatra
       # hashcat
-      # constrict
       # winboat
       # pods
       # podman
@@ -215,21 +216,23 @@ in
     zsh = {
       enable = true;
       enableCompletion = true;
+      enableBashCompletion = true;
       syntaxHighlighting.enable = true;
       autosuggestions.enable = true;
       vteIntegration = true;
-      shellInit = ''
-        eval "$(starship init zsh)"
-        export GPG_TTY="$(tty)"
-      '';
     };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
     };
     # prettier terminal prompt
-    starship.enable = true;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
     steam = {
       enable = true;
       # 1 option
@@ -237,7 +240,7 @@ in
       # 2 option. chaotic
       # https://www.nyx.chaotic.cx/#:~:text=proton%2Dcachyos%5Fx86%5F64%5Fv3
       extraCompatPackages = [
-        inputs.chaotic.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos_x86_64_v3
+        # inputs.chaotic.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos_x86_64_v3
       ];
     };
   };

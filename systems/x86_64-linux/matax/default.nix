@@ -12,7 +12,7 @@ in
   ];
 
   services.relago = {
-    enable = true;
+    enable = false;
     # nix-config = "/home/bahrom/workplace/bahrom04/nix-config/";
   };
 
