@@ -22,7 +22,7 @@
   virtualisation.podman.enable = true;
 
   services.intel-lpmd = {
-    enable = true;
+    enable = false;
     configFile = ./intel_lpmd_config_F6_M170.xml;
   };
 
