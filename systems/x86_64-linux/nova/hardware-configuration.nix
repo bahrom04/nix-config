@@ -10,11 +10,11 @@ let
   # https://discourse.nixos.org/t/random-freeze-of-system/44766/13
   # https://github.com/NixOS/nixpkgs/pull/561660/changes
   nvidia-source = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "615.78.08";
-    sha256_64bit = "sha256-Pj9t3cLudnoIGFMAr3vjyyhuznZpjS3eNSRZl4LQf/4=";
+    version = "620.70.06";
+    sha256_64bit = "sha256-KRGOOr0IwHVZvMo9nHYjjQOUkK8DYqLlvPy+cgSv1LE=";
     sha256_aarch64 = lib.fakeSha256;
-    openSha256 = "sha256-HBINiOjL0ZJLIAJeNIBYHBnwgUXtNwPPtnFpAI1YwF4=";
-    settingsSha256 = "sha256-inDRpG02sdDgHmlqgu/DsgK8OFdOt1fZIYyXdhlGC/c=";
+    openSha256 = "sha256-dV8vzniUl3UJoG2Q3KdoUJigLRuQeTniUfB670gb1Mw=";
+    settingsSha256 = "sha256-CFBRmXFJ9eAf5BRlHMBolahz1Pshr9giI7zcZC29oZ8=";
     persistencedSha256 = lib.fakeSha256;
   };
 in
