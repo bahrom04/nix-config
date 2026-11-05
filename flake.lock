@@ -1280,10 +1280,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1793193205,
-        "narHash": "sha256-X6xa6sGA7RnJQuZGbFMC+K+KToWAlBDCCjJXfTwEPsw=",
+        "lastModified": 1793757180,
+        "narHash": "sha256-gyV7AtCwLnOImcrfSETP4J3Ie96bz19DY47B7m7Y3HM=",
         "ref": "master",
-        "rev": "095fef2f265c3c0da4fe315efba8f8a04495ab34",
+        "rev": "b787c48e2ec57a9d098f5c2721882a3bc1e16f97",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/home-manager"
@@ -1495,18 +1495,17 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1790060333,
-        "narHash": "sha256-pnOPPgkhG1+gqzpmG6pTh4G7OVgUWQiG0aqvESZomko=",
-        "owner": "bahrom04-lab",
-        "repo": "nixos-hardware",
-        "rev": "00687db9b6ff3ede62d6d197bd9a6415de5f400f",
-        "type": "github"
+        "lastModified": 1793355509,
+        "narHash": "sha256-/Zs18x+IW4LuVH0rKxra0WPRgsk0DQsi0Bwkf8sOC5c=",
+        "ref": "refs/heads/master",
+        "rev": "04c6b94fa104bc23650983a4513aea196794d321",
+        "revCount": 2906,
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/nixos-hardware"
       },
       "original": {
-        "owner": "bahrom04-lab",
-        "ref": "common-pc-laptop-tlp",
-        "repo": "nixos-hardware",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.oss.uzinfocom.uz/mirrors/nixos-hardware"
       }
     },
     "nixpkgs": {
@@ -1773,10 +1772,10 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1793540411,
-        "narHash": "sha256-fiPJ88izTVucjeo2EQ3jk4aWmLg03I1D4vxnX2QjEgE=",
+        "lastModified": 1793726008,
+        "narHash": "sha256-jQp1wKvbwWdLBASTXkSi/VYmDJ5AbBi1WvcMt9HWJC8=",
         "ref": "nixos-unstable",
-        "rev": "0bb2eedc20e4739f29e8045034f2828ad7054f8f",
+        "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
@@ -2584,10 +2583,10 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1793712160,
-        "narHash": "sha256-v25ezWe8g7wzoWvkLJMDmPaLNdVj7q6gKAr6ZjgnqEM=",
+        "lastModified": 1793785203,
+        "narHash": "sha256-2vew86QORN800RR963k4WJ03lpdb8y81buhhL5AAt2U=",
         "ref": "main",
-        "rev": "3487a5fe7ca195116e4d7718516cf8cc80608ff5",
+        "rev": "03a6ef5b850ad1198fe1e1db6632f9e80a034229",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/modules"

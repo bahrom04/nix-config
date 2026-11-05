@@ -38,7 +38,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-software-center = {
-      # url = "github:xinux-org/software-center";
       url = "git+https://git.oss.uzinfocom.uz/xinux/software-center?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -72,7 +71,7 @@
 
     # proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
     # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    nixos-hardware.url = "github:bahrom04-lab/nixos-hardware/common-pc-laptop-tlp";
+    nixos-hardware.url = "git+https://git.oss.uzinfocom.uz/mirrors/nixos-hardware";
   };
 
   outputs =
