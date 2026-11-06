@@ -53,10 +53,6 @@
       url = "git+https://git.oss.uzinfocom.uz/xinux/xinux-tour?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    uz-xkb = {
-      url = "github:itsbilolbek/uzbek-linux-keyboard";
-      flake = false;
-    };
     bleur = {
       url = "git+https://git.oss.uzinfocom.uz/bleur/bleur?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";

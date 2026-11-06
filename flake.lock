@@ -1495,11 +1495,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1793355509,
-        "narHash": "sha256-/Zs18x+IW4LuVH0rKxra0WPRgsk0DQsi0Bwkf8sOC5c=",
+        "lastModified": 1793871777,
+        "narHash": "sha256-DbFyxXHjP4SJDWVVIILkgrUZxj29cDusi8ULXoQGuZ8=",
         "ref": "refs/heads/master",
-        "rev": "04c6b94fa104bc23650983a4513aea196794d321",
-        "revCount": 2906,
+        "rev": "d645c71a58dbae3eb17ff551a07aea13a541cb1a",
+        "revCount": 2911,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/nixos-hardware"
       },
@@ -1859,7 +1859,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_9",
         "relago": "relago",
-        "uz-xkb": "uz-xkb",
         "xinux-lib": "xinux-lib_4",
         "xinux-modules": "xinux-modules",
         "xinux-settings": "xinux-settings",
@@ -2255,22 +2254,6 @@
       "locked": {
         "lastModified": 1785762462,
         "narHash": "sha256-IOHsJ1Rcm9xQASi+q4xtlPzS+6zybC4S2KDZKA5VVwk=",
-        "owner": "itsbilolbek",
-        "repo": "uzbek-linux-keyboard",
-        "rev": "bc49f375dfbf1307acf975d21297c6e8b2ad4185",
-        "type": "github"
-      },
-      "original": {
-        "owner": "itsbilolbek",
-        "repo": "uzbek-linux-keyboard",
-        "type": "github"
-      }
-    },
-    "uz-xkb_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1785762462,
-        "narHash": "sha256-IOHsJ1Rcm9xQASi+q4xtlPzS+6zybC4S2KDZKA5VVwk=",
         "ref": "refs/heads/main",
         "rev": "bc49f375dfbf1307acf975d21297c6e8b2ad4185",
         "shallow": true,
@@ -2568,7 +2551,7 @@
         ],
         "relago": "relago_2",
         "systems": "systems_7",
-        "uz-xkb": "uz-xkb_2",
+        "uz-xkb": "uz-xkb",
         "xin": "xin",
         "xinux-grub-theme": "xinux-grub-theme",
         "xinux-lib": "xinux-lib_5",
