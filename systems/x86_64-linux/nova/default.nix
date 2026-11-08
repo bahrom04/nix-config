@@ -46,7 +46,10 @@
   powerManagement.powertop.enable = false;
   services = {
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
-    scx.enable = true;
+    scx-loader = {
+      enable = true;
+      config.default_sched = "scx_bpfland";
+    };
     system76-scheduler.enable = false;
     power-profiles-daemon.enable = false;
     thermald.enable = true;
