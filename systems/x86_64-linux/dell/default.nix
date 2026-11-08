@@ -20,8 +20,10 @@
   powerManagement.powertop.enable = true;
   services = {
     relago.enable = false;
-    scx.enable = true;
-    system76-scheduler.enable = false;
+    scx-loader = {
+      enable = true;
+      config.default_sched = "scx_bpfland";
+    };    system76-scheduler.enable = false;
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     thermald.enable = true;
     power-profiles-daemon.enable = false;

@@ -20,8 +20,9 @@
   };
 
   # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
-  services.scx = {
+  scx-loader = {
     enable = true;
+    config.default_sched = "scx_bpfland";
   };
 
   boot = {
