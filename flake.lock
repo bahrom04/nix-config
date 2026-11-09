@@ -1495,17 +1495,18 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1794051415,
-        "narHash": "sha256-mJok3uMK0awq2MPKdSnvTxm3UD89KD3LclQzASgtY1s=",
-        "ref": "refs/heads/master",
-        "rev": "1a8ff4f57ffe1f732beaa1db842247a381ea471d",
-        "revCount": 2913,
-        "type": "git",
-        "url": "https://git.oss.uzinfocom.uz/mirrors/nixos-hardware"
+        "lastModified": 1794220542,
+        "narHash": "sha256-VI8OrE/sTo+EfkWj3guGMwqoyHQLAk1nc27zazilJF8=",
+        "owner": "bahrom04-lab",
+        "repo": "nixos-hardware",
+        "rev": "9f3f5e9b7312f81cd519be2f111dcb06b2aab558",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.oss.uzinfocom.uz/mirrors/nixos-hardware"
+        "owner": "bahrom04-lab",
+        "ref": "add-novacustomv56",
+        "repo": "nixos-hardware",
+        "type": "github"
       }
     },
     "nixpkgs": {

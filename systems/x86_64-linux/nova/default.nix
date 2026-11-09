@@ -9,15 +9,17 @@
     ./modules.nix
     ./hardware-configuration.nix
   ]
-  ++ [ inputs.nixos-hardware.nixosModules.common-pc-laptop ];
+  ++ [
+    inputs.nixos-hardware.nixosModules.novacustom-v560tnx
+  ];
 
   # useful when debugging xeonitte (xinux installer)
-  # security.polkit.extraConfig = ''
-  #   polkit.addRule(function(action, subject) {
-  #     if (subject.isInGroup("wheel"))
-  #       return polkit.Result.YES;
-  #   });
-  # '';
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (subject.isInGroup("wheel"))
+        return polkit.Result.YES;
+    });
+  '';
 
   virtualisation.podman.enable = true;
 

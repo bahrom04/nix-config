@@ -67,7 +67,8 @@
 
     # proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
     # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    nixos-hardware.url = "git+https://git.oss.uzinfocom.uz/mirrors/nixos-hardware";
+    nixos-hardware.url = "github:bahrom04-lab/nixos-hardware/add-novacustomv56";
+    # nixos-hardware.url = "git+https://git.oss.uzinfocom.uz/mirrors/nixos-hardware";
   };
 
   outputs =
