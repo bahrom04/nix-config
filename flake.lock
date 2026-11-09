@@ -2306,10 +2306,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1794225559,
-        "narHash": "sha256-r/dbZ6/71RGrLI+W/AuDQnEsTB4Y1kbUADWeC/MUSRc=",
+        "lastModified": 1794227163,
+        "narHash": "sha256-urZB1FbDbI/X1156Z/pIblL9D2DOBoNOf0zwlNJWCDg=",
         "ref": "main",
-        "rev": "9b0b4dc7b9f6e247117b16be323cd4c3664ef078",
+        "rev": "d77132cee6afc010002e6040dce480c6077f1cf4",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/grub-theme"
@@ -2567,10 +2567,10 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1794226622,
-        "narHash": "sha256-bNkRLcP0s+vAINcSpksfKiPnKkAeSrqYjMS1sRqVL04=",
+        "lastModified": 1794227322,
+        "narHash": "sha256-ZmX+Hbfvi1pq7E1ti8ninTGvSumrwjK7iHSsHx6rqqw=",
         "ref": "main",
-        "rev": "b2fd39da2550a561a4af4f531e388895fa2c5063",
+        "rev": "15de4baf04158a0c0a50aee7c6989d1488f728b8",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/modules"
