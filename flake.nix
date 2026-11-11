@@ -31,7 +31,6 @@
       inputs.nix-software-center.follows = "nix-software-center";
       inputs.e-imzo-manager.follows = "e-imzo-manager";
       inputs.xinux-tour.follows = "xinux-tour";
-      inputs.bleur.follows = "bleur";
     };
     xinux-settings = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
@@ -51,10 +50,6 @@
     };
     xinux-tour = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/xinux-tour?ref=main&shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    bleur = {
-      url = "git+https://git.oss.uzinfocom.uz/bleur/bleur?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # snowfall-drift = {
