@@ -123,7 +123,7 @@ in
       xinux-settings
       inkscape-with-extensions
       constrict
-      gearlever
+      # gearlever
 
       # gtk devel
       cargo
