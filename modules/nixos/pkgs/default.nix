@@ -128,6 +128,7 @@ in
       # gtk devel
       cargo
       cargo-expand
+      cargo-audit
       clippy
       rust-analyzer
       rustc
