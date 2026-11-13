@@ -8,6 +8,5 @@
   services.flatpak.enable = true;
   services.gnome.games.enable = false;
   modules.xinux.xinuxModuleManager.enable = true;
-  modules.xinux.libreofficePack.enable = false;
   modules.xinux.binaryCompat.enable = true;
 }
