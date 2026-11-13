@@ -6,7 +6,7 @@
   ...
 }:
 let
-  age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
+  # age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
   #   pkgs = inputs.nixpkgs> {
   #     localSystem = {
   #       gcc.arch = "x86-64-v3";
@@ -22,7 +22,7 @@ in
   environment = {
     variables = {
       EDITOR = "hx";
-      SOPS_AGE_KEY_FILE = age_keys;
+      # SOPS_AGE_KEY_FILE = age_keys;
     };
     systemPackages = with pkgs; [
       gnome-tweaks
@@ -99,7 +99,6 @@ in
       qdiskinfo
       kdiskmark
       libreoffice
-      googleearth-pro
       google-chrome
       gitte
       element-desktop
@@ -113,9 +112,7 @@ in
       libimobiledevice
       ifuse # optional, to mount using 'ifuse'
       localsend
-      shotcut
       powertop
-      powerstat
       lm_sensors
       lact
       mangohud
