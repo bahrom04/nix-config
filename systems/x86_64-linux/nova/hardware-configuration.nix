@@ -10,11 +10,11 @@ let
   # https://discourse.nixos.org/t/random-freeze-of-system/44766/13
   # https://github.com/NixOS/nixpkgs/pull/561660/changes
   nvidia-source = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "615.78.08";
-    sha256_64bit = "sha256-Pj9t3cLudnoIGFMAr3vjyyhuznZpjS3eNSRZl4LQf/4=";
+    version = "620.70.06";
+    sha256_64bit = "sha256-KRGOOr0IwHVZvMo9nHYjjQOUkK8DYqLlvPy+cgSv1LE=";
     sha256_aarch64 = lib.fakeSha256;
-    openSha256 = "sha256-HBINiOjL0ZJLIAJeNIBYHBnwgUXtNwPPtnFpAI1YwF4=";
-    settingsSha256 = "sha256-inDRpG02sdDgHmlqgu/DsgK8OFdOt1fZIYyXdhlGC/c=";
+    openSha256 = "sha256-dV8vzniUl3UJoG2Q3KdoUJigLRuQeTniUfB670gb1Mw=";
+    settingsSha256 = "sha256-CFBRmXFJ9eAf5BRlHMBolahz1Pshr9giI7zcZC29oZ8=";
     persistencedSha256 = lib.fakeSha256;
   };
 in
@@ -39,23 +39,22 @@ in
     ];
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     # kernelPackages = pkgs.linuxPackages_latest;
-    initrd.systemd.enable = true;
-    initrd.kernelModules = [
-      "xe"
-    ];
+    # initrd.kernelModules = [
+    #   "xe"
+    # ];
     kernelModules = [
       "fuse"
     ];
-    kernelParams = [
-      "xe.force_probe=7d55"
-      "i915.force_probe=!7d55"
-    ];
+    # kernelParams = [
+    #   "xe.force_probe=7d55"
+    #   "i915.force_probe=!7d55"
+    # ];
     supportedFilesystems = [ "ntfs" ];
   };
 
-  environment.variables = {
-    INTEL_XE_IGNORE_EXPERIMENTAL_WARNING = 1;
-  };
+  # environment.variables = {
+  #   INTEL_XE_IGNORE_EXPERIMENTAL_WARNING = 1;
+  # };
 
   environment.sessionVariables = {
     __GLX_VENDOR_LIBRARY_NAME = "mesa";
@@ -75,12 +74,12 @@ in
   #
   # Actions from: https://github.com/jvdillon/rtx-laptop-linux#5-enable-runtime-pm-via-udev
   # SUBSYSTEM=="drm", DRIVERS=="nvidia", TAG+="mutter-device-ignore"
-  services.udev.extraRules = ''
-    # https://gitlab.com/asus-linux/nvidia-laptop-power-cfg/-/blob/main/nvidia.rules
-    # Enable runtime PM for NVIDIA VGA/3D controller devices on adding device
-    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
-    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
-  '';
+  # services.udev.extraRules = ''
+  #   # https://gitlab.com/asus-linux/nvidia-laptop-power-cfg/-/blob/main/nvidia.rules
+  #   # Enable runtime PM for NVIDIA VGA/3D controller devices on adding device
+  #   ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
+  #   ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
+  # '';
 
   # services.cardwired = {
   #   enable = true;

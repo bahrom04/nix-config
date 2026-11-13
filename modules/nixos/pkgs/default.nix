@@ -6,7 +6,7 @@
   ...
 }:
 let
-  age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
+  # age_keys = "${config.users.users.bahrom.home}/.config/sops/age/keys.txt";
   #   pkgs = inputs.nixpkgs> {
   #     localSystem = {
   #       gcc.arch = "x86-64-v3";
@@ -22,129 +22,127 @@ in
   environment = {
     variables = {
       EDITOR = "hx";
-      SOPS_AGE_KEY_FILE = age_keys;
+      # SOPS_AGE_KEY_FILE = age_keys;
     };
     systemPackages = with pkgs; [
-      gnome-tweaks
-      gnome-power-manager
-      gnomeExtensions.gtk4-desktop-icons-ng-ding
-      gnome-shell-extensions
-      nautilus-python
-      code-nautilus
-      gnome-initial-setup
-      # formatter
-      deadnix
-      statix
-      nixd
-      nixfmt-tree
-      nixfmt
-      nixpkgs-review
-      nix-output-monitor
-      nix-fast-build
-      gnome-user-share
-      neovim
-      helix
-      fastfetch
-      onefetch
-      cpufetch
-      gpufetch
-      ffmpeg
-      mpv
-      tree
-      file
-      uutils-coreutils-noprefix
       jq
-      jq-zsh-plugin
-      jq-lsp
-      jadx
-      xcp
-      htop
-      iotop
-      asciinema
-      flatpak-builder
-      woeusb # for creating windows usb
-      libva-utils
-      intel-gpu-tools
-      fuse # version 2 for appimages
-      appimage-run
       age
-      sops
-      pinentry-gnome3
-      hunspell
-      hunspellDicts.uz_UZ
-      wineWow64Packages.stable
-      gamemode
-      samba # Provides ntlm_auth
-      krb5 # Provides Kerberos support libraries
-      winetricks
-      elfx86exts
-      pciutils
-      psmisc
-      usbutils
+      mpv
       nvd
-      bleur
-      ############################ GNOME
-      gnome-boxes
-      gnome-graphs
-      gnome-podcasts
-      icon-library
-      app-icon-preview
-      resources
-      mission-center
-      blanket
-      fractal
-      crosswords
-      impression
-      bustle
-      gradia
-      cpu-x
-      qdiskinfo
-      kdiskmark
-      libreoffice
-      googleearth-pro
-      google-chrome
-      gitte
-      element-desktop
-      telegram-desktop
-      discord
-      sqlitebrowser
-      poedit
-      geekbench
-      wl-clipboard
-      disko
-      libimobiledevice
-      ifuse # optional, to mount using 'ifuse'
-      localsend
-      shotcut
-      powertop
-      powerstat
-      lm_sensors
-      lact
-      mangohud
-      epiphany
-      xinux-settings
-
-      # gtk devel
-      cargo
-      cargo-expand
-      clippy
-      rust-analyzer
-      rustc
-      rustfmt
-      appstream
-      desktop-file-utils
-      cairo
-      gdk-pixbuf
-      gobject-introspection
+      xcp
+      file
       gtk4
-      gtksourceview5
-      libadwaita
-      libxml2
+      htop
+      lact
+      nixd
+      sops
+      tree
+      bleur
+      cairo
+      cargo
+      cpu-x
+      disko
+      gitte
+      helix
+      iotop
       meson
       ninja
-      openssl
       pango
+      rustc
+      bustle
+      clippy
+      ffmpeg
+      gradia
+      jq-lsp
+      neovim
+      nixfmt
+      poedit
+      psmisc
+      statix
+      blanket
+      deadnix
+      discord
+      fractal
+      libxml2
+      openssl
+      rustfmt
+      cpufetch
+      epiphany
+      gamemode
+      gpufetch
+      hunspell
+      mangohud
+      onefetch
+      pciutils
+      powertop
+      usbutils
+      appstream
+      asciinema
+      constrict
+      fastfetch
+      geekbench
+      kdiskmark
+      localsend
+      qdiskinfo
+      resources
+      crosswords
+      elfx86exts
+      gdk-pixbuf
+      impression
+      libadwaita
+      lm_sensors
       pkg-config
+      winetricks
+      # formatter
+      # gearlever
+      # gtk devel
+      cargo-audit
+      gnome-boxes
+      libreoffice
+      libva-utils
+      nixfmt-tree
+      appimage-run
+      cargo-expand
+      gnome-graphs
+      gnome-tweaks
+      icon-library
+      wl-clipboard
+      code-nautilus
+      google-chrome
+      jq-zsh-plugin
+      rust-analyzer
+      sqlitebrowser
+      gnome-podcasts
+      gtksourceview5
+      mission-center
+      nix-fast-build
+      nixpkgs-review
+      xinux-settings
+      element-desktop
+      flatpak-builder
+      intel-gpu-tools
+      nautilus-python
+      pinentry-gnome3
+      app-icon-preview
+      gnome-user-share
+      libimobiledevice
+      telegram-desktop
+      desktop-file-utils
+      nix-output-monitor
+      gnome-initial-setup
+      gnome-power-manager
+      hunspellDicts.uz_UZ
+      gobject-introspection
+      gnome-shell-extensions
+      inkscape-with-extensions
+      wineWow64Packages.stable
+      samba # Provides ntlm_auth
+      fuse # version 2 for appimages
+      woeusb # for creating windows usb
+      ############################ GNOME
+      ifuse # optional, to mount using 'ifuse'
+      gnomeExtensions.gtk4-desktop-icons-ng-ding
+      krb5 # Provides Kerberos support libraries
       #nix-software-center
       #xinux-tour
       #wireshark
@@ -167,7 +165,6 @@ in
       # cosmic-settings-daemon
       # kdePackages.kleopatra
       # hashcat
-      # constrict
       # winboat
       # pods
       # podman
@@ -215,21 +212,23 @@ in
     zsh = {
       enable = true;
       enableCompletion = true;
+      enableBashCompletion = true;
       syntaxHighlighting.enable = true;
       autosuggestions.enable = true;
       vteIntegration = true;
-      shellInit = ''
-        eval "$(starship init zsh)"
-        export GPG_TTY="$(tty)"
-      '';
     };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
       enableZshIntegration = true;
+      enableBashIntegration = true;
     };
     # prettier terminal prompt
-    starship.enable = true;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
     steam = {
       enable = true;
       # 1 option
@@ -237,7 +236,7 @@ in
       # 2 option. chaotic
       # https://www.nyx.chaotic.cx/#:~:text=proton%2Dcachyos%5Fx86%5F64%5Fv3
       extraCompatPackages = [
-        inputs.chaotic.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos_x86_64_v3
+        # inputs.chaotic.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos_x86_64_v3
       ];
     };
   };

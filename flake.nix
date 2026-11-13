@@ -31,14 +31,12 @@
       inputs.nix-software-center.follows = "nix-software-center";
       inputs.e-imzo-manager.follows = "e-imzo-manager";
       inputs.xinux-tour.follows = "xinux-tour";
-      inputs.bleur.follows = "bleur";
     };
     xinux-settings = {
       url = "git+https://git.oss.uzinfocom.uz/xinux/settings?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-software-center = {
-      # url = "github:xinux-org/software-center";
       url = "git+https://git.oss.uzinfocom.uz/xinux/software-center?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -54,14 +52,6 @@
       url = "git+https://git.oss.uzinfocom.uz/xinux/xinux-tour?ref=main&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    uz-xkb = {
-      url = "github:itsbilolbek/uzbek-linux-keyboard";
-      flake = false;
-    };
-    bleur = {
-      url = "git+https://git.oss.uzinfocom.uz/bleur/bleur?ref=main&shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # snowfall-drift = {
     #   url = "github:snowfallorg/drift";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -70,15 +60,10 @@
     relago.url = "git+https://git.oss.uzinfocom.uz/xinux/relago";
     # relago.url = "path:/home/bahrom/workplace/xinux/relago";
 
-    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
-    intel-lpmd-flake = {
-      url = "github:dmfrpro/intel-lpmd-flake";
-      # url = "github:bahrom04-lab/intel-lpmd-flake/update-september";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixos-hardware.url = "github:bahrom04-lab/nixos-hardware/common-pc-laptop-tlp";
+    # proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
+    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nixos-hardware.url = "github:bahrom04-lab/nixos-hardware/add-novacustomv56";
+    # nixos-hardware.url = "git+https://git.oss.uzinfocom.uz/mirrors/nixos-hardware";
   };
 
   outputs =
@@ -111,7 +96,6 @@
         nix-data.nixosModules.nix-data
         xinux-modules.nixosModules.efiboot
         xinux-modules.nixosModules.meta
-        intel-lpmd-flake.nixosModules.default
         # chaotic.nixosModules.default
         # chaotic.nixosModules.nyx-cache
         # chaotic.nixosModules.nyx-overlay

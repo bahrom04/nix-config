@@ -16,7 +16,7 @@ in
         uz = {
           description = "Uzbek";
           languages = [ "uzb" ];
-          symbolsFile = "${inputs.uz-xkb}/uz_compat";
+          symbolsFile = "${xkbPath}/uz";
         };
         uz-2026 = {
           description = "Uzbek 2026";

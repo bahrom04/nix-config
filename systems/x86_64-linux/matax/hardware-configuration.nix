@@ -20,8 +20,9 @@
   };
 
   # https://github.com/sched-ext/scx/blob/main/INSTALL.md#nix
-  services.scx = {
+  scx-loader = {
     enable = true;
+    config.default_sched = "scx_bpfland";
   };
 
   boot = {
@@ -29,7 +30,6 @@
       enable = true;
     };
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
-    initrd.systemd.enable = true;
     kernelModules = [ "fuse" ];
     kernelParams = [
       "intel_pstate=active"

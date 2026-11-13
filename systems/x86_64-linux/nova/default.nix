@@ -9,7 +9,9 @@
     ./modules.nix
     ./hardware-configuration.nix
   ]
-  ++ [ inputs.nixos-hardware.nixosModules.common-pc-laptop ];
+  ++ [
+    inputs.nixos-hardware.nixosModules.novacustom-v560tnx
+  ];
 
   # useful when debugging xeonitte (xinux installer)
   # security.polkit.extraConfig = ''
@@ -19,18 +21,11 @@
   #   });
   # '';
 
-  networking.useDHCP = false;
-
   virtualisation.podman.enable = true;
 
   services.intel-lpmd = {
-    enable = true;
-    # config.meteorLake = true;
-    mode = "AUTO";
-    config.custom = {
-      filename = "intel_lpmd_config_F6_M170.xml";
-      content = lib.readFile ./intel_lpmd_config_F6_M170.xml;
-    };
+    enable = false;
+    configFile = ./intel_lpmd_config_F6_M170.xml;
   };
 
   services.tlp = {
@@ -53,10 +48,12 @@
   powerManagement.powertop.enable = false;
   services = {
     logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
-    scx.enable = true;
+    scx-loader = {
+      enable = true;
+      config.default_sched = "scx_bpfland";
+    };
     system76-scheduler.enable = false;
     power-profiles-daemon.enable = false;
-    thermald.enable = true;
     auto-cpufreq = {
       enable = false;
       settings = {
