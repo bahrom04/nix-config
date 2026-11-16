@@ -25,155 +25,155 @@ in
       # SOPS_AGE_KEY_FILE = age_keys;
     };
     systemPackages = with pkgs; [
-      jq
-      age
-      mpv
-      nvd
-      xcp
-      file
-      gtk4
-      htop
-      lact
-      nixd
-      sops
-      tree
-      bleur
-      cairo
-      cargo
-      cpu-x
-      disko
-      gitte
-      helix
-      iotop
-      meson
-      ninja
-      pango
-      rustc
-      bustle
-      clippy
-      ffmpeg
-      gradia
-      jq-lsp
-      neovim
-      nixfmt
-      poedit
-      psmisc
-      statix
-      blanket
-      deadnix
-      discord
-      fractal
-      libxml2
-      openssl
-      rustfmt
-      cpufetch
-      epiphany
-      gamemode
-      gpufetch
-      hunspell
-      mangohud
-      onefetch
-      pciutils
-      powertop
-      usbutils
-      appstream
-      asciinema
-      constrict
-      fastfetch
-      geekbench
-      kdiskmark
-      localsend
-      qdiskinfo
-      resources
-      crosswords
-      elfx86exts
-      gdk-pixbuf
-      impression
-      libadwaita
-      lm_sensors
-      pkg-config
-      winetricks
+      # authenticator
+      # autopsy
+      # bitwarden-desktop
+      # cambalache
+      # cisco-packet-tracer_9
+      # cosmic-settings
+      # cosmic-settings-daemon
+      # dialect
       # formatter
       # gearlever
       # gtk devel
-      cargo-audit
-      gnome-boxes
-      libreoffice
-      libva-utils
-      nixfmt-tree
-      appimage-run
-      cargo-expand
-      gnome-graphs
-      gnome-tweaks
-      icon-library
-      wl-clipboard
-      code-nautilus
-      google-chrome
-      jq-zsh-plugin
-      rust-analyzer
-      sqlitebrowser
-      gnome-podcasts
-      gtksourceview5
-      mission-center
-      nix-fast-build
-      nixpkgs-review
-      xinux-settings
-      element-desktop
-      flatpak-builder
-      intel-gpu-tools
-      nautilus-python
-      pinentry-gnome3
-      app-icon-preview
-      gnome-user-share
-      libimobiledevice
-      telegram-desktop
-      desktop-file-utils
-      nix-output-monitor
-      gnome-initial-setup
-      gnome-power-manager
-      hunspellDicts.uz_UZ
-      gobject-introspection
-      gnome-shell-extensions
-      inkscape-with-extensions
-      wineWow64Packages.stable
-      samba # Provides ntlm_auth
-      fuse # version 2 for appimages
-      woeusb # for creating windows usb
-      ############################ GNOME
-      ifuse # optional, to mount using 'ifuse'
-      gnomeExtensions.gtk4-desktop-icons-ng-ding
-      krb5 # Provides Kerberos support libraries
-      #nix-software-center
-      #xinux-tour
-      #wireshark
-      #zap
-      #seclists
-      #burpsuite
-      # nextcloud-client
       # gtranslator
-      # authenticator
-      # onlyoffice-desktopeditors
-      # prismlauncher
-      # postman
-      # cisco-packet-tracer_9
-      # bitwarden-desktop
-      # cambalache
-      # dialect
-      # autopsy
-      # xeonitte
-      # cosmic-settings
-      # cosmic-settings-daemon
-      # kdePackages.kleopatra
       # hashcat
-      # winboat
-      # pods
-      # podman
+      # kdePackages.kleopatra
+      # nextcloud-client
+      # onlyoffice-desktopeditors
+      # openscad
+      # openscad-lsp
       # opensnitch-ui
+      # podman
+      # pods
+      # postman
+      # prismlauncher
+      # tailor_gui
       # virtualbox
       # vmware-workstation
-      # tailor_gui
-      # openscad-lsp
-      # openscad
+      # winboat
+      # xeonitte
+      ############################ GNOME
+      #burpsuite
+      #nix-software-center
+      #seclists
+      #wireshark
+      #xinux-tour
+      #zap
+      age
+      app-icon-preview
+      appimage-run
+      appstream
+      asciinema
+      blanket
+      bleur
+      bustle
+      cairo
+      cargo
+      cargo-audit
+      cargo-expand
+      clippy
+      code-nautilus
+      constrict
+      cpu-x
+      cpufetch
+      crosswords
+      deadnix
+      desktop-file-utils
+      discord
+      disko
+      element-desktop
+      elfx86exts
+      epiphany
+      fastfetch
+      ffmpeg
+      file
+      flatpak-builder
+      fractal
+      fuse # version 2 for appimages
+      gamemode
+      gdk-pixbuf
+      geekbench
+      gitte
+      gnome-boxes
+      gnome-graphs
+      gnome-initial-setup
+      gnome-podcasts
+      gnome-power-manager
+      gnome-shell-extensions
+      gnome-tweaks
+      gnome-user-share
+      gnomeExtensions.gtk4-desktop-icons-ng-ding
+      gobject-introspection
+      google-chrome
+      gpufetch
+      gradia
+      gtk4
+      gtksourceview5
+      helix
+      htop
+      hunspell
+      hunspellDicts.uz_UZ
+      icon-library
+      ifuse # optional, to mount using 'ifuse'
+      impression
+      inkscape-with-extensions
+      intel-gpu-tools
+      iotop
+      jq
+      jq-lsp
+      jq-zsh-plugin
+      kdiskmark
+      krb5 # Provides Kerberos support libraries
+      lact
+      libadwaita
+      libimobiledevice
+      libreoffice
+      libva-utils
+      libxml2
+      lm_sensors
+      localsend
+      mangohud
+      meson
+      mission-center
+      mpv
+      nautilus-python
+      neovim
+      ninja
+      nix-fast-build
+      nix-output-monitor
+      nixd
+      nixfmt
+      nixfmt-tree
+      nixpkgs-review
+      nvd
+      onefetch
+      openssl
+      pango
+      pciutils
+      pinentry-gnome3
+      pkg-config
+      poedit
+      powertop
+      psmisc
+      qdiskinfo
+      resources
+      rust-analyzer
+      rustc
+      rustfmt
+      samba # Provides ntlm_auth
+      sops
+      sqlitebrowser
+      statix
+      telegram-desktop
+      tree
+      usbutils
+      winetricks
+      wineWow64Packages.stable
+      wl-clipboard
+      woeusb # for creating windows usb
+      xcp
+      xinux-settings
     ];
   };
 
