@@ -45,10 +45,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1794877365,
-        "narHash": "sha256-jGJvVnE2WHt8GkVj/gOMnth5lmn4u1UZ+cqdtLbRNQs=",
+        "lastModified": 1795132042,
+        "narHash": "sha256-tYzkUU6InfcOebtWNpBrDbLIVWa+TTz88xMR1+3NC3E=",
         "ref": "master",
-        "rev": "8baead9a2ded49bcfc3f68b0afd18a23e6ad0576",
+        "rev": "ffdb35a774334ae2f1aca81817f5f5519edbadd5",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/nix-cachyos-kernel"
@@ -97,10 +97,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1794328522,
-        "narHash": "sha256-h2BYMW4nTFpIqnMd8gwAPFmJAp/1wWLQ6vT0NfL5qt4=",
+        "lastModified": 1795168368,
+        "narHash": "sha256-D35n2Q2v1KrlF9LS/pFl8Z3EBMJW6qvPw5q4HMbXXLg=",
         "ref": "master",
-        "rev": "1dd30c29c88d99ce295f15e27f93c49bc5fbae07",
+        "rev": "44761d4f745b95e037458a0e57133c5700c8e320",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/disko"
@@ -1359,10 +1359,10 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1794877365,
-        "narHash": "sha256-jGJvVnE2WHt8GkVj/gOMnth5lmn4u1UZ+cqdtLbRNQs=",
+        "lastModified": 1795132042,
+        "narHash": "sha256-tYzkUU6InfcOebtWNpBrDbLIVWa+TTz88xMR1+3NC3E=",
         "ref": "release",
-        "rev": "8baead9a2ded49bcfc3f68b0afd18a23e6ad0576",
+        "rev": "ffdb35a774334ae2f1aca81817f5f5519edbadd5",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/nix-cachyos-kernel"
@@ -1607,11 +1607,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1794811116,
-        "narHash": "sha256-pqGclG7BIdWkdUwug170RhCVD107iUSeH4z3h9SmCL8=",
+        "lastModified": 1795098731,
+        "narHash": "sha256-y1GUzNe5w8Di8Vu3eilszPhRKo0BUODT77Fx0HwYc1M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4bc82a230ef72f82a7c62ed32435e570b26bc76f",
+        "rev": "b8a59ac94c4c495610130c08e5b4c99c2758b571",
         "type": "github"
       },
       "original": {
@@ -1724,11 +1724,11 @@
         "treefmt-nix": "treefmt-nix_7"
       },
       "locked": {
-        "lastModified": 1795010708,
-        "narHash": "sha256-1kFrBPulSFdh5rpREHYRSCBCaIfjwawYWPavkgH1hhU=",
+        "lastModified": 1795182392,
+        "narHash": "sha256-XGZeger7DqCqN1ROwRq+zM50Hr9Sq6t+D0E/9oeials=",
         "ref": "refs/heads/main",
-        "rev": "b38d4a03a32c2d2c7184a006ee44038285b51aa3",
-        "revCount": 68,
+        "rev": "c7067566f841ff5cc657c1883c48f94027ad6adb",
+        "revCount": 69,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/relago"
       },
@@ -1760,11 +1760,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795010708,
-        "narHash": "sha256-1kFrBPulSFdh5rpREHYRSCBCaIfjwawYWPavkgH1hhU=",
+        "lastModified": 1795182392,
+        "narHash": "sha256-XGZeger7DqCqN1ROwRq+zM50Hr9Sq6t+D0E/9oeials=",
         "ref": "main",
-        "rev": "b38d4a03a32c2d2c7184a006ee44038285b51aa3",
-        "revCount": 68,
+        "rev": "c7067566f841ff5cc657c1883c48f94027ad6adb",
+        "revCount": 69,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/relago"
       },
@@ -2490,10 +2490,10 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1795168842,
-        "narHash": "sha256-bHsf89YUJH7btdMlmP2so4IFPl6LR3Us9PT0Pc0RbIM=",
+        "lastModified": 1795204351,
+        "narHash": "sha256-WQBAbehW7AEIT1rE76QSKkEROG84MYEohEd3+TNcvQ8=",
         "ref": "main",
-        "rev": "fd81c43d908e3de8d2fef0632c488bf54c0fad44",
+        "rev": "2f3418fb38a583f2f6882dc822333317c32b7b2e",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/modules"
