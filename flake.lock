@@ -14,10 +14,10 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1794237553,
-        "narHash": "sha256-hJRzVwJAeY/ZKe55G3ErOeIg663M6UevUhG+2Xt0D3o=",
+        "lastModified": 1794424204,
+        "narHash": "sha256-T7WQ3yqqkEyTric9XNRHNfsHhw39jYVSLv7QhSD+avQ=",
         "ref": "refs/heads/main",
-        "rev": "412700c008b31afa56597e3c1f79735ef394bbc6",
+        "rev": "0968049e240f2eed9a3e3ee92bc3e06ca41d9b96",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/aagl-gtk-on-nix"
@@ -45,10 +45,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1794350001,
-        "narHash": "sha256-7bDprndrkGZDk5kvBv6ips/IAO4eyLFC7es+o4D7DJk=",
+        "lastModified": 1794877365,
+        "narHash": "sha256-jGJvVnE2WHt8GkVj/gOMnth5lmn4u1UZ+cqdtLbRNQs=",
         "ref": "master",
-        "rev": "f60c040cc2dd33153b2e7ab01e40ccd277dcc32e",
+        "rev": "8baead9a2ded49bcfc3f68b0afd18a23e6ad0576",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/nix-cachyos-kernel"
@@ -796,11 +796,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791914995,
-        "narHash": "sha256-Zf/xfQEAasnwnmEfHqW/4hjDE/s44yn2hD4RuVIZRjA=",
+        "lastModified": 1794427683,
+        "narHash": "sha256-o7ey9gEilsxaifqJWnBDlYSKbNWYQYtKwDyXeZU2kaU=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b7a79d3fea1e214f6d668d521cecec0c01e26544",
+        "rev": "cd489559845d81f673a12885576016c65cbe9363",
         "type": "github"
       },
       "original": {
@@ -1214,14 +1214,13 @@
           "xinux-modules",
           "nixpkgs"
         ],
-        "nixpkgs-darwin": "nixpkgs-darwin",
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1794375497,
-        "narHash": "sha256-RZ0Kn5rfbJ/oV/82RpNlT0lUTNNsBV9VGHldaMRuUqk=",
+        "lastModified": 1795035810,
+        "narHash": "sha256-Dk0aWxK5ypX2MdaV2NB1Kdm33XT9dUsv8VwKjueqa4g=",
         "ref": "refs/heads/main",
-        "rev": "14825c00855df2de049af02aea38a3de92671836",
+        "rev": "eda99c0c406b8045a4a3e441f2e9608f1d64ab66",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/helium-browser-nix-flake"
@@ -1239,10 +1238,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1794865930,
-        "narHash": "sha256-a3My+u9CEwEFmuGXb3PV9COj7Gd8o28b19TvtDiKPfg=",
+        "lastModified": 1794963576,
+        "narHash": "sha256-+CPrP74GDJ63f7bgEFC9Av4hbxc7K9WUNv1ZVRifRe8=",
         "ref": "master",
-        "rev": "9d7ba6bef3904a018d38b92f83132eaf01eb8ef3",
+        "rev": "2b13c9cb3aa20653e6f8ee0b7f8331a53ea9b0a9",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/home-manager"
@@ -1263,11 +1262,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793193205,
-        "narHash": "sha256-X6xa6sGA7RnJQuZGbFMC+K+KToWAlBDCCjJXfTwEPsw=",
+        "lastModified": 1794715309,
+        "narHash": "sha256-awkBBs5ctFKgEYjpNGpi3t/VqF589n5EWfdinRb2gNI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "095fef2f265c3c0da4fe315efba8f8a04495ab34",
+        "rev": "a1293da7dd8e497e08d26173f97e2976b36a31ea",
         "type": "github"
       },
       "original": {
@@ -1360,10 +1359,10 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1794610277,
-        "narHash": "sha256-q5xZJkzEbH/fMH2GeWDFiAWNIpxtALATi01pY7fKxvU=",
+        "lastModified": 1794877365,
+        "narHash": "sha256-jGJvVnE2WHt8GkVj/gOMnth5lmn4u1UZ+cqdtLbRNQs=",
         "ref": "release",
-        "rev": "f5e1fb8f1185cb51ef6d433e27ab7b60f54cd0e0",
+        "rev": "8baead9a2ded49bcfc3f68b0afd18a23e6ad0576",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/nix-cachyos-kernel"
@@ -1480,22 +1479,6 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-darwin": {
-      "locked": {
-        "lastModified": 1793976852,
-        "narHash": "sha256-bWDN3JZcE9ovYoaD0/6WYbMtXYpUu0vd5onpK0pc/SE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "57f1c8965649ce5bcac5118a0d2e41f1fbdc56e5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-26.05-darwin",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1624,11 +1607,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1794580336,
-        "narHash": "sha256-nH8frotF2VIsA+4tWfbo4skbobTpxc2XHsrl6z0TtpI=",
+        "lastModified": 1794811116,
+        "narHash": "sha256-pqGclG7BIdWkdUwug170RhCVD107iUSeH4z3h9SmCL8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ac9af266ee64ddb2eafeb4b250cac6a88147b43a",
+        "rev": "4bc82a230ef72f82a7c62ed32435e570b26bc76f",
         "type": "github"
       },
       "original": {
@@ -1717,10 +1700,10 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1794537146,
-        "narHash": "sha256-Wpz/7x/YWnDIBu7yj6ixe8j6fIMsidd9Y+o1PqPF3iM=",
+        "lastModified": 1795085501,
+        "narHash": "sha256-S5keGWzaKpuXo9MNoIC2FfTIuTyTnx8P4NhYJMEsTLI=",
         "ref": "nixos-unstable",
-        "rev": "d5cc6833999746cffdfe0598f7bc801a57b887a9",
+        "rev": "0bb8272318b4ca41bf0edc6224df3e3e3046b70d",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/nixpkgs"
@@ -1741,11 +1724,11 @@
         "treefmt-nix": "treefmt-nix_7"
       },
       "locked": {
-        "lastModified": 1791346838,
-        "narHash": "sha256-cDsYpbh3NgyHk12voE2rzYA/SVgY4nBbQkTaqTKVafI=",
+        "lastModified": 1795010708,
+        "narHash": "sha256-1kFrBPulSFdh5rpREHYRSCBCaIfjwawYWPavkgH1hhU=",
         "ref": "refs/heads/main",
-        "rev": "c3f875803b247d353636767d8d6f2e91b518eac6",
-        "revCount": 62,
+        "rev": "b38d4a03a32c2d2c7184a006ee44038285b51aa3",
+        "revCount": 68,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/relago"
       },
@@ -1777,11 +1760,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791346838,
-        "narHash": "sha256-cDsYpbh3NgyHk12voE2rzYA/SVgY4nBbQkTaqTKVafI=",
+        "lastModified": 1795010708,
+        "narHash": "sha256-1kFrBPulSFdh5rpREHYRSCBCaIfjwawYWPavkgH1hhU=",
         "ref": "main",
-        "rev": "c3f875803b247d353636767d8d6f2e91b518eac6",
-        "revCount": 62,
+        "rev": "b38d4a03a32c2d2c7184a006ee44038285b51aa3",
+        "revCount": 68,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/relago"
       },
@@ -2180,11 +2163,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791914995,
-        "narHash": "sha256-Zf/xfQEAasnwnmEfHqW/4hjDE/s44yn2hD4RuVIZRjA=",
+        "lastModified": 1794427683,
+        "narHash": "sha256-o7ey9gEilsxaifqJWnBDlYSKbNWYQYtKwDyXeZU2kaU=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b7a79d3fea1e214f6d668d521cecec0c01e26544",
+        "rev": "cd489559845d81f673a12885576016c65cbe9363",
         "type": "github"
       },
       "original": {
@@ -2507,10 +2490,10 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1794410879,
-        "narHash": "sha256-Mlvl1ePv5mDY3+YzDfZ7NtiiZzQTIpmCqzCUibRIf2E=",
+        "lastModified": 1795168842,
+        "narHash": "sha256-bHsf89YUJH7btdMlmP2so4IFPl6LR3Us9PT0Pc0RbIM=",
         "ref": "main",
-        "rev": "e89b1e2ea1b7e0b7de33e3a5f81b7fce04b70dd1",
+        "rev": "fd81c43d908e3de8d2fef0632c488bf54c0fad44",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/xinux/modules"
@@ -2604,10 +2587,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1794356940,
-        "narHash": "sha256-ML+0SjnxlkLAFclntmMJpUBs13IGQNb5BD14jrmWHsw=",
+        "lastModified": 1795154381,
+        "narHash": "sha256-Q9L3osq3mW1NGCHLESTAsFQKB++50phqtomZE14J0TA=",
         "ref": "refs/heads/main",
-        "rev": "a7cac935fd58b6f177d2412ea00c566ed4f0abab",
+        "rev": "1ac6ed0bb28e7e098fa27cf9624b33d74bd4b3bd",
         "shallow": true,
         "type": "git",
         "url": "https://git.oss.uzinfocom.uz/mirrors/zen-browser-flake"
