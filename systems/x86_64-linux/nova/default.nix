@@ -21,6 +21,7 @@
   #   });
   # '';
 
+  networking.dhcpcd.enable = false;
   virtualisation.podman.enable = true;
 
   services.intel-lpmd = {
